@@ -1,1 +1,12 @@
-/*# sourceMappingURL=global_classnames.css.map */
+.full-second {
+  transition: 1s ease-in-out !important;
+}
+
+.half-second {
+  transition: 0.5s ease-in-out !important;
+}
+
+.stay-put {
+  transition: 0s ease-in-out !important;
+  opacity: 1 !important;
+}/*# sourceMappingURL=global_classnames.css.map */

@@ -1,0 +1,25 @@
+.full-second {
+  transition: 1s ease-in-out !important;
+}
+
+.half-second {
+  transition: 0.5s ease-in-out !important;
+}
+
+.stay-put {
+  // transform: translateX(0) !important;
+  transition: 0s ease-in-out !important;
+  opacity: 1 !important;
+}
+
+.selected {
+  &::selection {
+    // background-color: #1092a7;
+    // color: black;
+  }
+
+  &::-moz-selection {
+    // background-color: #1092a7;
+    // color: black;
+  }
+}

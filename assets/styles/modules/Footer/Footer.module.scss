@@ -3,8 +3,34 @@
 @import "../../tools/themes/themes.scss";
 @import "../../tools/variables/variable.scss";
 
-// Desktop 
+// Fonts
+@font-face {
+  font-family: "Noto Sans Medium";
+  src: url("../../../fonts/NotoSans-Medium.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Regular";
+  src: url("../../../fonts/NotoSans-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Black";
+  src: url("../../../fonts/Poppins-Black.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Extra Bold";
+  src: url("../../../fonts/Poppins-ExtraBold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("../../../fonts/Poppins-Bold.ttf");
+  font-display: swap;
+}
 
+// Desktop
 
 // Responsive
 @media all and (max-width: 1995px) {
