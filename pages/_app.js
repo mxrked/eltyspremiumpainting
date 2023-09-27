@@ -18,8 +18,9 @@ import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorage
 import CheckUserDevice from "@/assets/functions/dom/checkers/CheckUserDevice";
 import CheckScreenOrientation from "@/assets/functions/dom/checkers/CheckScreenOrientation";
 
+import { PageTransition } from "@/assets/animations/components/PageTransition";
+
 // Component Imports
-import { PageTransition } from "@/assets/components/global/All/PageTransition";
 
 // Style Imports
 import "../assets/styles/tools/global_classnames/global_classnames.css";
