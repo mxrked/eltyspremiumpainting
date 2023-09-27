@@ -141,6 +141,116 @@
   }
 }
 
+.desktop_nav {
+}
+
+.mobile_nav {
+  background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
+
+  ul {
+    background-color: $Seance;
+    font-family: "Poppins Bold";
+    height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    li {
+      cursor: pointer;
+      height: 45px;
+      @include displayElement(flex, flex-start, center);
+      padding-left: 10px;
+      padding-right: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.131);
+      color: white;
+      text-transform: uppercase;
+      font-size: $Link;
+    }
+  }
+
+  .mobile_nav_inner {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .mobile_nav_inner_box {
+      .mobile_nav_inner_row {
+        .mobile_nav_inner_side {
+          height: 85px;
+          width: 100%;
+          max-width: 50%;
+          display: flex;
+          align-items: center;
+          padding: 0;
+        }
+
+        .mobile_nav_L {
+          justify-content: flex-start;
+
+          .mobile_nav_inner_side_cnt {
+            .logo {
+              img {
+                max-width: 150px;
+              }
+            }
+          }
+        }
+
+        .mobile_nav_R {
+          justify-content: flex-end;
+
+          .mobile_nav_inner_side_cnt {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+              width: 32px;
+              height: 32px;
+
+              span {
+                height: 5px;
+                background-color: $MineShaft;
+                display: block;
+                border-radius: 5px;
+
+                &:nth-child(even) {
+                  margin-top: 7px;
+                  margin-bottom: 7px;
+                }
+              }
+            }
+
+            .closer {
+              position: relative;
+              display: none;
+              align-items: center;
+              justify-content: center;
+
+              span {
+                height: 5px;
+                background-color: $MineShaft;
+                display: block;
+                border-radius: 5px;
+                position: absolute;
+                width: 100%;
+
+                &:first-child {
+                  transform: rotate(45deg);
+                }
+
+                &:last-child {
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Responsive
 @media all and (max-width: 1995px) {
 }
@@ -195,9 +305,18 @@
       }
     }
   }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
+  }
 }
 
 @media (min-width: 992px) {
+  .mobile_nav {
+    display: none !important;
+  }
 }
 
 // Desktop Window (Smallest)
@@ -262,6 +381,12 @@
         }
       }
     }
+  }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
   }
 }
 
@@ -337,6 +462,12 @@
         }
       }
     }
+  }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
   }
 }
 
@@ -416,6 +547,12 @@
       }
     }
   }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
+  }
 }
 
 // Ipad
@@ -485,6 +622,12 @@
       }
     }
   }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
@@ -552,6 +695,12 @@
         }
       }
     }
+  }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
   }
 }
 
@@ -623,6 +772,12 @@
       }
     }
   }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
+  }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -691,6 +846,12 @@
         }
       }
     }
+  }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
   }
 }
 
@@ -761,5 +922,11 @@
         }
       }
     }
+  }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
   }
 }

@@ -121,6 +121,92 @@
   color: #93329e;
 }
 
+.mobile_nav {
+  background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mobile_nav ul {
+  background-color: #722180;
+  font-family: "Poppins Bold";
+  height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mobile_nav ul li {
+  cursor: pointer;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.131);
+  color: white;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+}
+.mobile_nav .mobile_nav_inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_inner_side {
+  height: 85px;
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_L {
+  justify-content: flex-start;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_L .mobile_nav_inner_side_cnt .logo img {
+  max-width: 150px;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R {
+  justify-content: flex-end;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt button {
+  width: 32px;
+  height: 32px;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt button span {
+  height: 5px;
+  background-color: #333333;
+  display: block;
+  border-radius: 5px;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt button span:nth-child(even) {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt .closer {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt .closer span {
+  height: 5px;
+  background-color: #333333;
+  display: block;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt .closer span:first-child {
+  transform: rotate(45deg);
+}
+.mobile_nav .mobile_nav_inner .mobile_nav_inner_box .mobile_nav_inner_row .mobile_nav_R .mobile_nav_inner_side_cnt .closer span:last-child {
+  transform: rotate(-45deg);
+}
+
 @media all and (max-width: 991px) {
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_inner_side {
     height: 80px;
@@ -144,6 +230,17 @@
   }
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
+  }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .mobile_nav {
+    display: none !important;
   }
 }
 @media all and (max-width: 768px) {
@@ -184,6 +281,12 @@
   }
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
+  }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
   }
 }
 @media all and (max-width: 419px) {
@@ -238,6 +341,12 @@
   }
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 17px;
+  }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
   }
 }
 @media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -295,6 +404,12 @@
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 17px;
   }
+  .desktop_nav {
+    display: none !important;
+  }
+  .mobile_nav {
+    display: block;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
   .nav_top .nav_top_inner {
@@ -341,6 +456,12 @@
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
   }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
   .nav_top .nav_top_inner {
@@ -386,6 +507,12 @@
   }
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
+  }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -434,6 +561,12 @@
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
   }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
+  }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .nav_top .nav_top_inner {
@@ -481,6 +614,12 @@
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 20px;
   }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
+  }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .nav_top .nav_top_inner {
@@ -527,5 +666,11 @@
   }
   .nav_top .nav_top_inner .nav_top_inner_box .nav_top_inner_row .nav_top_R .nav_top_inner_side_cnt ul li {
     font-size: 22px;
+  }
+  .desktop_nav {
+    display: block;
+  }
+  .mobile_nav {
+    display: none;
   }
 }/*# sourceMappingURL=Nav.module.css.map */
