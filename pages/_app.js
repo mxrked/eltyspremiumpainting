@@ -15,6 +15,7 @@ import NProgress from "nprogress";
 // Data/Functions/Images Imports
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
+import CheckUserDevice from "@/assets/functions/dom/checkers/CheckUserDevice";
 
 // Component Imports
 
@@ -124,28 +125,8 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   //? MANIPS
-  //! Changing fade classes based on screen size
-  // useEffect(() => {
-  //   const WINDOW_EVENTS = ["load", "resize"];
-
-  //   WINDOW_EVENTS.forEach((ev) => {
-  //     window.addEventListener(ev, () => {
-  //       ManipFadeFixClasses("fade-left", "fade-left-fix");
-  //       ManipFadeFixClasses("fade-right", "fade-right-fix");
-  //       ManipFadeFixClasses("fade-up", "fade-up-fix");
-  //       ManipFadeFixClasses("fade-down", "fade-down-fix");
-  //     });
-  //   });
-  // }, []);
 
   //? CHECKERS
-  //! Check Page Orientation
-  // useEffect(() => {
-  //   window.addEventListener("orientationchange", () => {
-  //     CheckScreenOrientation();
-  //   });
-  // }, []);
-
   //! Check User Device
   useEffect(() => {
     let mobile,
@@ -169,21 +150,6 @@ function MyApp({ Component, pageProps }) {
       CheckUserDevice(mobile, desktop);
     });
   }, []);
-
-  //! Checking Mobile Nav Menu Status
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      CheckMobileNavMenuStatus();
-    });
-
-    window.addEventListener("load", () => {
-      CheckMobileNavMenuStatus();
-    });
-
-    router.events.on("routeChangeComplete", () => {
-      CheckMobileNavMenuStatus();
-    });
-  }, [router]);
 
   //? DISPLAYS/HIDERS
   //! Add selection styling for specific elements by adding a className to each element
@@ -219,37 +185,6 @@ function MyApp({ Component, pageProps }) {
       }
     });
   }, []);
-
-  //! Display Page after some time
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (document.querySelector(".page")) {
-  //       document.querySelectorAll(".page").forEach((page) => {
-  //         page.style.opacity = 1;
-  //         page.style.visibility = "visible";
-
-  //         if (
-  //           !sessionStorage.getItem("Mobile Nav Opened") &&
-  //           !sessionStorage.getItem("Modal Opened")
-  //         ) {
-  //           // page.style.overflowY = "auto";
-  //           page.style.pointerEvents = "auto";
-  //         }
-  //       });
-  //     }
-  //   }, 2500);
-  // }, []);
-
-  //! Removing/Adding Page class depending on device (THIS FIXED THE PAGE SHOW ISSUE WHEN POPSTATE CHANGES ON MOBILE DEVICES)
-  // useEffect(() => {
-  //   window.addEventListener("load", () => {
-  //     CheckPageClass();
-  //   });
-
-  //   window.addEventListener("resize", () => {
-  //     CheckPageClass();
-  //   });
-  // }, []);
 
   return <Component {...pageProps} />;
 }
