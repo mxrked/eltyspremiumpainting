@@ -12,6 +12,8 @@ import path from "path";
 import { PageHead } from "@/assets/components/global/All/PageHead";
 
 import { NavTop } from "@/assets/components/global/Nav/Both/NavTop";
+import { DesktopNav } from "@/assets/components/global/Nav/Desktop/DesktopNav";
+import { MobileNav } from "@/assets/components/global/Nav/Mobile/MobileNav";
 
 // Style Imports
 import "../assets/styles/modules/Index/Index.module.css";
@@ -55,6 +57,8 @@ export default function Home({ iconData }) {
 
       <main id="PAGE_CNT" className="page-cnt">
         <NavTop />
+        <DesktopNav />
+        <MobileNav />
       </main>
     </div>
   );
