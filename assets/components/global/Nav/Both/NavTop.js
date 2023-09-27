@@ -16,7 +16,7 @@ export const NavTop = () => {
         <div className={`${styles.nav_top_inner_box} container-fluid`}>
           <div className={`${styles.nav_top_inner_row} row`}>
             <div
-              className={`${styles.nav_top_inner_side} ${styles.nav_top_L} col-lg-7 col-md-7 col-sm-7 col-xs-12`}
+              className={`${styles.nav_top_inner_side} ${styles.nav_top_L} col-lg-8 col-md-8 col-sm-8 col-xs-12`}
             >
               <div className={`${styles.nav_top_inner_side_cnt}`}>
                 <div className={`${styles.phone}`}>
@@ -37,16 +37,17 @@ export const NavTop = () => {
                     Send us a text:
                   </span>
 
-                  <a href="sms:+13368657741">
-                    <MdSms
-                      className={`${styles.icon} orientation-change-element half-second`}
-                    />
+                  <a
+                    href="sms:+13368657741"
+                    className="orientation-change-element half-second"
+                  >
+                    <MdSms className={`${styles.icon}`} />
                   </a>
                 </div>
               </div>
             </div>
             <div
-              className={`${styles.nav_top_inner_side} ${styles.nav_top_R} col-lg-5 col-md-5 col-sm-5 col-xs-12`}
+              className={`${styles.nav_top_inner_side} ${styles.nav_top_R} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
             >
               <div className={`${styles.nav_top_inner_side_cnt}`}>
                 <ul>
