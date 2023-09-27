@@ -16,6 +16,7 @@ import NProgress from "nprogress";
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
 import CheckUserDevice from "@/assets/functions/dom/checkers/CheckUserDevice";
+import CheckScreenOrientation from "@/assets/functions/dom/checkers/CheckScreenOrientation";
 
 // Component Imports
 
@@ -127,6 +128,13 @@ function MyApp({ Component, pageProps }) {
   //? MANIPS
 
   //? CHECKERS
+  //! Check Page Orientation
+  useEffect(() => {
+    window.addEventListener("orientationchange", () => {
+      CheckScreenOrientation();
+    });
+  }, []);
+
   //! Check User Device
   useEffect(() => {
     let mobile,
