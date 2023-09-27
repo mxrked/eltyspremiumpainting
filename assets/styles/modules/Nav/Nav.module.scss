@@ -31,6 +31,115 @@
 }
 
 // Desktop
+.nav_top {
+  background-color: $MineShaft;
+
+  .nav_top_inner {
+    max-width: 1500px;
+    @include quickCenter("relative");
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .nav_top_inner_box {
+      .nav_top_inner_row {
+        .nav_top_inner_side {
+          height: 100px;
+          display: flex;
+          align-items: center;
+        }
+
+        .nav_top_L {
+          justify-content: flex-start;
+
+          .nav_top_inner_side_cnt {
+            width: 100%;
+            @include displayElement(flex, flex-start, center);
+
+            .phone {
+              margin-right: 30px;
+
+              .icon {
+                color: white;
+                font-size: clamp(18px, 20px, 20px);
+                margin-right: 12px;
+              }
+
+              a {
+                font-family: "Noto Sans Medium";
+                color: white;
+                font-size: clamp(15px, 17px, 17px);
+                text-decoration: underline;
+                // text-decoration-color: $Seance;
+
+                &:hover {
+                  color: $VividViolet;
+                }
+              }
+            }
+
+            .sms {
+              @include displayElement(flex, flex-start, center);
+
+              span {
+                font-family: "Noto Sans Medium";
+                color: white;
+                font-size: clamp(16px, 17px, 17px);
+                margin-right: 12px;
+              }
+
+              a {
+                color: white;
+                background-color: $Seance;
+                width: 35px;
+                height: 35px;
+                @include quickCenter("relative");
+                text-align: center;
+                font-size: clamp(15px, 17px, 17px);
+                text-decoration: underline;
+                // text-decoration-color: $Seance;
+                @include displayElement(flex, center, center);
+                border-radius: 10px;
+
+                &:hover {
+                  background-color: $VividViolet;
+                }
+              }
+            }
+          }
+        }
+
+        .nav_top_R {
+          justify-content: flex-end;
+
+          .nav_top_inner_side_cnt {
+            width: 100%;
+            @include displayElement(flex, flex-end, center);
+
+            ul {
+              @include displayElement(flex, space-between, center);
+              max-width: 105px;
+              width: 100%;
+
+              li {
+                font-size: clamp(20px, 23px, 23px);
+
+                .icon {
+                  color: white;
+                  cursor: pointer;
+
+                  &:hover {
+                    color: $VividViolet;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // Responsive
 @media all and (max-width: 1995px) {
