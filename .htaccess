@@ -1,5 +1,5 @@
 # Enables CORS Policy for fonts, etc.
-Header add Access-Control-Allow-Origin "eltyspremiumpainting.com"
+Access-Control-Allow-Origin: *
 
 # Browser Caching Expires - Helps boost performance with caching
 <IfModule mod_expires.c>
