@@ -1,5 +1,5 @@
 // React/Next Imports
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
@@ -10,6 +10,8 @@ import path from "path";
 
 // Component Imports
 import { PageHead } from "@/assets/components/global/All/PageHead";
+
+import { NavTop } from "@/assets/components/global/Nav/Both/NavTop";
 
 // Style Imports
 import "../assets/styles/modules/Index/Index.module.css";
@@ -51,7 +53,9 @@ export default function Home({ iconData }) {
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
 
-      <main id="PAGE_CNT" className="page-cnt"></main>
+      <main id="PAGE_CNT" className="page-cnt">
+        <NavTop />
+      </main>
     </div>
   );
 }
