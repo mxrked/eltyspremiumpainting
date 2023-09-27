@@ -19,6 +19,7 @@ import CheckUserDevice from "@/assets/functions/dom/checkers/CheckUserDevice";
 import CheckScreenOrientation from "@/assets/functions/dom/checkers/CheckScreenOrientation";
 
 // Component Imports
+import { PageTransition } from "@/assets/components/global/All/PageTransition";
 
 // Style Imports
 import "../assets/styles/tools/global_classnames/global_classnames.css";
@@ -194,7 +195,13 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <AnimatePresence mode="wait">
+      <PageTransition>
+        <Component {...pageProps} />
+      </PageTransition>
+    </AnimatePresence>
+  );
 }
 
 export default MyApp;
