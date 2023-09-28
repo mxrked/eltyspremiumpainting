@@ -142,6 +142,68 @@
 }
 
 .desktop_nav {
+  background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .desktop_nav_inner {
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1500px;
+    @include quickCenter("relative");
+
+    .desktop_nav_inner_box {
+      .desktop_nav_inner_row {
+        .desktop_nav_inner_side {
+          height: 145px;
+          display: flex;
+          align-items: center;
+          padding: 0;
+        }
+
+        .desktop_nav_L {
+          justify-content: flex-start;
+
+          .desktop_nav_inner_side_cnt {
+            .logo {
+              img {
+                max-width: 230px;
+              }
+            }
+          }
+        }
+
+        .desktop_nav_R {
+          justify-content: flex-end;
+
+          .desktop_nav_inner_side_cnt {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+
+            ul {
+              width: 100%;
+              max-width: 430px;
+              font-family: "Poppins Bold";
+              @include displayElement(flex, space-between, center);
+
+              li {
+                cursor: pointer;
+                color: $MineShaft;
+                text-transform: uppercase;
+                font-size: $Link;
+
+                &:hover {
+                  color: $VividViolet;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .mobile_nav {
@@ -805,6 +867,63 @@
   }
   .mobile_nav {
     display: block;
+
+    ul {
+      li {
+        height: 38px;
+        font-size: clamp(13px, 14px, 14px);
+      }
+    }
+
+    .mobile_nav_inner {
+      padding-left: 50px;
+      padding-right: 50px;
+
+      .mobile_nav_inner_box {
+        .mobile_nav_inner_row {
+          .mobile_nav_inner_side {
+            height: 110px;
+          }
+
+          .mobile_nav_L {
+            .mobile_nav_inner_side_cnt {
+              .logo {
+                img {
+                  max-width: 160px;
+                }
+              }
+            }
+          }
+
+          .mobile_nav_R {
+            .mobile_nav_inner_side_cnt {
+              button {
+                width: 30px;
+                height: 30px;
+
+                span {
+                  height: 4px;
+                  background-color: $MineShaft;
+                  display: block;
+                  border-radius: 5px;
+
+                  &:nth-child(even) {
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                  }
+                }
+
+                .closer {
+                  span {
+                    height: 4px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -952,6 +1071,22 @@
   }
   .desktop_nav {
     display: block !important;
+
+    .desktop_nav_inner {
+      max-width: 900px;
+
+      .desktop_nav_inner_box {
+        .desktop_nav_inner_row {
+          .desktop_nav_R {
+            .desktop_nav_inner_side_cnt {
+              ul {
+                max-width: 370px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .mobile_nav {
     display: none;
@@ -1027,6 +1162,32 @@
   }
   .desktop_nav {
     display: block;
+
+    .desktop_nav_inner {
+      max-width: 900px;
+
+      .desktop_nav_inner_box {
+        .desktop_nav_inner_row {
+          .desktop_nav_L {
+            .desktop_nav_inner_side_cnt {
+              .logo {
+                img {
+                  max-width: 200px;
+                }
+              }
+            }
+          }
+
+          .desktop_nav_R {
+            .desktop_nav_inner_side_cnt {
+              ul {
+                max-width: 370px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .mobile_nav {
     display: none;
@@ -1103,6 +1264,22 @@
   }
   .desktop_nav {
     display: block;
+
+    .desktop_nav_inner {
+      max-width: 1200px;
+
+      .desktop_nav_inner_box {
+        .desktop_nav_inner_row {
+          .desktop_nav_R {
+            .desktop_nav_inner_side_cnt {
+              ul {
+                max-width: 430px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .mobile_nav {
     display: none;
