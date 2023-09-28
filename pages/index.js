@@ -7,6 +7,9 @@ import path from "path";
 // Library Imports
 
 // Data/Functions/Images Imports
+import { FadeLeft } from "@/assets/animations/components/FadeLeft";
+import { FadeRight } from "@/assets/animations/components/FadeRight";
+import { FadeDown } from "@/assets/animations/components/FadeDown";
 
 // Component Imports
 import { PageHead } from "@/assets/components/global/All/PageHead";
@@ -22,6 +25,7 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 
 // Style Imports
 import "../assets/styles/modules/Index/Index.module.css";
+import { FadeUp } from "@/assets/animations/components/FadeUp";
 
 export async function getStaticProps() {
   try {
@@ -66,9 +70,15 @@ export default function Home({ iconData }) {
         <MobileNav />
 
         <IndexTop />
-        <IndexAbout />
-        <IndexGallery />
-        <IndexContact />
+        <FadeLeft threshold={0.5}>
+          <IndexAbout />
+        </FadeLeft>
+        <FadeRight threshold={0.5}>
+          <IndexGallery />
+        </FadeRight>
+        <FadeUp threshold={0.5}>
+          <IndexContact />
+        </FadeUp>
       </main>
     </div>
   );
