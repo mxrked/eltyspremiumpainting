@@ -166,6 +166,10 @@
       color: white;
       text-transform: uppercase;
       font-size: $Link;
+
+      &:hover {
+        background-color: $VividViolet;
+      }
     }
   }
 
@@ -314,6 +318,9 @@
 }
 
 @media (min-width: 992px) {
+  .desktop_nav {
+    display: block !important;
+  }
   .mobile_nav {
     display: none !important;
   }
@@ -387,6 +394,63 @@
   }
   .mobile_nav {
     display: block;
+
+    ul {
+      li {
+        height: 40px;
+        font-size: clamp(14px, 15px, 15px);
+      }
+    }
+
+    .mobile_nav_inner {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .mobile_nav_inner_box {
+        .mobile_nav_inner_row {
+          .mobile_nav_inner_side {
+            height: 70px;
+          }
+
+          .mobile_nav_L {
+            .mobile_nav_inner_side_cnt {
+              .logo {
+                img {
+                  max-width: 130px;
+                }
+              }
+            }
+          }
+
+          .mobile_nav_R {
+            .mobile_nav_inner_side_cnt {
+              button {
+                width: 27px;
+                height: 27px;
+
+                span {
+                  height: 4px;
+                  background-color: $MineShaft;
+                  display: block;
+                  border-radius: 5px;
+
+                  &:nth-child(even) {
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                  }
+                }
+              }
+
+              .closer {
+                span {
+                  height: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -468,6 +532,63 @@
   }
   .mobile_nav {
     display: block;
+
+    ul {
+      li {
+        height: 34px;
+        font-size: clamp(13px, 14px, 14px);
+      }
+    }
+
+    .mobile_nav_inner {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .mobile_nav_inner_box {
+        .mobile_nav_inner_row {
+          .mobile_nav_inner_side {
+            height: 70px;
+          }
+
+          .mobile_nav_L {
+            .mobile_nav_inner_side_cnt {
+              .logo {
+                img {
+                  max-width: 110px;
+                }
+              }
+            }
+          }
+
+          .mobile_nav_R {
+            .mobile_nav_inner_side_cnt {
+              button {
+                width: 25px;
+                height: 25px;
+
+                span {
+                  height: 3px;
+                  background-color: $MineShaft;
+                  display: block;
+                  border-radius: 5px;
+
+                  &:nth-child(even) {
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                  }
+                }
+
+                .closer {
+                  span {
+                    height: 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -552,6 +673,63 @@
   }
   .mobile_nav {
     display: block;
+
+    ul {
+      li {
+        height: 38px;
+        font-size: clamp(13px, 14px, 14px);
+      }
+    }
+
+    .mobile_nav_inner {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .mobile_nav_inner_box {
+        .mobile_nav_inner_row {
+          .mobile_nav_inner_side {
+            height: 70px;
+          }
+
+          .mobile_nav_L {
+            .mobile_nav_inner_side_cnt {
+              .logo {
+                img {
+                  max-width: 110px;
+                }
+              }
+            }
+          }
+
+          .mobile_nav_R {
+            .mobile_nav_inner_side_cnt {
+              button {
+                width: 25px;
+                height: 25px;
+
+                span {
+                  height: 3px;
+                  background-color: $MineShaft;
+                  display: block;
+                  border-radius: 5px;
+
+                  &:nth-child(even) {
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                  }
+                }
+
+                .closer {
+                  span {
+                    height: 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -623,10 +801,10 @@
     }
   }
   .desktop_nav {
-    display: block;
+    display: none;
   }
   .mobile_nav {
-    display: none;
+    display: block;
   }
 }
 
@@ -697,10 +875,10 @@
     }
   }
   .desktop_nav {
-    display: block;
+    display: none;
   }
   .mobile_nav {
-    display: none;
+    display: block;
   }
 }
 
@@ -773,7 +951,7 @@
     }
   }
   .desktop_nav {
-    display: block;
+    display: block !important;
   }
   .mobile_nav {
     display: none;
