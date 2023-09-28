@@ -4,11 +4,12 @@
  *
  */
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 // import { FADE_LEFT } from "../objects/FADES";
 
-export const FadeLeft = ({ threshold = 0.5, children }) => {
+export const FadeLeft = ({ threshold = 0.5, delay = 0, children }) => {
   const [HAS_ANIMATED, SET_HAS_ANIMATED] = useState(false);
   const CONTROLS = useAnimation();
   const REF = useRef();
@@ -17,14 +18,14 @@ export const FadeLeft = ({ threshold = 0.5, children }) => {
     const ELEMENT = REF.current;
 
     const handleScroll = () => {
-      // Making it only display once
-      if (!HAS_ANIMATED) {
-        // Getting if the user has scrolled close to the element
-        const { TOP, BOTTOM } = ELEMENT.getBoundingClientRect();
-        const IS_VISIBLE = TOP < window.innerHeight * threshold && BOTTOM >= 0;
+      if (!HAS_ANIMATED && ELEMENT) {
+        const { left, width } = ELEMENT.getBoundingClientRect();
+        const isMobile = window.innerWidth <= 768; // Adjust the width as needed for your definition of mobile
 
-        // Displaying element
-        if (IS_VISIBLE) {
+        const IS_VISIBLE =
+          window.scrollX + window.innerWidth > left + width * threshold;
+
+        if (!isMobile && IS_VISIBLE) {
           CONTROLS.start({ opacity: 1, x: 0 });
           SET_HAS_ANIMATED(true);
         }
