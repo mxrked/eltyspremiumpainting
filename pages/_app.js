@@ -128,6 +128,32 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   //? MANIPS
+  //! Determine to enable/disable framer motion animations on mobile devices
+  useEffect(() => {
+    // THIS IS USED TO ENABLE/DISABLE THE FRAMER MOTION ANIMATIONS ON MOBILE DEVICES
+    const DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES = false;
+
+    // Checking to see if user is on desktop
+    let onDesktop = true;
+    if (sessionStorage.getItem("Mobile Device")) {
+      onDesktop = false;
+    }
+
+    const handleDisableCheck = () => {
+      if (!DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES) {
+        return;
+      } else {
+        if (!onDesktop) {
+          document.querySelectorAll(".fm-element").forEach((fix) => {
+            fix.classList.add("fm-mobile-fix");
+          });
+        }
+      }
+    };
+
+    // Adds the class to disable the animations if DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES = true
+    handleDisableCheck();
+  }, []);
 
   //? CHECKERS
   //! Check Page Orientation
