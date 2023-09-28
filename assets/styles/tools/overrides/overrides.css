@@ -1,1 +1,5 @@
-/*# sourceMappingURL=overrides.css.map */
+.fm-mobile-fix {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}/*# sourceMappingURL=overrides.css.map */

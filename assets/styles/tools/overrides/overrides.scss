@@ -2,6 +2,12 @@
 
 // Desktop
 
+.fm-mobile-fix {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
 // Responsive
 @media all and (max-width: 1995px) {
 }
