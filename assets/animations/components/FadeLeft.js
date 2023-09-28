@@ -20,12 +20,11 @@ export const FadeLeft = ({ threshold = 0.5, delay = 0, children }) => {
     const handleScroll = () => {
       if (!HAS_ANIMATED && ELEMENT) {
         const { left, width } = ELEMENT.getBoundingClientRect();
-        const isMobile = window.innerWidth <= 768; // Adjust the width as needed for your definition of mobile
 
         const IS_VISIBLE =
           window.scrollX + window.innerWidth > left + width * threshold;
 
-        if (!isMobile && IS_VISIBLE) {
+        if (IS_VISIBLE) {
           CONTROLS.start({ opacity: 1, x: 0 });
           SET_HAS_ANIMATED(true);
         }
@@ -43,6 +42,7 @@ export const FadeLeft = ({ threshold = 0.5, delay = 0, children }) => {
       initial={{ opacity: 0, x: -50 }}
       animate={CONTROLS}
       transition={{ duration: 0.5 }}
+      className="fm-element"
     >
       {children}
     </motion.div>

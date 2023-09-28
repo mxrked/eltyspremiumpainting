@@ -9,7 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 
 // import { FADE_DOWN } from "../objects/FADES";
 
-export const FadeDown = ({ threshold = 0.5, delay = 0, children }) => {
+export const FadeDown = ({ threshold = 0.5, children }) => {
   const [HAS_ANIMATED, SET_HAS_ANIMATED] = useState(false);
   const CONTROLS = useAnimation();
   const REF = useRef(null);
@@ -17,14 +17,13 @@ export const FadeDown = ({ threshold = 0.5, delay = 0, children }) => {
   useEffect(() => {
     const { offsetTop, offsetHeight } = REF.current;
 
-    const ELEMENT = REF.current;
-
     const handleScroll = () => {
       // Making it only display once
-      if (!HAS_ANIMATED && ELEMENT) {
+      if (!HAS_ANIMATED && REF.current) {
         window.requestAnimationFrame(() => {
           // Getting if the user has scrolled close to the element
-          const isMobile = window.innerWidth <= 768; // Adjust the width as needed for your definition of mobile
+          // const { TOP, BOTTOM } = ELEMENT.getBoundingClientRect();
+          // console.log("Top: " + TOP, "Bottom: " + BOTTOM);
 
           const IS_VISIBLE =
             window.scrollY + window.innerHeight >
@@ -32,7 +31,7 @@ export const FadeDown = ({ threshold = 0.5, delay = 0, children }) => {
           console.log("Is Visible: " + IS_VISIBLE);
 
           // Displaying element
-          if (!isMobile && IS_VISIBLE) {
+          if (IS_VISIBLE) {
             CONTROLS.start({ opacity: 1, y: 0 });
             SET_HAS_ANIMATED(true);
           }
@@ -51,6 +50,7 @@ export const FadeDown = ({ threshold = 0.5, delay = 0, children }) => {
       initial={{ opacity: 0, y: -50 }}
       animate={CONTROLS}
       transition={{ duration: 0.5 }}
+      className="fm-element"
     >
       {children}
     </motion.div>

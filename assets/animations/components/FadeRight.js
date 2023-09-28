@@ -9,7 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 
 // import { FADE_RIGHT } from "../objects/FADES";
 
-export const FadeRight = ({ threshold = 0.5, delay = 0, children }) => {
+export const FadeRight = ({ threshold = 0.5, children }) => {
   const [HAS_ANIMATED, SET_HAS_ANIMATED] = useState(false);
   const CONTROLS = useAnimation();
   const REF = useRef();
@@ -19,12 +19,11 @@ export const FadeRight = ({ threshold = 0.5, delay = 0, children }) => {
 
     const handleScroll = () => {
       if (!HAS_ANIMATED && ELEMENT) {
-        const { left, right } = ELEMENT.getBoundingClientRect();
-        const isMobile = window.innerWidth <= 768; // Adjust the width as needed for your definition of mobile
+        const { left, width } = ELEMENT.getBoundingClientRect();
+        const IS_VISIBLE =
+          window.scrollX + window.innerWidth > left + width * threshold;
 
-        const IS_VISIBLE = left < window.innerWidth * threshold && right >= 0;
-
-        if (!isMobile && IS_VISIBLE) {
+        if (IS_VISIBLE) {
           CONTROLS.start({ opacity: 1, x: 0 });
           SET_HAS_ANIMATED(true);
         }
@@ -42,6 +41,7 @@ export const FadeRight = ({ threshold = 0.5, delay = 0, children }) => {
       initial={{ opacity: 0, x: 50 }}
       animate={CONTROLS}
       transition={{ duration: 0.5 }}
+      className="fm-element"
     >
       {children}
     </motion.div>
