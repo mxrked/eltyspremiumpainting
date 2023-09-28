@@ -70,15 +70,15 @@ export default function Home({ iconData }) {
         <MobileNav />
 
         <IndexTop />
-        <FadeLeft threshold={0.5}>
+        <FadeRight threshold={0.5}>
           <IndexAbout />
+        </FadeRight>
+        <FadeLeft threshold={0.5}>
+          <IndexGallery />
         </FadeLeft>
         <FadeRight threshold={0.5}>
-          <IndexGallery />
-        </FadeRight>
-        <FadeUp threshold={0.5}>
           <IndexContact />
-        </FadeUp>
+        </FadeRight>
       </main>
     </div>
   );
