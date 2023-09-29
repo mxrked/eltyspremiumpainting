@@ -9,7 +9,6 @@ import path from "path";
 // Data/Functions/Images Imports
 import { FadeLeft } from "@/assets/animations/components/FadeLeft";
 import { FadeRight } from "@/assets/animations/components/FadeRight";
-import { FadeDown } from "@/assets/animations/components/FadeDown";
 
 // Component Imports
 import { PageHead } from "@/assets/components/global/All/PageHead";
@@ -29,17 +28,29 @@ import "../assets/styles/modules/Index/Index.module.css";
 
 export async function getStaticProps() {
   try {
-    const filePath = path.join(
+    const pageHeadDatafilePath = path.join(
       process.cwd(),
       "public/data/",
       "PageHeadIconsData.json"
     );
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const iconData = JSON.parse(fileContents);
+    const pageHeadDatafileContents = fs.readFileSync(
+      pageHeadDatafilePath,
+      "utf8"
+    );
+    const iconData = JSON.parse(pageHeadDatafileContents);
+
+    const yelpDataFilePath = path.join(
+      process.cwd(),
+      "public/data/",
+      "YelpReviewsData.json"
+    );
+    const yelpDataFileContents = fs.readFileSync(yelpDataFilePath, "utf8");
+    const yelpData = JSON.parse(yelpDataFileContents);
 
     return {
       props: {
         iconData,
+        yelpData,
       },
     };
   } catch (error) {
@@ -48,16 +59,21 @@ export async function getStaticProps() {
     return {
       props: {
         iconData: null,
+        yelpData: null,
       },
     };
   }
 }
 
-export default function Home({ iconData }) {
+export default function Home({ iconData, yelpData }) {
   const router = useRouter();
 
   useEffect(() => {
     console.log(iconData.favicon);
+
+    yelpData.forEach((review) => {
+      console.log(review);
+    });
   }, []);
 
   return (
