@@ -32,20 +32,20 @@ export const PageHead = ({ page_head_data }) => {
     if (DESCRIPTIONS[0].length > 0) {
       desc = DESCRIPTIONS[0];
     } else {
-      desc = DESCRIPTIONS[0];
+      desc = "";
     }
 
     kws = INDEX_KWS;
   }
 
   // 404 Page
-  if (router.pathname == "/404") {
-    title = "Elty's Premium Painting & Restoration | 404";
-    robots = "no index, no follow";
-    desc = null;
-    kws = null;
-    url = router.pathname;
-  }
+  // if (router.pathname == "/404") {
+  //   title = "Elty's Premium Painting & Restoration | 404";
+  //   robots = "no index, no follow";
+  //   desc = null;
+  //   kws = null;
+  //   url = router.pathname;
+  // }
 
   return (
     <Head id="pageHead">
