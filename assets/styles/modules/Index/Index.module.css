@@ -158,7 +158,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_span {
+.index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_h3 {
   font-family: "Poppins Extra Bold";
   font-size: clamp(3rem, 3vw, 3rem);
   color: #333333;
@@ -249,7 +249,7 @@
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 750px;
   }
-  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_span {
+  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_h3 {
     font-size: clamp(2rem, 3vw, 3rem);
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt h2 {
@@ -300,7 +300,7 @@
     max-width: 520px;
     left: 0px;
   }
-  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_span {
+  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_h3 {
     font-size: clamp(2rem, 3vw, 3rem);
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt h2 {
@@ -355,7 +355,7 @@
     max-width: 450px;
     left: 0px;
   }
-  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_span {
+  .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_h3 {
     font-size: clamp(1.5rem, 1.8vw, 1.8rem);
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt h2 {

@@ -161,7 +161,7 @@
         max-width: 900px;
         @include quickCenter("relative");
 
-        .section_heading_span {
+        .section_heading_h3 {
           font-family: "Poppins Extra Bold";
           font-size: clamp(3rem, 3vw, 3rem);
           color: $MineShaft;
@@ -271,7 +271,7 @@
 
       .index_about_inner_text {
         .index_about_inner_text_cnt {
-          .section_heading_span {
+          .section_heading_h3 {
             font-size: clamp(2rem, 3vw, 3rem);
           }
 
@@ -342,7 +342,7 @@
 
       .index_about_inner_text {
         .index_about_inner_text_cnt {
-          .section_heading_span {
+          .section_heading_h3 {
             font-size: clamp(2rem, 3vw, 3rem);
           }
 
@@ -421,7 +421,7 @@
 
       .index_about_inner_text {
         .index_about_inner_text_cnt {
-          .section_heading_span {
+          .section_heading_h3 {
             font-size: clamp(1.5rem, 1.8vw, 1.8rem);
           }
 
