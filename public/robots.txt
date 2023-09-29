@@ -1,0 +1,4 @@
+Sitemap: https://www.eltyspremiumpainting.com/sitemap.xml
+User-agent: *
+Disallow: /admin
+Disallow: /logs
