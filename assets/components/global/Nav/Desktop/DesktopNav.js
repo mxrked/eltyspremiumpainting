@@ -22,7 +22,7 @@ export const DesktopNav = () => {
                   <img
                     data-src={LOGO}
                     className="lazyload orientation-change-element half-second"
-                    alt="Elty's Premium Painting & Restoration logo image."
+                    alt="Elty's Premium Painting & Restoration: Logo image."
                   />
                 </div>
               </div>
