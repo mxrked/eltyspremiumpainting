@@ -32,7 +32,7 @@ export const MobileNav = () => {
                   <img
                     data-src={LOGO}
                     className="lazyload orientation-change-element half-second"
-                    alt="Elty's Premium Painting & Restoration logo image."
+                    alt="Elty's Premium Painting & Restoration: Logo image."
                   />
                 </div>
               </div>
@@ -42,6 +42,7 @@ export const MobileNav = () => {
             >
               <div className={`${styles.mobile_nav_inner_side_cnt}`}>
                 <button
+                  name="mobileNavToggler"
                   id="mobileNavToggler"
                   onClick={(e) => {
                     e.currentTarget.style.opacity = 0.5;
@@ -67,6 +68,7 @@ export const MobileNav = () => {
                   <span className="orientation-change-element half-second"></span>
                 </button>
                 <button
+                  name="mobileNavCloser"
                   id="mobileNavCloser"
                   className={`${styles.closer}`}
                   onClick={(e) => {
