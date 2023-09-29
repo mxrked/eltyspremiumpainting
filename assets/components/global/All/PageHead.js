@@ -55,23 +55,19 @@ export const PageHead = ({ page_head_data }) => {
       <meta name="description" content={desc} />
       <meta name="robots" content={robots} />
 
+      {/** FACEBOOK */}
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_GB" />
-      <meta property="og:url" content={url} />
-      {/**
-      <meta
-        name="google-site-verification"
-        content="aPd101rbxmZ5gRWC4D6m_kW5i3UVNrrgnmA6CrJWz20"
-      />
-      */}
-      {/**
-        <meta
-        name="google-site-verification"
-        content="V5Rtva_ZUQGbD75j-mxlBzvediiQnPt2hEi7YaPPAEE"
-      />
-        */}
+      <meta property="og:image" content={page_head_data.f512} />
+      <meta property="og:image:width" content="512" />
+      <meta property="og:image:height" content="512" />
 
+      {/** TWITTER */}
+      <meta name="twitter:image" content={page_head_data.f512} />
+      <meta name="twitter:card" content={desc} />
+
+      <link rel="canonical" href="https://eltyspremiumpainting.com/" />
       <link rel="icon" type="image/x-icon" href={page_head_data.favicon} />
       <link
         rel="icon"
