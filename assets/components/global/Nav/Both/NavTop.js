@@ -52,39 +52,54 @@ export const NavTop = () => {
               <div className={`${styles.nav_top_inner_side_cnt}`}>
                 <ul>
                   <li>
-                    <FaInstagram
-                      className={`${styles.icon} orientation-change-element half-second`}
-                      onClick={(e) => {
-                        window.open(
-                          "https://www.instagram.com/eltyspremiumpainting/",
-                          "_self"
-                        );
-                      }}
-                    />
+                    <a
+                      href="https://www.instagram.com/eltyspremiumpainting/"
+                      target={"_blank"}
+                    >
+                      <FaInstagram
+                        className={`${styles.icon} orientation-change-element half-second`}
+                        // onClick={(e) => {
+                        //   window.open(
+                        //     "https://www.instagram.com/eltyspremiumpainting/",
+                        //     "_self"
+                        //   );
+                        // }}
+                      />
+                    </a>
                   </li>
 
                   <li>
-                    <FaFacebook
-                      className={`${styles.icon} orientation-change-element half-second`}
-                      onClick={(e) => {
-                        window.open(
-                          "https://www.facebook.com/eltyspremiumpainting",
-                          "_self"
-                        );
-                      }}
-                    />
+                    <a
+                      href="https://www.facebook.com/eltyspremiumpainting"
+                      target={"_blank"}
+                    >
+                      <FaFacebook
+                        className={`${styles.icon} orientation-change-element half-second`}
+                        // onClick={(e) => {
+                        //   window.open(
+                        //     "https://www.facebook.com/eltyspremiumpainting",
+                        //     "_self"
+                        //   );
+                        // }}
+                      />
+                    </a>
                   </li>
 
                   <li>
-                    <FaYelp
-                      className={`${styles.icon} orientation-change-element half-second`}
-                      onClick={(e) => {
-                        window.open(
-                          "https://www.yelp.com/biz/eltys-premium-painting-and-restoration-mount-airy?osq=eltys+premium+painting&override_cta=Request+a+Quote",
-                          "_self"
-                        );
-                      }}
-                    />
+                    <a
+                      href="https://www.yelp.com/biz/eltys-premium-painting-and-restoration-mount-airy?osq=eltys+premium+painting&override_cta=Request+a+Quote"
+                      target={"_blank"}
+                    >
+                      <FaYelp
+                        className={`${styles.icon} orientation-change-element half-second`}
+                        // onClick={(e) => {
+                        //   window.open(
+                        //     "https://www.yelp.com/biz/eltys-premium-painting-and-restoration-mount-airy?osq=eltys+premium+painting&override_cta=Request+a+Quote",
+                        //     "_self"
+                        //   );
+                        // }}
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>
