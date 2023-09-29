@@ -1,11 +1,14 @@
 // This file is used to hold some arrays
 
 const TITLES = [
-  "Eltys Premium Painting & Restoration | Expert House Painting, Popcorn Ceiling Removal, and Restoration Services in Mt. Airy & Greensboro, NC",
+  // "Eltys Premium Painting & Restoration | Expert House Painting, Popcorn Ceiling Removal, and Restoration Services in Mt. Airy & Greensboro, NC",
+  // "Eltys Premium Painting & Restoration | House Painting, Popcorn Ceiling Removal, Restoration in Mt. Airy & Greensboro, NC",
+  "Elty's Premium Painting & Restoration | Greensboro/Mt. Airy, NC",
 ];
 
 const DESCRIPTIONS = [
-  "Elty's Premium Painting & Restoration is your trusted expert for house painting, popcorn ceiling removal, skim coating, staining, sheetrock repair, and pressure washing in Mt. Airy and Greensboro, NC. With over a decade of experience, our top-rated painting contractors specialize in delivering high-quality interior and exterior painting services. From wood staining to sheetrock repair, we are your local painting company in North Carolina committed to excellence. Contact us for professional painting and restoration services that exceed your expectations.",
+  // "Elty's Premium Painting & Restoration is your trusted expert for house painting, popcorn ceiling removal, skim coating, staining, sheetrock repair, and pressure washing in Mt. Airy and Greensboro, NC. With over a decade of experience, our top-rated painting contractors specialize in delivering high-quality interior and exterior painting services. From wood staining to sheetrock repair, we are your local painting company in North Carolina committed to excellence. Contact us for professional painting and restoration services that exceed your expectations.",
+  "Elty's Premium Painting: Expert house painting, popcorn ceiling removal, skim coating, staining, sheetrock repair, and pressure washing in Mt. Airy & Greensboro, NC. With over a decade of experience, we specialize in delivering high-quality interior and exterior painting services. Book a service now!",
 ];
 
 const INDEX_KWS = [
