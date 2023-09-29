@@ -24,8 +24,8 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 
 // Style Imports
+import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { FadeUp } from "@/assets/animations/components/FadeUp";
 
 export async function getStaticProps() {
   try {
@@ -64,7 +64,7 @@ export default function Home({ iconData }) {
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
 
-      <main id="PAGE_CNT" className="page-cnt">
+      <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         <NavTop />
         <DesktopNav />
         <MobileNav />
