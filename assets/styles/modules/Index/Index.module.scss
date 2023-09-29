@@ -31,6 +31,10 @@
 }
 
 // Desktop
+.page_cnt {
+  overflow-x: hidden; // Preventing horizontal scrolling due to framer motion animations
+}
+
 .index_top {
   height: 1100px;
   position: relative;
@@ -183,9 +187,48 @@
           margin-bottom: 40px;
           @include quickCenter("relative");
         }
+
+        button {
+          width: 210px;
+          height: 50px;
+          background-color: $Seance;
+          color: white;
+          @include displayElement(flex, space-evenly, center);
+          font-size: $Link;
+          @include quickCenter("relative");
+          font-family: "Poppins Bold";
+          border-radius: 3px;
+
+          .icon {
+            transition: transform 0.5s ease;
+            animation: iconMovement 1.5s infinite; // Adjust the duration as needed
+          }
+
+          &:hover {
+            background-color: $VividViolet;
+          }
+
+          @keyframes iconMovement {
+            0% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(3px);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
       }
     }
   }
+}
+.index_gallery {
+  overflow: hidden;
+}
+.index_contact {
+  overflow: hidden;
 }
 
 // Responsive
