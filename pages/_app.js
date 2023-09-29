@@ -201,6 +201,7 @@ function MyApp({ Component, pageProps }) {
       "h6",
       "p",
       "span",
+      "a",
       "li",
       "img",
       "br",
