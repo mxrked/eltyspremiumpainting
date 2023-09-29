@@ -62,6 +62,7 @@ export const IndexAbout = () => {
             </p>
 
             <button
+              name="bookServiceBtn_2"
               className="orientation-change-element half-second"
               onClick={() => {
                 if (document.getElementById("indexContact")) {
