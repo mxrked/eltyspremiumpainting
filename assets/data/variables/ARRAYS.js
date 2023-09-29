@@ -1,7 +1,7 @@
 // This file is used to hold some arrays
 
 const TITLES = [
-  "Elty's Premium Painting & Restoration | Expert House Painting, Popcorn Ceiling Removal, and Restoration Services in Mt. Airy & Greensboro, NC",
+  "Eltys Premium Painting & Restoration | Expert House Painting, Popcorn Ceiling Removal, and Restoration Services in Mt. Airy & Greensboro, NC",
 ];
 
 const DESCRIPTIONS = [
