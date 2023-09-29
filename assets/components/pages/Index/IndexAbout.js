@@ -31,34 +31,45 @@ export const IndexAbout = () => {
 
         <div className={`${styles.index_about_inner_text}`}>
           <div className={`${styles.index_about_inner_text_cnt}`}>
-            <span
-              className={`${styles.section_heading_span} orientation-change-element half-second`}
+            <h3
+              className={`${styles.section_heading_h3} orientation-change-element half-second`}
             >
               About:
-            </span>
+            </h3>
 
             <h2 className="orientation-change-element half-second">
               Elty's Premium Painting & Restoration
             </h2>
 
             <p className="orientation-change-element half-second">
-              Welcome to Elty's Premium Painting & Restoration - Your Trusted
-              Painting and Restoration Experts in Mt. Airy and Greensboro, North
-              Carolina.
+              Experience the pinnacle of painting and restoration services with
+              Elty's Premium Painting & Restoration, a trusted name with over a
+              decade of industry excellence. Serving Mt. Airy and Greensboro,
+              including Elty's Greensboro house painters, our team of seasoned
+              professionals specializes in residential painting in North
+              Carolina, delivering unparalleled craftsmanship. From Elty's
+              painting services in NC to North Carolina house restoration by
+              Elty's, our comprehensive services, including popcorn ceiling
+              removal, are designed to enhance the aesthetic appeal of your
+              home.
             </p>
             <p className="orientation-change-element half-second">
-              Experience top-tier painting and restoration with Elty's Premium
-              Painting & Restoration. With over a decade of industry experience,
-              we take pride in delivering the highest quality craftsmanship in
-              Mt. Airy and Greensboro. Our specialized services include
-              professional painting, sheetrock installation, finishing,
-              pressure-washing, popcorn ceiling removal, and wallpaper removal.
+              In addition to our painting expertise, we excel in wall
+              restoration and repair. Our skilled team offers sheetrock repair
+              in Greensboro, NC, and nearby areas, ensuring flawless walls. We
+              extend our proficiency to wood surfaces with wood staining in Mt.
+              Airy, NC, and Greensboro, NC, providing top-notch deck staining
+              services for both exterior and interior wood finishing projects
+              across North Carolina.
             </p>
             <p className="orientation-change-element half-second">
-              We're passionate about turning your vision into reality and
-              exceeding your expectations. Trust Elty's Premium Painting &
-              Restoration to breathe new life into your home. Discover the
-              difference today.
+              Transform your living spaces with Elty's Premium Painting &
+              Restoration - your go-to partner for professional painting, wall
+              restoration, and wood finishing, including Elty's Premium Painting
+              Greensboro. Our commitment to excellence and attention to detail
+              guarantee results that exceed expectations. Elevate the beauty of
+              your home with our specialized services in Greensboro, Mt. Airy,
+              and throughout North Carolina.
             </p>
 
             <button
