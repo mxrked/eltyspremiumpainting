@@ -3,7 +3,7 @@
 const TITLES = [
   // "Eltys Premium Painting & Restoration | Expert House Painting, Popcorn Ceiling Removal, and Restoration Services in Mt. Airy & Greensboro, NC",
   // "Eltys Premium Painting & Restoration | House Painting, Popcorn Ceiling Removal, Restoration in Mt. Airy & Greensboro, NC",
-  "Elty's Premium Painting & Restoration | Greensboro/Mt. Airy, NC",
+  "Elty's Premium Painting & Restoration | Greensboro/Mt Airy, NC",
 ];
 
 const DESCRIPTIONS = [
