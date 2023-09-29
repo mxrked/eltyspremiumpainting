@@ -74,8 +74,9 @@
 
       p {
         font-family: "Noto Sans Medium";
-        font-size: $Text;
+        font-size: $Link;
         color: white;
+        line-height: 35px;
         margin-top: 20px;
         margin-bottom: 40px;
         @include quickCenter("relative");
@@ -111,6 +112,76 @@
           100% {
             transform: translateY(0);
           }
+        }
+      }
+    }
+  }
+}
+.index_about {
+  margin-top: 60px;
+  margin-bottom: 260px;
+  overflow: hidden !important;
+  white-space: pre-wrap;
+
+  .index_about_inner {
+    max-width: 1300px;
+    @include quickCenter("relative");
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100%;
+
+    .index_about_inner_top {
+      height: 750px;
+      width: 100%;
+      @include displayElement(flex, center, center);
+
+      .index_about_inner_top_img_holder {
+        position: relative;
+        width: 100%;
+        @include displayElement(flex, center, center);
+
+        img {
+          max-width: 800px;
+          width: 100%;
+          @include quickCenter("relative");
+          position: relative;
+          left: -30px;
+        }
+      }
+    }
+
+    .index_about_inner_text {
+      text-align: center;
+
+      .index_about_inner_text_cnt {
+        max-width: 900px;
+        @include quickCenter("relative");
+
+        .section_heading_span {
+          font-family: "Poppins Extra Bold";
+          font-size: clamp(3rem, 3vw, 3rem);
+          color: $MineShaft;
+        }
+
+        h2 {
+          font-family: "Poppins Extra Bold";
+          font-size: $SubHeading;
+          color: $Seance;
+          max-width: 730px;
+          line-height: 80px;
+          @include quickCenter("relative");
+          margin-bottom: 50px;
+        }
+
+        p {
+          font-family: "Noto Sans Medium";
+          font-size: $Link;
+          color: $MineShaft;
+          max-width: 800px;
+          line-height: 35px;
+          // margin-top: 20px;
+          margin-bottom: 40px;
+          @include quickCenter("relative");
         }
       }
     }

@@ -9,4 +9,18 @@
 .stay-put {
   transition: 0s ease-in-out !important;
   opacity: 1 !important;
+}
+
+.selected::-moz-selection {
+  background-color: #722180;
+  color: white;
+}
+
+.selected::selection {
+  background-color: #722180;
+  color: white;
+}
+.selected::-moz-selection {
+  background-color: #722180;
+  color: white;
 }/*# sourceMappingURL=global_classnames.css.map */
