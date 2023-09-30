@@ -25,6 +25,7 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
+import { IndexYelpReviews } from "@/assets/components/pages/Index/IndexYelpReviews";
 
 export async function getStaticProps() {
   try {
@@ -90,11 +91,14 @@ export default function Home({ iconData, yelpData }) {
           <IndexAbout />
         </FadeRight>
         <FadeLeft threshold={0.5}>
-          <IndexGallery />
+          <IndexYelpReviews />
         </FadeLeft>
         <FadeRight threshold={0.5}>
-          <IndexContact />
+          <IndexGallery />
         </FadeRight>
+        <FadeLeft threshold={0.5}>
+          <IndexContact />
+        </FadeLeft>
       </main>
     </div>
   );
