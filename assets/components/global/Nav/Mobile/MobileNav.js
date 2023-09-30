@@ -129,6 +129,19 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
+            if (document.getElementById("indexYelpReviews")) {
+              console.log("Scrolling to Index Yelp Reviews");
+              document.getElementById("indexYelpReviews").scrollIntoView();
+            }
+          }}
+        >
+          <span>Reviews</span>
+        </li>
+        <li
+          className="orientation-change-element half-second"
+          onClick={() => {
+            closeMobileNav();
+
             if (document.getElementById("indexGallery")) {
               console.log("Scrolling to Index Gallery");
               document.getElementById("indexGallery").scrollIntoView();

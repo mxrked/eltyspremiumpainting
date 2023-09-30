@@ -57,6 +57,19 @@ export const DesktopNav = () => {
                   <li
                     className="orientation-change-element half-second"
                     onClick={() => {
+                      if (document.getElementById("indexYelpReviews")) {
+                        console.log("Scrolling to Index Yelp Reviews");
+                        document
+                          .getElementById("indexYelpReviews")
+                          .scrollIntoView();
+                      }
+                    }}
+                  >
+                    <span>Reviews</span>
+                  </li>
+                  <li
+                    className="orientation-change-element half-second"
+                    onClick={() => {
                       if (document.getElementById("indexGallery")) {
                         console.log("Scrolling to Index Gallery");
                         document
