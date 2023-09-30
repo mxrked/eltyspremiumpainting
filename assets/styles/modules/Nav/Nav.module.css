@@ -156,7 +156,7 @@
 }
 .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul {
   width: 100%;
-  max-width: 430px;
+  max-width: 550px;
   font-family: "Poppins Bold";
   display: flex;
   justify-content: space-between;
@@ -749,7 +749,7 @@
     max-width: 900px;
   }
   .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul {
-    max-width: 370px;
+    max-width: 470px;
   }
   .mobile_nav {
     display: none;
@@ -811,7 +811,7 @@
     max-width: 200px;
   }
   .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul {
-    max-width: 370px;
+    max-width: 470px;
   }
   .mobile_nav {
     display: none;
@@ -870,7 +870,7 @@
     max-width: 1200px;
   }
   .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul {
-    max-width: 430px;
+    max-width: 490px;
   }
   .mobile_nav {
     display: none;
