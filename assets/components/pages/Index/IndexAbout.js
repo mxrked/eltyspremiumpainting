@@ -86,17 +86,6 @@ export const IndexAbout = () => {
 
               <FaArrowAltCircleDown className={`${styles.icon}`} />
             </button>
-
-            {/**
-          
-          
-          
-            //! ADD YELP REVIEWS HERE
-            
-          
-          
-          
-            */}
           </div>
         </div>
       </div>
