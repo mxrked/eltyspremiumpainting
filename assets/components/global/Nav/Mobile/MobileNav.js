@@ -129,9 +129,9 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexYelpReviews")) {
-              console.log("Scrolling to Index Yelp Reviews");
-              document.getElementById("indexYelpReviews").scrollIntoView();
+            if (document.getElementById("indexReviews")) {
+              console.log("Scrolling to Index Reviews");
+              document.getElementById("indexReviews").scrollIntoView();
             }
           }}
         >
