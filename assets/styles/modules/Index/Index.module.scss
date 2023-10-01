@@ -224,6 +224,186 @@
     }
   }
 }
+.index_reviews {
+  margin-top: 60px;
+  margin-bottom: 260px;
+  overflow: hidden !important;
+  white-space: pre-wrap;
+
+  .index_reviews_inner {
+    max-width: 1300px;
+    @include quickCenter("relative");
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100%;
+
+    .index_reviews_inner_top {
+      text-align: center;
+      height: 450px;
+
+      h3 {
+        font-family: "Poppins Extra Bold";
+        font-size: clamp(3rem, 3vw, 3rem);
+        color: $MineShaft;
+      }
+
+      h2 {
+        font-family: "Poppins Extra Bold";
+        font-size: $SubHeading;
+        color: $Seance;
+        max-width: 730px;
+        line-height: 80px;
+        @include quickCenter("relative");
+        margin-bottom: 50px;
+      }
+
+      p {
+        font-family: "Noto Sans Medium";
+        font-size: $Link;
+        color: $MineShaft;
+        max-width: 800px;
+        line-height: 35px;
+        // margin-top: 20px;
+        margin-bottom: 40px;
+        @include quickCenter("relative");
+      }
+    }
+
+    .index_reviews_inner_reviews {
+      .index_reviews_inner_reviews_box {
+        .index_reviews_inner_reviews_row {
+          .review {
+            height: 520px;
+
+            .review_inner {
+              background-color: white;
+              box-shadow: 0 2px 2px rgba(0, 0, 0, 0.109);
+              height: 100%;
+              overflow: hidden;
+              white-space: pre-wrap;
+              overflow-y: auto;
+              max-width: 95%;
+              @include quickCenter("relative");
+              width: 100%;
+              border-radius: 5px;
+
+              .review_inner_top {
+                padding-left: 30px;
+                padding-right: 30px;
+
+                .review_inner_top_box {
+                  .review_inner_top_row {
+                    .review_inner_top_side {
+                      height: 210px;
+                      display: flex;
+                      align-items: center;
+                    }
+
+                    .review_top_L {
+                      justify-content: center;
+
+                      .review_inner_top_side_cnt {
+                        width: 100%;
+                        height: 100%;
+                        @include displayElement(flex, flex-start, center);
+
+                        img {
+                          width: 100%;
+                          max-width: 85px;
+                          @include quickCenter("relative");
+                          margin-left: 0;
+                          border-radius: 50%;
+                        }
+                      }
+                    }
+
+                    .review_top_R {
+                      .review_inner_top_side_cnt {
+                        .review_inner_top_text {
+                          display: block;
+                          text-align: left;
+
+                          a {
+                            display: inline-block;
+                            text-decoration: none;
+
+                            &:hover {
+                              .review_name {
+                                color: $VividViolet;
+                              }
+                            }
+
+                            .review_name {
+                              color: $MineShaft;
+                              font-family: "Poppins Extra Bold";
+                              font-size: clamp(17px, 19px, 19px);
+                            }
+                          }
+
+                          .review_location {
+                            font-family: "Poppins Bold";
+                            font-size: clamp(15px, 16px, 16px);
+                          }
+
+                          .review_date {
+                            font-family: "Noto Sans Medium";
+                            font-size: clamp(15px, 16px, 16px);
+                          }
+                        }
+
+                        .review_inner_yelp_rating {
+                          margin-top: 13px;
+
+                          ul {
+                            @include displayElement(flex, flex-start, center);
+
+                            li {
+                              margin-right: 10px;
+                              width: 25px;
+                              height: 25px;
+                              background-color: red;
+                              @include displayElement(flex, center, center);
+                              color: white;
+                              font-size: clamp(13px, 13px, 13px);
+                              border-radius: 3px;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .review_inner_text {
+                // height: 100%;
+                padding-left: 35px;
+                padding-right: 35px;
+                margin-bottom: 40px;
+
+                p {
+                  font-family: "Noto Sans Regular";
+                  font-size: clamp(15px, 16px, 16px);
+                }
+              }
+
+              .yelp_logo_holder {
+                max-width: 75px;
+                margin-left: 35px;
+
+                img {
+                  width: 100%;
+                  max-width: 100%;
+                }
+              }
+            }
+            // height: 600px;
+          }
+        }
+      }
+    }
+  }
+}
 .index_gallery {
   overflow: hidden;
 }
