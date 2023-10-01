@@ -19,13 +19,13 @@ import { MobileNav } from "@/assets/components/global/Nav/Mobile/MobileNav";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
+import { IndexReviews } from "@/assets/components/pages/Index/IndexReviews";
 import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { IndexYelpReviews } from "@/assets/components/pages/Index/IndexYelpReviews";
 
 export async function getStaticProps() {
   try {
@@ -40,18 +40,21 @@ export async function getStaticProps() {
     );
     const iconData = JSON.parse(pageHeadDatafileContents);
 
-    const yelpDataFilePath = path.join(
+    const reviewsDataFilePath = path.join(
       process.cwd(),
       "public/data/",
-      "YelpReviewsData.json"
+      "ReviewsData.json"
     );
-    const yelpDataFileContents = fs.readFileSync(yelpDataFilePath, "utf8");
-    const yelpData = JSON.parse(yelpDataFileContents);
+    const reviewsDataFileContents = fs.readFileSync(
+      reviewsDataFilePath,
+      "utf8"
+    );
+    const reviewsData = JSON.parse(reviewsDataFileContents);
 
     return {
       props: {
         iconData,
-        yelpData,
+        reviewsData,
       },
     };
   } catch (error) {
@@ -60,19 +63,19 @@ export async function getStaticProps() {
     return {
       props: {
         iconData: null,
-        yelpData: null,
+        reviewsData: null,
       },
     };
   }
 }
 
-export default function Home({ iconData, yelpData }) {
+export default function Home({ iconData, reviewsData }) {
   const router = useRouter();
 
   useEffect(() => {
     console.log(iconData.favicon);
 
-    yelpData.forEach((review) => {
+    reviewsData.forEach((review) => {
       console.log(review);
     });
   }, []);
@@ -91,7 +94,7 @@ export default function Home({ iconData, yelpData }) {
           <IndexAbout />
         </FadeRight>
         <FadeLeft threshold={0.5}>
-          <IndexYelpReviews />
+          <IndexReviews reviewsData={reviewsData} />
         </FadeLeft>
         <FadeRight threshold={0.5}>
           <IndexGallery />
