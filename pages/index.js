@@ -38,7 +38,11 @@ export async function getStaticProps() {
       pageHeadDatafilePath,
       "utf8"
     );
+
+    // console.log("Icons Data: " + pageHeadDatafileContents);
+
     const iconData = JSON.parse(pageHeadDatafileContents);
+    // console.log("Icons Data: " + iconData);
 
     const reviewsDataFilePath = path.join(
       process.cwd(),
@@ -49,7 +53,11 @@ export async function getStaticProps() {
       reviewsDataFilePath,
       "utf8"
     );
+
+    // console.log("Reviews Data: " + reviewsDataFileContents);
+
     const reviewsData = JSON.parse(reviewsDataFileContents);
+    // console.log("Reviews Data: " + reviewsData);
 
     return {
       props: {
