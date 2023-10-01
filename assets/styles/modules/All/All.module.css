@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Noto Sans Medium";
+  src: url("../../../fonts/NotoSans-Medium.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Regular";
+  src: url("../../../fonts/NotoSans-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Black";
+  src: url("../../../fonts/Poppins-Black.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Extra Bold";
+  src: url("../../../fonts/Poppins-ExtraBold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("../../../fonts/Poppins-Bold.ttf");
+  font-display: swap;
+}
+.back_to_top {
+  position: fixed;
+  z-index: 100;
+  bottom: -100%;
+  right: 10px;
+}
+.back_to_top button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  background-color: #722180;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back_to_top button:hover {
+  background-color: #93329e;
+}
+
+@media all and (max-width: 991px) {
+  .back_to_top button {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media all and (max-width: 768px) {
+  .back_to_top button {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media all and (max-width: 419px) {
+  .back_to_top button {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .back_to_top button {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top button {
+    width: 37px;
+    height: 37px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top button {
+    width: 37px;
+    height: 37px;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .back_to_top button {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .back_to_top button {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top button {
+    width: 40px;
+    height: 40px;
+  }
+}/*# sourceMappingURL=All.module.css.map */

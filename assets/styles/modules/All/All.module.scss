@@ -1,0 +1,147 @@
+// Imports
+@import "../../tools/mixins/mixins.scss";
+@import "../../tools/themes/themes.scss";
+@import "../../tools/variables/variable.scss";
+
+// Fonts
+@font-face {
+  font-family: "Noto Sans Medium";
+  src: url("../../../fonts/NotoSans-Medium.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Regular";
+  src: url("../../../fonts/NotoSans-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Black";
+  src: url("../../../fonts/Poppins-Black.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Extra Bold";
+  src: url("../../../fonts/Poppins-ExtraBold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("../../../fonts/Poppins-Bold.ttf");
+  font-display: swap;
+}
+
+// Desktop
+.back_to_top {
+  position: fixed;
+  z-index: 100;
+  bottom: -100%;
+  right: 10px;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: $Text;
+    background-color: $Seance;
+    color: white;
+    @include displayElement(flex, center, center);
+
+    &:hover {
+      background-color: $VividViolet;
+    }
+  }
+}
+
+// Responsive
+@media all and (max-width: 1995px) {
+}
+
+@media all and (max-width: 991px) {
+  .back_to_top {
+    button {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+// Desktop Window (Smallest)
+@media all and (max-width: 768px) {
+  .back_to_top {
+    button {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+// Smaller Devices (Phones)
+@media all and (max-width: 419px) {
+  .back_to_top {
+    button {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+// Pixel 2 XL
+@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .back_to_top {
+    button {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+// Ipad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top {
+    button {
+      width: 37px;
+      height: 37px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top {
+    button {
+      width: 37px;
+      height: 37px;
+    }
+  }
+}
+
+// iPad Pro
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .back_to_top {
+    button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .back_to_top {
+    button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// Laptops
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .back_to_top {
+    button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
