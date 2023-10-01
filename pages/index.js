@@ -16,6 +16,7 @@ import { PageHead } from "@/assets/components/global/All/PageHead";
 import { NavTop } from "@/assets/components/global/Nav/Both/NavTop";
 import { DesktopNav } from "@/assets/components/global/Nav/Desktop/DesktopNav";
 import { MobileNav } from "@/assets/components/global/Nav/Mobile/MobileNav";
+import { BackToTop } from "@/assets/components/global/All/BackToTop";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
@@ -91,6 +92,7 @@ export default function Home({ iconData, reviewsData }) {
   return (
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
+      <BackToTop />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         <NavTop />
