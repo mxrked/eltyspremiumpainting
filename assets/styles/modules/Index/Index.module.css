@@ -232,7 +232,7 @@
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_top {
   text-align: center;
-  height: 450px;
+  height: 550px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
   font-family: "Poppins Extra Bold";
@@ -260,8 +260,21 @@
   margin-left: auto;
   margin-right: auto;
 }
+.index_reviews .index_reviews_inner .index_reviews_inner_top ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 385px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_top ul li a img {
+  max-width: 100px;
+}
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-  height: 525px;
+  height: 100%;
+  margin-bottom: 40px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
   background-color: white;
@@ -282,7 +295,7 @@
   padding-right: 30px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
-  height: 210px;
+  height: 185px;
   display: flex;
   align-items: center;
 }
@@ -346,6 +359,23 @@
   align-items: center;
   color: white;
   font-size: 13px;
+  border-radius: 3px;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating {
+  margin-top: 13px;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f7b704;
+  font-size: 15px;
   border-radius: 3px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
@@ -482,7 +512,7 @@
     margin-bottom: 60px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 370px;
+    height: 410px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -505,7 +535,7 @@
     max-width: 100%;
     width: 100%;
     margin-bottom: 60px;
-    height: 520px;
+    height: 100%;
   }
 }
 @media all and (max-width: 768px) {
@@ -531,7 +561,7 @@
   }
   .index_about {
     margin-top: 0px;
-    margin-bottom: 90px;
+    margin-bottom: 130px;
   }
   .index_about .index_about_inner {
     max-width: 800px;
@@ -566,7 +596,7 @@
     margin-bottom: 60px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 370px;
+    height: 410px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.5rem, 1.8vw, 1.8rem);
@@ -580,6 +610,9 @@
     font-size: 16px;
     max-width: 420px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_top ul li a img {
+    max-width: 80px;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
     max-width: 650px;
     margin-left: auto;
@@ -589,7 +622,7 @@
     max-width: 100%;
     width: 100%;
     margin-bottom: 60px;
-    height: 520px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
     height: 100%;
@@ -712,7 +745,7 @@
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
     height: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -730,7 +763,10 @@
     max-width: 700px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_top ul li a img {
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
     max-width: 650px;
@@ -747,7 +783,7 @@
     max-width: 100%;
     width: 100%;
     margin-bottom: 40px;
-    height: 520px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
     padding-bottom: 15px;
@@ -879,7 +915,7 @@
     margin-top: 5px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 240px;
+    height: 280px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -898,6 +934,9 @@
     margin-top: 10px;
     margin-bottom: 30px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_top ul li a img {
+    max-width: 75px;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
     max-width: 650px;
     margin-left: auto;
@@ -913,7 +952,7 @@
     max-width: 50%;
     width: 100%;
     margin-bottom: 40px;
-    height: 520px;
+    height: 100%;
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -1080,7 +1119,7 @@
     max-width: 100%;
     width: 100%;
     margin-bottom: 40px;
-    height: 520px;
+    height: 100%;
     padding-left: 0px;
     padding-right: 0px;
   }
