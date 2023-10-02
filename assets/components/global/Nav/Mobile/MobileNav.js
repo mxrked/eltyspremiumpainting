@@ -103,9 +103,9 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexTop")) {
+            if (document.getElementById("indexTop_JUMPPOINT")) {
               console.log("Scrolling to Index Top");
-              document.getElementById("indexTop").scrollIntoView();
+              document.getElementById("indexTop_JUMPPOINT").scrollIntoView();
             }
           }}
         >
@@ -116,9 +116,9 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexAbout")) {
+            if (document.getElementById("indexAbout_JUMPPOINT")) {
               console.log("Scrolling to Index About");
-              document.getElementById("indexAbout").scrollIntoView();
+              document.getElementById("indexAbout_JUMPPOINT").scrollIntoView();
             }
           }}
         >
@@ -129,9 +129,11 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexReviews")) {
+            if (document.getElementById("indexReviews_JUMPPOINT")) {
               console.log("Scrolling to Index Reviews");
-              document.getElementById("indexReviews").scrollIntoView();
+              document
+                .getElementById("indexReviews_JUMPPOINT")
+                .scrollIntoView();
             }
           }}
         >
@@ -142,9 +144,11 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexGallery")) {
+            if (document.getElementById("indexGallery_JUMPPOINT")) {
               console.log("Scrolling to Index Gallery");
-              document.getElementById("indexGallery").scrollIntoView();
+              document
+                .getElementById("indexGallery_JUMPPOINT")
+                .scrollIntoView();
             }
           }}
         >
@@ -155,9 +159,11 @@ export const MobileNav = () => {
           onClick={() => {
             closeMobileNav();
 
-            if (document.getElementById("indexContact")) {
+            if (document.getElementById("indexContact_JUMPPOINT")) {
               console.log("Scrolling to Index Contact");
-              document.getElementById("indexContact").scrollIntoView();
+              document
+                .getElementById("indexContact_JUMPPOINT")
+                .scrollIntoView();
             }
           }}
         >
