@@ -32,6 +32,7 @@ export const IndexAbout = () => {
         <div className={`${styles.index_about_inner_text}`}>
           <div className={`${styles.index_about_inner_text_cnt}`}>
             <h3
+              id="indexAbout_JUMPPOINT"
               className={`${styles.section_heading_h3} orientation-change-element half-second`}
             >
               About:

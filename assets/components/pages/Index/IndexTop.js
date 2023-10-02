@@ -24,7 +24,10 @@ export const IndexTop = () => {
 
       <div className={`${styles.index_top_overlay}`}>
         <div className={`${styles.index_top_overlay_cnt}`}>
-          <h1 className="orientation-change-element half-second">
+          <h1
+            id="indexTop_JUMPPOINT"
+            className="orientation-change-element half-second"
+          >
             Expert House Painting and Restoration in Mt. Airy & Greensboro, NC
           </h1>
 

@@ -15,7 +15,12 @@ export const IndexReviews = (props) => {
     <section id="indexReviews" className={`${styles.index_reviews}`}>
       <div className={`${styles.index_reviews_inner}`}>
         <div className={`${styles.index_reviews_inner_top}`}>
-          <h3 className="orientation-change-element half-second">Reviews:</h3>
+          <h3
+            id="indexReviews_JUMPPOINT"
+            className="orientation-change-element half-second"
+          >
+            Reviews:
+          </h3>
           <h2 className="orientation-change-element half-second">
             Reviews/Testimonials
           </h2>
