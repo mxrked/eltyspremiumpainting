@@ -99,11 +99,6 @@ export const IndexGallery = (props) => {
                           ).alt = `Elty's Premium Painting & Restoration: ${item.galleryItem_ID} image.`;
 
                           setTimeout(() => {
-                            document.body.style.pointerEvents = "none";
-                            document.body.style.overflowY = "hidden";
-                          }, 200);
-
-                          setTimeout(() => {
                             document.getElementById(
                               "indexGalleryImgModal"
                             ).style.pointerEvents = "auto";
@@ -148,11 +143,6 @@ export const IndexGallery = (props) => {
                           document.getElementById(
                             "indexGalleryVideoModal"
                           ).style.visibility = "visible";
-
-                          setTimeout(() => {
-                            document.body.style.pointerEvents = "none";
-                            document.body.style.overflowY = "hidden";
-                          }, 200);
 
                           setTimeout(() => {
                             document.getElementById(
