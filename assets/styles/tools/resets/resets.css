@@ -110,7 +110,7 @@ section {
 body {
   overflow-y: hidden;
   white-space: nowrap;
-  pointer-events: none;
+  pointer-events: auto;
   scrollbar-width: thin;
 }
 

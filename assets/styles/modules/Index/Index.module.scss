@@ -560,15 +560,30 @@
   opacity: 0;
   visibility: hidden;
   z-index: 400;
+  background-color: white;
 
   .modal_darken {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.55);
     top: 0;
     left: 0;
     cursor: pointer;
+  }
+
+  button {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    max-width: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 60px;
+    background-color: $Seance;
+    color: white;
+    font-size: $Link;
+    @include displayElement(flex, center, center);
   }
 
   .modal_img_holder,

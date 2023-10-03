@@ -510,15 +510,31 @@
   opacity: 0;
   visibility: hidden;
   z-index: 400;
+  background-color: white;
 }
 .index_gallery_modal .modal_darken {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.55);
   top: 0;
   left: 0;
   cursor: pointer;
+}
+.index_gallery_modal button {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  max-width: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 60px;
+  background-color: #722180;
+  color: white;
+  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .index_gallery_modal .modal_img_holder,
 .index_gallery_modal .modal_video_holder {

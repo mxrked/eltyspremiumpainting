@@ -5,7 +5,8 @@
 .fm-mobile-fix {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: none !important;
+  // transform: none !important;
+  pointer-events: auto !important;
 }
 
 // Responsive
