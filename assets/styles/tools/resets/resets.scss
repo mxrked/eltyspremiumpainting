@@ -86,23 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-body {
-  background-color: rgba(238, 238, 238, 0.6);
-  // background: rgb(16, 16, 22);
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(16, 16, 22, 1) 0%,
-  //   rgba(0, 0, 0, 1) 100%,
-  //   rgba(0, 212, 255, 1) 100%
-  // );
-  //   background: rgb(0, 0, 0);
-  //   background: linear-gradient(
-  //     90deg,
-  //     rgba(0, 0, 0, 1) 0%,
-  //     rgba(19, 14, 14, 1) 94%
-  //   );
-  //   background-color: #fafafa;
-}
 html {
   background-color: rgba(238, 238, 238, 0.6);
   //   cursor: url(https://raw.githubusercontent.com/mxrked/Codingthefront_CDN/main/icons/custom-cursor.png),
@@ -130,8 +113,9 @@ body {
   // background-color: rgba(243, 243, 240, 0.238);
   // line-height: 1;
   // overflow: hidden;
+  overflow-y: hidden;
   white-space: nowrap;
-  // pointer-events: none;
+  pointer-events: none;
   // scrollbar-color: #1e2022 #c9d6df;
   scrollbar-width: thin;
   // background-color: red;
