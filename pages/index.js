@@ -22,6 +22,8 @@ import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
 import { IndexReviews } from "@/assets/components/pages/Index/IndexReviews";
 import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
+import { IndexGalleryImgModal } from "@/assets/components/pages/Index/IndexGalleryImgModal";
+import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 
 // Style Imports
@@ -114,6 +116,8 @@ export default function Home({ iconData, reviewsData, galleryData }) {
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
       <BackToTop />
+      <IndexGalleryImgModal />
+      <IndexGalleryVideoModal />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         <NavTop />
