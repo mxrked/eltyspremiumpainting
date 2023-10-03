@@ -60,10 +60,26 @@ export async function getStaticProps() {
     const reviewsData = JSON.parse(reviewsDataFileContents);
     // console.log("Reviews Data: " + reviewsData);
 
+    const galleryDataFilePath = path.join(
+      process.cwd(),
+      "public/data/",
+      "IndexGalleryData.json"
+    );
+    const galleryDataFileContents = fs.readFileSync(
+      galleryDataFilePath,
+      "utf8"
+    );
+
+    // console.log("Reviews Data: " + galleryDataFileContents);
+
+    const galleryData = JSON.parse(galleryDataFileContents);
+    // console.log("Gallery Data: " + galleryData);
+
     return {
       props: {
         iconData,
         reviewsData,
+        galleryData,
       },
     };
   } catch (error) {
@@ -73,12 +89,13 @@ export async function getStaticProps() {
       props: {
         iconData: null,
         reviewsData: null,
+        galleryData: null,
       },
     };
   }
 }
 
-export default function Home({ iconData, reviewsData }) {
+export default function Home({ iconData, reviewsData, galleryData }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -86,6 +103,10 @@ export default function Home({ iconData, reviewsData }) {
 
     reviewsData.forEach((review) => {
       console.log(review);
+    });
+
+    galleryData.forEach((gallery) => {
+      console.log(gallery);
     });
   }, []);
 
@@ -107,7 +128,7 @@ export default function Home({ iconData, reviewsData }) {
           <IndexReviews reviewsData={reviewsData} />
         </FadeLeft>
         <FadeRight threshold={0.5}>
-          <IndexGallery />
+          <IndexGallery galleryData={galleryData} />
         </FadeRight>
         <FadeLeft threshold={0.5}>
           <IndexContact />
