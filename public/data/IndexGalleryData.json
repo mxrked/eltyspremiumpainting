@@ -1,58 +1,120 @@
 [
   {
     "galleryItem_ID": "galleryItem_001",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-1.webp"
+    "galleryItem_Type": "video",
+    "galleryItem_Poster": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-1-poster.webp",
+    "galleryItem_Video": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-1-comp.mp4"
   },
   {
     "galleryItem_ID": "galleryItem_002",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-2.webp"
+    "galleryItem_Type": "video",
+    "galleryItem_Poster": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-2-poster.webp",
+    "galleryItem_Video": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-2-comp.mp4"
   },
   {
     "galleryItem_ID": "galleryItem_003",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-3.webp"
+    "galleryItem_Type": "video",
+    "galleryItem_Poster": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-3-poster.webp",
+    "galleryItem_Video": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/before-after-video-3-comp.mp4"
   },
   {
     "galleryItem_ID": "galleryItem_004",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-4.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-1.webp"
   },
   {
     "galleryItem_ID": "galleryItem_005",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-5.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-2.webp"
   },
   {
     "galleryItem_ID": "galleryItem_006",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-6.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-3.webp"
   },
   {
     "galleryItem_ID": "galleryItem_007",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-7.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-4.webp"
   },
   {
     "galleryItem_ID": "galleryItem_008",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-8.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-5.webp"
   },
   {
     "galleryItem_ID": "galleryItem_009",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-9.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-6.webp"
   },
   {
     "galleryItem_ID": "galleryItem_010",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-10.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-7.webp"
   },
   {
     "galleryItem_ID": "galleryItem_011",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-11.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-8.webp"
   },
   {
     "galleryItem_ID": "galleryItem_012",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-12.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-9.webp"
   },
   {
     "galleryItem_ID": "galleryItem_013",
-    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-13.webp"
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-10.webp"
   },
   {
     "galleryItem_ID": "galleryItem_014",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-11.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_015",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-12.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_016",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-13.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_017",
+    "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-14.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_018",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-15.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_019",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-16.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_020",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-17.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_021",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-18.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_022",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-19.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_023",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-20.webp"
   }
 ]
