@@ -66,21 +66,23 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   //! Updating UI State
-  useEffect(() => {
-    setTimeout(() => {
-      if (sessionStorage.getItem("FM Loaded")) {
-        setUpdateUI(updateUI + 1);
-      }
-    }, 2500);
-  }, [router]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (sessionStorage.getItem("FM Loaded")) {
+  //       setUpdateUI(updateUI + 1);
+  //     }
+  //   }, 1700);
+  // }, [router]);
 
   //! Enabling scrolling and pointerevents when updateUI == 1
-  useEffect(() => {
-    if (updateUI == 1) {
-      document.body.style.overflowY = "auto";
-      document.body.style.pointerEvents = "auto";
-    }
-  }, [updateUI]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (updateUI == 1) {
+  //       document.body.style.overflowY = "auto";
+  //       document.body.style.pointerEvents = "auto";
+  //     }
+  //   }, 500);
+  // }, [updateUI]);
 
   //! Reload Page after route change (This is mostly for the animations)
   useEffect(() => {
