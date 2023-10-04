@@ -1,7 +1,6 @@
 // @import "~@fortawesome/fontawesome-free/css/all.css";
 
 // Desktop
-
 .fm-mobile-fix {
   opacity: 1 !important;
   visibility: visible !important;
@@ -14,6 +13,11 @@
 }
 
 @media all and (max-width: 991px) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -21,21 +25,46 @@
 
 // Desktop Window (Smallest)
 @media all and (max-width: 768px) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 // Smaller Devices (Phones)
 @media all and (max-width: 419px) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 // Pixel 2 XL
 @media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 // Ipad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .fm-element {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 // iPad Pro
