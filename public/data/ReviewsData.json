@@ -31,5 +31,16 @@
     "reviewDate": "12/02/2022",
     "reviewRating": 5,
     "reviewText": "Very good quality of service"
+  },
+  {
+    "reviewID": "review_0004",
+    "reviewType": "Google",
+    "reviewName": "Karen Sue Grano",
+    "reviewProfile": "https://www.google.com/maps/contrib/101257506930356984134/reviews/@36.3993275,-81.3661717,9z/data=!4m3!8m2!3m1!1e1?hl=en-US&entry=ttu",
+    "reviewProfilePicture": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/reviews/google-profiles/karen-sue-grano.webp",
+    "reviewLocation": "?",
+    "reviewDate": "10/04/2023",
+    "reviewRating": 5,
+    "reviewText": "Great work and so very pleasant to work with."
   }
 ]
