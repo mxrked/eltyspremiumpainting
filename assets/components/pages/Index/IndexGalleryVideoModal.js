@@ -44,15 +44,12 @@ export const IndexGalleryVideoModal = () => {
     document.body.style.pointerEvents = "auto";
     document.body.style.overflowY = "auto";
 
-    // Scrolling back to the section when the user first opened the modal
-    setTimeout(() => {
-      // Check if the current scroll position is different from the last scroll position stored in sessionStorage
-      if (window.scrollY != sessionStorage.getItem("Last Scroll Pos")) {
-        // Scroll back to the last scroll position with smooth scroll behavior
-        window.scroll(0, sessionStorage.getItem("Last Scroll Pos"));
-        document.documentElement.style.scrollBehavior = "smooth";
-      }
-    }, 300);
+    // Check if the current scroll position is different from the last scroll position stored in sessionStorage
+    if (window.scrollY != sessionStorage.getItem("Last Scroll Pos")) {
+      // Scroll back to the last scroll position with smooth scroll behavior
+      window.scroll(0, sessionStorage.getItem("Last Scroll Pos"));
+      document.documentElement.style.scrollBehavior = "smooth";
+    }
   };
 
   return (

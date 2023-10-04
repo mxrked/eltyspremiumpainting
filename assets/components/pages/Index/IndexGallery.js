@@ -53,9 +53,9 @@ export const IndexGallery = (props) => {
           </p>
         </div>
 
-        <div className={`${styles.index_gallery_inner}`}>
-          <div className={`${styles.index_gallery_inner_box} container-fluid`}>
-            <div className={`${styles.index_gallery_inner_row} row`}>
+        <div className={`${styles.index_gallery_main_inner}`}>
+          <div className={`${styles.index_gallery_main_inner_box} container-fluid`}>
+            <div className={`${styles.index_gallery_main_inner_row} row`}>
               {props.galleryData.slice(0, VISIBLE_ITEMS).map((item) => (
                 <div
                   key={item.galleryItem_ID}
