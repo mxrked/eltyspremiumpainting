@@ -132,7 +132,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     //TODO: THIS IS USED TO ENABLE/DISABLE THE FRAMER MOTION ANIMATIONS ON MOBILE DEVICES
     // ----------------------------------------------------
-    const DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES = false;
+    const DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES = true;
     // ----------------------------------------------------
 
     // Checking to see if user is on desktop
