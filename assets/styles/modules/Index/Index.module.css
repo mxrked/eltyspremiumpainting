@@ -440,11 +440,11 @@
   margin-left: auto;
   margin-right: auto;
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .index_gallery_inner_box .index_gallery_inner_row .gallery_item {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
   height: 450px;
   margin-bottom: 30px;
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .index_gallery_inner_box .index_gallery_inner_row .gallery_item .gallery_item_inner {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item .gallery_item_inner {
   width: 100%;
   height: 100%;
   position: relative;
@@ -456,7 +456,7 @@
   overflow: hidden;
   white-space: pre-wrap;
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .index_gallery_inner_box .index_gallery_inner_row .gallery_item .gallery_item_inner .gallery_item_bg {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item .gallery_item_inner .gallery_item_bg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -466,7 +466,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .index_gallery_inner_box .index_gallery_inner_row .gallery_item .gallery_item_inner button {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item .gallery_item_inner button {
   position: absolute;
   top: 0;
   left: 0;
@@ -479,10 +479,10 @@
   color: white;
   font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .index_gallery_inner_box .index_gallery_inner_row .gallery_item .gallery_item_inner button:hover {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item .gallery_item_inner button:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .load_more_btn {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
   width: 140px;
   height: 50px;
   background-color: #722180;
@@ -497,7 +497,7 @@
   font-family: "Poppins Bold";
   border-radius: 3px;
 }
-.index_gallery .index_gallery_inner .index_gallery_inner .load_more_btn:hover {
+.index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn:hover {
   background-color: #93329e;
 }
 
@@ -543,8 +543,6 @@
   height: 100%;
   top: 50%;
   left: 50%;
-  max-width: 700px;
-  max-height: 700px;
   background-color: rgb(26, 26, 26);
   transform: translate(-50%, -50%);
 }
@@ -555,6 +553,14 @@
   max-width: 100%;
   height: 100%;
   width: 100%;
+}
+.index_gallery_modal .modal_img_holder {
+  max-width: 700px;
+  max-height: 700px;
+}
+.index_gallery_modal .modal_video_holder {
+  max-width: 65%;
+  max-height: 65%;
 }
 
 .index_contact {
@@ -646,14 +652,15 @@
     font-size: 17px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 60px;
     margin-bottom: 150px;
   }
   .index_about .index_about_inner {
     max-width: 800px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 500px;
+    height: 100%;
+    margin-bottom: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 520px;
@@ -680,7 +687,8 @@
     margin-bottom: 60px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 410px;
+    height: 100%;
+    margin-bottom: 40px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -706,7 +714,8 @@
     height: 100%;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
-    height: 410px;
+    height: 100%;
+    margin-bottom: 90px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -719,6 +728,25 @@
   .index_gallery .index_gallery_inner .index_gallery_inner_top p {
     font-size: 18px;
     max-width: 700px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 310px;
+  }
+  .index_gallery_modal button {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    max-width: 520px;
+    max-height: 520px;
   }
 }
 @media all and (max-width: 768px) {
@@ -752,7 +780,8 @@
     padding-right: 30px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 400px;
+    height: 100%;
+    margin-bottom: 50px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 450px;
@@ -776,10 +805,11 @@
     font-size: 16px;
   }
   .index_reviews {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 410px;
+    height: 100%;
+    margin-bottom: 50px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.5rem, 1.8vw, 1.8rem);
@@ -854,7 +884,8 @@
     margin-right: auto;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
-    height: 410px;
+    height: 100%;
+    margin-bottom: 110px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(1.5rem, 1.8vw, 1.8rem);
@@ -867,6 +898,25 @@
   .index_gallery .index_gallery_inner .index_gallery_inner_top p {
     font-size: 16px;
     max-width: 420px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 100%;
+    width: 100%;
+    height: 270px;
+  }
+  .index_gallery_modal button {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    max-width: 80%;
+    height: 80%;
   }
 }
 @media all and (max-width: 419px) {
@@ -897,7 +947,7 @@
     font-size: 15px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 40px;
     margin-bottom: 90px;
   }
   .index_about .index_about_inner {
@@ -906,7 +956,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 300px;
+    height: 100%;
+    margin-bottom: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 95%;
@@ -921,6 +972,7 @@
     max-width: 650px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 10px;
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt p {
     font-size: 15px;
@@ -934,7 +986,7 @@
     font-size: 15px;
   }
   .index_reviews {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .index_reviews .index_reviews_inner {
     padding-left: 30px;
@@ -943,7 +995,7 @@
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
     height: 100%;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -1045,7 +1097,8 @@
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
+    margin-bottom: 70px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -1064,6 +1117,39 @@
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom: 25px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 100%;
+    width: 100%;
+    height: 160px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 15px;
+    height: 40px;
+    max-width: 110px;
+    font-size: 15px;
+  }
+  .index_gallery_modal button {
+    margin-top: 50px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 20px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
   }
 }
 @media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1096,7 +1182,7 @@
     font-size: 14px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 30px;
     margin-bottom: 90px;
   }
   .index_about .index_about_inner {
@@ -1105,7 +1191,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 330px;
+    height: 100%;
+    margin-bottom: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 375px;
@@ -1142,7 +1229,8 @@
     margin-top: 5px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 280px;
+    height: 100%;
+    margin-bottom: 45px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -1247,6 +1335,7 @@
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
+    margin-bottom: 70px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -1264,6 +1353,39 @@
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 160px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 15px;
+    height: 40px;
+    max-width: 110px;
+    font-size: 15px;
+  }
+  .index_gallery_modal button {
+    margin-top: 12px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 230px;
+    max-height: 230px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
@@ -1296,8 +1418,8 @@
     font-size: 17px;
   }
   .index_about {
-    margin-top: 0px;
-    margin-bottom: 110px;
+    margin-top: 70px;
+    margin-bottom: 160px;
   }
   .index_about .index_about_inner {
     max-width: 800px;
@@ -1305,7 +1427,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 530px;
+    height: 100%;
+    margin-bottom: 10px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 515px;
@@ -1333,7 +1456,7 @@
     font-size: 17px;
   }
   .index_reviews {
-    margin-bottom: 40px;
+    margin-bottom: 120px;
   }
   .index_reviews .index_reviews_inner {
     padding-left: 20px;
@@ -1432,6 +1555,9 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .index_gallery {
+    margin-bottom: 70px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
   }
@@ -1451,10 +1577,43 @@
     margin-top: 20px;
     margin-bottom: 40px;
   }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 200px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 15px;
+    height: 40px;
+    max-width: 110px;
+    font-size: 15px;
+  }
+  .index_gallery_modal button {
+    margin-top: 115px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 510px;
+    max-height: 510px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
   .index_top {
-    height: 335px;
+    height: 385px;
   }
   .index_top .index_top_overlay {
     padding-left: 20px;
@@ -1466,8 +1625,8 @@
   }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 30px;
-    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
-    max-width: 460px;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    max-width: 560px;
   }
   .index_top .index_top_overlay .index_top_overlay_cnt p {
     font-size: 15px;
@@ -1483,7 +1642,7 @@
     font-size: 14px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 50px;
     margin-bottom: 90px;
   }
   .index_about .index_about_inner {
@@ -1492,18 +1651,19 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 330px;
+    height: 100%;
+    margin-bottom: 30px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 375px;
     left: 0px;
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt .section_heading_h3 {
-    font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
   }
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt h2 {
     line-height: 30px;
-    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+    font-size: clamp(1.5rem, 1.9vw, 1.9rem);
     max-width: 560px;
     margin-bottom: 23px;
   }
@@ -1529,14 +1689,15 @@
     margin-top: 5px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 310px;
+    height: 100%;
+    margin-bottom: 50px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
-    font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h2 {
     line-height: 30px;
-    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+    font-size: clamp(1.5rem, 1.9vw, 1.9rem);
     max-width: 560px;
     margin-bottom: 23px;
   }
@@ -1566,6 +1727,9 @@
     height: 100%;
     padding-left: 0px;
     padding-right: 0px;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
+    max-width: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
     padding-bottom: 25px;
@@ -1630,11 +1794,11 @@
     height: 100%;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
-    font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h2 {
     line-height: 30px;
-    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+    font-size: clamp(1.5rem, 1.9vw, 1.9rem);
     max-width: 560px;
     margin-bottom: 23px;
   }
@@ -1645,6 +1809,39 @@
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 200px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 15px;
+    height: 40px;
+    max-width: 110px;
+    font-size: 15px;
+  }
+  .index_gallery_modal button {
+    margin-top: 25px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 290px;
+    max-height: 290px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -1677,7 +1874,7 @@
     font-size: 17px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 80px;
     margin-bottom: 190px;
   }
   .index_about .index_about_inner {
@@ -1686,7 +1883,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 630px;
+    height: 100%;
+    margin-bottom: 80px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 575px;
@@ -1714,7 +1912,7 @@
     font-size: 17px;
   }
   .index_reviews {
-    margin-bottom: 40px;
+    margin-bottom: 110px;
   }
   .index_reviews .index_reviews_inner {
     padding-left: 20px;
@@ -1722,7 +1920,8 @@
     margin-top: 5px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 350px;
+    height: 100%;
+    margin-bottom: 60px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.8rem, 2.1vw, 2.1rem);
@@ -1820,6 +2019,7 @@
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
+    margin-bottom: 80px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(1.8rem, 2.1vw, 2.1rem);
@@ -1836,6 +2036,39 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 260px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 15px;
+    height: 45px;
+    max-width: 125px;
+    font-size: 17px;
+  }
+  .index_gallery_modal button {
+    margin-top: 215px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 690px;
+    max-height: 690px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1868,8 +2101,8 @@
     font-size: 17px;
   }
   .index_about {
-    margin-top: 0px;
-    margin-bottom: 180px;
+    margin-top: 80px;
+    margin-bottom: 160px;
   }
   .index_about .index_about_inner {
     max-width: 800px;
@@ -1877,7 +2110,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 630px;
+    height: 100%;
+    margin-bottom: 60px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 575px;
@@ -1905,7 +2139,7 @@
     font-size: 17px;
   }
   .index_reviews {
-    margin-bottom: 40px;
+    margin-bottom: 140px;
   }
   .index_reviews .index_reviews_inner {
     padding-left: 20px;
@@ -1913,7 +2147,8 @@
     margin-top: 5px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top {
-    height: 310px;
+    height: 100%;
+    margin-bottom: 70px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(1.8rem, 2.1vw, 2.1rem);
@@ -1949,6 +2184,12 @@
     height: 100%;
     padding-left: 0px;
     padding-right: 0px;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
+    max-width: 65%;
+    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
     padding-bottom: 25px;
@@ -2009,8 +2250,12 @@
     margin-right: auto;
     margin-left: 40px;
   }
+  .index_gallery {
+    margin-bottom: 120px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
+    margin-bottom: 90px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top h3 {
     font-size: clamp(1.8rem, 2.1vw, 2.1rem);
@@ -2027,6 +2272,39 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 240px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 55px;
+    height: 45px;
+    max-width: 180px;
+    font-size: 17px;
+  }
+  .index_gallery_modal button {
+    margin-top: 65px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 70%;
+    height: 70%;
   }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2059,7 +2337,7 @@
     font-size: 17px;
   }
   .index_about {
-    margin-top: 0px;
+    margin-top: 80px;
     margin-bottom: 180px;
   }
   .index_about .index_about_inner {
@@ -2068,7 +2346,8 @@
     padding-right: 20px;
   }
   .index_about .index_about_inner .index_about_inner_top {
-    height: 630px;
+    height: 100%;
+    margin-bottom: 50px;
   }
   .index_about .index_about_inner .index_about_inner_top .index_about_inner_top_img_holder img {
     max-width: 575px;
@@ -2096,7 +2375,7 @@
     font-size: 17px;
   }
   .index_reviews {
-    margin-bottom: 40px;
+    margin-bottom: 160px;
   }
   .index_reviews .index_reviews_inner {
     padding-left: 20px;
@@ -2218,5 +2497,38 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .index_gallery_main_inner_box .index_gallery_main_inner_row .gallery_item {
+    max-width: 50%;
+    width: 100%;
+    height: 270px;
+  }
+  .index_gallery .index_gallery_inner .index_gallery_main_inner .load_more_btn {
+    margin-top: 55px;
+    height: 45px;
+    max-width: 120px;
+    font-size: 17px;
+  }
+  .index_gallery_modal button {
+    margin-top: 95px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .index_gallery_modal .modal_img_holder,
+  .index_gallery_modal .modal_video_holder {
+    margin-top: 30px;
+  }
+  .index_gallery_modal .modal_img_holder {
+    max-width: 640px;
+    max-height: 640px;
+  }
+  .index_gallery_modal .modal_video_holder {
+    max-width: 65%;
+    height: 65%;
   }
 }/*# sourceMappingURL=Index.module.css.map */
