@@ -6,12 +6,7 @@
 
 import { FaArrowAltCircleDown } from "react-icons/fa";
 
-import { INDEX_ABOUT_BG } from "@/assets/cdns/CDNBgs";
-import {
-  SPLASH_MAIN_IMG,
-  SPLASH_CORNER_IMG,
-  COMBO_1,
-} from "@/assets/cdns/CDNImgs";
+import { COMBO_1 } from "@/assets/cdns/CDNImgs";
 
 import styles from "../../../styles/modules/Index/Index.module.css";
 
