@@ -20,15 +20,7 @@ import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStora
 import styles from "../../../styles/modules/Index/Index.module.css";
 
 export const IndexContact = () => {
-  const SERVICES = [
-    "-- NOT SELECTED --",
-    "House Painting",
-    "Popcorn Ceiling Removal",
-    "Skim Coating",
-    "Staining",
-    "Sheetrock Repair",
-    "Pressure Washing",
-  ];
+  const SERVICES = [];
   const FINISHERS = [
     "-- NOT SELECTED --",
     "Flat",
@@ -92,7 +84,6 @@ export const IndexContact = () => {
 
   const EmailSend = () => {
     // Array of form elements
-    const COMPANY_NAME = "Elty's Premium Painting & Restoration LLC";
     const FORM_ELEMENTS = [
       document.getElementById("formFirstName"),
       document.getElementById("formLastName"),
@@ -113,6 +104,7 @@ export const IndexContact = () => {
       document.getElementById("formTypeOfColors"),
       document.getElementById("formTypeOfFinishers"),
     ];
+    const COMPANY_NAME = "Elty's Premium Painting & Restoration LLC";
 
     // Variables to track validation
     let checkBoxesType = "";
@@ -320,24 +312,24 @@ export const IndexContact = () => {
                 };
                 console.table(EMAIL_JS_TEMPLATE_PARAMS);
 
-                // emailjs
-                //   .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
-                //   .then((res) => {
-                //     console.log("Email sent successfully: " + res);
+                emailjs
+                  .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+                  .then((res) => {
+                    console.log("Email sent successfully: " + res);
 
-                //     sentSuccess = true;
+                    sentSuccess = true;
 
-                //     DeclareStorageVariable("session", "Submission Sent", true);
+                    DeclareStorageVariable("session", "Submission Sent", true);
 
-                //     setTimeout(() => {
-                //       if (sentSuccess) {
-                //         router.reload();
-                //       }
-                //     }, 300);
-                //   })
-                //   .catch((error) => {
-                //     console.error("Error sending email: " + error);
-                //   });
+                    setTimeout(() => {
+                      if (sentSuccess) {
+                        router.reload();
+                      }
+                    }, 300);
+                  })
+                  .catch((error) => {
+                    console.error("Error sending email: " + error);
+                  });
               } else {
                 nonSpaceAsFirstCharacter = false;
 
@@ -498,24 +490,24 @@ export const IndexContact = () => {
               email_comments_additional_details: FORM_ELEMENTS[9].value,
             };
 
-            // emailjs
-            //   .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
-            //   .then((res) => {
-            //     console.log("Email sent successfully: " + res);
+            emailjs
+              .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+              .then((res) => {
+                console.log("Email sent successfully: " + res);
 
-            //     sentSuccess = true;
+                sentSuccess = true;
 
-            //     DeclareStorageVariable("session", "Submission Sent", true);
+                DeclareStorageVariable("session", "Submission Sent", true);
 
-            //     setTimeout(() => {
-            //       if (sentSuccess) {
-            //         router.reload();
-            //       }
-            //     }, 300);
-            //   })
-            //   .catch((error) => {
-            //     console.error("Error sending email: " + error);
-            //   });
+                setTimeout(() => {
+                  if (sentSuccess) {
+                    router.reload();
+                  }
+                }, 300);
+              })
+              .catch((error) => {
+                console.error("Error sending email: " + error);
+              });
 
             console.table(EMAIL_JS_TEMPLATE_PARAMS);
           } else {
@@ -594,7 +586,7 @@ export const IndexContact = () => {
 
         <div className={`${styles.index_contact_inner_form}`}>
           <form
-            data-form-type={undefined}
+            data-form-type={"other-form"}
             id="contactForm"
             onSubmit={(e) => {
               e.preventDefault();
@@ -756,6 +748,7 @@ export const IndexContact = () => {
                       <select
                         name="email_service"
                         id="formService"
+                        de
                         onChange={(e) => {
                           const CURRENT_OPTION =
                             e.currentTarget.options[
@@ -808,9 +801,15 @@ export const IndexContact = () => {
                           }
                         }}
                       >
-                        {SERVICES.map((service) => (
-                          <option>{service}</option>
-                        ))}
+                        {/** {SERVICES.map((service) => (
+                        <option>{service}</option>
+                      ))} */}
+                        <option selected>-- NOT SELECTED --</option>
+                        <option>House Painting</option>{" "}
+                        <option>Popcorn Ceiling Removal</option>
+                        <option>Skim Coating</option> <option>Staining</option>{" "}
+                        <option>Sheetrock Repair</option>{" "}
+                        <option>Pressure Washing</option>
                       </select>
                     </div>
                   </div>
