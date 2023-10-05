@@ -5,8 +5,17 @@
  */
 
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+
+import emailjs from "@emailjs/browser";
 
 import { COMBO_2 } from "@/assets/cdns/CDNImgs";
+
+import CheckValidEmail from "@/assets/functions/data/email/CheckValidEmail";
+import CheckValidZip from "@/assets/functions/data/email/CheckZipCode";
+import CheckValidPhoneNumber from "@/assets/functions/data/email/CheckValidPhoneNumber";
+import CheckForSpaceInFirstCharacter from "@/assets/functions/data/email/CheckForSpaceInFirstCharacter";
+import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 
 import styles from "../../../styles/modules/Index/Index.module.css";
 
@@ -29,6 +38,519 @@ export const IndexContact = () => {
     "Semi-Gloss Enamel",
     "Hi-Gloss Enamel",
   ];
+
+  const router = useRouter();
+
+  const resetForm = () => {
+    const FORM_ELEMENTS = [
+      document.getElementById("formFirstName"),
+      document.getElementById("formLastName"),
+      document.getElementById("formEmail"),
+      document.getElementById("formPhone"),
+      document.getElementById("formCity"),
+      document.getElementById("formStreet"),
+      document.getElementById("formZip"),
+      document.getElementById("formService"),
+      document.getElementById("interiorCheckbox"),
+      document.getElementById("exteriorCheckbox"),
+      document.getElementById("formSpecifications"),
+      document.getElementById("formTypeOfColors"),
+      document.getElementById("formTypeOfFinishers"),
+      document.getElementById("formCommentsDetails"),
+    ];
+
+    // Clearing the content of each element
+    FORM_ELEMENTS.forEach((element) => {
+      element.style.border = "none";
+
+      if (
+        element.type === "text" ||
+        element.type === "email" ||
+        element.type === "tel" ||
+        element.tagName === "TEXTAREA"
+      ) {
+        element.value = "";
+      }
+
+      if (element.type === "checkbox") {
+        element.checked = false;
+      }
+
+      if (element.tagName === "SELECT") {
+        element.selectedIndex = 0;
+      }
+    });
+
+    // Hiding painting-rows
+    document.querySelectorAll(".painting-row").forEach((row) => {
+      row.style.display = "none";
+    });
+  };
+
+  const PUBLIC_KEY = "ENRk6ty7gZFAmYSCk";
+  emailjs.init(PUBLIC_KEY);
+
+  const EmailSend = () => {
+    // Array of form elements
+    const COMPANY_NAME = "Elty's Premium Painting & Restoration LLC";
+    const FORM_ELEMENTS = [
+      document.getElementById("formFirstName"),
+      document.getElementById("formLastName"),
+      document.getElementById("formEmail"),
+      document.getElementById("formPhone"),
+      document.getElementById("formCity"),
+      document.getElementById("formStreet"),
+      document.getElementById("formZip"),
+      document.getElementById("formService"),
+      document.getElementById("formSpecifications"),
+      document.getElementById("formCommentsDetails"),
+    ];
+
+    // Array of painting form elements
+    const PAINTING_FORM_ELEMENTS = [
+      document.getElementById("interiorCheckbox"),
+      document.getElementById("exteriorCheckbox"),
+      document.getElementById("formTypeOfColors"),
+      document.getElementById("formTypeOfFinishers"),
+    ];
+
+    // Variables to track validation
+    let checkBoxesType = "";
+    let nonEmptyInputs = false;
+    let nonSpaceAsFirstCharacter = false;
+    let validEmail = false;
+    let validPhoneNumber = false;
+    let validZip = false;
+    let sentSuccess = false;
+
+    // Form type
+    const FORM_TYPE = document
+      .getElementById("contactForm")
+      .getAttribute("data-form-type");
+
+    //! Painting form
+    if (FORM_TYPE == "painting-form") {
+      // Email JS variables
+      const SERVICE_ID = "service_48gpr39";
+      const TEMPLATE_ID = "template_pgy02on";
+
+      // Validation flags for non-empty values in different rows
+      let rowOnePassed = false;
+      let rowTwoPassed = false;
+      let rowThreePassed = false;
+      let rowFourPassed = false;
+      let rowFivePassed = false;
+      let rowSixPassed = false;
+      let rowSevenPassed = false;
+
+      // Validation for Row One
+      if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
+        rowOnePassed = true;
+      } else {
+        rowOnePassed = false;
+        console.log("Row One failed");
+      }
+
+      // Validation for Row Two
+      if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
+        rowTwoPassed = true;
+      } else {
+        rowTwoPassed = false;
+        console.log("Row Two failed");
+      }
+
+      // Validation for Row Three
+      if (
+        FORM_ELEMENTS[4].value !== "" &&
+        FORM_ELEMENTS[5].value !== "" &&
+        FORM_ELEMENTS[6].value !== ""
+      ) {
+        rowThreePassed = true;
+      } else {
+        rowThreePassed = false;
+        console.log("Row Three failed");
+      }
+
+      // Validation for Row Four
+      if (FORM_ELEMENTS[7].selectedIndex !== 0) {
+        rowFourPassed = true;
+      } else {
+        rowFourPassed = false;
+        console.log("Row Four failed");
+      }
+
+      // Validation for Row Five
+      if (
+        PAINTING_FORM_ELEMENTS[0].checked ||
+        PAINTING_FORM_ELEMENTS[1].checked
+      ) {
+        rowFivePassed = true;
+
+        if (
+          PAINTING_FORM_ELEMENTS[0].checked &&
+          !PAINTING_FORM_ELEMENTS[1].checked
+        ) {
+          checkBoxesType = "Interior";
+        }
+
+        if (
+          !PAINTING_FORM_ELEMENTS[0].checked &&
+          PAINTING_FORM_ELEMENTS[1].checked
+        ) {
+          checkBoxesType = "Exterior";
+        }
+
+        if (
+          PAINTING_FORM_ELEMENTS[0].checked &&
+          PAINTING_FORM_ELEMENTS[1].checked
+        ) {
+          checkBoxesType = "Interior and Exterior";
+        }
+      } else {
+        rowFivePassed = false;
+        console.log("Row Five failed");
+      }
+
+      // Validation for Row Six
+      if (FORM_ELEMENTS[8].value !== "") {
+        rowSixPassed = true;
+      } else {
+        rowSixPassed = false;
+        console.log("Row Six failed");
+      }
+
+      // Validation for Row Seven
+      if (
+        PAINTING_FORM_ELEMENTS[2].value !== "" &&
+        PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0
+      ) {
+        rowSevenPassed = true;
+      } else {
+        rowSevenPassed = false;
+        console.log("Row Seven failed");
+      }
+
+      // Validation for all rows
+      if (
+        rowOnePassed &&
+        rowTwoPassed &&
+        rowThreePassed &&
+        rowFourPassed &&
+        rowFivePassed &&
+        rowSixPassed &&
+        rowSevenPassed
+      ) {
+        // Checking if some inputs are valid
+        const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
+        const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
+        const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+
+        if (CHECK_PHONE_NUMBER) {
+          validPhoneNumber = true;
+
+          if (CHECK_EMAIL) {
+            validEmail = true;
+
+            if (CHECK_ZIP) {
+              validZip = true;
+
+              // Checking if there are no spaces as first character
+              const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[0]
+              );
+              const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[1]
+              );
+              const SPACE_EMAIL = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[2]
+              );
+              const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[3]
+              );
+              const SPACE_CITY = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[4]
+              );
+              const SPACE_STREET = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[5]
+              );
+              const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
+              const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
+                FORM_ELEMENTS[8]
+              );
+              const SPACE_COLOR_TYPES = CheckForSpaceInFirstCharacter(
+                PAINTING_FORM_ELEMENTS[2]
+              );
+
+              if (
+                !SPACE_FIRST_NAME &&
+                !SPACE_LAST_NAME &&
+                !SPACE_EMAIL &&
+                !SPACE_PHONE_NUMBER &&
+                !SPACE_CITY &&
+                !SPACE_STREET &&
+                !SPACE_ZIP &&
+                !SPACE_SPECIFICATIONS &&
+                !SPACE_COLOR_TYPES
+              ) {
+                nonSpaceAsFirstCharacter = true;
+
+                const EMAIL_JS_TEMPLATE_PARAMS = {
+                  email_company_name: COMPANY_NAME,
+                  email_subject:
+                    FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex]
+                      .text,
+                  email_first_name: FORM_ELEMENTS[0].value,
+                  email_last_name: FORM_ELEMENTS[1].value,
+                  email_client_email: FORM_ELEMENTS[2].value,
+                  email_phone_number: FORM_ELEMENTS[3].value,
+                  email_city: FORM_ELEMENTS[4].value,
+                  email_street: FORM_ELEMENTS[5].value,
+                  email_zip_code: FORM_ELEMENTS[6].value,
+                  email_service:
+                    FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex]
+                      .text,
+                  email_painting_type: checkBoxesType,
+                  email_specifications: FORM_ELEMENTS[8].value,
+                  email_type_of_colors: PAINTING_FORM_ELEMENTS[2].value,
+                  email_type_of_sheen_finisher:
+                    PAINTING_FORM_ELEMENTS[3].options[
+                      PAINTING_FORM_ELEMENTS[3].selectedIndex
+                    ].text,
+                  email_comments_additional_details: FORM_ELEMENTS[9].value,
+                };
+                console.table(EMAIL_JS_TEMPLATE_PARAMS);
+
+                // emailjs
+                //   .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+                //   .then((res) => {
+                //     console.log("Email sent successfully: " + res);
+
+                //     sentSuccess = true;
+
+                //     DeclareStorageVariable("session", "Submission Sent", true);
+
+                //     setTimeout(() => {
+                //       if (sentSuccess) {
+                //         router.reload();
+                //       }
+                //     }, 300);
+                //   })
+                //   .catch((error) => {
+                //     console.error("Error sending email: " + error);
+                //   });
+              } else {
+                nonSpaceAsFirstCharacter = false;
+
+                if (SPACE_FIRST_NAME) {
+                  console.log("Space as first character: First Name");
+                }
+                if (SPACE_LAST_NAME) {
+                  console.log("Space as first character: Last Name");
+                }
+                if (SPACE_EMAIL) {
+                  console.log("Space as first character: Email");
+                }
+                if (SPACE_PHONE_NUMBER) {
+                  console.log("Space as first character: Phone Number");
+                }
+                if (SPACE_CITY) {
+                  console.log("Space as first character: City");
+                }
+                if (SPACE_STREET) {
+                  console.log("Space as first character: Street");
+                }
+                if (SPACE_ZIP) {
+                  console.log("Space as first character: ZIP Code");
+                }
+                if (SPACE_SPECIFICATIONS) {
+                  console.log("Space as first character: Specifications");
+                }
+                if (SPACE_COLOR_TYPES) {
+                  console.log("Space as first character: Type of colors");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //! Other forms
+    if (FORM_TYPE == "other-form") {
+      const SERVICE_ID = "service_48gpr39";
+      const TEMPLATE_ID = "template_wncm26z";
+
+      // Validation flags for non-empty values in different rows
+      let rowOnePassed = false;
+      let rowTwoPassed = false;
+      let rowThreePassed = false;
+      let rowFourPassed = false;
+      let rowFivePassed = false;
+
+      // Validation for Row One
+      if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
+        rowOnePassed = true;
+      } else {
+        rowOnePassed = false;
+        console.log("Row One failed");
+      }
+
+      // Validation for Row Two
+      if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
+        rowTwoPassed = true;
+      } else {
+        rowTwoPassed = false;
+        console.log("Row Two failed");
+      }
+
+      // Validation for Row Three
+      if (
+        FORM_ELEMENTS[4].value !== "" &&
+        FORM_ELEMENTS[5].value !== "" &&
+        FORM_ELEMENTS[6].value !== ""
+      ) {
+        rowThreePassed = true;
+      } else {
+        rowThreePassed = false;
+        console.log("Row Three failed");
+      }
+
+      // Validation for Row Four
+      if (FORM_ELEMENTS[7].selectedIndex !== 0) {
+        rowFourPassed = true;
+      } else {
+        rowFourPassed = false;
+        console.log("Row Four failed");
+      }
+
+      // Validation for Row Five
+      if (FORM_ELEMENTS[8].value !== "") {
+        rowFivePassed = true;
+      } else {
+        rowFivePassed = false;
+        console.log("Row Five failed");
+      }
+
+      // If all validation checks pass
+      if (
+        rowOnePassed &&
+        rowTwoPassed &&
+        rowThreePassed &&
+        rowFourPassed &&
+        rowFivePassed
+      ) {
+        // Checking if some inputs are valid
+        const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
+        const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
+        const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+
+        if (CHECK_PHONE_NUMBER && CHECK_EMAIL && CHECK_ZIP) {
+          validPhoneNumber = true;
+          validEmail = true;
+          validZip = true;
+
+          // Checking if there are no spaces as the first character
+          // (Assuming CheckForSpaceInFirstCharacter is a function that returns true if there is a space as the first character)
+          const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(
+            FORM_ELEMENTS[0]
+          );
+          const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(
+            FORM_ELEMENTS[1]
+          );
+          const SPACE_EMAIL = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[2]);
+          const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
+            FORM_ELEMENTS[3]
+          );
+          const SPACE_CITY = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[4]);
+          const SPACE_STREET = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[5]);
+          const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
+          const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
+            FORM_ELEMENTS[8]
+          );
+
+          if (
+            !SPACE_FIRST_NAME &&
+            !SPACE_LAST_NAME &&
+            !SPACE_EMAIL &&
+            !SPACE_PHONE_NUMBER &&
+            !SPACE_CITY &&
+            !SPACE_STREET &&
+            !SPACE_ZIP &&
+            !SPACE_SPECIFICATIONS
+          ) {
+            nonSpaceAsFirstCharacter = true;
+
+            // Creating an object with the form data
+            const EMAIL_JS_TEMPLATE_PARAMS = {
+              email_company_name: COMPANY_NAME,
+              email_subject:
+                FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+              email_first_name: FORM_ELEMENTS[0].value,
+              email_last_name: FORM_ELEMENTS[1].value,
+              email_client_email: FORM_ELEMENTS[2].value,
+              email_phone_number: FORM_ELEMENTS[3].value,
+              email_city: FORM_ELEMENTS[4].value,
+              email_street: FORM_ELEMENTS[5].value,
+              email_zip_code: FORM_ELEMENTS[6].value,
+              email_service:
+                FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+              email_specifications: FORM_ELEMENTS[8].value,
+              email_comments_additional_details: FORM_ELEMENTS[9].value,
+            };
+
+            // emailjs
+            //   .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+            //   .then((res) => {
+            //     console.log("Email sent successfully: " + res);
+
+            //     sentSuccess = true;
+
+            //     DeclareStorageVariable("session", "Submission Sent", true);
+
+            //     setTimeout(() => {
+            //       if (sentSuccess) {
+            //         router.reload();
+            //       }
+            //     }, 300);
+            //   })
+            //   .catch((error) => {
+            //     console.error("Error sending email: " + error);
+            //   });
+
+            console.table(EMAIL_JS_TEMPLATE_PARAMS);
+          } else {
+            nonSpaceAsFirstCharacter = false;
+
+            // Logging which input has a space as the first character
+            if (SPACE_FIRST_NAME) {
+              console.log("Space as first character: First Name");
+            }
+            if (SPACE_LAST_NAME) {
+              console.log("Space as first character: Last Name");
+            }
+            if (SPACE_EMAIL) {
+              console.log("Space as first character: Email");
+            }
+            if (SPACE_PHONE_NUMBER) {
+              console.log("Space as first character: Phone Number");
+            }
+            if (SPACE_CITY) {
+              console.log("Space as first character: City");
+            }
+            if (SPACE_STREET) {
+              console.log("Space as first character: Street");
+            }
+            if (SPACE_ZIP) {
+              console.log("Space as first character: ZIP Code");
+            }
+            if (SPACE_SPECIFICATIONS) {
+              console.log("Space as first character: Specifications");
+            }
+          }
+        }
+      }
+    }
+  };
 
   return (
     <section id="indexContact" className={`${styles.index_contact}`}>
@@ -76,15 +598,7 @@ export const IndexContact = () => {
             id="contactForm"
             onSubmit={(e) => {
               e.preventDefault();
-
-              const DATA_FORM_TYPE =
-                e.currentTarget.getAttribute("data-form-type");
-
-              if (DATA_FORM_TYPE == "painting-form") {
-              }
-
-              if (DATA_FORM_TYPE == "other-form") {
-              }
+              EmailSend();
             }}
           >
             <div className={`${styles.index_contact_inner_form_inner}`}>
@@ -95,16 +609,14 @@ export const IndexContact = () => {
                   className={`${styles.index_contact_inner_form_inner_row} ${styles.double_row} row`}
                 >
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_L} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formFirstName"
                       >
-                        <span>
-                          First Name: <span>*</span>
-                        </span>
+                        First Name: <span>*</span>
                       </label>
 
                       <input
@@ -115,16 +627,14 @@ export const IndexContact = () => {
                     </div>
                   </div>
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_R} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formLastName"
                       >
-                        <span>
-                          Last Name: <span>*</span>
-                        </span>
+                        Last Name: <span>*</span>
                       </label>
 
                       <input
@@ -139,16 +649,14 @@ export const IndexContact = () => {
                   className={`${styles.index_contact_inner_form_inner_row} ${styles.double_row} row`}
                 >
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_L} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formEmail"
                       >
-                        <span>
-                          Email: <span>*</span>
-                        </span>
+                        Email: <span>*</span>
                       </label>
 
                       <input
@@ -159,19 +667,18 @@ export const IndexContact = () => {
                     </div>
                   </div>
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_R} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formPhone"
                       >
-                        <span>
-                          Phone Number: <span>*</span>{" "}
-                          <span className={`${styles.phone_hint}`}>
-                            (Ex: +1336....)
-                          </span>
-                        </span>
+                        Phone Number{" "}
+                        <span className={`${styles.small_text}`}>
+                          (Ex: +1336....):
+                        </span>{" "}
+                        <span>*</span>{" "}
                       </label>
 
                       <input
@@ -186,32 +693,28 @@ export const IndexContact = () => {
                   className={`${styles.index_contact_inner_form_inner_row} ${styles.triple_row} row`}
                 >
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_L} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formCity"
                       >
-                        <span>
-                          City: <span>*</span>
-                        </span>
+                        City: <span>*</span>
                       </label>
 
                       <input type={"text"} name="email_city" id="formCity" />
                     </div>
                   </div>
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_M} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formStreet"
                       >
-                        <span>
-                          Street: <span>*</span>
-                        </span>
+                        Street: <span>*</span>
                       </label>
 
                       <input
@@ -222,16 +725,14 @@ export const IndexContact = () => {
                     </div>
                   </div>
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_R} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formZip"
                       >
-                        <span>
-                          ZIP Code: <span>*</span>
-                        </span>
+                        ZIP Code: <span>*</span>
                       </label>
 
                       <input type={"text"} name="email_zip_code" id="formZip" />
@@ -249,9 +750,7 @@ export const IndexContact = () => {
                         className="orientation-change-element half-second"
                         for="formService"
                       >
-                        <span>
-                          Type of Service: <span>*</span>
-                        </span>
+                        Type of Service: <span>*</span>
                       </label>
 
                       <select
@@ -323,13 +822,9 @@ export const IndexContact = () => {
                     className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
-                      <label
-                        className="orientation-change-element half-second"
-                        for="formPaintingType"
-                      >
-                        <span>
-                          Painting Type: <span>*</span>
-                        </span>
+                      <label className="orientation-change-element half-second">
+                        Painting Type:
+                        <span>*</span>
                       </label>
 
                       <div className={`${styles.painting_checkboxes}`}>
@@ -386,81 +881,27 @@ export const IndexContact = () => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.index_contact_inner_form_inner_row} ${styles.double_row} ${styles.painting_row} painting-row painting-interior-row row`}
+                  className={`${styles.index_contact_inner_form_inner_row} ${styles.single_row}`}
                 >
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
+                        for="formSpecifications"
                         className="orientation-change-element half-second"
-                        for="formNumberOfRooms"
                       >
-                        <span>
-                          <span className={`${styles.small_text}`}>
-                            (Interior)
-                          </span>{" "}
-                          Number of rooms: <span>*</span>
-                        </span>
+                        Specifications{" "}
+                        <span className={`${styles.small_text}`}>
+                          (Number of rooms, what rooms/sections):
+                        </span>{" "}
+                        <span>*</span>
                       </label>
 
-                      <input
-                        type={"number"}
-                        name="email_number_of_rooms"
-                        id="formNumberOfRooms"
-                        defaultValue={1}
-                        max={50}
-                        min={1}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.painting_row} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
-                  >
-                    <div className={`${styles.form_set_cnt}`}>
-                      <label
+                      <textarea
+                        id="formSpecifications"
+                        name="email_specifications"
                         className="orientation-change-element half-second"
-                        for="formRoomNames"
-                      >
-                        <span>
-                          <span className={`${styles.small_text}`}>
-                            (Interior)
-                          </span>{" "}
-                          Room names: <span>*</span>
-                        </span>
-                      </label>
-
-                      <input
-                        type={"text"}
-                        name="email_room_names"
-                        id="formRoomNames"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className={`${styles.index_contact_inner_form_inner_row} ${styles.double_row} ${styles.painting_row} painting-row painting-exterior-row row`}
-                >
-                  <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
-                  >
-                    <div className={`${styles.form_set_cnt}`}>
-                      <label
-                        className="orientation-change-element half-second"
-                        for="formOutsideHouseSections"
-                      >
-                        <span>
-                          <span className={`${styles.small_text}`}>
-                            (Exterior)
-                          </span>{" "}
-                          Outside House Sections: <span>*</span>
-                        </span>
-                      </label>
-
-                      <input
-                        type={"text"}
-                        name="email_outside_house_sections"
-                        id="formOutsideHouseSections"
                       />
                     </div>
                   </div>
@@ -469,39 +910,34 @@ export const IndexContact = () => {
                   className={`${styles.index_contact_inner_form_inner_row} ${styles.double_row} ${styles.painting_row} painting-row row`}
                 >
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_L} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
                         for="formTypeOfColors"
                       >
-                        <span>
-                          Type of Colors: <span>*</span>
-                        </span>
+                        Type of Colors: <span>*</span>
                       </label>
 
-                      <input
-                        type={"text"}
+                      <textarea
                         name="email_type_of_colors"
                         id="formTypeOfColors"
                       />
                     </div>
                   </div>
                   <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} ${styles.form_set_R} col-lg-6 col-md-6 col-sm-6 col-xs-12`}
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label
                         className="orientation-change-element half-second"
-                        for="formTypeOfColors"
+                        for="formTypeOfFinishers"
                       >
-                        <span>
-                          Type of Sheen/Finisher: <span>*</span>
-                        </span>
+                        Type of Sheen/Finisher: <span>*</span>
                       </label>
 
-                      <select>
+                      <select id="formTypeOfFinishers">
                         {FINISHERS.map((finisher) => (
                           <option>{finisher}</option>
                         ))}
@@ -510,7 +946,7 @@ export const IndexContact = () => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.index_contact_inner_form_inner_row} ${styles.single_row} ${styles.painting_row} painting-row row`}
+                  className={`${styles.index_contact_inner_form_inner_row} ${styles.single_row} row`}
                 >
                   <div
                     className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
@@ -520,7 +956,7 @@ export const IndexContact = () => {
                         className="orientation-change-element half-second"
                         for="formCommentsDetails"
                       >
-                        <span>Comments/Additional Details:</span>
+                        Comments/Additional Details:
                       </label>
 
                       <textarea
@@ -530,31 +966,15 @@ export const IndexContact = () => {
                     </div>
                   </div>
                 </div>
-                <div
-                  className={`${styles.index_contact_inner_form_inner_row} ${styles.single_row} other-form-row row`}
-                >
-                  <div
-                    className={`${styles.index_contact_inner_form_inner_side} ${styles.form_set} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
-                  >
-                    <div className={`${styles.form_set_cnt}`}>
-                      <label
-                        className="orientation-change-element half-second"
-                        for="formDescribeServiceArea"
-                      >
-                        <span>Describe where the service will happen:</span>
-                      </label>
-
-                      <textarea
-                        id="formDescribeServiceArea"
-                        name="email_describe_service_area"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className={`${styles.form_btns}`}>
                 <button
+                  onClick={(e) => {
+                    e.preventDefault();
+
+                    resetForm();
+                  }}
                   type={"reset"}
                   className={`${styles.reset} orientation-change-element half-second`}
                 >
