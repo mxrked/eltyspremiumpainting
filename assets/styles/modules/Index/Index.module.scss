@@ -682,6 +682,21 @@
         }
       }
     }
+
+    .index_contact_inner_form {
+      form {
+        .index_contact_inner_form_inner {
+          .index_contact_inner_form_inner_box {
+            .index_contact_inner_form_inner_row {
+            }
+
+            .painting_row {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -767,7 +782,7 @@
     }
   }
   .index_gallery {
-    margin-bottom: 115px;
+    margin-bottom: 95px;
 
     .index_gallery_inner {
       .index_gallery_inner_top {
@@ -788,7 +803,7 @@
     }
   }
   .index_contact {
-    margin-bottom: 210px;
+    margin-bottom: 185px;
 
     .index_contact_inner {
       max-width: 900px;
