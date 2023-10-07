@@ -722,6 +722,7 @@ export const IndexContact = () => {
                         type={"text"}
                         name="email_first_name"
                         id="formFirstName"
+                        className="orientation-change-element half-second"
                       />
                     </div>
                   </div>
@@ -740,6 +741,7 @@ export const IndexContact = () => {
                         type={"text"}
                         name="email_last_name"
                         id="formLastName"
+                        className="orientation-change-element half-second"
                       />
                     </div>
                   </div>
@@ -762,6 +764,7 @@ export const IndexContact = () => {
                         type={"email"}
                         name="email_client_email"
                         id="formEmail"
+                        className="orientation-change-element half-second"
                       />
                     </div>
                   </div>
@@ -773,17 +776,17 @@ export const IndexContact = () => {
                         className="orientation-change-element half-second"
                         for="formPhone"
                       >
-                        Phone Number{" "}
+                        Phone Number: <span>*</span> <br />
                         <span className={`${styles.small_text}`}>
-                          (Ex: +1336....):
+                          (Ex: +1336....)
                         </span>{" "}
-                        <span>*</span>{" "}
                       </label>
 
                       <input
                         type={"tel"}
                         name="email_phone_number"
                         id="formPhone"
+                        className="orientation-change-element half-second"
                       />
                     </div>
                   </div>
@@ -802,7 +805,12 @@ export const IndexContact = () => {
                         City: <span>*</span>
                       </label>
 
-                      <input type={"text"} name="email_city" id="formCity" />
+                      <input
+                        type={"text"}
+                        name="email_city"
+                        id="formCity"
+                        className="orientation-change-element half-second"
+                      />
                     </div>
                   </div>
                   <div
@@ -820,6 +828,7 @@ export const IndexContact = () => {
                         type={"text"}
                         name="email_street"
                         id="formStreet"
+                        className="orientation-change-element half-second"
                       />
                     </div>
                   </div>
@@ -834,7 +843,12 @@ export const IndexContact = () => {
                         ZIP Code: <span>*</span>
                       </label>
 
-                      <input type={"text"} name="email_zip_code" id="formZip" />
+                      <input
+                        type={"text"}
+                        name="email_zip_code"
+                        id="formZip"
+                        className="orientation-change-element half-second"
+                      />
                     </div>
                   </div>
                 </div>
@@ -854,6 +868,7 @@ export const IndexContact = () => {
 
                       <select
                         name="email_service"
+                        className="orientation-change-element half-second"
                         id="formService"
                         de
                         onChange={(e) => {
@@ -950,6 +965,7 @@ export const IndexContact = () => {
                             id="interiorCheckbox"
                             name="email_painting_type"
                             placeholder="Interior"
+                            className="orientation-change-element half-second"
                           />
                           <label
                             id="interiorCheckboxLabel"
@@ -975,6 +991,7 @@ export const IndexContact = () => {
                             id="exteriorCheckbox"
                             name="email_painting_type"
                             placeholder="Exterior"
+                            className="orientation-change-element half-second"
                           />
                           <label
                             id="exteriorCheckboxLabel"
@@ -999,11 +1016,11 @@ export const IndexContact = () => {
                         for="formSpecifications"
                         className="orientation-change-element half-second"
                       >
-                        Specifications{" "}
+                        Specifications: <span>*</span>
+                        <br />
                         <span className={`${styles.small_text}`}>
-                          (Number of rooms, what rooms/sections):
+                          (Number of rooms, what rooms/sections)
                         </span>{" "}
-                        <span>*</span>
                       </label>
 
                       <textarea
