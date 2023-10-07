@@ -720,6 +720,10 @@
                     color: white;
                     font-size: clamp(20px, 21px, 21px);
 
+                    br {
+                      display: none;
+                    }
+
                     span {
                       span {
                         color: $VividViolet;
@@ -1646,6 +1650,92 @@
           }
         }
       }
+
+      .index_contact_inner_form {
+        form {
+          padding-top: 55px;
+          padding-bottom: 55px;
+          max-width: 760px;
+
+          .index_contact_inner_form_inner {
+            max-width: 90%;
+
+            .index_contact_inner_form_inner_box {
+              .index_contact_inner_form_inner_row {
+                .index_contact_inner_form_inner_side {
+                  width: 100%;
+                  max-width: 100%;
+                  margin-bottom: 20px;
+                  height: 100%;
+
+                  .form_set_cnt {
+                    max-width: 100%;
+
+                    label {
+                      font-size: clamp(14px, 16px, 16px);
+                      margin-bottom: 0;
+
+                      span {
+                        display: inline-block;
+                      }
+
+                      .small_text {
+                        font-size: clamp(12px, 13px, 13px);
+                        display: inline-block;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .single_row {
+                margin-bottom: 0;
+
+                .index_contact_inner_form_inner_side {
+                  .form_set_cnt {
+                    input,
+                    select,
+                    textarea {
+                      font-size: clamp(14px, 14px, 14px);
+                    }
+
+                    .painting_checkboxes {
+                      display: block;
+                    }
+                  }
+                }
+              }
+
+              .double_row,
+              .triple_row {
+                .index_contact_inner_form_inner_side {
+                  .form_set_cnt {
+                    input,
+                    select,
+                    textarea {
+                      font-size: clamp(14px, 14px, 14px);
+                    }
+                  }
+                }
+              }
+            }
+
+            .form_btns {
+              button {
+                height: 40px;
+                font-size: clamp(16px, 16px, 16px);
+              }
+
+              .reset {
+                max-width: 80px;
+              }
+              .submit {
+                max-width: 70px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -2002,6 +2092,99 @@
               max-width: 700px;
               padding-left: 10px;
               padding-right: 10px;
+            }
+          }
+        }
+      }
+
+      .index_contact_inner_form {
+        form {
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 25px;
+          padding-bottom: 25px;
+          max-width: 760px;
+
+          .index_contact_inner_form_inner {
+            max-width: 90%;
+
+            .index_contact_inner_form_inner_box {
+              .index_contact_inner_form_inner_row {
+                .index_contact_inner_form_inner_side {
+                  width: 100%;
+                  max-width: 100%;
+                  margin-bottom: 20px;
+                  height: 100%;
+
+                  .form_set_cnt {
+                    max-width: 100%;
+
+                    label {
+                      font-size: clamp(13px, 13px, 13px);
+
+                      margin-bottom: 10px;
+
+                      br {
+                        display: block;
+                      }
+
+                      span {
+                        display: inline-block;
+                      }
+
+                      .small_text {
+                        font-size: clamp(10px, 11px, 11px);
+                        display: inline-block;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .single_row {
+                margin-bottom: 0;
+
+                .index_contact_inner_form_inner_side {
+                  .form_set_cnt {
+                    input,
+                    select,
+                    textarea {
+                      font-size: clamp(14px, 14px, 14px);
+                    }
+
+                    .painting_checkboxes {
+                      display: block;
+                    }
+                  }
+                }
+              }
+
+              .double_row,
+              .triple_row {
+                .index_contact_inner_form_inner_side {
+                  .form_set_cnt {
+                    input,
+                    select,
+                    textarea {
+                      font-size: clamp(14px, 14px, 14px);
+                    }
+                  }
+                }
+              }
+            }
+
+            .form_btns {
+              button {
+                height: 35px;
+                font-size: clamp(13px, 14px, 14px);
+              }
+
+              .reset {
+                max-width: 70px;
+              }
+              .submit {
+                max-width: 60px;
+              }
             }
           }
         }
