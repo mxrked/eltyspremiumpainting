@@ -109,5 +109,30 @@
     "galleryItem_ID": "galleryItem_023",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-20.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_024",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-4.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_025",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-5.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_026",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-6.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_027",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-7.webp"
+  },
+  {
+    "galleryItem_ID": "galleryItem_028",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-8.webp"
   }
 ]
