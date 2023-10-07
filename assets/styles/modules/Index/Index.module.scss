@@ -1682,6 +1682,7 @@
                       .small_text {
                         font-size: clamp(12px, 13px, 13px);
                         display: inline-block;
+                        margin-top: 5px;
                       }
                     }
                   }
@@ -2098,6 +2099,8 @@
       }
 
       .index_contact_inner_form {
+        margin-top: 25px;
+
         form {
           padding-left: 0;
           padding-right: 0;
@@ -2121,7 +2124,6 @@
 
                     label {
                       font-size: clamp(13px, 13px, 13px);
-
                       margin-bottom: 10px;
 
                       br {
@@ -2135,6 +2137,7 @@
                       .small_text {
                         font-size: clamp(10px, 11px, 11px);
                         display: inline-block;
+                        margin-top: 5px;
                       }
                     }
                   }

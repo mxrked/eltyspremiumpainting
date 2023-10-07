@@ -1357,6 +1357,7 @@
   .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
     font-size: 13px;
     display: inline-block;
+    margin-top: 5px;
   }
   .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
     margin-bottom: 0;
@@ -1660,6 +1661,9 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 25px;
+  }
   .index_contact .index_contact_inner .index_contact_inner_form form {
     padding-left: 0;
     padding-right: 0;
@@ -1692,6 +1696,7 @@
   .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
     font-size: 11px;
     display: inline-block;
+    margin-top: 5px;
   }
   .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
     margin-bottom: 0;
