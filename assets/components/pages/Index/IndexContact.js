@@ -20,7 +20,6 @@ import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStora
 import styles from "../../../styles/modules/Index/Index.module.css";
 
 export const IndexContact = () => {
-  const SERVICES = [];
   const FINISHERS = [
     "-- NOT SELECTED --",
     "Flat",
@@ -51,9 +50,13 @@ export const IndexContact = () => {
       document.getElementById("formCommentsDetails"),
     ];
 
+    // Changing color of labels
+    document.getElementById("interiorCheckboxLabel").style.color = "white";
+    document.getElementById("exteriorCheckboxLabel").style.color = "white";
+
     // Clearing the content of each element
     FORM_ELEMENTS.forEach((element) => {
-      element.style.border = "none";
+      element.style.borderColor = "#635985";
 
       if (
         element.type === "text" ||
@@ -81,6 +84,34 @@ export const IndexContact = () => {
 
   const PUBLIC_KEY = "ENRk6ty7gZFAmYSCk";
   emailjs.init(PUBLIC_KEY);
+
+  function setBorderColor(type, element) {
+    if (type == "input") {
+      if (element.value == "") {
+        element.style.borderColor = "red";
+      }
+    }
+
+    if (type == "select") {
+      if (element.selectedIndex == 0) {
+        element.style.borderColor = "red";
+      }
+    }
+  }
+
+  function resetBorderColor(type, element) {
+    if (type == "input") {
+      if (element.value !== "") {
+        element.style.borderColor = "#635985";
+      }
+    }
+
+    if (type == "select") {
+      if (element.selectedIndex !== 0) {
+        element.style.borderColor = "#635985";
+      }
+    }
+  }
 
   const EmailSend = () => {
     // Array of form elements
@@ -138,17 +169,29 @@ export const IndexContact = () => {
       // Validation for Row One
       if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
         rowOnePassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[0]);
+        resetBorderColor("input", FORM_ELEMENTS[1]);
       } else {
         rowOnePassed = false;
         console.log("Row One failed");
+
+        setBorderColor("input", FORM_ELEMENTS[0]);
+        setBorderColor("input", FORM_ELEMENTS[1]);
       }
 
       // Validation for Row Two
       if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
         rowTwoPassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[2]);
+        resetBorderColor("input", FORM_ELEMENTS[3]);
       } else {
         rowTwoPassed = false;
         console.log("Row Two failed");
+
+        setBorderColor("input", FORM_ELEMENTS[2]);
+        setBorderColor("input", FORM_ELEMENTS[3]);
       }
 
       // Validation for Row Three
@@ -158,17 +201,29 @@ export const IndexContact = () => {
         FORM_ELEMENTS[6].value !== ""
       ) {
         rowThreePassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[4]);
+        resetBorderColor("input", FORM_ELEMENTS[5]);
+        resetBorderColor("input", FORM_ELEMENTS[6]);
       } else {
         rowThreePassed = false;
         console.log("Row Three failed");
+
+        setBorderColor("input", FORM_ELEMENTS[4]);
+        setBorderColor("input", FORM_ELEMENTS[5]);
+        setBorderColor("input", FORM_ELEMENTS[6]);
       }
 
       // Validation for Row Four
       if (FORM_ELEMENTS[7].selectedIndex !== 0) {
         rowFourPassed = true;
+
+        resetBorderColor("select", FORM_ELEMENTS[7]);
       } else {
         rowFourPassed = false;
         console.log("Row Four failed");
+
+        setBorderColor("select", FORM_ELEMENTS[7]);
       }
 
       // Validation for Row Five
@@ -177,6 +232,8 @@ export const IndexContact = () => {
         PAINTING_FORM_ELEMENTS[1].checked
       ) {
         rowFivePassed = true;
+        document.getElementById("interiorCheckboxLabel").style.color = "white";
+        document.getElementById("exteriorCheckboxLabel").style.color = "white";
 
         if (
           PAINTING_FORM_ELEMENTS[0].checked &&
@@ -201,25 +258,48 @@ export const IndexContact = () => {
       } else {
         rowFivePassed = false;
         console.log("Row Five failed");
+
+        document.getElementById("interiorCheckboxLabel").style.color = "red";
+        document.getElementById("exteriorCheckboxLabel").style.color = "red";
+
+        // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[0]);
+        // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[1]);
       }
 
       // Validation for Row Six
       if (FORM_ELEMENTS[8].value !== "") {
         rowSixPassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[8]);
       } else {
         rowSixPassed = false;
         console.log("Row Six failed");
+
+        setBorderColor("input", FORM_ELEMENTS[8]);
       }
 
       // Validation for Row Seven
+      if (PAINTING_FORM_ELEMENTS[2].value !== "") {
+        PAINTING_FORM_ELEMENTS[2].style.borderColor = "#635985";
+      }
+      if (PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0) {
+        PAINTING_FORM_ELEMENTS[3].style.borderColor = "#635985";
+      }
+
       if (
         PAINTING_FORM_ELEMENTS[2].value !== "" &&
         PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0
       ) {
         rowSevenPassed = true;
+
+        // resetBorderColor("input", PAINTING_FORM_ELEMENTS[2]);
+        // resetBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
       } else {
         rowSevenPassed = false;
         console.log("Row Seven failed");
+
+        setBorderColor("input", PAINTING_FORM_ELEMENTS[2]);
+        setBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
       }
 
       // Validation for all rows
@@ -382,17 +462,29 @@ export const IndexContact = () => {
       // Validation for Row One
       if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
         rowOnePassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[0]);
+        resetBorderColor("input", FORM_ELEMENTS[1]);
       } else {
         rowOnePassed = false;
         console.log("Row One failed");
+
+        setBorderColor("input", FORM_ELEMENTS[0]);
+        setBorderColor("input", FORM_ELEMENTS[1]);
       }
 
       // Validation for Row Two
       if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
         rowTwoPassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[2]);
+        resetBorderColor("input", FORM_ELEMENTS[3]);
       } else {
         rowTwoPassed = false;
         console.log("Row Two failed");
+
+        setBorderColor("input", FORM_ELEMENTS[2]);
+        setBorderColor("input", FORM_ELEMENTS[3]);
       }
 
       // Validation for Row Three
@@ -402,25 +494,40 @@ export const IndexContact = () => {
         FORM_ELEMENTS[6].value !== ""
       ) {
         rowThreePassed = true;
+
+        resetBorderColor("input", FORM_ELEMENTS[4]);
+        resetBorderColor("input", FORM_ELEMENTS[5]);
+        resetBorderColor("input", FORM_ELEMENTS[6]);
       } else {
         rowThreePassed = false;
         console.log("Row Three failed");
+
+        setBorderColor("input", FORM_ELEMENTS[4]);
+        setBorderColor("input", FORM_ELEMENTS[5]);
+        setBorderColor("input", FORM_ELEMENTS[6]);
       }
 
       // Validation for Row Four
       if (FORM_ELEMENTS[7].selectedIndex !== 0) {
         rowFourPassed = true;
+
+        resetBorderColor("select", FORM_ELEMENTS[7]);
       } else {
         rowFourPassed = false;
         console.log("Row Four failed");
+
+        setBorderColor("select", FORM_ELEMENTS[7]);
       }
 
       // Validation for Row Five
       if (FORM_ELEMENTS[8].value !== "") {
         rowFivePassed = true;
+        resetBorderColor("input", FORM_ELEMENTS[8]);
       } else {
         rowFivePassed = false;
         console.log("Row Five failed");
+
+        setBorderColor("input", FORM_ELEMENTS[8]);
       }
 
       // If all validation checks pass
@@ -845,6 +952,7 @@ export const IndexContact = () => {
                             placeholder="Interior"
                           />
                           <label
+                            id="interiorCheckboxLabel"
                             for="interiorCheckbox"
                             className="orientation-change-element half-second"
                           >
@@ -869,6 +977,7 @@ export const IndexContact = () => {
                             placeholder="Exterior"
                           />
                           <label
+                            id="exteriorCheckboxLabel"
                             for="exteriorCheckbox"
                             className="orientation-change-element half-second"
                           >
