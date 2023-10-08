@@ -100,11 +100,29 @@
     width: 35px;
     height: 35px;
   }
+  .submission_success_message {
+    max-width: 400px;
+    height: 150px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 15px;
+  }
 }
 @media all and (max-width: 768px) {
   .back_to_top button {
     width: 32px;
     height: 32px;
+  }
+  .submission_success_message {
+    max-width: 300px;
+    height: 150px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 13px;
   }
 }
 @media all and (max-width: 419px) {
@@ -112,11 +130,33 @@
     width: 32px;
     height: 32px;
   }
+  .submission_success_message {
+    max-width: 95%;
+    height: 130px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 13px;
+  }
 }
 @media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .back_to_top button {
     width: 35px;
     height: 35px;
+  }
+  .submission_success_message {
+    max-width: 350px;
+    height: 120px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 13px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
@@ -124,11 +164,33 @@
     width: 37px;
     height: 37px;
   }
+  .submission_success_message {
+    max-width: 390px;
+    height: 150px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 15px;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
   .back_to_top button {
     width: 37px;
     height: 37px;
+  }
+  .submission_success_message {
+    max-width: 390px;
+    height: 150px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 14px;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -136,16 +198,49 @@
     width: 40px;
     height: 40px;
   }
+  .submission_success_message {
+    max-width: 420px;
+    height: 170px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 16px;
+  }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .back_to_top button {
     width: 40px;
     height: 40px;
   }
+  .submission_success_message {
+    max-width: 420px;
+    height: 170px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 16px;
+  }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .back_to_top button {
     width: 40px;
     height: 40px;
+  }
+  .submission_success_message {
+    max-width: 420px;
+    height: 170px;
+  }
+  .submission_success_message .submission_success_message_cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .submission_success_message .submission_success_message_cnt span {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=All.module.css.map */
