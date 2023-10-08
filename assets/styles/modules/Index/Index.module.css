@@ -1546,6 +1546,16 @@
     height: 20px;
     font-size: 10px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: center;
     padding-left: 25px;
@@ -1894,6 +1904,16 @@
     height: 20px;
     font-size: 10px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: center;
     padding-left: 25px;
@@ -1965,7 +1985,7 @@
   }
   .index_contact {
     margin-top: 80px;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
   .index_contact .index_contact_inner {
     max-width: 800px;
@@ -2002,6 +2022,72 @@
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 55px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 510px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2159,6 +2245,16 @@
     height: 23px;
     font-size: 12px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: center;
     padding-left: 45px;
@@ -2264,6 +2360,72 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 85px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 610px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2432,6 +2594,17 @@
     height: 21px;
     font-size: 11px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: left;
     padding-left: 45px;
@@ -2537,6 +2710,72 @@
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 85px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 610px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -2699,6 +2938,17 @@
     height: 21px;
     font-size: 11px;
   }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
+  }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: left;
     padding-left: 45px;
@@ -2803,6 +3053,72 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 85px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 710px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -3079,6 +3395,72 @@
     margin-top: 20px;
     margin-bottom: 40px;
   }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 85px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 710px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
+  }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .index_top {
@@ -3345,5 +3727,71 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form {
+    margin-top: 85px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    max-width: 710px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
+    max-width: 90%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt {
+    max-width: 100%;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label br {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label span {
+    display: inline-block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .index_contact_inner_form_inner_row .index_contact_inner_form_inner_side .form_set_cnt label .small_text {
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row {
+    margin-bottom: 0;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .single_row .index_contact_inner_form_inner_side .form_set_cnt .painting_checkboxes {
+    display: block;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt textarea,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select,
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt textarea {
+    font-size: 14px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .reset {
+    max-width: 70px;
+  }
+  .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .form_btns .submit {
+    max-width: 70px;
   }
 }/*# sourceMappingURL=Index.module.css.map */
