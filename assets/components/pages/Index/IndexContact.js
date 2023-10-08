@@ -89,37 +89,37 @@ export const IndexContact = () => {
   const PUBLIC_KEY = "ENRk6ty7gZFAmYSCk";
   emailjs.init(PUBLIC_KEY);
 
-  let nonEmptyInputs = false;
-  let nonSpaceAsFirstCharacter = false;
-  let validEmail = false;
-  let validPhoneNumber = false;
-  let validZip = false;
+  // let nonEmptyInputs = false;
+  // let nonSpaceAsFirstCharacter = false;
+  // let validEmail = false;
+  // let validPhoneNumber = false;
+  // let validZip = false;
 
-  function setBorderColor(type, element) {
-    if (type == "input") {
-      if (element.value == "") {
-        element.style.borderColor = "red";
+  // function setBorderColor(type, element) {
+  //   if (type == "input") {
+  //     if (element.value == "") {
+  //       element.style.borderColor = "red";
 
-        // Adding shake animation
-        element.classList.add("shake-element");
-        setTimeout(() => {
-          element.classList.remove("shake-element");
-        }, 500);
-      }
-    }
+  //       // Adding shake animation
+  //       element.classList.add("shake-element");
+  //       setTimeout(() => {
+  //         element.classList.remove("shake-element");
+  //       }, 500);
+  //     }
+  //   }
 
-    if (type == "select") {
-      if (element.selectedIndex == 0) {
-        element.style.borderColor = "red";
+  //   if (type == "select") {
+  //     if (element.selectedIndex == 0) {
+  //       element.style.borderColor = "red";
 
-        // Adding shake animation
-        element.classList.add("shake-element");
-        setTimeout(() => {
-          element.classList.remove("shake-element");
-        }, 500);
-      }
-    }
-  }
+  //       // Adding shake animation
+  //       element.classList.add("shake-element");
+  //       setTimeout(() => {
+  //         element.classList.remove("shake-element");
+  //       }, 500);
+  //     }
+  //   }
+  // }
 
   function resetBorderColor(type, element) {
     if (type == "input") {
@@ -132,6 +132,16 @@ export const IndexContact = () => {
       if (element.selectedIndex !== 0) {
         element.style.borderColor = "#635985";
       }
+    }
+  }
+
+  function checkEmptyOrSpaceValue(element, spaceChecker) {
+    if (element.value == "" || spaceChecker) {
+      return false;
+    }
+
+    if (element.value !== "" && !spaceChecker) {
+      return true;
     }
   }
 
@@ -185,99 +195,197 @@ export const IndexContact = () => {
       let rowSixPassed = false;
       let rowSevenPassed = false;
 
-      // Validation for Row One
-      if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
-        rowOnePassed = true;
+      // Checking if there are no spaces as the first character
+      // (Assuming CheckForSpaceInFirstCharacter is a function that returns true if there is a space as the first character)
+      const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[0]);
+      const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[1]);
+      const SPACE_EMAIL = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[2]);
+      const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
+        FORM_ELEMENTS[3]
+      );
+      const SPACE_CITY = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[4]);
+      const SPACE_STREET = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[5]);
+      const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
+      const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
+        FORM_ELEMENTS[8]
+      );
+      const SPACE_TYPE_OF_COLORS = CheckForSpaceInFirstCharacter(
+        PAINTING_FORM_ELEMENTS[2]
+      );
 
+      //! Row 1
+      const FN_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[0],
+        SPACE_FIRST_NAME
+      );
+      const LN_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[1],
+        SPACE_LAST_NAME
+      );
+
+      if (!FN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[0].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[0].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[0].classList.remove("shake-element");
+        }, 500);
+      }
+      if (FN_EMPTY_OR_SPACE_VALUE_CHECKER) {
         resetBorderColor("input", FORM_ELEMENTS[0]);
+      }
+
+      if (!LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[1].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[1].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[1].classList.remove("shake-element");
+        }, 500);
+      }
+      if (LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
         resetBorderColor("input", FORM_ELEMENTS[1]);
-      } else {
-        rowOnePassed = false;
-        console.log("Row One failed");
-
-        setBorderColor("input", FORM_ELEMENTS[0]);
-        setBorderColor("input", FORM_ELEMENTS[1]);
       }
 
-      // Validation for Row Two
-      if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
-        rowTwoPassed = true;
+      if (FN_EMPTY_OR_SPACE_VALUE_CHECKER && LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        rowOnePassed = true;
+      }
 
+      //! Row 2
+      const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
+      const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
+      const EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[2],
+        SPACE_EMAIL
+      );
+      const PHONE_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[3],
+        SPACE_PHONE_NUMBER
+      );
+
+      if (!EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_EMAIL) {
+        FORM_ELEMENTS[2].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[2].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[2].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_EMAIL) {
         resetBorderColor("input", FORM_ELEMENTS[2]);
-        resetBorderColor("input", FORM_ELEMENTS[3]);
-      } else {
-        rowTwoPassed = false;
-        console.log("Row Two failed");
-
-        setBorderColor("input", FORM_ELEMENTS[2]);
-        setBorderColor("input", FORM_ELEMENTS[3]);
       }
 
-      // Validation for Row Three
+      if (!PHONE_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_PHONE_NUMBER) {
+        FORM_ELEMENTS[3].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[3].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[3].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (PHONE_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_PHONE_NUMBER) {
+        resetBorderColor("input", FORM_ELEMENTS[3]);
+      }
+
       if (
-        FORM_ELEMENTS[4].value !== "" &&
-        FORM_ELEMENTS[5].value !== "" &&
-        FORM_ELEMENTS[6].value !== ""
+        EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_EMAIL &&
+        PHONE_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_PHONE_NUMBER
+      ) {
+        rowTwoPassed = true;
+      }
+
+      //! Row 3
+      const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+      const CITY_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[4],
+        SPACE_CITY
+      );
+      const STREET_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[5],
+        SPACE_STREET
+      );
+      const ZIP_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[6],
+        SPACE_ZIP
+      );
+      if (!CITY_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[4].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[4].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[4].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (CITY_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[4]);
+      }
+
+      if (!STREET_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[5].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[5].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[5].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (STREET_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[5]);
+      }
+
+      if (!ZIP_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_ZIP) {
+        FORM_ELEMENTS[6].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[6].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[6].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (ZIP_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_ZIP) {
+        resetBorderColor("input", FORM_ELEMENTS[6]);
+      }
+
+      if (
+        CITY_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        STREET_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        ZIP_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_ZIP
       ) {
         rowThreePassed = true;
-
-        resetBorderColor("input", FORM_ELEMENTS[4]);
-        resetBorderColor("input", FORM_ELEMENTS[5]);
-        resetBorderColor("input", FORM_ELEMENTS[6]);
-      } else {
-        rowThreePassed = false;
-        console.log("Row Three failed");
-
-        setBorderColor("input", FORM_ELEMENTS[4]);
-        setBorderColor("input", FORM_ELEMENTS[5]);
-        setBorderColor("input", FORM_ELEMENTS[6]);
       }
 
-      // Validation for Row Four
-      if (FORM_ELEMENTS[7].selectedIndex !== 0) {
-        rowFourPassed = true;
+      //! Row 4
+      if (FORM_ELEMENTS[7].selectedIndex == 0) {
+        FORM_ELEMENTS[7].style.borderColor = "red";
 
+        // Adding shake animation
+        FORM_ELEMENTS[7].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[7].classList.remove("shake-element");
+        }, 500);
+      } else {
         resetBorderColor("select", FORM_ELEMENTS[7]);
-      } else {
-        rowFourPassed = false;
-        console.log("Row Four failed");
-
-        setBorderColor("select", FORM_ELEMENTS[7]);
+        rowFourPassed = true;
       }
 
-      // Validation for Row Five
+      //! Row 5
       if (
-        PAINTING_FORM_ELEMENTS[0].checked ||
-        PAINTING_FORM_ELEMENTS[1].checked
+        !PAINTING_FORM_ELEMENTS[0].checked &&
+        !PAINTING_FORM_ELEMENTS[1].checked
       ) {
-        rowFivePassed = true;
-        document.getElementById("interiorCheckboxLabel").style.color = "white";
-        document.getElementById("exteriorCheckboxLabel").style.color = "white";
-
-        if (
-          PAINTING_FORM_ELEMENTS[0].checked &&
-          !PAINTING_FORM_ELEMENTS[1].checked
-        ) {
-          checkBoxesType = "Interior";
-        }
-
-        if (
-          !PAINTING_FORM_ELEMENTS[0].checked &&
-          PAINTING_FORM_ELEMENTS[1].checked
-        ) {
-          checkBoxesType = "Exterior";
-        }
-
-        if (
-          PAINTING_FORM_ELEMENTS[0].checked &&
-          PAINTING_FORM_ELEMENTS[1].checked
-        ) {
-          checkBoxesType = "Interior and Exterior";
-        }
-      } else {
-        rowFivePassed = false;
-        console.log("Row Five failed");
-
         document.getElementById("interiorCheckboxLabel").style.color = "red";
         document.getElementById("exteriorCheckboxLabel").style.color = "red";
 
@@ -296,45 +404,80 @@ export const IndexContact = () => {
             .getElementById("exteriorCheckboxLabel")
             .classList.remove("shake-element");
         }, 500);
-
-        // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[0]);
-        // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[1]);
-      }
-
-      // Validation for Row Six
-      if (FORM_ELEMENTS[8].value !== "") {
-        rowSixPassed = true;
-
-        resetBorderColor("input", FORM_ELEMENTS[8]);
-      } else {
-        rowSixPassed = false;
-        console.log("Row Six failed");
-
-        setBorderColor("input", FORM_ELEMENTS[8]);
-      }
-
-      // Validation for Row Seven
-      if (PAINTING_FORM_ELEMENTS[2].value !== "") {
-        PAINTING_FORM_ELEMENTS[2].style.borderColor = "#635985";
-      }
-      if (PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0) {
-        PAINTING_FORM_ELEMENTS[3].style.borderColor = "#635985";
       }
 
       if (
-        PAINTING_FORM_ELEMENTS[2].value !== "" &&
+        PAINTING_FORM_ELEMENTS[0].checked ||
+        PAINTING_FORM_ELEMENTS[1].checked
+      ) {
+        document.getElementById("interiorCheckboxLabel").style.color = "white";
+        document.getElementById("exteriorCheckboxLabel").style.color = "white";
+        document
+          .getElementById("interiorCheckboxLabel")
+          .classList.remove("shake-element");
+        document
+          .getElementById("exteriorCheckboxLabel")
+          .classList.remove("shake-element");
+        rowFivePassed = true;
+      }
+
+      //! Row 6
+      const SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER =
+        checkEmptyOrSpaceValue(FORM_ELEMENTS[8], SPACE_SPECIFICATIONS);
+
+      if (!SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[8].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[8].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[8].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[8]);
+
+        rowSixPassed = true;
+      }
+
+      //! Row 7
+      const TYPES_OF_COLORS_EMPTY_OR_SPACE_VALUE_CHECKER =
+        checkEmptyOrSpaceValue(PAINTING_FORM_ELEMENTS[2], SPACE_TYPE_OF_COLORS);
+
+      if (!TYPES_OF_COLORS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        PAINTING_FORM_ELEMENTS[2].style.borderColor = "red";
+
+        // Adding shake animation
+        PAINTING_FORM_ELEMENTS[2].classList.add("shake-element");
+        setTimeout(() => {
+          PAINTING_FORM_ELEMENTS[2].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (TYPES_OF_COLORS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", PAINTING_FORM_ELEMENTS[2]);
+      }
+
+      if (PAINTING_FORM_ELEMENTS[3].selectedIndex == 0) {
+        PAINTING_FORM_ELEMENTS[3].style.borderColor = "red";
+
+        // Adding shake animation
+        PAINTING_FORM_ELEMENTS[3].classList.add("shake-element");
+        setTimeout(() => {
+          PAINTING_FORM_ELEMENTS[3].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0) {
+        resetBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
+      }
+
+      if (
+        TYPES_OF_COLORS_EMPTY_OR_SPACE_VALUE_CHECKER &&
         PAINTING_FORM_ELEMENTS[3].selectedIndex !== 0
       ) {
         rowSevenPassed = true;
-
-        // resetBorderColor("input", PAINTING_FORM_ELEMENTS[2]);
-        // resetBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
-      } else {
-        rowSevenPassed = false;
-        console.log("Row Seven failed");
-
-        setBorderColor("input", PAINTING_FORM_ELEMENTS[2]);
-        setBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
       }
 
       // Setting message for empty Comments/Additional Details
@@ -355,141 +498,52 @@ export const IndexContact = () => {
         rowSixPassed &&
         rowSevenPassed
       ) {
-        nonEmptyInputs = true;
+        const EMAIL_JS_TEMPLATE_PARAMS = {
+          email_company_name: COMPANY_NAME,
+          email_subject:
+            FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+          email_first_name: FORM_ELEMENTS[0].value,
+          email_last_name: FORM_ELEMENTS[1].value,
+          email_client_email: FORM_ELEMENTS[2].value,
+          email_phone_number: FORM_ELEMENTS[3].value,
+          email_city: FORM_ELEMENTS[4].value,
+          email_street: FORM_ELEMENTS[5].value,
+          email_zip_code: FORM_ELEMENTS[6].value,
+          email_service:
+            FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+          email_painting_type: checkBoxesType,
+          email_specifications: FORM_ELEMENTS[8].value,
+          email_type_of_colors: PAINTING_FORM_ELEMENTS[2].value,
+          email_type_of_sheen_finisher:
+            PAINTING_FORM_ELEMENTS[3].options[
+              PAINTING_FORM_ELEMENTS[3].selectedIndex
+            ].text,
+          email_comments_additional_details: commentsAdditionalDetailsText,
+        };
+        console.table(EMAIL_JS_TEMPLATE_PARAMS);
 
-        // Checking if some inputs are valid
-        const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
-        const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
-        const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+        // setTimeout(() => {
+        //   router.reload();
+        // }, 300);
 
-        if (CHECK_PHONE_NUMBER) {
-          validPhoneNumber = true;
+        emailjs
+          .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+          .then((res) => {
+            console.log("Email sent successfully: " + res);
 
-          if (CHECK_EMAIL) {
-            validEmail = true;
+            sentSuccess = true;
 
-            if (CHECK_ZIP) {
-              validZip = true;
+            DeclareStorageVariable("session", "Submission Sent", true);
 
-              // Checking if there are no spaces as first character
-              const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[0]
-              );
-              const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[1]
-              );
-              const SPACE_EMAIL = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[2]
-              );
-              const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[3]
-              );
-              const SPACE_CITY = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[4]
-              );
-              const SPACE_STREET = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[5]
-              );
-              const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
-              const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
-                FORM_ELEMENTS[8]
-              );
-              const SPACE_COLOR_TYPES = CheckForSpaceInFirstCharacter(
-                PAINTING_FORM_ELEMENTS[2]
-              );
-
-              if (
-                !SPACE_FIRST_NAME &&
-                !SPACE_LAST_NAME &&
-                !SPACE_EMAIL &&
-                !SPACE_PHONE_NUMBER &&
-                !SPACE_CITY &&
-                !SPACE_STREET &&
-                !SPACE_ZIP &&
-                !SPACE_SPECIFICATIONS &&
-                !SPACE_COLOR_TYPES
-              ) {
-                nonSpaceAsFirstCharacter = true;
-
-                const EMAIL_JS_TEMPLATE_PARAMS = {
-                  email_company_name: COMPANY_NAME,
-                  email_subject:
-                    FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex]
-                      .text,
-                  email_first_name: FORM_ELEMENTS[0].value,
-                  email_last_name: FORM_ELEMENTS[1].value,
-                  email_client_email: FORM_ELEMENTS[2].value,
-                  email_phone_number: FORM_ELEMENTS[3].value,
-                  email_city: FORM_ELEMENTS[4].value,
-                  email_street: FORM_ELEMENTS[5].value,
-                  email_zip_code: FORM_ELEMENTS[6].value,
-                  email_service:
-                    FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex]
-                      .text,
-                  email_painting_type: checkBoxesType,
-                  email_specifications: FORM_ELEMENTS[8].value,
-                  email_type_of_colors: PAINTING_FORM_ELEMENTS[2].value,
-                  email_type_of_sheen_finisher:
-                    PAINTING_FORM_ELEMENTS[3].options[
-                      PAINTING_FORM_ELEMENTS[3].selectedIndex
-                    ].text,
-                  email_comments_additional_details:
-                    commentsAdditionalDetailsText,
-                };
-                console.table(EMAIL_JS_TEMPLATE_PARAMS);
-
-                emailjs
-                  .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
-                  .then((res) => {
-                    console.log("Email sent successfully: " + res);
-
-                    sentSuccess = true;
-
-                    DeclareStorageVariable("session", "Submission Sent", true);
-
-                    setTimeout(() => {
-                      if (sentSuccess) {
-                        router.reload();
-                      }
-                    }, 300);
-                  })
-                  .catch((error) => {
-                    console.error("Error sending email: " + error);
-                  });
-              } else {
-                nonSpaceAsFirstCharacter = false;
-
-                if (SPACE_FIRST_NAME) {
-                  console.log("Space as first character: First Name");
-                }
-                if (SPACE_LAST_NAME) {
-                  console.log("Space as first character: Last Name");
-                }
-                if (SPACE_EMAIL) {
-                  console.log("Space as first character: Email");
-                }
-                if (SPACE_PHONE_NUMBER) {
-                  console.log("Space as first character: Phone Number");
-                }
-                if (SPACE_CITY) {
-                  console.log("Space as first character: City");
-                }
-                if (SPACE_STREET) {
-                  console.log("Space as first character: Street");
-                }
-                if (SPACE_ZIP) {
-                  console.log("Space as first character: ZIP Code");
-                }
-                if (SPACE_SPECIFICATIONS) {
-                  console.log("Space as first character: Specifications");
-                }
-                if (SPACE_COLOR_TYPES) {
-                  console.log("Space as first character: Type of colors");
-                }
+            setTimeout(() => {
+              if (sentSuccess) {
+                router.reload();
               }
-            }
-          }
-        }
+            }, 300);
+          })
+          .catch((error) => {
+            console.error("Error sending email: " + error);
+          });
       }
     }
 
@@ -505,75 +559,207 @@ export const IndexContact = () => {
       let rowFourPassed = false;
       let rowFivePassed = false;
 
-      // Validation for Row One
-      if (FORM_ELEMENTS[0].value !== "" && FORM_ELEMENTS[1].value !== "") {
-        rowOnePassed = true;
+      // Checking if there are no spaces as the first character
+      // (Assuming CheckForSpaceInFirstCharacter is a function that returns true if there is a space as the first character)
+      const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[0]);
+      const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[1]);
+      const SPACE_EMAIL = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[2]);
+      const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
+        FORM_ELEMENTS[3]
+      );
+      const SPACE_CITY = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[4]);
+      const SPACE_STREET = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[5]);
+      const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
+      const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
+        FORM_ELEMENTS[8]
+      );
 
+      //! Row 1
+      const FN_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[0],
+        SPACE_FIRST_NAME
+      );
+      const LN_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[1],
+        SPACE_LAST_NAME
+      );
+
+      if (!FN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[0].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[0].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[0].classList.remove("shake-element");
+        }, 500);
+      }
+      if (FN_EMPTY_OR_SPACE_VALUE_CHECKER) {
         resetBorderColor("input", FORM_ELEMENTS[0]);
+      }
+
+      if (!LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[1].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[1].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[1].classList.remove("shake-element");
+        }, 500);
+      }
+      if (LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
         resetBorderColor("input", FORM_ELEMENTS[1]);
-      } else {
-        rowOnePassed = false;
-        console.log("Row One failed");
-
-        setBorderColor("input", FORM_ELEMENTS[0]);
-        setBorderColor("input", FORM_ELEMENTS[1]);
       }
 
-      // Validation for Row Two
-      if (FORM_ELEMENTS[2].value !== "" && FORM_ELEMENTS[3].value !== "") {
-        rowTwoPassed = true;
+      if (FN_EMPTY_OR_SPACE_VALUE_CHECKER && LN_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        rowOnePassed = true;
+      }
 
+      //! Row 2
+      const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
+      const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
+      const EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[2],
+        SPACE_EMAIL
+      );
+      const PHONE_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[3],
+        SPACE_PHONE_NUMBER
+      );
+
+      if (!EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_EMAIL) {
+        FORM_ELEMENTS[2].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[2].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[2].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_EMAIL) {
         resetBorderColor("input", FORM_ELEMENTS[2]);
-        resetBorderColor("input", FORM_ELEMENTS[3]);
-      } else {
-        rowTwoPassed = false;
-        console.log("Row Two failed");
-
-        setBorderColor("input", FORM_ELEMENTS[2]);
-        setBorderColor("input", FORM_ELEMENTS[3]);
       }
 
-      // Validation for Row Three
+      if (!PHONE_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_PHONE_NUMBER) {
+        FORM_ELEMENTS[3].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[3].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[3].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (PHONE_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_PHONE_NUMBER) {
+        resetBorderColor("input", FORM_ELEMENTS[3]);
+      }
+
       if (
-        FORM_ELEMENTS[4].value !== "" &&
-        FORM_ELEMENTS[5].value !== "" &&
-        FORM_ELEMENTS[6].value !== ""
+        EMAIL_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_EMAIL &&
+        PHONE_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_PHONE_NUMBER
+      ) {
+        rowTwoPassed = true;
+      }
+
+      //! Row 3
+      const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+      const CITY_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[4],
+        SPACE_CITY
+      );
+      const STREET_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[5],
+        SPACE_STREET
+      );
+      const ZIP_EMPTY_OR_SPACE_VALUE_CHECKER = checkEmptyOrSpaceValue(
+        FORM_ELEMENTS[6],
+        SPACE_ZIP
+      );
+      if (!CITY_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[4].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[4].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[4].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (CITY_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[4]);
+      }
+
+      if (!STREET_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[5].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[5].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[5].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (STREET_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[5]);
+      }
+
+      if (!ZIP_EMPTY_OR_SPACE_VALUE_CHECKER || !CHECK_ZIP) {
+        FORM_ELEMENTS[6].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[6].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[6].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (ZIP_EMPTY_OR_SPACE_VALUE_CHECKER && CHECK_ZIP) {
+        resetBorderColor("input", FORM_ELEMENTS[6]);
+      }
+
+      if (
+        CITY_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        STREET_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        ZIP_EMPTY_OR_SPACE_VALUE_CHECKER &&
+        CHECK_ZIP
       ) {
         rowThreePassed = true;
-
-        resetBorderColor("input", FORM_ELEMENTS[4]);
-        resetBorderColor("input", FORM_ELEMENTS[5]);
-        resetBorderColor("input", FORM_ELEMENTS[6]);
-      } else {
-        rowThreePassed = false;
-        console.log("Row Three failed");
-
-        setBorderColor("input", FORM_ELEMENTS[4]);
-        setBorderColor("input", FORM_ELEMENTS[5]);
-        setBorderColor("input", FORM_ELEMENTS[6]);
       }
 
-      // Validation for Row Four
-      if (FORM_ELEMENTS[7].selectedIndex !== 0) {
-        rowFourPassed = true;
+      //! Row 4
+      if (FORM_ELEMENTS[7].selectedIndex == 0) {
+        FORM_ELEMENTS[7].style.borderColor = "red";
 
+        // Adding shake animation
+        FORM_ELEMENTS[7].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[7].classList.remove("shake-element");
+        }, 500);
+      } else {
         resetBorderColor("select", FORM_ELEMENTS[7]);
-      } else {
-        rowFourPassed = false;
-        console.log("Row Four failed");
-
-        setBorderColor("select", FORM_ELEMENTS[7]);
+        rowFourPassed = true;
       }
 
-      // Validation for Row Five
-      if (FORM_ELEMENTS[8].value !== "") {
-        rowFivePassed = true;
-        resetBorderColor("input", FORM_ELEMENTS[8]);
-      } else {
-        rowFivePassed = false;
-        console.log("Row Five failed");
+      //! Row 5
+      const SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER =
+        checkEmptyOrSpaceValue(FORM_ELEMENTS[8], SPACE_SPECIFICATIONS);
 
-        setBorderColor("input", FORM_ELEMENTS[8]);
+      if (!SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        FORM_ELEMENTS[8].style.borderColor = "red";
+
+        // Adding shake animation
+        FORM_ELEMENTS[8].classList.add("shake-element");
+        setTimeout(() => {
+          FORM_ELEMENTS[8].classList.remove("shake-element");
+        }, 500);
+      }
+
+      if (SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER) {
+        resetBorderColor("input", FORM_ELEMENTS[8]);
+
+        rowFivePassed = true;
       }
 
       // Setting message for empty Comments/Additional Details
@@ -592,117 +778,50 @@ export const IndexContact = () => {
         rowFourPassed &&
         rowFivePassed
       ) {
-        nonEmptyInputs = true;
+        // Creating an object with the form data
+        const EMAIL_JS_TEMPLATE_PARAMS = {
+          email_company_name: COMPANY_NAME,
+          email_subject:
+            FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+          email_first_name: FORM_ELEMENTS[0].value,
+          email_last_name: FORM_ELEMENTS[1].value,
+          email_client_email: FORM_ELEMENTS[2].value,
+          email_phone_number: FORM_ELEMENTS[3].value,
+          email_city: FORM_ELEMENTS[4].value,
+          email_street: FORM_ELEMENTS[5].value,
+          email_zip_code: FORM_ELEMENTS[6].value,
+          email_service:
+            FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
+          email_specifications: FORM_ELEMENTS[8].value,
+          email_comments_additional_details: commentsAdditionalDetailsText,
+        };
 
-        // Checking if some inputs are valid
-        const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
-        const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
-        const CHECK_ZIP = CheckValidZip(FORM_ELEMENTS[6]);
+        console.table(EMAIL_JS_TEMPLATE_PARAMS);
 
-        if (CHECK_PHONE_NUMBER && CHECK_EMAIL && CHECK_ZIP) {
-          validPhoneNumber = true;
-          validEmail = true;
-          validZip = true;
+        // DeclareStorageVariable("session", "Submission Sent", true);
 
-          // Checking if there are no spaces as the first character
-          // (Assuming CheckForSpaceInFirstCharacter is a function that returns true if there is a space as the first character)
-          const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(
-            FORM_ELEMENTS[0]
-          );
-          const SPACE_LAST_NAME = CheckForSpaceInFirstCharacter(
-            FORM_ELEMENTS[1]
-          );
-          const SPACE_EMAIL = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[2]);
-          const SPACE_PHONE_NUMBER = CheckForSpaceInFirstCharacter(
-            FORM_ELEMENTS[3]
-          );
-          const SPACE_CITY = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[4]);
-          const SPACE_STREET = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[5]);
-          const SPACE_ZIP = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[6]);
-          const SPACE_SPECIFICATIONS = CheckForSpaceInFirstCharacter(
-            FORM_ELEMENTS[8]
-          );
+        // setTimeout(() => {
+        //   router.reload();
+        // }, 300);
 
-          if (
-            !SPACE_FIRST_NAME &&
-            !SPACE_LAST_NAME &&
-            !SPACE_EMAIL &&
-            !SPACE_PHONE_NUMBER &&
-            !SPACE_CITY &&
-            !SPACE_STREET &&
-            !SPACE_ZIP &&
-            !SPACE_SPECIFICATIONS
-          ) {
-            nonSpaceAsFirstCharacter = true;
+        emailjs
+          .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
+          .then((res) => {
+            console.log("Email sent successfully: " + res);
 
-            // Creating an object with the form data
-            const EMAIL_JS_TEMPLATE_PARAMS = {
-              email_company_name: COMPANY_NAME,
-              email_subject:
-                FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
-              email_first_name: FORM_ELEMENTS[0].value,
-              email_last_name: FORM_ELEMENTS[1].value,
-              email_client_email: FORM_ELEMENTS[2].value,
-              email_phone_number: FORM_ELEMENTS[3].value,
-              email_city: FORM_ELEMENTS[4].value,
-              email_street: FORM_ELEMENTS[5].value,
-              email_zip_code: FORM_ELEMENTS[6].value,
-              email_service:
-                FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
-              email_specifications: FORM_ELEMENTS[8].value,
-              email_comments_additional_details: commentsAdditionalDetailsText,
-            };
+            sentSuccess = true;
 
-            console.table(EMAIL_JS_TEMPLATE_PARAMS);
+            DeclareStorageVariable("session", "Submission Sent", true);
 
-            emailjs
-              .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
-              .then((res) => {
-                console.log("Email sent successfully: " + res);
-
-                sentSuccess = true;
-
-                DeclareStorageVariable("session", "Submission Sent", true);
-
-                setTimeout(() => {
-                  if (sentSuccess) {
-                    router.reload();
-                  }
-                }, 300);
-              })
-              .catch((error) => {
-                console.error("Error sending email: " + error);
-              });
-          } else {
-            nonSpaceAsFirstCharacter = false;
-
-            // Logging which input has a space as the first character
-            if (SPACE_FIRST_NAME) {
-              console.log("Space as first character: First Name");
-            }
-            if (SPACE_LAST_NAME) {
-              console.log("Space as first character: Last Name");
-            }
-            if (SPACE_EMAIL) {
-              console.log("Space as first character: Email");
-            }
-            if (SPACE_PHONE_NUMBER) {
-              console.log("Space as first character: Phone Number");
-            }
-            if (SPACE_CITY) {
-              console.log("Space as first character: City");
-            }
-            if (SPACE_STREET) {
-              console.log("Space as first character: Street");
-            }
-            if (SPACE_ZIP) {
-              console.log("Space as first character: ZIP Code");
-            }
-            if (SPACE_SPECIFICATIONS) {
-              console.log("Space as first character: Specifications");
-            }
-          }
-        }
+            setTimeout(() => {
+              if (sentSuccess) {
+                router.reload();
+              }
+            }, 300);
+          })
+          .catch((error) => {
+            console.error("Error sending email: " + error);
+          });
       }
     }
   };
@@ -755,6 +874,7 @@ export const IndexContact = () => {
               e.preventDefault();
               EmailSend();
             }}
+            noValidate
           >
             <div className={`${styles.index_contact_inner_form_inner}`}>
               <div
@@ -1102,6 +1222,7 @@ export const IndexContact = () => {
                       </label>
 
                       <textarea
+                        className="orientation-change-element half-second"
                         name="email_type_of_colors"
                         id="formTypeOfColors"
                       />
@@ -1118,7 +1239,10 @@ export const IndexContact = () => {
                         Type of Sheen/Finisher: <span>*</span>
                       </label>
 
-                      <select id="formTypeOfFinishers">
+                      <select
+                        id="formTypeOfFinishers"
+                        className="orientation-change-element half-second"
+                      >
                         {FINISHERS.map((finisher) => (
                           <option>{finisher}</option>
                         ))}
