@@ -1000,8 +1000,7 @@ export const IndexContact = () => {
                   >
                     <div className={`${styles.form_set_cnt}`}>
                       <label className="orientation-change-element half-second">
-                        Painting Type:
-                        <span>*</span>
+                        Painting Type: <span>*</span>
                       </label>
 
                       <div className={`${styles.painting_checkboxes}`}>
@@ -1075,6 +1074,7 @@ export const IndexContact = () => {
                         Specifications: <span>*</span>
                         <br />
                         <span className={`${styles.small_text}`}>
+                          {" "}
                           (Number of rooms, what rooms/sections)
                         </span>{" "}
                       </label>
