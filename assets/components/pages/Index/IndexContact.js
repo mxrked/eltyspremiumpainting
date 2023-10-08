@@ -195,6 +195,8 @@ export const IndexContact = () => {
       let rowSixPassed = false;
       let rowSevenPassed = false;
 
+      let checkBoxesType = "";
+
       // Checking if there are no spaces as the first character
       // (Assuming CheckForSpaceInFirstCharacter is a function that returns true if there is a space as the first character)
       const SPACE_FIRST_NAME = CheckForSpaceInFirstCharacter(FORM_ELEMENTS[0]);
@@ -419,7 +421,23 @@ export const IndexContact = () => {
           .getElementById("exteriorCheckboxLabel")
           .classList.remove("shake-element");
         rowFivePassed = true;
+
+        if (PAINTING_FORM_ELEMENTS[0].checked) {
+          checkBoxesType = "Interior";
+        }
+        if (PAINTING_FORM_ELEMENTS[1].checked) {
+          checkBoxesType = "Exterior";
+        }
       }
+
+      if (
+        PAINTING_FORM_ELEMENTS[0].checked &&
+        PAINTING_FORM_ELEMENTS[1].checked
+      ) {
+        checkBoxesType = "Interior & Exterior";
+      }
+
+      // console.log(checkBoxesType);
 
       //! Row 6
       const SPECIFICATIONS_EMPTY_OR_SPACE_VALUE_CHECKER =
