@@ -44,6 +44,57 @@
   background-color: #93329e;
 }
 
+.submission_success_message {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 450px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: pre-wrap;
+  background-color: rgb(244, 244, 244);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 600;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.218);
+}
+.submission_success_message button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.7;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.submission_success_message .submission_success_message_cnt {
+  display: block;
+  text-align: center;
+}
+.submission_success_message .submission_success_message_cnt .icon {
+  color: green;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.submission_success_message .submission_success_message_cnt span {
+  font-family: "Noto Sans Regular";
+  font-size: 18px;
+  display: block;
+}
+
 @media all and (max-width: 991px) {
   .back_to_top button {
     width: 35px;
