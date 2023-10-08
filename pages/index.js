@@ -17,6 +17,7 @@ import { NavTop } from "@/assets/components/global/Nav/Both/NavTop";
 import { DesktopNav } from "@/assets/components/global/Nav/Desktop/DesktopNav";
 import { MobileNav } from "@/assets/components/global/Nav/Mobile/MobileNav";
 import { BackToTop } from "@/assets/components/global/All/BackToTop";
+import { Footer } from "@/assets/components/global/Footer/Footer";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
@@ -138,6 +139,8 @@ export default function Home({ iconData, reviewsData, galleryData }) {
           <IndexContact />
         </FadeLeft>
       </main>
+
+      <Footer />
     </div>
   );
 }
