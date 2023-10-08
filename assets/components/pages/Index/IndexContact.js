@@ -74,6 +74,10 @@ export const IndexContact = () => {
       if (element.tagName === "SELECT") {
         element.selectedIndex = 0;
       }
+
+      if (element.classList.contains("shake-element")) {
+        element.classList.remove("shake-element");
+      }
     });
 
     // Hiding painting-rows
@@ -85,16 +89,34 @@ export const IndexContact = () => {
   const PUBLIC_KEY = "ENRk6ty7gZFAmYSCk";
   emailjs.init(PUBLIC_KEY);
 
+  let nonEmptyInputs = false;
+  let nonSpaceAsFirstCharacter = false;
+  let validEmail = false;
+  let validPhoneNumber = false;
+  let validZip = false;
+
   function setBorderColor(type, element) {
     if (type == "input") {
       if (element.value == "") {
         element.style.borderColor = "red";
+
+        // Adding shake animation
+        element.classList.add("shake-element");
+        setTimeout(() => {
+          element.classList.remove("shake-element");
+        }, 500);
       }
     }
 
     if (type == "select") {
       if (element.selectedIndex == 0) {
         element.style.borderColor = "red";
+
+        // Adding shake animation
+        element.classList.add("shake-element");
+        setTimeout(() => {
+          element.classList.remove("shake-element");
+        }, 500);
       }
     }
   }
@@ -135,15 +157,12 @@ export const IndexContact = () => {
       document.getElementById("formTypeOfColors"),
       document.getElementById("formTypeOfFinishers"),
     ];
+
     const COMPANY_NAME = "Elty's Premium Painting & Restoration LLC";
 
     // Variables to track validation
-    let checkBoxesType = "";
-    let nonEmptyInputs = false;
-    let nonSpaceAsFirstCharacter = false;
-    let validEmail = false;
-    let validPhoneNumber = false;
-    let validZip = false;
+    let checkBoxesType = ""; // This is what the message for the checkboxes will be on the email
+    let commentsAdditionalDetailsText = undefined;
     let sentSuccess = false;
 
     // Form type
@@ -262,6 +281,22 @@ export const IndexContact = () => {
         document.getElementById("interiorCheckboxLabel").style.color = "red";
         document.getElementById("exteriorCheckboxLabel").style.color = "red";
 
+        // Adding shake animation
+        document
+          .getElementById("interiorCheckboxLabel")
+          .classList.add("shake-element");
+        document
+          .getElementById("exteriorCheckboxLabel")
+          .classList.add("shake-element");
+        setTimeout(() => {
+          document
+            .getElementById("interiorCheckboxLabel")
+            .classList.remove("shake-element");
+          document
+            .getElementById("exteriorCheckboxLabel")
+            .classList.remove("shake-element");
+        }, 500);
+
         // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[0]);
         // setBorderColor("checkbox", PAINTING_FORM_ELEMENTS[1]);
       }
@@ -302,6 +337,14 @@ export const IndexContact = () => {
         setBorderColor("select", PAINTING_FORM_ELEMENTS[3]);
       }
 
+      // Setting message for empty Comments/Additional Details
+      if (FORM_ELEMENTS[9].value !== "") {
+        commentsAdditionalDetailsText = FORM_ELEMENTS[9].value;
+      } else {
+        commentsAdditionalDetailsText =
+          "The user did not add any comments or additional details.";
+      }
+
       // Validation for all rows
       if (
         rowOnePassed &&
@@ -312,6 +355,8 @@ export const IndexContact = () => {
         rowSixPassed &&
         rowSevenPassed
       ) {
+        nonEmptyInputs = true;
+
         // Checking if some inputs are valid
         const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
         const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
@@ -388,7 +433,8 @@ export const IndexContact = () => {
                     PAINTING_FORM_ELEMENTS[3].options[
                       PAINTING_FORM_ELEMENTS[3].selectedIndex
                     ].text,
-                  email_comments_additional_details: FORM_ELEMENTS[9].value,
+                  email_comments_additional_details:
+                    commentsAdditionalDetailsText,
                 };
                 console.table(EMAIL_JS_TEMPLATE_PARAMS);
 
@@ -530,6 +576,14 @@ export const IndexContact = () => {
         setBorderColor("input", FORM_ELEMENTS[8]);
       }
 
+      // Setting message for empty Comments/Additional Details
+      if (FORM_ELEMENTS[9].value !== "") {
+        commentsAdditionalDetailsText = FORM_ELEMENTS[9].value;
+      } else {
+        commentsAdditionalDetailsText =
+          "The user did not add any comments or additional details.";
+      }
+
       // If all validation checks pass
       if (
         rowOnePassed &&
@@ -538,6 +592,8 @@ export const IndexContact = () => {
         rowFourPassed &&
         rowFivePassed
       ) {
+        nonEmptyInputs = true;
+
         // Checking if some inputs are valid
         const CHECK_PHONE_NUMBER = CheckValidPhoneNumber(FORM_ELEMENTS[3]);
         const CHECK_EMAIL = CheckValidEmail(FORM_ELEMENTS[2]);
@@ -594,8 +650,10 @@ export const IndexContact = () => {
               email_service:
                 FORM_ELEMENTS[7].options[FORM_ELEMENTS[7].selectedIndex].text,
               email_specifications: FORM_ELEMENTS[8].value,
-              email_comments_additional_details: FORM_ELEMENTS[9].value,
+              email_comments_additional_details: commentsAdditionalDetailsText,
             };
+
+            console.table(EMAIL_JS_TEMPLATE_PARAMS);
 
             emailjs
               .send(SERVICE_ID, TEMPLATE_ID, EMAIL_JS_TEMPLATE_PARAMS)
@@ -615,8 +673,6 @@ export const IndexContact = () => {
               .catch((error) => {
                 console.error("Error sending email: " + error);
               });
-
-            console.table(EMAIL_JS_TEMPLATE_PARAMS);
           } else {
             nonSpaceAsFirstCharacter = false;
 
