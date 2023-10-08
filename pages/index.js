@@ -117,6 +117,8 @@ export default function Home({ iconData, reviewsData, galleryData }) {
   // Displaying the submission success message if sent successfully
   useEffect(() => {
     if (sessionStorage.getItem("Submission Sent")) {
+      document.getElementById("submissionSuccessMessage").style.display =
+        "flex";
       document
         .getElementById("submissionSuccessMessage")
         .querySelector("button").style.pointerEvents = "auto";
