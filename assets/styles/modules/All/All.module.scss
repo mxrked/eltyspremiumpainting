@@ -59,7 +59,7 @@
   width: 100%;
   max-width: 450px;
   height: 180px;
-  @include displayElement(flex, center, center);
+  @include displayElement(none, center, center);
   overflow: hidden;
   white-space: pre-wrap;
   background-color: rgb(244, 244, 244);

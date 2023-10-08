@@ -52,7 +52,7 @@
   width: 100%;
   max-width: 450px;
   height: 180px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   overflow: hidden;
