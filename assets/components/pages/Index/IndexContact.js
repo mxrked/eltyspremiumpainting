@@ -954,7 +954,7 @@ export const IndexContact = () => {
                       >
                         Phone Number: <span>*</span> <br />
                         <span className={`${styles.small_text}`}>
-                          (Ex: +1336....)
+                          (Ex: (123).......)
                         </span>{" "}
                       </label>
 
