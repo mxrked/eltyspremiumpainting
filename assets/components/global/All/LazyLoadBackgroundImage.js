@@ -3,7 +3,6 @@
  *  This is the Lazy Load Background Image
  *
  */
-
 import { useRef, useEffect } from "react";
 
 export const LazyLoadBackgroundImage = ({
@@ -17,7 +16,7 @@ export const LazyLoadBackgroundImage = ({
     const OPTIONS = {
       root: null, // Using the viewport as the root
       rootMargin: "0px", // Setting no margin
-      threshold: 0.1, // 10% intersection ratio
+      threshold: 0, // Set the threshold to 0 for instant loading
     };
 
     const handleIntersection = (entries, observer) => {
