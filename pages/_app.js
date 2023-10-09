@@ -134,24 +134,60 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     //TODO: THIS IS USED TO ENABLE/DISABLE THE FRAMER MOTION ANIMATIONS ON MOBILE DEVICES
     // ----------------------------------------------------
-    const DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES = true;
+    const TURN_OFF_FRAMER_MOTION_ON_MOBILE_DEVICES = true;
+    const TURN_OFF_FRAMER_MOTION_ON_DESKTOP = true;
     // ----------------------------------------------------
 
     // Checking to see if user is on desktop
     let onDesktop = true;
+    let onMobile = true;
     if (sessionStorage.getItem("Mobile Device")) {
       onDesktop = false;
+      onMobile = true;
+    }
+
+    if (sessionStorage.getItem("Desktop Device")) {
+      onDesktop = true;
+      onMobile = false;
     }
 
     const handleDisableCheck = () => {
-      if (!DETERMINE_FRAMER_MOTION_ON_MOBILE_DEVICES) {
-        return;
-      } else {
-        if (!onDesktop) {
+      // if (!TURN_OFF_FRAMER_MOTION_ON_MOBILE_DEVICES) {
+      //   return;
+      // } else {
+      //   if (!onDesktop) {
+      //     document.querySelectorAll(".fm-element").forEach((fix) => {
+      //       fix.classList.add("fm-mobile-fix");
+      //     });
+      //   }
+      // }
+
+      //! DESKTOP
+      if (TURN_OFF_FRAMER_MOTION_ON_DESKTOP) {
+        if (onDesktop && !onMobile) {
           document.querySelectorAll(".fm-element").forEach((fix) => {
             fix.classList.add("fm-mobile-fix");
           });
         }
+      }
+
+      //! MOBILE
+      if (TURN_OFF_FRAMER_MOTION_ON_MOBILE_DEVICES) {
+        if (!onDesktop && onMobile) {
+          document.querySelectorAll(".fm-element").forEach((fix) => {
+            fix.classList.add("fm-mobile-fix");
+          });
+        }
+      }
+
+      //! BOTH
+      if (
+        TURN_OFF_FRAMER_MOTION_ON_DESKTOP &&
+        TURN_OFF_FRAMER_MOTION_ON_MOBILE_DEVICES
+      ) {
+        document.querySelectorAll(".fm-element").forEach((fix) => {
+          fix.classList.add("fm-mobile-fix");
+        });
       }
     };
 
