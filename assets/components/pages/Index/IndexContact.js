@@ -121,6 +121,32 @@ export const IndexContact = () => {
   //   }
   // }
 
+  function tabPressChecking(checker, element, e) {
+    if (checker) {
+      if (e.keyCode === 9) {
+        if (element.value !== "") {
+          element.style.borderColor = "#635985";
+        } else {
+          element.style.borderColor = "red";
+        }
+
+        if (!checker) {
+          element.style.borderColor = "red";
+        } else {
+          element.style.borderColor = "#635985";
+        }
+      }
+    } else {
+      if (e.keyCode === 9) {
+        if (element.value !== "") {
+          element.style.borderColor = "#635985";
+        } else {
+          element.style.borderColor = "red";
+        }
+      }
+    }
+  }
+
   function resetBorderColor(type, element) {
     if (type == "input") {
       if (element.value !== "") {
@@ -886,6 +912,7 @@ export const IndexContact = () => {
 
         <div className={`${styles.index_contact_inner_form}`}>
           <form
+            autoComplete="off"
             data-form-type={"other-form"}
             id="contactForm"
             onSubmit={(e) => {
@@ -912,11 +939,35 @@ export const IndexContact = () => {
                         First Name: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"text"}
                         name="email_first_name"
                         id="formFirstName"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -931,11 +982,35 @@ export const IndexContact = () => {
                         Last Name: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"text"}
                         name="email_last_name"
                         id="formLastName"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -954,11 +1029,39 @@ export const IndexContact = () => {
                         Email: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"email"}
                         name="email_client_email"
                         id="formEmail"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          const CHECKER = CheckValidEmail(e.currentTarget);
+
+                          tabPressChecking(CHECKER, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          const CHECKER = CheckValidEmail(e.currentTarget);
+
+                          if (!CHECKER) {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+
+                          if (e.currentTarget.value !== "" && CHECKER) {
+                            e.currentTarget.style.borderColor = "#635985";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -976,11 +1079,43 @@ export const IndexContact = () => {
                         </span>{" "}
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"tel"}
                         name="email_phone_number"
                         id="formPhone"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          const CHECKER = CheckValidPhoneNumber(
+                            e.currentTarget
+                          );
+
+                          tabPressChecking(CHECKER, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          const CHECKER = CheckValidPhoneNumber(
+                            e.currentTarget
+                          );
+
+                          if (!CHECKER) {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+
+                          if (e.currentTarget.value !== "" && CHECKER) {
+                            e.currentTarget.style.borderColor = "#635985";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -999,11 +1134,35 @@ export const IndexContact = () => {
                         City: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"text"}
                         name="email_city"
                         id="formCity"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -1018,11 +1177,35 @@ export const IndexContact = () => {
                         Street: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"text"}
                         name="email_street"
                         id="formStreet"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -1037,11 +1220,43 @@ export const IndexContact = () => {
                         ZIP Code: <span>*</span>
                       </label>
 
-                      <input
+                      <textarea
+                        data-gramm="false"
                         type={"text"}
                         name="email_zip_code"
                         id="formZip"
-                        className="orientation-change-element half-second"
+                        className={`${styles.input} orientation-change-element half-second`}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\n/g,
+                            ""
+                          );
+                        }}
+                        onKeyDown={(e) => {
+                          const CHECKER = CheckValidZip(e.currentTarget);
+
+                          tabPressChecking(CHECKER, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          const CHECKER = CheckValidPhoneNumber(
+                            e.currentTarget
+                          );
+
+                          if (!CHECKER) {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+
+                          if (e.currentTarget.value !== "" && CHECKER) {
+                            e.currentTarget.style.borderColor = "#635985";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -1145,14 +1360,11 @@ export const IndexContact = () => {
                         <div className={`${styles.checkbox}`}>
                           <input
                             onChange={(e) => {
-                              // const INTERIOR_ROW = document.querySelector(
-                              //   ".painting-interior-row"
-                              // );
-                              // const EXTERIOR_ROW = document.querySelector(
-                              //   ".painting-exterior-row"
-                              // );
-                              // INTERIOR_ROW.style.display = "flex";
-                              // EXTERIOR_ROW.style.display = "none";
+                              if (e.currentTarget.checked) {
+                                document.getElementById(
+                                  "interiorCheckboxLabel"
+                                ).style.color = "white";
+                              }
                             }}
                             type={"checkbox"}
                             id="interiorCheckbox"
@@ -1171,14 +1383,11 @@ export const IndexContact = () => {
                         <div className={`${styles.checkbox}`}>
                           <input
                             onChange={(e) => {
-                              // const INTERIOR_ROW = document.querySelector(
-                              //   ".painting-interior-row"
-                              // );
-                              // const EXTERIOR_ROW = document.querySelector(
-                              //   ".painting-exterior-row"
-                              // );
-                              // INTERIOR_ROW.style.display = "none";
-                              // EXTERIOR_ROW.style.display = "flex";
+                              if (e.currentTarget.checked) {
+                                document.getElementById(
+                                  "exteriorCheckboxLabel"
+                                ).style.color = "white";
+                              }
                             }}
                             type={"checkbox"}
                             id="exteriorCheckbox"
@@ -1218,9 +1427,27 @@ export const IndexContact = () => {
                       </label>
 
                       <textarea
+                        data-gramm="false"
                         id="formSpecifications"
                         name="email_specifications"
                         className="orientation-change-element half-second"
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -1240,9 +1467,27 @@ export const IndexContact = () => {
                       </label>
 
                       <textarea
+                        data-gramm="false"
                         className="orientation-change-element half-second"
                         name="email_type_of_colors"
                         id="formTypeOfColors"
+                        onKeyDown={(e) => {
+                          tabPressChecking(undefined, e.currentTarget, e);
+                        }}
+                        onBlur={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
+                        onChange={(e) => {
+                          if (e.currentTarget.value !== "") {
+                            e.currentTarget.style.borderColor = "#635985";
+                          } else {
+                            e.currentTarget.style.borderColor = "red";
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -1283,6 +1528,7 @@ export const IndexContact = () => {
                       </label>
 
                       <textarea
+                        data-gramm="false"
                         id="formCommentsDetails"
                         name="email_comments_additional_details"
                       />
