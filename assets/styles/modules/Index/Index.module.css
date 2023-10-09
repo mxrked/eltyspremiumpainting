@@ -759,14 +759,21 @@
   font-size: 16px;
 }
 .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt input,
-.index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input {
+.index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt .input,
+.index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt input,
+.index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt .input {
+  resize: none;
   height: 35px;
   background-color: white;
+  padding: 0;
+  padding-top: 5px;
   padding-left: 8px;
   padding-right: 8px;
   color: #333333;
   font-family: "Noto Sans Regular";
   border: 2px solid #635985;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .double_row .index_contact_inner_form_inner_side .form_set_cnt select,
 .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner .index_contact_inner_form_inner_box .triple_row .index_contact_inner_form_inner_side .form_set_cnt select {
@@ -1058,7 +1065,7 @@
   }
   .index_contact {
     margin-top: 60px;
-    margin-bottom: 150px;
+    margin-bottom: 70px;
   }
   .index_contact .index_contact_inner {
     max-width: 800px;
@@ -1303,7 +1310,7 @@
   }
   .index_contact {
     margin-top: 0px;
-    margin-bottom: 130px;
+    margin-bottom: 40px;
   }
   .index_contact .index_contact_inner {
     max-width: 800px;
@@ -2031,7 +2038,7 @@
     padding-right: 0;
     padding-top: 45px;
     padding-bottom: 45px;
-    max-width: 510px;
+    max-width: 470px;
   }
   .index_contact .index_contact_inner .index_contact_inner_form form .index_contact_inner_form_inner {
     max-width: 90%;
