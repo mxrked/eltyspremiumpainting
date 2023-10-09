@@ -3,15 +3,26 @@
  *  This is the Index Top
  *
  */
+import { useEffect } from "react";
+
+import { FaArrowAltCircleDown } from "react-icons/fa";
 
 import { INDEX_TOP_BG } from "@/assets/cdns/CDNBgs";
 
 import { LazyLoadBackgroundImage } from "../../global/All/LazyLoadBackgroundImage";
 
 import styles from "../../../styles/modules/Index/Index.module.css";
-import { FaArrowAltCircleDown } from "react-icons/fa";
 
 export const IndexTop = () => {
+  const preloadImage = (url) => {
+    const img = new Image();
+    img.src = url;
+  };
+
+  useEffect(() => {
+    preloadImage(INDEX_TOP_BG);
+  }, [INDEX_TOP_BG]);
+
   return (
     <section id="indexTop" className={`${styles.index_top}`}>
       <LazyLoadBackgroundImage
