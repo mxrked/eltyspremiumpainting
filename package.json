@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "react-intersection-observer": "^9.5.2",
+    "react-lazy-load-image-component": "^1.6.0",
     "tls": "^0.0.1"
   },
   "devDependencies": {
