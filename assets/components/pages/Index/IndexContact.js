@@ -7,6 +7,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import emailjs from "@emailjs/browser";
 
 import { COMBO_2 } from "@/assets/cdns/CDNImgs";
@@ -875,9 +876,10 @@ export const IndexContact = () => {
       <div className={`${styles.index_contact_inner}`}>
         <div className={`${styles.index_contact_inner_top}`}>
           <div className={`${styles.index_contact_inner_top_img_holder}`}>
-            <img
-              data-src={COMBO_2}
-              className="lazyload"
+            <LazyLoadImage
+              // data-src={COMBO_2}
+              // className="lazyload"
+              src={COMBO_2}
               alt="Elty's Premium Painting & Restoration: Two workers working on the room of a building."
             />
           </div>

@@ -4,6 +4,8 @@
  *
  */
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
 
 import { YELP_LOGO, GOOGLE_REVIEWS_LOGO } from "@/assets/cdns/CDNImgs";
@@ -47,9 +49,12 @@ export const IndexReviews = (props) => {
                 href="https://www.yelp.com/biz/eltys-premium-painting-and-restoration-mount-airy"
                 target={"_blank"}
               >
-                <img
-                  data-src={YELP_LOGO}
-                  className="lazyload"
+                <LazyLoadImage
+                  // data-src={YELP_LOGO}
+                  // className="lazyload"
+                  src={YELP_LOGO}
+                  effect={"blur"}
+                  className={`${styles.logo_img}`}
                   alt={`Elty's Premium Painting & Restoration: Yelp's logo.`}
                 />
               </a>
@@ -59,9 +64,12 @@ export const IndexReviews = (props) => {
                 href="https://maps.app.goo.gl/DYcb3TaadfUGiMTL8"
                 target={"_blank"}
               >
-                <img
-                  data-src={GOOGLE_REVIEWS_LOGO}
-                  className="lazyload"
+                <LazyLoadImage
+                  // data-src={GOOGLE_REVIEWS_LOGO}
+                  // className="lazyload"
+                  src={GOOGLE_REVIEWS_LOGO}
+                  effect={"blur"}
+                  className={`${styles.logo_img}`}
                   alt={`Elty's Premium Painting & Restoration: Google Reviews logo.`}
                 />
               </a>
@@ -95,17 +103,21 @@ export const IndexReviews = (props) => {
                               className={`${styles.review_inner_top_side_cnt}`}
                             >
                               {review.reviewType === "Yelp" && (
-                                <img
-                                  data-src={review.reviewProfilePicture}
-                                  className="lazyload"
+                                <LazyLoadImage
+                                  // data-src={review.reviewProfilePicture}
+                                  // className="lazyload"
+                                  src={review.reviewProfilePicture}
+                                  className={`${styles.pfp_img}`}
                                   alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
                                 />
                               )}
 
                               {review.reviewType === "Google" && (
-                                <img
-                                  data-src={review.reviewProfilePicture}
-                                  className="lazyload"
+                                <LazyLoadImage
+                                  // data-src={review.reviewProfilePicture}
+                                  // className="lazyload"
+                                  src={review.reviewProfilePicture}
+                                  className={`${styles.pfp_img}`}
                                   alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
                                 />
                               )}
@@ -199,9 +211,11 @@ export const IndexReviews = (props) => {
                           href="https://www.yelp.com/biz/eltys-premium-painting-and-restoration-mount-airy"
                           target={"_blank"}
                         >
-                          <img
-                            data-src={YELP_LOGO}
-                            className="lazyload"
+                          <LazyLoadImage
+                            // data-src={YELP_LOGO}
+                            // className="lazyload"
+                            src={YELP_LOGO}
+                            className={`${styles.logo_img}`}
                             alt={`Elty's Premium Painting & Restoration: ${review.reviewType}'s logo.`}
                           />
                         </a>
@@ -214,9 +228,11 @@ export const IndexReviews = (props) => {
                           href="https://maps.app.goo.gl/DYcb3TaadfUGiMTL8"
                           target={"_blank"}
                         >
-                          <img
-                            data-src={GOOGLE_REVIEWS_LOGO}
-                            className="lazyload"
+                          <LazyLoadImage
+                            // data-src={GOOGLE_REVIEWS_LOGO}
+                            // className="lazyload"
+                            src={GOOGLE_REVIEWS_LOGO}
+                            className={`${styles.logo_img}`}
                             alt={`Elty's Premium Painting & Restoration: ${review.reviewType} Reviews logo.`}
                           />
                         </a>

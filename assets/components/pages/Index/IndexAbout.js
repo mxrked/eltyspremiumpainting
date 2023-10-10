@@ -4,6 +4,7 @@
  *
  */
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 
 import { COMBO_1 } from "@/assets/cdns/CDNImgs";
@@ -16,9 +17,10 @@ export const IndexAbout = () => {
       <div className={`${styles.index_about_inner}`}>
         <div className={`${styles.index_about_inner_top}`}>
           <div className={`${styles.index_about_inner_top_img_holder}`}>
-            <img
-              data-src={COMBO_1}
-              className="lazyload"
+            <LazyLoadImage
+              // data-src={COMBO_1}
+              // className="lazyload"
+              src={COMBO_1}
               alt="Elty's Premium Painting & Restoration: Paint roller and paint pan with paint splashes on sides."
             />
           </div>

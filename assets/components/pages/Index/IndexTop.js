@@ -35,7 +35,7 @@ export const IndexTop = () => {
 
       {/** <img data-src={INDEX_TOP_BG} className="lazyload" /> */}
 
-      <div className={`${styles.loading_flash}`} />
+      {/** <div className={`${styles.loading_flash}`} /> */}
 
       <div className={`${styles.index_top_overlay}`}>
         <div className={`${styles.index_top_overlay_cnt}`}>

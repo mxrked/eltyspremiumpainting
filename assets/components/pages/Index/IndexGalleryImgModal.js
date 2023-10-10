@@ -3,6 +3,8 @@
  *  This is the Index Gallery Img Modal
  *
  */
+
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FaTimes } from "react-icons/fa";
 
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
@@ -37,6 +39,7 @@ export const IndexGalleryImgModal = () => {
 
     // Set the source of the image to "#" effectively clearing it
     document.getElementById("indexGalleryImg").src = "#";
+    document.getElementById("indexGalleryImg").alt = "#";
 
     // Enable pointer events and vertical scrollbar on the body
     document.body.style.pointerEvents = "auto";
@@ -74,7 +77,7 @@ export const IndexGalleryImgModal = () => {
       <div
         className={`${styles.modal_img_holder} orientation-change-element half-second`}
       >
-        <img id="indexGalleryImg" src="#" alt="#" />
+        <LazyLoadImage id="indexGalleryImg" src="#" alt="#" />
       </div>
     </div>
   );

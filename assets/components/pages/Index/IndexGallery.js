@@ -7,6 +7,7 @@
 import { useState } from "react";
 
 import { BsZoomIn } from "react-icons/bs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { LazyLoadBackgroundImage } from "../../global/All/LazyLoadBackgroundImage";
 
@@ -54,7 +55,9 @@ export const IndexGallery = (props) => {
         </div>
 
         <div className={`${styles.index_gallery_main_inner}`}>
-          <div className={`${styles.index_gallery_main_inner_box} container-fluid`}>
+          <div
+            className={`${styles.index_gallery_main_inner_box} container-fluid`}
+          >
             <div className={`${styles.index_gallery_main_inner_row} row`}>
               {props.galleryData.slice(0, VISIBLE_ITEMS).map((item) => (
                 <div
@@ -63,10 +66,18 @@ export const IndexGallery = (props) => {
                 >
                   {item.galleryItem_Type === "img" ? (
                     <div className={`${styles.gallery_item_inner}`}>
+                      {/**
                       <LazyLoadBackgroundImage
                         image_url={item.galleryItem_Img}
                         image_alt={`Elty's Premium Painting & Restoration: ${item.galleryItem_ID} image.`}
                         style_className={styles.gallery_item_bg}
+                      />
+                      */}
+
+                      <LazyLoadImage
+                        src={item.galleryItem_Img}
+                        alt={`Elty's Premium Painting & Restoration: ${item.galleryItem_ID} image.`}
+                        className={styles.gallery_item_bg}
                       />
 
                       <button
