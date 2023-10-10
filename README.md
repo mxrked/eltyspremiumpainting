@@ -22,7 +22,7 @@ Demo: https://www.eltyspremiumpainting.com
 
 ## Started Developement - 9/26/2023
 
-## Ended Development - IN PROGRESS
+## Ended Development - 10/10/2023
 
 ## Status
 
