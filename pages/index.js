@@ -102,17 +102,17 @@ export async function getStaticProps() {
 export default function Home({ iconData, reviewsData, galleryData }) {
   const router = useRouter();
 
-  useEffect(() => {
-    console.log(iconData.favicon);
+  // useEffect(() => {
+  //   console.log(iconData.favicon);
 
-    reviewsData.forEach((review) => {
-      console.log(review);
-    });
+  //   reviewsData.forEach((review) => {
+  //     console.log(review);
+  //   });
 
-    galleryData.forEach((gallery) => {
-      console.log(gallery);
-    });
-  }, []);
+  //   galleryData.forEach((gallery) => {
+  //     console.log(gallery);
+  //   });
+  // }, []);
 
   // Displaying the submission success message if sent successfully
   useEffect(() => {
