@@ -31,6 +31,7 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
+import { IndexGalleryModal } from "@/assets/components/pages/Index/IndexGalleryModal";
 
 export async function getStaticProps() {
   try {
@@ -142,8 +143,11 @@ export default function Home({ iconData, reviewsData, galleryData }) {
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
       <BackToTop />
+      {/**
       <IndexGalleryImgModal />
       <IndexGalleryVideoModal />
+      */}
+
       <SubmissionSuccessMessage />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
@@ -159,7 +163,7 @@ export default function Home({ iconData, reviewsData, galleryData }) {
           <IndexReviews reviewsData={reviewsData} />
         </FadeLeft>
         <FadeRight threshold={0.5}>
-          <IndexGallery galleryData={galleryData} />
+          {/** */} <IndexGallery galleryData={galleryData} />
         </FadeRight>
         <FadeLeft threshold={0.5}>
           <IndexContact />
