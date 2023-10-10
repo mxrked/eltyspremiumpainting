@@ -6,6 +6,7 @@
 
 import { useEffect } from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { MdCopyright } from "react-icons/md";
 import { FaInstagram, FaFacebook, FaYelp } from "react-icons/fa";
 
@@ -31,9 +32,11 @@ export const Footer = () => {
                 className={`${styles.footer_top_inner_side} ${styles.footer_L} col-lg-5 col-md-5 col-sm-5 col-xs-12`}
               >
                 <div className={`${styles.footer_top_inner_side_cnt}`}>
-                  <img
-                    data-src={LOGO}
-                    className="lazyload orientation-change-element half-second"
+                  <LazyLoadImage
+                    // data-src={LOGO}
+                    // className="lazyload orientation-change-element half-second"
+                    src={LOGO}
+                    className="orientation-change-element half-second"
                     alt="Elty's Premium Painting & Restoration: Logo image."
                   />
                   <br />

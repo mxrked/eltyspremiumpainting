@@ -4,6 +4,8 @@
  *
  */
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { LOGO } from "@/assets/cdns/CDNImgs";
 
 import styles from "../../../../styles/modules/Nav/Nav.module.css";
@@ -19,9 +21,11 @@ export const DesktopNav = () => {
             >
               <div className={`${styles.desktop_nav_inner_side_cnt}`}>
                 <div className={`${styles.logo}`}>
-                  <img
-                    data-src={LOGO}
-                    className="lazyload orientation-change-element half-second"
+                  <LazyLoadImage
+                    // data-src={LOGO}
+                    // className="lazyload orientation-change-element half-second"
+                    src={LOGO}
+                    className="orientation-change-element half-second"
                     alt="Elty's Premium Painting & Restoration: Logo image."
                   />
                 </div>
