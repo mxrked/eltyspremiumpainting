@@ -4,6 +4,7 @@
  *
  */
 import { useRef, useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export const LazyLoadBackgroundImage = ({
   image_url,
@@ -74,17 +75,27 @@ export const LazyLoadBackgroundImage = ({
 
   return (
     <>
-      {IS_LOADING && <div className="loading-img"></div>}
+      <LazyLoadImage
+        src={image_url}
+        alt={image_alt}
+        className={`${style_className}`}
+        effect="blur"
+      />
+      {/** 
+
+      // Old Code
+      {/** {IS_LOADING && <div className="loading-img"></div>} */}
+      {/**  
       <div
         aria-label={image_alt}
         ref={CONTAINER_REF}
         className={`lazy-loaded-background ${style_className}`}
         style={{
-          /* You can add additional styling here if needed */
           width: "100%",
           height: "100%",
         }}
       ></div>
+      */}
     </>
   );
 };
