@@ -135,7 +135,7 @@ function MyApp({ Component, pageProps }) {
     //TODO: THIS IS USED TO ENABLE/DISABLE THE FRAMER MOTION ANIMATIONS ON MOBILE DEVICES
     // ----------------------------------------------------
     const TURN_OFF_FRAMER_MOTION_ON_MOBILE_DEVICES = true;
-    const TURN_OFF_FRAMER_MOTION_ON_DESKTOP = false;
+    const TURN_OFF_FRAMER_MOTION_ON_DESKTOP = true;
     // ----------------------------------------------------
 
     // Checking to see if user is on desktop
@@ -272,13 +272,17 @@ function MyApp({ Component, pageProps }) {
   //   });
   // }, []);
 
-  return (
+  {
+    /**
     <AnimatePresence mode="wait">
       <PageTransition>
         <Component {...pageProps} />
       </PageTransition>
     </AnimatePresence>
-  );
+  */
+  }
+
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
