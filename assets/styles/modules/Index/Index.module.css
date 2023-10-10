@@ -543,6 +543,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  margin-top: 90px;
 }
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
@@ -1337,12 +1338,13 @@
     max-height: 600px;
     top: 50%;
     left: 50%;
+    margin-top: 60px;
     transform: translate(-50%, -50%);
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 80%;
+    max-height: 80%;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: relative;
@@ -1679,6 +1681,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 10px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
@@ -2049,8 +2052,8 @@
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 80%;
+    max-height: 80%;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
@@ -2763,7 +2766,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 110px;
+    margin-top: 80px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
@@ -3478,12 +3481,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 10px;
+    margin-top: 90px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 60%;
+    max-height: 80%;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
@@ -3826,12 +3829,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 10px;
+    margin-top: 70px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 750px;
-    max-height: 750px;
+    max-width: 60%;
+    max-height: 80%;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
