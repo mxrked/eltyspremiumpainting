@@ -23,7 +23,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className={`${styles.footer}`}>
+    <footer className={`${styles.footer}`} id="footer">
       <div className={`${styles.footer_top}`}>
         <div className={`${styles.footer_top_inner}`}>
           <div className={`${styles.footer_top_inner_box} container-fluid`}>

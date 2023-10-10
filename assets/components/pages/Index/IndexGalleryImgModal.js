@@ -39,7 +39,6 @@ export const IndexGalleryImgModal = () => {
 
     // Set the source of the image to "#" effectively clearing it
     document.getElementById("indexGalleryImg").src = "#";
-    document.getElementById("indexGalleryImg").alt = "#";
 
     // Enable pointer events and vertical scrollbar on the body
     document.body.style.pointerEvents = "auto";
