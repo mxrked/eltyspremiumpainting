@@ -555,8 +555,9 @@
   width: 100%;
 }
 .index_gallery_modal .modal_img_holder {
-  max-width: 700px;
-  max-height: 700px;
+  max-width: 550px;
+  max-height: 550px;
+  margin-top: 30px;
 }
 .index_gallery_modal .modal_video_holder {
   max-width: 65%;
