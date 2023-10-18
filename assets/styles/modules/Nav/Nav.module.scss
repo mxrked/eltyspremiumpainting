@@ -184,7 +184,7 @@
 
             ul {
               width: 100%;
-              max-width: 550px;
+              max-width: 650px;
               font-family: "Poppins Bold";
               @include displayElement(flex, space-between, center);
 
@@ -1277,7 +1277,11 @@
           .desktop_nav_R {
             .desktop_nav_inner_side_cnt {
               ul {
-                max-width: 490px;
+                max-width: 550px;
+
+                li {
+                  font-size: clamp(17px, 19px, 19px);
+                }
               }
             }
           }
