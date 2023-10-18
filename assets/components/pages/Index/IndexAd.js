@@ -13,10 +13,14 @@ import styles from "../../../styles/modules/Index/Index.module.css";
 export const IndexAd = (props) => {
   const [DETECT_ADS, SET_DETECT_ADS] = useState("");
 
-  // Detecting if there are any ads on the page
+  // Determining if ads should be shown on the page
   useEffect(() => {
     if (props.adData[0]) {
-      SET_DETECT_ADS("true");
+      if (props.adData[0].adShow) {
+        SET_DETECT_ADS("true");
+      } else {
+        SET_DETECT_ADS("");
+      }
     } else {
       SET_DETECT_ADS("");
     }
