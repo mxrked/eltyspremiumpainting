@@ -22,16 +22,16 @@ import { SubmissionSuccessMessage } from "@/assets/components/global/All/Submiss
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
+import { IndexAd } from "@/assets/components/pages/Index/IndexAd";
 import { IndexReviews } from "@/assets/components/pages/Index/IndexReviews";
 import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
-import { IndexGalleryImgModal } from "@/assets/components/pages/Index/IndexGalleryImgModal";
-import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
+// import { IndexGalleryImgModal } from "@/assets/components/pages/Index/IndexGalleryImgModal";
+// import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { IndexGalleryModal } from "@/assets/components/pages/Index/IndexGalleryModal";
 
 export async function getStaticProps() {
   try {
@@ -160,14 +160,17 @@ export default function Home({ iconData, reviewsData, galleryData }) {
           <IndexAbout />
         </FadeRight>
         <FadeLeft threshold={0.5}>
-          <IndexReviews reviewsData={reviewsData} />
+          <IndexAd />
         </FadeLeft>
         <FadeRight threshold={0.5}>
-          {/** */} <IndexGallery galleryData={galleryData} />
+          <IndexReviews reviewsData={reviewsData} />
         </FadeRight>
         <FadeLeft threshold={0.5}>
-          <IndexContact />
+          {/** */} <IndexGallery galleryData={galleryData} />
         </FadeLeft>
+        <FadeRight threshold={0.5}>
+          <IndexContact />
+        </FadeRight>
       </main>
 
       <Footer />
