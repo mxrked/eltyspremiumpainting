@@ -751,6 +751,9 @@
   .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul {
     max-width: 470px;
   }
+  .desktop_nav .desktop_nav_inner .desktop_nav_inner_box .desktop_nav_inner_row .desktop_nav_R .desktop_nav_inner_side_cnt ul li {
+    font-size: 15px;
+  }
   .mobile_nav {
     display: none;
   }
