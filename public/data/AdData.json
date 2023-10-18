@@ -1,6 +1,7 @@
 [
   {
     "adID": "ad_1",
+    "adShow": true,
     "adText_A": "Special",
     "adText_B": "October/November Discount!",
     "adImg": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/index/november-2023.webp",
