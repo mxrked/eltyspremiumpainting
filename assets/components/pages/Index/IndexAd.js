@@ -37,10 +37,10 @@ export const IndexAd = (props) => {
                   className="orientation-change-element half-second"
                   id="indexAds_JUMPPOINT"
                 >
-                  {props.adData[0].adText_A}
+                  <span>{props.adData[0].adText_A}</span>
                   <span> </span>
                   <br />
-                  {props.adData[0].adText_B}
+                  <span>{props.adData[0].adText_B}</span>
                 </h3>
 
                 <LazyLoadImage
