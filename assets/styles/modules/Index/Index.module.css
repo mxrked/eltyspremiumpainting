@@ -63,6 +63,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+.index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+  font-family: "Poppins Bold";
+  font-size: 23px;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
 .index_top .index_top_overlay .index_top_overlay_cnt h1 {
   font-family: "Poppins Extra Bold";
   font-size: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
@@ -116,7 +123,7 @@
 
 .index_about {
   margin-top: 60px;
-  margin-bottom: 260px;
+  margin-bottom: 220px;
   overflow: hidden !important;
   white-space: pre-wrap;
 }
@@ -216,6 +223,34 @@
   }
 }
 
+.index_ad {
+  margin-bottom: 240px;
+  overflow: hidden !important;
+  white-space: pre-wrap;
+}
+.index_ad .index_ad_inner {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.index_ad .index_ad_inner .ad {
+  text-align: center;
+}
+.index_ad .index_ad_inner .ad h3 {
+  font-family: "Poppins Extra Bold";
+  font-size: clamp(3rem, 3vw, 3rem);
+  color: #333333;
+  margin-bottom: 40px;
+}
+.index_ad .index_ad_inner .ad img {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .index_reviews {
   margin-top: 60px;
   margin-bottom: 200px;
@@ -274,11 +309,29 @@
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
   height: 100%;
-  margin-bottom: 40px;
+  max-width: 48%;
+  max-height: 350px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+  scrollbar-color: rgba(197, 197, 197, 0.63) #93329e;
+  scrollbar-width: thin;
+  border: 2px solid rgba(0, 0, 0, 0.053);
+  /* Custom styling for the scrollbar track */
+  /* Custom styling for the scrollbar handle */
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(197, 197, 197, 0.63);
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review::-webkit-scrollbar-thumb {
+  background-color: #93329e;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
   background-color: white;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.109);
   height: 100%;
   overflow: hidden;
   white-space: pre-wrap;
@@ -288,7 +341,16 @@
   margin-right: auto;
   width: 100%;
   border-radius: 5px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_cnt {
+  height: 100%;
+  width: 100%;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
   padding-left: 30px;
@@ -379,17 +441,27 @@
   border-radius: 3px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
+  height: 100%;
   padding-left: 35px;
   padding-right: 35px;
   margin-bottom: 40px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
+  height: 100%;
   font-family: "Noto Sans Regular";
   font-size: 16px;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
   max-width: 75px;
   margin-left: 35px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder a {
+  display: inline-flex;
+  align-items: flex-end;
 }
 .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder img {
   width: 100%;
@@ -874,6 +946,9 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 900px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 20px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 60px;
     font-size: clamp(3rem, 3vw, 3rem);
@@ -906,6 +981,12 @@
   .index_about .index_about_inner .index_about_inner_text .index_about_inner_text_cnt button {
     height: 50px;
     font-size: 18px;
+  }
+  .index_ad .index_ad_inner .ad img {
+    max-width: 750px;
+  }
+  .index_ad .index_ad_inner .ad h3 {
+    font-size: clamp(2rem, 3vw, 3rem);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_top h3 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -967,6 +1048,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 800px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 50px;
     font-size: clamp(2rem, 2.5vw, 2.5rem);
@@ -1013,6 +1098,15 @@
     max-width: 190px;
     font-size: 17px;
   }
+  .index_ad {
+    margin-bottom: 150px;
+  }
+  .index_ad .index_ad_inner .ad img {
+    max-width: 520px;
+  }
+  .index_ad .index_ad_inner .ad h3 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
   .index_reviews {
     margin-bottom: 60px;
   }
@@ -1042,6 +1136,7 @@
     width: 100%;
     margin-bottom: 60px;
     height: 100%;
+    max-height: 100%;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -1171,6 +1266,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 800px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 35px;
     font-size: clamp(1.7rem, 2.1vw, 2.1rem);
@@ -1219,6 +1318,15 @@
     max-width: 180px;
     font-size: 16px;
   }
+  .index_ad {
+    margin-bottom: 120px;
+  }
+  .index_ad .index_ad_inner .ad img {
+    max-width: 450px;
+  }
+  .index_ad .index_ad_inner .ad h3 {
+    font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+  }
   .index_reviews {
     margin-bottom: 50px;
   }
@@ -1251,6 +1359,7 @@
     width: 100%;
     margin-bottom: 60px;
     height: 100%;
+    max-height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
     height: 100%;
@@ -1443,7 +1552,7 @@
 }
 @media all and (max-width: 419px) {
   .index_top {
-    height: 535px;
+    height: 595px;
   }
   .index_top .index_top_overlay {
     padding-left: 20px;
@@ -1451,6 +1560,10 @@
   }
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 800px;
+  }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 15px;
+    margin-bottom: 15px;
   }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 30px;
@@ -1507,6 +1620,15 @@
     max-width: 170px;
     font-size: 15px;
   }
+  .index_ad {
+    margin-bottom: 80px;
+  }
+  .index_ad .index_ad_inner .ad img {
+    max-width: 97%;
+  }
+  .index_ad .index_ad_inner .ad h3 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
   .index_reviews {
     margin-bottom: 30px;
   }
@@ -1556,6 +1678,7 @@
     width: 100%;
     margin-bottom: 40px;
     height: 100%;
+    max-height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
     padding-bottom: 15px;
@@ -1814,6 +1937,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 530px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 30px;
     font-size: clamp(1.3rem, 1.9vw, 1.9rem);
@@ -1871,6 +1998,18 @@
     max-width: 160px;
     font-size: 14px;
   }
+  .index_ad {
+    margin-bottom: 80px;
+  }
+  .index_ad .index_ad_inner .ad img {
+    max-width: 375px;
+  }
+  .index_ad .index_ad_inner .ad h3 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
+  .index_ad .index_ad_inner .ad h3 br {
+    display: none;
+  }
   .index_reviews {
     margin-bottom: 40px;
   }
@@ -1915,12 +2054,17 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 50%;
+    max-width: 46%;
     width: 100%;
     margin-bottom: 40px;
-    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 350px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
     max-width: 50%;
@@ -1928,12 +2072,16 @@
     margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
-    padding-bottom: 15px;
-    max-width: 92%;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
     height: 100%;
@@ -2181,6 +2329,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 650px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 40px;
     font-size: clamp(2rem, 3vw, 3rem);
@@ -2265,7 +2417,7 @@
     margin-bottom: 40px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
-    max-width: 550px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0px;
@@ -2276,20 +2428,34 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 100%;
+    max-width: 46%;
     width: 100%;
     margin-bottom: 40px;
-    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 350px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
-    padding-bottom: 15px;
-    max-width: 92%;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
     height: 100%;
@@ -2303,27 +2469,27 @@
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L .review_inner_top_side_cnt img {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85px;
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text {
     text-align: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text a .review_name {
-    font-size: 21px;
+    font-size: 17px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_location {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_date {
-    font-size: 14px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_yelp_rating ul li {
-    width: 23px;
-    height: 23px;
-    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
     margin-left: auto;
@@ -2337,11 +2503,11 @@
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
     text-align: center;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
-    font-size: 16px;
+    font-size: 14px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
     margin-left: auto;
@@ -2525,7 +2691,7 @@
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
   .index_top {
-    height: 385px;
+    height: 415px;
   }
   .index_top .index_top_overlay {
     padding-left: 20px;
@@ -2534,6 +2700,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 530px;
     padding-top: 10px;
+  }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 18px;
+    margin-bottom: 15px;
   }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 30px;
@@ -2622,7 +2792,7 @@
     margin-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
-    max-width: 550px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0px;
@@ -2633,66 +2803,72 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 100%;
+    max-width: 46%;
     width: 100%;
-    margin-bottom: 30px;
-    height: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 350px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
-    max-width: 100%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
+    padding-top: 5px;
     padding-bottom: 25px;
-    max-width: 92%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
-    height: 185px;
+    height: 100%;
     width: 100%;
     justify-content: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L {
-    max-width: 30%;
     padding-top: 30px;
     padding-bottom: 20px;
-    justify-content: flex-start;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L .review_inner_top_side_cnt img {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85px;
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R {
-    max-width: 70%;
-    padding-bottom: 0px;
-    justify-content: flex-start;
+    padding-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text {
-    text-align: left;
+    text-align: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text a .review_name {
-    font-size: 19px;
+    font-size: 17px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_location {
-    font-size: 14px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_date {
-    font-size: 14px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_yelp_rating ul li {
-    width: 21px;
-    height: 21px;
-    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 0;
     max-width: 120px;
     width: 100%;
     justify-content: space-evenly;
@@ -2701,17 +2877,16 @@
     margin-right: 0;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
-    text-align: left;
-    padding-left: 45px;
-    padding-right: 45px;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 40px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -2899,6 +3074,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 750px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 55px;
     font-size: clamp(3rem, 4vw, 4rem);
@@ -2984,7 +3163,7 @@
     margin-bottom: 40px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
-    max-width: 880px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0px;
@@ -2995,63 +3174,72 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 50%;
+    max-width: 46%;
     width: 100%;
-    margin-bottom: 30px;
-    height: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
+    padding-top: 5px;
     padding-bottom: 25px;
-    max-width: 92%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
-    height: 185px;
+    height: 100%;
     width: 100%;
     justify-content: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L {
-    max-width: 30%;
     padding-top: 30px;
     padding-bottom: 20px;
-    justify-content: flex-start;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L .review_inner_top_side_cnt img {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85px;
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R {
-    max-width: 70%;
-    padding-bottom: 0px;
-    justify-content: flex-start;
+    padding-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text {
-    text-align: left;
+    text-align: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text a .review_name {
-    font-size: 20px;
+    font-size: 17px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_location {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_date {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_yelp_rating ul li {
-    width: 21px;
-    height: 21px;
-    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 0;
     max-width: 120px;
     width: 100%;
     justify-content: space-evenly;
@@ -3060,17 +3248,16 @@
     margin-right: 0;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
-    text-align: left;
-    padding-left: 45px;
-    padding-right: 45px;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 40px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -3257,6 +3444,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 750px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 55px;
     font-size: clamp(3rem, 4vw, 4rem);
@@ -3342,7 +3533,7 @@
     margin-bottom: 40px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
-    max-width: 880px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0px;
@@ -3353,77 +3544,90 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 50%;
+    max-width: 46%;
     width: 100%;
-    margin-bottom: 30px;
-    height: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
     max-width: 50%;
-    margin-left: 0;
     margin-left: auto;
     margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
+    padding-top: 5px;
     padding-bottom: 25px;
-    max-width: 92%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
-    height: 185px;
+    height: 100%;
     width: 100%;
     justify-content: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L {
-    max-width: 30%;
     padding-top: 30px;
     padding-bottom: 20px;
-    justify-content: flex-start;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L .review_inner_top_side_cnt img {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85px;
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R {
-    max-width: 70%;
-    padding-bottom: 0px;
-    justify-content: flex-start;
+    padding-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text {
-    text-align: left;
+    text-align: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text a .review_name {
-    font-size: 20px;
+    font-size: 17px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_location {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_date {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_yelp_rating ul li {
-    width: 21px;
-    height: 21px;
-    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
-    text-align: left;
-    padding-left: 45px;
-    padding-right: 45px;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 40px;
   }
   .index_gallery {
     margin-bottom: 120px;
@@ -3613,6 +3817,10 @@
   .index_top .index_top_overlay .index_top_overlay_cnt {
     max-width: 750px;
   }
+  .index_top .index_top_overlay .index_top_overlay_cnt .company_name {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
   .index_top .index_top_overlay .index_top_overlay_cnt h1 {
     line-height: 60px;
     font-size: clamp(3rem, 3vw, 3rem);
@@ -3697,7 +3905,7 @@
     margin-bottom: 40px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews {
-    max-width: 980px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0px;
@@ -3708,74 +3916,90 @@
     padding-right: 0px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review {
-    max-width: 50%;
+    max-width: 46%;
     width: 100%;
-    margin-bottom: 30px;
-    height: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(222, 222, 222);
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review:last-child {
     max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner {
+    padding-top: 5px;
     padding-bottom: 25px;
-    max-width: 92%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top {
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
-    height: 185px;
+    height: 100%;
     width: 100%;
     justify-content: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L {
-    max-width: 30%;
     padding-top: 30px;
     padding-bottom: 20px;
-    justify-content: flex-start;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_L .review_inner_top_side_cnt img {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85px;
+    max-width: 75px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R {
-    max-width: 70%;
-    padding-bottom: 0px;
-    justify-content: flex-start;
+    padding-bottom: 30px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text {
-    text-align: left;
+    text-align: center;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text a .review_name {
-    font-size: 20px;
+    font-size: 17px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_location {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_top_text .review_date {
-    font-size: 15px;
+    font-size: 13px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_yelp_rating ul li {
-    width: 21px;
-    height: 21px;
-    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_top_R .review_inner_top_side_cnt .review_inner_google_rating ul li:last-child {
+    margin-right: 0;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text {
-    text-align: left;
-    padding-left: 45px;
-    padding-right: 45px;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .review_inner_text p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .index_reviews .index_reviews_inner .index_reviews_inner_reviews .index_reviews_inner_reviews_box .index_reviews_inner_reviews_row .review .review_inner .yelp_logo_holder {
     margin-left: auto;
     margin-right: auto;
-    margin-left: 40px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
