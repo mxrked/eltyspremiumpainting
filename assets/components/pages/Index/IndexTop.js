@@ -39,6 +39,12 @@ export const IndexTop = () => {
 
       <div className={`${styles.index_top_overlay}`}>
         <div className={`${styles.index_top_overlay_cnt}`}>
+          <span
+            className={`${styles.company_name} orientation-change-element half-second`}
+          >
+            Elty's Premium Painting & Restoration LLC.
+          </span>
+
           <h1
             id="indexTop_JUMPPOINT"
             className="orientation-change-element half-second"
