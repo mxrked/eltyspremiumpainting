@@ -23,6 +23,17 @@
   },
   {
     "reviewID": "review_0003",
+    "reviewType": "Yelp",
+    "reviewName": "Julie R.",
+    "reviewProfile": "https://www.yelp.com/user_details?userid=xu4jyL_dciQYb1Qs7FC3ZA",
+    "reviewProfilePicture": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
+    "reviewLocation": "Winston-Salem, NC",
+    "reviewDate": "10/13/2023",
+    "reviewRating": 5,
+    "reviewText": "I hired Elty's to remove popcorn ceilings and paint my living room, hallway, and foyer for a split level house. The crew did a fantastic job and my living area looks polished and new. I appreciated that they started early each morning and were able to complete the job in less than a week and a half. The pricing was competitive and Elty communicated with me regularly on updates. I'm so glad I was able to find a quality and reliable painting company. Thank you!"
+  },
+  {
+    "reviewID": "review_0004",
     "reviewType": "Google",
     "reviewName": "Maria Ruiz",
     "reviewProfile": "https://www.google.com/maps/contrib/110995469311719217576/reviews/@36.0151584,-80.3547279,15z/data=!4m3!8m2!3m1!1e1?hl=en-US&entry=ttu",
@@ -33,7 +44,7 @@
     "reviewText": "Very good quality of service"
   },
   {
-    "reviewID": "review_0004",
+    "reviewID": "review_0005",
     "reviewType": "Google",
     "reviewName": "Karen Sue Grano",
     "reviewProfile": "https://www.google.com/maps/contrib/101257506930356984134/reviews/@36.3993275,-81.3661717,9z/data=!4m3!8m2!3m1!1e1?hl=en-US&entry=ttu",
