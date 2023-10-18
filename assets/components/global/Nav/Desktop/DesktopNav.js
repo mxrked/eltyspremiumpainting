@@ -4,6 +4,8 @@
  *
  */
 
+import { useEffect, useState } from "react";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { LOGO } from "@/assets/cdns/CDNImgs";
@@ -11,6 +13,19 @@ import { LOGO } from "@/assets/cdns/CDNImgs";
 import styles from "../../../../styles/modules/Nav/Nav.module.css";
 
 export const DesktopNav = () => {
+  const [DETECT_ADS, SET_DETECT_ADS] = useState("");
+
+  // Detecting if there are any ads on the page
+  useEffect(() => {
+    setTimeout(() => {
+      if (document.getElementById("indexAds")) {
+        SET_DETECT_ADS("true");
+      } else {
+        SET_DETECT_ADS("");
+      }
+    }, 500);
+  }, [DETECT_ADS]);
+
   return (
     <nav id="desktopNav" className={`${styles.desktop_nav}`}>
       <div className={`${styles.desktop_nav_inner}`}>
@@ -62,6 +77,21 @@ export const DesktopNav = () => {
                   >
                     <span>About</span>
                   </li>
+                  {DETECT_ADS !== "" ? (
+                    <li
+                      className="orientation-change-element half-second"
+                      onClick={() => {
+                        if (document.getElementById("indexAds_JUMPPOINT")) {
+                          console.log("Scrolling to Index Ads");
+                          document
+                            .getElementById("indexAds_JUMPPOINT")
+                            .scrollIntoView();
+                        }
+                      }}
+                    >
+                      <span>Ads</span>
+                    </li>
+                  ) : null}
                   <li
                     className="orientation-change-element half-second"
                     onClick={() => {
