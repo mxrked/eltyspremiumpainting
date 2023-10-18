@@ -232,11 +232,17 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const ELEMENT_TYPES = [
       "h1",
+      "h1 span",
       "h2",
+      "h2 span",
       "h3",
+      "h3 span",
       "h4",
+      "h4 span",
       "h5",
+      "h5 span",
       "h6",
+      "h6 span",
       "p",
       "span",
       "a",
