@@ -42,7 +42,7 @@ export async function getStaticProps() {
     );
     const pageHeadDatafileContents = fs.readFileSync(
       pageHeadDatafilePath,
-      "utf8"
+      "utf-8"
     );
 
     // console.log("Icons Data: " + pageHeadDatafileContents);
@@ -57,7 +57,7 @@ export async function getStaticProps() {
     );
     const reviewsDataFileContents = fs.readFileSync(
       reviewsDataFilePath,
-      "utf8"
+      "utf-8"
     );
 
     // console.log("Reviews Data: " + reviewsDataFileContents);
@@ -72,7 +72,7 @@ export async function getStaticProps() {
     );
     const galleryDataFileContents = fs.readFileSync(
       galleryDataFilePath,
-      "utf8"
+      "utf-8"
     );
 
     // console.log("Reviews Data: " + galleryDataFileContents);
@@ -80,11 +80,22 @@ export async function getStaticProps() {
     const galleryData = JSON.parse(galleryDataFileContents);
     // console.log("Gallery Data: " + galleryData);
 
+    const adDataFilePath = path.join(
+      process.cwd(),
+      "public/data/",
+      "AdData.json"
+    );
+    const adDataFileContents = fs.readFileSync(adDataFilePath, "utf-8");
+
+    const adData = JSON.parse(adDataFileContents);
+    // console.log("Ad Data: " + adData)
+
     return {
       props: {
         iconData,
         reviewsData,
         galleryData,
+        adData,
       },
     };
   } catch (error) {
@@ -95,12 +106,13 @@ export async function getStaticProps() {
         iconData: null,
         reviewsData: null,
         galleryData: null,
+        adData: null,
       },
     };
   }
 }
 
-export default function Home({ iconData, reviewsData, galleryData }) {
+export default function Home({ iconData, reviewsData, galleryData, adData }) {
   const router = useRouter();
 
   // useEffect(() => {
@@ -160,7 +172,7 @@ export default function Home({ iconData, reviewsData, galleryData }) {
           <IndexAbout />
         </FadeRight>
         <FadeLeft threshold={0.5}>
-          <IndexAd />
+          <IndexAd adData={adData} />
         </FadeLeft>
         <FadeRight threshold={0.5}>
           <IndexReviews reviewsData={reviewsData} />
