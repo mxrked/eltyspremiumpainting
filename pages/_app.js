@@ -28,22 +28,43 @@ import "../assets/styles/tools/overrides/overrides.css";
 import "../assets/styles/tools/resets/resets.css";
 import "../assets/styles/tools/library_styles/nprogress/nprogress.css";
 
+//TODO: This is used to indicate if the client has not paid for monthly invoice
+let IS_PAYMENT_REQUIRED = false;
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [updateUI, setUpdateUI] = useState(0);
+  const [redirected, setRedirected] = useState(false);
+
+  useEffect(() => {
+    const handleRedirect = async () => {
+      if (IS_PAYMENT_REQUIRED && !redirected) {
+        // Set redirected to true to prevent further redirects
+        setRedirected(true);
+
+        // Redirect to the payment_required page without adding a new entry to the history stack
+        await router.push("/payment_required", undefined, {
+          shallow: true,
+          replace: true,
+        });
+      }
+    };
+
+    handleRedirect();
+  }, [IS_PAYMENT_REQUIRED, redirected, router]);
 
   //? GLOBALS
   //! NProgress Init
   useEffect(() => {
     // NProgress.done(); // Prevents NProgress from being stuck after page route completed
-
-    router.events.on("routeChangeStart", () => {
-      NProgress.start();
-    });
-
-    router.events.on("routeChangeComplete", () => {
-      NProgress.done();
-    });
+    if (!IS_PAYMENT_REQUIRED) {
+      router.events.on("routeChangeStart", () => {
+        NProgress.start();
+      });
+      router.events.on("routeChangeComplete", () => {
+        NProgress.done();
+      });
+    }
   }, [router, router.events]);
 
   //! Forget scroll position and force user back to top of page
