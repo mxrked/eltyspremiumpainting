@@ -228,6 +228,7 @@ export default function Home({
       <SubmissionSuccessMessage />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
+        {/**
         {ON_LOCAL_HOST && (
           <div
             id="websitesVisitCounter"
@@ -250,6 +251,7 @@ export default function Home({
             </span>
           </div>
         )}
+        */}
 
         <NavTop />
         <DesktopNav />
