@@ -1,5 +1,5 @@
 // React/Next Imports
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
@@ -34,7 +34,7 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   try {
     // Database activities
     const DB = await connectDatabase();
@@ -43,6 +43,7 @@ export async function getServerSideProps() {
       return {
         props: {
           TOTAL_NUMBER_OF_IPS: 0,
+          current_ip: null,
           iconData: null,
           reviewsData: null,
           galleryData: null,
@@ -52,6 +53,8 @@ export async function getServerSideProps() {
     }
 
     const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
+
+    const current_ip = req.socket.remoteAddress;
 
     const pageHeadDatafilePath = path.join(
       process.cwd(),
@@ -111,6 +114,7 @@ export async function getServerSideProps() {
     return {
       props: {
         TOTAL_NUMBER_OF_IPS,
+        current_ip,
         iconData,
         reviewsData,
         galleryData,
@@ -123,6 +127,7 @@ export async function getServerSideProps() {
     return {
       props: {
         TOTAL_NUMBER_OF_IPS: 0,
+        current_ip: null,
         iconData: null,
         reviewsData: null,
         galleryData: null,
@@ -134,12 +139,15 @@ export async function getServerSideProps() {
 
 export default function Home({
   TOTAL_NUMBER_OF_IPS,
+  current_ip,
   iconData,
   reviewsData,
   galleryData,
   adData,
 }) {
   const router = useRouter();
+
+  const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
 
   // useEffect(() => {
   //   console.log(iconData.favicon);
@@ -199,6 +207,15 @@ export default function Home({
     FETCH_DATA();
   }, []);
 
+  // Displaying the current website visits when on localhost
+  useEffect(() => {
+    const IPS = ["127.0.0.1", "::1"];
+
+    if (current_ip === IPS[0] || current_ip === IPS[1]) {
+      SET_ON_LOCALHOST(true);
+    }
+  }, []);
+
   return (
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
@@ -211,6 +228,29 @@ export default function Home({
       <SubmissionSuccessMessage />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
+        {ON_LOCAL_HOST && (
+          <div
+            id="websitesVisitCounter"
+            style={{
+              padding: "15px",
+              fontFamily: "sans-serif",
+              backgroundColor: "#e3e3e3",
+              textAlign: "center",
+            }}
+          >
+            <span>
+              Total number of website visits:{" "}
+              <span
+                id="websitesVisitCounterIndicator"
+                style={{ fontWeight: "bold", marginLeft: "10px" }}
+              >
+                {" "}
+                {TOTAL_NUMBER_OF_IPS}{" "}
+              </span>
+            </span>
+          </div>
+        )}
+
         <NavTop />
         <DesktopNav />
         <MobileNav />
