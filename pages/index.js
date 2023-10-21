@@ -195,6 +195,8 @@ export default function Home({
         console.error("Error fetching data: " + error);
       }
     };
+
+    FETCH_DATA();
   }, []);
 
   return (
