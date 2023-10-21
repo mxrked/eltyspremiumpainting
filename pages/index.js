@@ -7,6 +7,7 @@ import path from "path";
 // Library Imports
 
 // Data/Functions/Images Imports
+import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
 import { FadeLeft } from "@/assets/animations/components/FadeLeft";
 import { FadeRight } from "@/assets/animations/components/FadeRight";
 
@@ -33,8 +34,25 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
+    // Database activities
+    const DB = await connectDatabase();
+
+    if (!DB) {
+      return {
+        props: {
+          TOTAL_NUMBER_OF_IPS: 0,
+          iconData: null,
+          reviewsData: null,
+          galleryData: null,
+          adData: null,
+        },
+      };
+    }
+
+    const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
+
     const pageHeadDatafilePath = path.join(
       process.cwd(),
       "public/data/",
@@ -92,6 +110,7 @@ export async function getStaticProps() {
 
     return {
       props: {
+        TOTAL_NUMBER_OF_IPS,
         iconData,
         reviewsData,
         galleryData,
@@ -103,6 +122,7 @@ export async function getStaticProps() {
 
     return {
       props: {
+        TOTAL_NUMBER_OF_IPS: 0,
         iconData: null,
         reviewsData: null,
         galleryData: null,
@@ -112,7 +132,13 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ iconData, reviewsData, galleryData, adData }) {
+export default function Home({
+  TOTAL_NUMBER_OF_IPS,
+  iconData,
+  reviewsData,
+  galleryData,
+  adData,
+}) {
   const router = useRouter();
 
   // useEffect(() => {
@@ -127,7 +153,7 @@ export default function Home({ iconData, reviewsData, galleryData, adData }) {
   //   });
   // }, []);
 
-  // Displaying the submission success message if sent successfully
+  // Displaying the submission form success message if sent
   useEffect(() => {
     if (sessionStorage.getItem("Submission Sent")) {
       document.getElementById("submissionSuccessMessage").style.display =
@@ -149,6 +175,26 @@ export default function Home({ iconData, reviewsData, galleryData, adData }) {
           .querySelector("button").style.pointerEvents = "none";
       }, 7000);
     }
+  }, []);
+
+  //! DB Activities
+  // Checking if connected to DB
+  console.log("Total number of website visits: " + TOTAL_NUMBER_OF_IPS);
+
+  // Triggering getWebsiteVisitsByIps.js
+  useEffect(() => {
+    // Fetching the api route
+    const FETCH_DATA = async () => {
+      try {
+        const response = await fetch("/api/getWebsiteVisitsByIps");
+        const data = await response.json();
+
+        // Handle the data
+        console.log("API response: " + data);
+      } catch (error) {
+        console.error("Error fetching data: " + error);
+      }
+    };
   }, []);
 
   return (
