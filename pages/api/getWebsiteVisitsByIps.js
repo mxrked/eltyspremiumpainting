@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     }
 
     // Only proceed if not on localhost and the User-Agent is valid
-    if (!ON_LOCALHOST && isRealUserAgent) {
+    if (ON_LOCALHOST && isRealUserAgent) {
       // Insert the IP only if it doesn't exist
       await DB.collection("ips").findOneAndUpdate(
         { ip: CLIENT_IP },
