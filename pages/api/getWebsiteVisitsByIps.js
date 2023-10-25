@@ -12,6 +12,10 @@ export default async function handler(req, res) {
     // Checking if the IP is not localhost (127.0.0.1) and not ::1 (localhost as well)
     const ON_LOCALHOST = CLIENT_IP !== "127.0.0.1" && CLIENT_IP !== "::1";
 
+    // Check the User-Agent header to filter out unwanted traffic
+    const userAgent = req.headers["user-agent"];
+    const isRealUserAgent = checkUserAgent(userAgent);
+
     // Connect to the database
     const DB = await connectDatabase();
 
@@ -20,8 +24,8 @@ export default async function handler(req, res) {
       return;
     }
 
-    // Only proceed if not on localhost
-    if (ON_LOCALHOST) {
+    // Only proceed if not on localhost and the User-Agent is valid
+    if (!ON_LOCALHOST && isRealUserAgent) {
       // Insert the IP only if it doesn't exist
       await DB.collection("ips").findOneAndUpdate(
         { ip: CLIENT_IP },
@@ -67,4 +71,12 @@ export default async function handler(req, res) {
     console.error("Error handling request:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
+}
+
+function checkUserAgent(userAgent) {
+  // Define a list of valid user agents
+  const VALID_USER_AGENTS = ["Mozilla", "Chrome", "Safari", "Firefox", "Edge"];
+
+  // Check if the User-Agent matches any of the valid user agents
+  return VALID_USER_AGENTS.some((ua) => userAgent.includes(ua));
 }
