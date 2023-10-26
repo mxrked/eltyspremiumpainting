@@ -2,7 +2,10 @@
 import { connectDatabase } from "../../db/connections/websiteVisitsCounter_CONNECTION";
 // import fetch from "node-fetch";
 
-const EXCLUDED_SUBDOMAINS = ["compute-1.amazonaws.com"];
+const EXCLUDED_SUBDOMAINS = [
+  "compute-1.amazonaws.com",
+  "653a2ee2f2167a0008e737f6--graceful-lollipop-ce320b.netlify.app",
+];
 const GOOGLE_USER_AGENTS = [
   "Googlebot",
   "Googlebot-Image",
