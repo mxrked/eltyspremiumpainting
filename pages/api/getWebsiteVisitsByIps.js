@@ -75,10 +75,10 @@ export default async function handler(req, res) {
       return;
     }
 
-    // Remove entries with excluded subdomains
-    await DB.collection("ips").deleteMany({
-      host: { $in: EXCLUDED_SUBDOMAINS },
-    });
+    // // Remove entries with excluded subdomains
+    // await DB.collection("ips").deleteMany({
+    //   host: { $in: EXCLUDED_SUBDOMAINS },
+    // });
 
     // Retrieve all ips
     const allIPs_EC2 = await DB.collection("ips").distinct("ip");
@@ -138,6 +138,9 @@ export default async function handler(req, res) {
     // Removing the entries that have EXCLUDED_IPS values
     const EXCLUDED_IPS = ["127.0.0.1", "::1"];
     await DB.collection("ips").deleteMany({ ip: { $in: EXCLUDED_IPS } });
+    await DB.collection("ips").deleteMany({
+      host: { $in: EXCLUDED_SUBDOMAINS },
+    });
 
     const ALL_UNIQUE_IPS = await DB.collection("ips").find().toArray();
 
