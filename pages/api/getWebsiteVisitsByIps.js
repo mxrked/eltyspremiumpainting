@@ -2,10 +2,7 @@
 import { connectDatabase } from "../../db/connections/websiteVisitsCounter_CONNECTION";
 // import fetch from "node-fetch";
 
-const EXCLUDED_SUBDOMAINS = [
-  "compute-1.amazonaws.com",
-  // "653a2ee2f2167a0008e737f6--graceful-lollipop-ce320b.netlify.app",
-];
+const EXCLUDED_SUBDOMAINS = ["compute-1.amazonaws.com"];
 const GOOGLE_USER_AGENTS = [
   "Googlebot",
   "Googlebot-Image",
@@ -130,13 +127,20 @@ export default async function handler(req, res) {
       await DB.collection("ips").deleteMany({ _id: { $in: restDocs } });
     });
 
-    // Removing the entries that have EXCLUDED_IPS values
-    const EXCLUDED_IPS = ["127.0.0.1", "::1", "3.236.227.176", "54.172.255.46"];
-    await DB.collection("ips").deleteMany({ ip: { $in: EXCLUDED_IPS } });
+    // Removing the entries that have LOCALHOST_IPS values
+    const LOCALHOST_IPS = ["127.0.0.1", "::1"];
+    await DB.collection("ips").deleteMany({ ip: { $in: LOCALHOST_IPS } });
+
+    // Removing the entries that have NETLIFY_IPS values
+    // const NETLIFY_IPS = ["3.236.227.176", "54.172.255.46"];
+    // await DB.collection("ips").deleteMany({ ip: { $in: NETLIFY_IPS } });
 
     // Remove entries with excluded subdomains
     await DB.collection("ips").deleteMany({
       host: { $in: EXCLUDED_SUBDOMAINS },
+    });
+    await DB.collection("ips").deleteMany({
+      host: { $regex: /graceful-lollipop-ce320b\.netlify\.app/ },
     });
 
     const ALL_UNIQUE_IPS = await DB.collection("ips").find().toArray();
