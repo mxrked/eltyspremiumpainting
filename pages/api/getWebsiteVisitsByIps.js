@@ -4,7 +4,7 @@ import { connectDatabase } from "../../db/connections/websiteVisitsCounter_CONNE
 
 const EXCLUDED_SUBDOMAINS = [
   "compute-1.amazonaws.com",
-  "653a2ee2f2167a0008e737f6--graceful-lollipop-ce320b.netlify.app",
+  // "653a2ee2f2167a0008e737f6--graceful-lollipop-ce320b.netlify.app",
 ];
 const GOOGLE_USER_AGENTS = [
   "Googlebot",
@@ -75,11 +75,6 @@ export default async function handler(req, res) {
       return;
     }
 
-    // // Remove entries with excluded subdomains
-    // await DB.collection("ips").deleteMany({
-    //   host: { $in: EXCLUDED_SUBDOMAINS },
-    // });
-
     // Retrieve all ips
     const allIPs_EC2 = await DB.collection("ips").distinct("ip");
     const allIPs_GOOGLE = await DB.collection("ips").find().toArray();
@@ -136,8 +131,10 @@ export default async function handler(req, res) {
     });
 
     // Removing the entries that have EXCLUDED_IPS values
-    const EXCLUDED_IPS = ["127.0.0.1", "::1"];
+    const EXCLUDED_IPS = ["127.0.0.1", "::1", "3.236.227.176", "54.172.255.46"];
     await DB.collection("ips").deleteMany({ ip: { $in: EXCLUDED_IPS } });
+
+    // Remove entries with excluded subdomains
     await DB.collection("ips").deleteMany({
       host: { $in: EXCLUDED_SUBDOMAINS },
     });
