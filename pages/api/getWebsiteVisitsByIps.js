@@ -3,6 +3,7 @@ import { connectDatabase } from "../../db/connections/websiteVisitsCounter_CONNE
 // import fetch from "node-fetch";
 
 const EXCLUDED_SUBDOMAINS = ["compute-1.amazonaws.com"];
+const AZURE_IPS = ["40.77.167.0/24", "20.150.0.0/16", "40.90.0.0/16"];
 const GOOGLE_USER_AGENTS = [
   "Googlebot",
   "Googlebot-Image",
@@ -19,9 +20,15 @@ export default async function handler(req, res) {
     );
 
     console.log("awsIpRanges:", awsIpRanges); // Add this line for debugging
-    // Extract IP prefixes for EC2_INSTANCE_CONNECT service
+    // Extract IP prefixes for EC2_INSTANCE_CONNECT and AMAZON service
     const ec2InstanceConnectIps = awsIpRanges.prefixes
       .filter((entry) => entry.service === "EC2_INSTANCE_CONNECT")
+      .map((entry) => entry.ip_prefix);
+    const ec2Ips = awsIpRanges.prefixes
+      .filter((entry) => entry.service === "EC2")
+      .map((entry) => entry.ip_prefix);
+    const amazonIps = awsIpRanges.prefixes
+      .filter((entry) => entry.service === "AMAZON")
       .map((entry) => entry.ip_prefix);
 
     // Capture the client's IP address
@@ -33,11 +40,29 @@ export default async function handler(req, res) {
     // Checking if the IP is not localhost (127.0.0.1) and not ::1 (localhost as well)
     const ON_LOCALHOST = CLIENT_IP !== "127.0.0.1" && CLIENT_IP !== "::1";
 
-    // Check if the client's IP is in the list of EC2_INSTANCE_CONNECT IPs
+    // Check if the client's IP is in the list of EC2, EC2_INSTANCE_CONNECT and AMAZON IPs
+    if (ec2Ips.includes(CLIENT_IP)) {
+      // Handle traffic from EC2 IPs
+      res.json({
+        message: "EC2 traffic detected",
+        clientIP: CLIENT_IP,
+      });
+      return;
+    }
+
     if (ec2InstanceConnectIps.includes(CLIENT_IP)) {
       // Handle traffic from EC2_INSTANCE_CONNECT IPs
       res.json({
         message: "EC2_INSTANCE_CONNECT traffic detected",
+        clientIP: CLIENT_IP,
+      });
+      return;
+    }
+
+    if (amazonIps.includes(CLIENT_IP)) {
+      // Handle traffic from AMAZON IPs
+      res.json({
+        message: "AMAZON traffic detected",
         clientIP: CLIENT_IP,
       });
       return;
@@ -64,6 +89,20 @@ export default async function handler(req, res) {
       return;
     }
 
+    // Excluding Microsoft AZURE ips
+    const isAzureIP = AZURE_IPS.some((azureIP) =>
+      checkIsIPInRange(CLIENT_IP, azureIP)
+    );
+
+    if (isAzureIP) {
+      // Handle traffic from Microsoft Azure IPs
+      res.json({
+        message: "Microsoft Azure traffic detected",
+        clientIP: CLIENT_IP,
+      });
+      return;
+    }
+
     // Connect to the database
     const DB = await connectDatabase();
 
@@ -73,7 +112,7 @@ export default async function handler(req, res) {
     }
 
     // Retrieve all ips
-    const allIPs_EC2 = await DB.collection("ips").distinct("ip");
+    const allIPs = await DB.collection("ips").distinct("ip");
     const allIPs_GOOGLE = await DB.collection("ips").find().toArray();
 
     // Check each IP in the database to see if it's related to GoogleBot
@@ -81,9 +120,15 @@ export default async function handler(req, res) {
       return ipEntry.userAgent && isGoogleUserAgent(ipEntry.userAgent);
     });
 
-    // Check each ip against list of EC2_INSTANCE_CONNECT services
-    const ec2InstanceConnectIpsInDatabase = allIPs_EC2.filter((ip) =>
+    // Check each ip against list of EC2, EC2_INSTANCE_CONNECT and AMAZON services
+    const ec2IPsInDatabase = allIPs.filter((ip) =>
+      ec2Ips.some((prefix) => ip.startsWith(prefix))
+    );
+    const ec2InstanceConnectIpsInDatabase = allIPs.filter((ip) =>
       ec2InstanceConnectIps.some((prefix) => ip.startsWith(prefix))
+    );
+    const amazonIpsInDatabase = allIPs.filter((ip) =>
+      amazonIps.some((prefix) => ip.startsWith(prefix))
     );
 
     // Only proceed if not on localhost and the User-Agent is valid
@@ -143,12 +188,21 @@ export default async function handler(req, res) {
       host: { $regex: /graceful-lollipop-ce320b\.netlify\.app/ },
     });
 
+    // Removing entries that relate to Microsoft Azure
+    for (const ipInDatabase of allIPs) {
+      if (checkIsIPInAzureRange(ipInDatabase)) {
+        await DB.collection("ips").deleteMany({ ip: ipInDatabase });
+      }
+    }
+
     const ALL_UNIQUE_IPS = await DB.collection("ips").find().toArray();
 
     res.json({
       allUniqueIPs: ALL_UNIQUE_IPS,
-      ec2InstanceConnectIpsInDatabase,
-      googleBotIPs,
+      ec2Ips: ec2IPsInDatabase,
+      ec2InstanceConnectIps: ec2InstanceConnectIpsInDatabase,
+      amazonIps: amazonIpsInDatabase,
+      googleIps: googleBotIPs,
     });
   } catch (error) {
     console.error("Error handling request:", error);
@@ -172,4 +226,28 @@ function isGoogleUserAgent(userAgent) {
 function isExcludedSubdomain(host) {
   // Check if the host (domain) contains any excluded subdomains
   return EXCLUDED_SUBDOMAINS.some((subdomain) => host.endsWith(subdomain));
+}
+
+function checkIsIPInRange(ip, range) {
+  const [rangeIP, rangeCIDR] = range.split("/");
+  const rangeParts = rangeIP.split(".");
+  const ipParts = ip.split(".");
+  const mask = parseInt(rangeCIDR, 10);
+
+  for (let i = 0; i < mask / 8; i++) {
+    if (ipParts[i] !== rangeParts[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function checkIsIPInAzureRange(ip) {
+  for (const azureRange of AZURE_IPS) {
+    if (checkIsIPInRange(ip, azureRange)) {
+      return true;
+    }
+  }
+  return false;
 }
