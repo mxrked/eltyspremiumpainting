@@ -1520,10 +1520,16 @@
 
       .index_gallery_modal_inner_main {
         max-width: 800px;
-        max-height: 800px;
+        max-height: 600px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        img,
+        video {
+          max-width: 500px;
+          max-height: 500px;
+        }
 
         .navigation_buttons {
           position: relative;
@@ -1535,7 +1541,7 @@
       }
 
       .modal_description_holder {
-        margin-top: 180px;
+        margin-top: 190px;
         max-width: 500px;
       }
     }
@@ -1943,31 +1949,35 @@
 
       .index_gallery_modal_inner_main {
         max-width: 600px;
-        max-height: 600px;
+        max-height: 550px;
         top: 50%;
         left: 50%;
-        margin-top: 60px;
+        margin-top: 0px;
         transform: translate(-50%, -50%);
         // padding-left: 20px;
         // padding-right: 20px;
 
         img,
         video {
-          max-width: 80%;
-          max-height: 80%;
+          max-width: 400px;
+          max-height: 400px;
+          padding-left: 20px;
+          padding-right: 20px;
         }
 
         .navigation_buttons {
           position: relative;
           height: auto;
-          top: 100%;
+          top: 90%;
           justify-content: space-evenly;
           max-width: 200px;
         }
       }
 
       .modal_description_holder {
-        margin-top: 280px;
+        // margin-top: auto;
+        // margin-top: 50px;
+        top: 12%;
         max-width: 500px;
       }
     }
@@ -2460,7 +2470,7 @@
 
       .index_gallery_modal_inner_main {
         max-width: 600px;
-        max-height: 600px;
+        max-height: 550px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -2477,7 +2487,7 @@
         .navigation_buttons {
           position: relative;
           height: auto;
-          top: 90%;
+          top: 85%;
           transform: translate(-50%, -90%);
           justify-content: space-evenly;
           max-width: 200px;
@@ -2486,9 +2496,9 @@
 
       .modal_description_holder {
         position: absolute;
-        top: 51%;
+        top: 72%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -72%);
         max-width: 500px;
         padding-bottom: 50px;
         width: 100%;
@@ -3050,7 +3060,7 @@
       }
 
       .modal_description_holder {
-        margin-top: 30px;
+        margin-top: 10px;
         padding-bottom: 45px;
 
         p {
@@ -4368,11 +4378,11 @@
 
       .index_gallery_modal_inner_main {
         max-width: 900px;
-        max-height: 900px;
+        max-height: 700px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin-top: 80px;
+        margin-top: 0px;
         // padding-left: 20px;
         // padding-right: 20px;
 
@@ -4393,6 +4403,7 @@
       }
 
       .modal_description_holder {
+        margin-top: 30px;
       }
     }
   }
