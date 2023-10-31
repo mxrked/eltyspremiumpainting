@@ -581,11 +581,13 @@
   left: 0;
   background-color: white;
   z-index: 500;
+  overflow-y: auto;
 }
 .index_gallery_modal .index_gallery_modal_inner {
   position: absolute;
   width: 100%;
   height: 100%;
+  max-height: 1000px;
   max-width: 90%;
   top: 0;
   left: 50%;
@@ -610,12 +612,12 @@
   font-family: "Poppins Bold";
 }
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  margin-top: 90px;
+  margin-top: 50px;
 }
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
@@ -648,6 +650,26 @@
 }
 .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons button {
   color: #722180;
+}
+.index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+  position: relative;
+  max-width: 900px;
+  white-space: normal; /* Ensure normal whitespace handling */
+  word-wrap: break-word; /* Allow long words to break and wrap */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -30px;
+  padding-bottom: 90px;
+  z-index: 100;
+  font-family: "Noto Sans Medium";
+}
+.index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 30px;
+  font-size: 16px;
 }
 
 .index_contact {
@@ -1183,6 +1205,10 @@
     justify-content: space-evenly;
     max-width: 200px;
   }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 180px;
+    max-width: 500px;
+  }
   .index_contact {
     margin-top: 60px;
     margin-bottom: 70px;
@@ -1461,6 +1487,10 @@
     top: 100%;
     justify-content: space-evenly;
     max-width: 200px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 280px;
+    max-width: 500px;
   }
   .index_contact {
     margin-top: 0px;
@@ -1818,6 +1848,18 @@
     transform: translate(-50%, -90%);
     justify-content: space-evenly;
     max-width: 200px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    padding-bottom: 50px;
+    width: 100%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 14px;
   }
   .index_contact {
     margin-top: 90px;
@@ -2196,12 +2238,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 100px;
+    margin-top: 30px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 75%;
+    max-height: 75%;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
@@ -2210,6 +2252,13 @@
     transform: translate(-50%, -90%);
     justify-content: space-between;
     max-width: 95%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 30px;
+    padding-bottom: 45px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 15px;
   }
   .index_contact {
     margin-top: 80px;
@@ -2572,20 +2621,20 @@
     height: 40px;
     font-size: 17px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 110px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main {
     max-width: 900px;
-    max-height: 900px;
-    top: 50%;
+    max-height: 500px;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
     margin-top: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
+    max-height: 500px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
@@ -2593,10 +2642,16 @@
     top: 90%;
     transform: translate(-50%, -90%);
     justify-content: space-between;
-    max-width: 95%;
+    max-width: 100%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 290px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 17px;
   }
   .index_contact {
-    margin-top: 115px;
+    margin-top: 45px;
     margin-bottom: 90px;
   }
   .index_contact .index_contact_inner {
@@ -3336,32 +3391,38 @@
     padding-right: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .close_btn {
-    max-width: 80px;
-    height: 40px;
-    font-size: 17px;
+    max-width: 90px;
+    height: 50px;
+    font-size: 18px;
     position: relative;
-    margin-top: 90px;
+    margin-top: 110px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main {
     max-width: 900px;
-    max-height: 900px;
-    top: 50%;
+    max-height: 800px;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 10px;
+    transform: translate(-50%, -35%);
+    margin-top: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 650px;
-    max-height: 650px;
+    max-width: 550px;
+    max-height: 550px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
     height: 100%;
-    top: 100%;
-    transform: translate(-50%, -100%);
+    top: 90%;
+    transform: translate(-50%, -90%);
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 100%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 40px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 17px;
   }
   .index_contact {
     margin-top: 160px;
@@ -3721,32 +3782,38 @@
     padding-right: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .close_btn {
-    max-width: 80px;
-    height: 40px;
-    font-size: 17px;
+    max-width: 90px;
+    height: 50px;
+    font-size: 18px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 110px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main {
     max-width: 900px;
-    max-height: 900px;
-    top: 50%;
+    max-height: 800px;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 90px;
+    transform: translate(-50%, -35%);
+    margin-top: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 60%;
-    max-height: 80%;
+    max-width: 550px;
+    max-height: 550px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
     height: 100%;
-    top: 100%;
-    transform: translate(-50%, -100%);
+    top: 90%;
+    transform: translate(-50%, -90%);
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 100%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 40px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 17px;
   }
   .index_contact {
     margin-top: 150px;
@@ -4101,32 +4168,38 @@
     padding-right: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .close_btn {
-    max-width: 80px;
-    height: 40px;
-    font-size: 17px;
+    max-width: 90px;
+    height: 50px;
+    font-size: 18px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 110px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main {
     max-width: 900px;
-    max-height: 900px;
-    top: 50%;
+    max-height: 800px;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 70px;
+    transform: translate(-50%, -20%);
+    margin-top: 20px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main img,
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main video {
-    max-width: 60%;
-    max-height: 80%;
+    max-width: 590px;
+    max-height: 590px;
   }
   .index_gallery_modal .index_gallery_modal_inner .index_gallery_modal_inner_main .navigation_buttons {
     position: absolute;
     height: 100%;
-    top: 100%;
-    transform: translate(-50%, -100%);
+    top: 90%;
+    transform: translate(-50%, -90%);
     justify-content: space-between;
-    max-width: 90%;
+    max-width: 100%;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
+    margin-top: 40px;
+  }
+  .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
+    font-size: 18px;
   }
   .index_contact {
     margin-top: 150px;
