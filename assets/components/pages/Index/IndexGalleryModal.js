@@ -111,6 +111,18 @@ export const IndexGalleryModal = ({
             )}
           </div>
         </div>
+
+        {items[currentItemIndex].galleryItem_Description !== "" &&
+        items[currentItemIndex].galleryItem_Description !== null ? (
+          <div className={`${styles.modal_description_holder}`}>
+            <p
+              className="orientation-change-element half-second"
+              id="indexGalleryDesc"
+            >
+              {items[currentItemIndex].galleryItem_Description}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   ) : null;
