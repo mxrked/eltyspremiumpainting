@@ -166,5 +166,35 @@
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-8.webp",
     "galleryItem_Description": "Image of repainting of an exterior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_30",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-9.webp",
+    "galleryItem_Description": "Image of repainting of an exterior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_31",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-10.webp",
+    "galleryItem_Description": "Image of repainting of an exterior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_32",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-11.webp",
+    "galleryItem_Description": "Refresh your exterior house by painting your siding, shutters and eves."
+  },
+  {
+    "galleryItem_ID": "galleryItem_33",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-12.webp",
+    "galleryItem_Description": "Image of repainting of an exterior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_34",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-13.webp",
+    "galleryItem_Description": "Fresh walls and pathway."
   }
 ]
