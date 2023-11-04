@@ -196,5 +196,17 @@
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-13.webp",
     "galleryItem_Description": "Fresh walls and pathway."
+  },
+  {
+    "galleryItem_ID": "galleryItem_35",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-22.webp",
+    "galleryItem_Description": "Drywall finish and painting."
+  },
+  {
+    "galleryItem_ID": "galleryItem_36",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-23.webp",
+    "galleryItem_Description": "Drywall finish and painting."
   }
 ]
