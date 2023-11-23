@@ -208,5 +208,29 @@
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-23-fixed.webp",
     "galleryItem_Description": "Drywall finish and painting."
+  },
+  {
+    "galleryItem_ID": "galleryItem_37",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-1.webp",
+    "galleryItem_Description": "Image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_38",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-2.webp",
+    "galleryItem_Description": "Image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_39",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-3.webp",
+    "galleryItem_Description": "Image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_40",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-4.webp",
+    "galleryItem_Description": "Image of repainting of an interior."
   }
 ]
