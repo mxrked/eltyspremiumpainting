@@ -34,6 +34,17 @@
   },
   {
     "reviewID": "review_0004",
+    "reviewType": "Yelp",
+    "reviewName": "Tina L.",
+    "reviewProfile": "https://www.yelp.com/user_details?userid=Fv-NdsOX4mQsPB-ldQMVPg",
+    "reviewProfilePicture": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
+    "reviewLocation": "?",
+    "reviewDate": "11/29/2023",
+    "reviewRating": 5,
+    "reviewText": "I hired Elty's painting to paint my two vanities. They did a wonderful job. They were very neat and clean and didn't leave a mess anywhere. They had to install new hardware and it looks great. The job took two days and they cleaned after each day. They were on time and had all their supplies with them. Their pricing was very affordable. I would absolutely hire them again. Thank you Elty, I love my new vanities."
+  },
+  {
+    "reviewID": "review_0005",
     "reviewType": "Google",
     "reviewName": "Maria Ruiz",
     "reviewProfile": "https://www.google.com/maps/contrib/110995469311719217576/reviews/@36.0151584,-80.3547279,15z/data=!4m3!8m2!3m1!1e1?hl=en-US&entry=ttu",
@@ -44,7 +55,7 @@
     "reviewText": "Very good quality of service"
   },
   {
-    "reviewID": "review_0005",
+    "reviewID": "review_0006",
     "reviewType": "Google",
     "reviewName": "Karen Sue Grano",
     "reviewProfile": "https://www.google.com/maps/contrib/101257506930356984134/reviews/@36.3993275,-81.3661717,9z/data=!4m3!8m2!3m1!1e1?hl=en-US&entry=ttu",
@@ -53,5 +64,16 @@
     "reviewDate": "10/04/2023",
     "reviewRating": 5,
     "reviewText": "Great work and so very pleasant to work with."
+  },
+  {
+    "reviewID": "review_0007",
+    "reviewType": "Google",
+    "reviewName": "Michelle Allison",
+    "reviewProfile": "https://www.google.com/maps/contrib/116161368451543200904?hl=en-US",
+    "reviewProfilePicture": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/reviews/google-profiles/michelle-allison.webp",
+    "reviewLocation": "?",
+    "reviewDate": "11/30/2023",
+    "reviewRating": 5,
+    "reviewText": "I was very pleased with the excellent work on my home by Elty's Premium Painting and Restoration. They were professional, courteous, honest and provided the best paint work I have ever had. They showed up on time were genuinely nice and listened to what I wanted done. They finished the work in record time and I couldn't be more pleased. Thank you for providing quality work at a fair price. I highly recommend them."
   }
 ]
