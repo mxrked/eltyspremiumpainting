@@ -232,5 +232,29 @@
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-4.webp",
     "galleryItem_Description": "Image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_41",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/drawers-1.webp",
+    "galleryItem_Description": "Image of repainted drawers."
+  },
+  {
+    "galleryItem_ID": "galleryItem_42",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/drawers-2.webp",
+    "galleryItem_Description": "Image of repainted drawers."
+  },
+  {
+    "galleryItem_ID": "galleryItem_43",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/drawers-3.webp",
+    "galleryItem_Description": "Image of repainted drawers."
+  },
+  {
+    "galleryItem_ID": "galleryItem_44",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/drawers-4.webp",
+    "galleryItem_Description": "Image of repainted drawers."
   }
 ]
