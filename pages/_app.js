@@ -34,24 +34,33 @@ let IS_PAYMENT_REQUIRED = false;
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [updateUI, setUpdateUI] = useState(0);
-  const [redirected, setRedirected] = useState(false);
+  // const [redirected, setRedirected] = useState(false);
+
+  // useEffect(() => {
+  //   const handleRedirect = async () => {
+  //     if (IS_PAYMENT_REQUIRED && !redirected) {
+  //       // Set redirected to true to prevent further redirects
+  //       setRedirected(true);
+
+  //       // Redirect to the payment_required page without adding a new entry to the history stack
+  //       await router.push("/payment_required", undefined, {
+  //         shallow: true,
+  //         replace: true,
+  //       });
+  //     }
+  //   };
+
+  //   handleRedirect();
+  // }, [IS_PAYMENT_REQUIRED, redirected, router]);
 
   useEffect(() => {
-    const handleRedirect = async () => {
-      if (IS_PAYMENT_REQUIRED && !redirected) {
-        // Set redirected to true to prevent further redirects
-        setRedirected(true);
-
-        // Redirect to the payment_required page without adding a new entry to the history stack
-        await router.push("/payment_required", undefined, {
-          shallow: true,
-          replace: true,
-        });
+    if (IS_PAYMENT_REQUIRED) {
+      if (document.querySelector(".payment-required-wall")) {
+        document.querySelector(".payment-required-wall").style.display =
+          "block";
       }
-    };
-
-    handleRedirect();
-  }, [IS_PAYMENT_REQUIRED, redirected, router]);
+    }
+  }, [IS_PAYMENT_REQUIRED]);
 
   //? GLOBALS
   //! NProgress Init

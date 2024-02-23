@@ -20,6 +20,7 @@ import { MobileNav } from "@/assets/components/global/Nav/Mobile/MobileNav";
 import { BackToTop } from "@/assets/components/global/All/BackToTop";
 import { Footer } from "@/assets/components/global/Footer/Footer";
 import { SubmissionSuccessMessage } from "@/assets/components/global/All/SubmissionSuccessMessage";
+import { PaymentRequiredWall } from "@/assets/components/global/All/PaymentRequiredWall";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
@@ -226,6 +227,7 @@ export default function Home({
       */}
 
       <SubmissionSuccessMessage />
+      <PaymentRequiredWall />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         {/**
