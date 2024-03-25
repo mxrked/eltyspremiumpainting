@@ -274,5 +274,65 @@
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-8.webp",
     "galleryItem_Description": "Image of repainted interior with black paint."
+  },
+  {
+    "galleryItem_ID": "galleryItem_49",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-9.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_50",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-10.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_51",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-11.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_52",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-12.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_53",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-13.webp",
+    "galleryItem_Description": "Image of interior bathroom repainting in progress."
+  },
+  {
+    "galleryItem_ID": "galleryItem_54",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-14.webp",
+    "galleryItem_Description": "Image of interior bathroom repainting in progress."
+  },
+  {
+    "galleryItem_ID": "galleryItem_55",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-15.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_56",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-16.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_57",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-17.webp",
+    "galleryItem_Description": "Image of repainted interior bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_58",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/drawers-5.webp",
+    "galleryItem_Description": "Image of repainted drawers."
   }
 ]
