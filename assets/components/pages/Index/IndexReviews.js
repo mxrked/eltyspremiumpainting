@@ -122,6 +122,16 @@ export const IndexReviews = (props) => {
                                     alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
                                   />
                                 )}
+
+                                {review.reviewType === "Unknown" && (
+                                  <LazyLoadImage
+                                    // data-src={review.reviewProfilePicture}
+                                    // className="lazyload"
+                                    src={review.reviewProfilePicture}
+                                    className={`${styles.pfp_img}`}
+                                    alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
+                                  />
+                                )}
                               </div>
                             </div>
                             <div
@@ -194,6 +204,8 @@ export const IndexReviews = (props) => {
                                     </ul>
                                   </div>
                                 )}
+
+                                {review.reviewType === "?" && null}
                               </div>
                             </div>
                           </div>
@@ -239,6 +251,8 @@ export const IndexReviews = (props) => {
                           </a>
                         </div>
                       )}
+
+                      {review.reviewType === "?" && null}
                     </div>
                   </div>
                 </div>
