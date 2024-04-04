@@ -123,7 +123,7 @@ export const IndexReviews = (props) => {
                                   />
                                 )}
 
-                                {review.reviewType === "Unknown" && (
+                                {review.reviewType === "?" && (
                                   <LazyLoadImage
                                     // data-src={review.reviewProfilePicture}
                                     // className="lazyload"
@@ -205,7 +205,22 @@ export const IndexReviews = (props) => {
                                   </div>
                                 )}
 
-                                {review.reviewType === "?" && null}
+                                {review.reviewType === "?" && (
+                                  <div
+                                    className={`${styles.review_inner_google_rating}`}
+                                  >
+                                    <ul>
+                                      {Array.from(
+                                        { length: review.reviewRating },
+                                        (_, index) => (
+                                          <li key={index}>
+                                            <BsStarFill />
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>

@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 
 // Library Imports
+import { BsStarFill } from "react-icons/bs";
 
 // Data/Functions/Images Imports
 // import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
@@ -82,6 +83,7 @@ export async function getServerSideProps({ req }) {
       "utf-8"
     );
 
+    //! SWITCH TO HAVE ADDED REVIEWS
     // const reviewsDataFilePath = path.join(
     //   process.cwd(),
     //   "public/data/",
@@ -231,6 +233,9 @@ export default function Home({
   // const [name, setName] = useState("");
   // const [rating, setRating] = useState("");
   // const [review, setReview] = useState("");
+  // const [img, setImg] = useState(
+  //   "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png"
+  // );
   // const [reviews, setReviews] = useState([]);
 
   // // Function to fetch reviews
@@ -262,7 +267,7 @@ export default function Home({
   //       headers: {
   //         "Content-Type": "application/json",
   //       },
-  //       body: JSON.stringify({ name, rating, review }),
+  //       body: JSON.stringify({ name, rating, img, review }),
   //     });
 
   //     if (response.ok) {
@@ -270,6 +275,9 @@ export default function Home({
   //       // Reset form fields after successful submission
   //       setName("");
   //       setRating("");
+  //       setImg(
+  //         "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png"
+  //       );
   //       setReview("");
   //       // Fetch reviews again after submission to update the list
   //       fetchReviews();
@@ -335,7 +343,7 @@ export default function Home({
           <IndexReviews reviewsData={reviewsData} />
         </FadeRight>
 
-        {/**
+        {/*
         <div>
           <h2>Reviews</h2>
           {reviews.length > 0 ? (
@@ -347,7 +355,15 @@ export default function Home({
                       Name: <strong>{review.name}</strong>
                     </span>
                     <br />
-                    <span>Rating: {review.rating}</span>
+                    <ul>
+                      {Array.from({ length: review.rating }, (_, index) => (
+                        <li key={index}>
+                          <BsStarFill />
+                        </li>
+                      ))}
+                    </ul>
+                    <br />
+                    <span>Img: {review.img}</span>
                     <br />
                     <span>Review:</span>
                     <p>{review.review}</p>
@@ -396,7 +412,7 @@ export default function Home({
             <button type="submit">Submit Review</button>
           </form>
         </div>
-        */}
+        **/}
         <FadeLeft threshold={0.5}>
           {/** */} <IndexGallery galleryData={galleryData} />
         </FadeLeft>
