@@ -72,10 +72,20 @@ export async function getServerSideProps({ req }) {
     const iconData = JSON.parse(pageHeadDatafileContents);
     // console.log("Icons Data: " + iconData);
 
+    // const reviewsDataFilePath = path.join(
+    //   process.cwd(),
+    //   "public/data/",
+    //   "ReviewsData.json"
+    // );
+    // const reviewsDataFileContents = fs.readFileSync(
+    //   reviewsDataFilePath,
+    //   "utf-8"
+    // );
+
     const reviewsDataFilePath = path.join(
       process.cwd(),
       "public/data/",
-      "ReviewsData.json"
+      "GeneratedReviews.json"
     );
     const reviewsDataFileContents = fs.readFileSync(
       reviewsDataFilePath,
@@ -148,6 +158,10 @@ export default function Home({
 }) {
   const router = useRouter();
 
+  const [name, setName] = useState("");
+  const [rating, setRating] = useState("");
+  const [review, setReview] = useState("");
+  const [reviews, setReviews] = useState([]);
   const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
 
   // useEffect(() => {
@@ -217,6 +231,82 @@ export default function Home({
     }
   }, []);
 
+  // Function to handle review submission
+  // const handleReviewSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const newReviewData = { name, review };
+  //   setReviews([...reviews, newReviewData]);
+  //   setNewReview(newReviewData);
+
+  //   // Save the new review to the JSON file
+  //   try {
+  //     const reviewsFilePath = path.join(
+  //       process.cwd(),
+  //       "public/data/",
+  //       "GeneratedReviews.json"
+  //     );
+  //     await fs.promises.appendFile(
+  //       reviewsFilePath,
+  //       JSON.stringify(newReviewData) + "\n"
+  //     );
+  //   } catch (error) {
+  //     console.error("Error saving review:", error);
+  //   }
+
+  //   // Clear the form inputs
+  //   setName("");
+  //   setReview("");
+  // };
+
+  // Function to fetch reviews
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch("/api/getReviews");
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data); // Set the reviews state with fetched data
+      } else {
+        console.error("Failed to fetch reviews");
+      }
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Call the fetchReviews function when component mounts
+    fetchReviews();
+  }, []);
+
+  // Function to handle review submission
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/getReviews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, rating, review }),
+      });
+
+      if (response.ok) {
+        console.log("Review submitted successfully");
+        // Reset form fields after successful submission
+        setName("");
+        setRating("");
+        setReview("");
+        // Fetch reviews again after submission to update the list
+        fetchReviews();
+      } else {
+        console.error("Failed to submit review");
+      }
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
+  };
+
   return (
     <div id="PAGE" className="page index-page">
       <PageHead page_head_data={iconData} />
@@ -266,9 +356,71 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexAd adData={adData} />
         </FadeLeft>
+        {/**
         <FadeRight threshold={0.5}>
           <IndexReviews reviewsData={reviewsData} />
         </FadeRight>
+        */}
+        <div>
+          <h2>Reviews</h2>
+          {reviews.length > 0 ? (
+            <ul>
+              {reviews.map((review, index) => (
+                <li key={index}>
+                  <div>
+                    <span>
+                      Name: <strong>{review.name}</strong>
+                    </span>
+                    <br />
+                    <span>Rating: {review.rating}</span>
+                    <br />
+                    <span>Review:</span>
+                    <p>{review.review}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No reviews available</p>
+          )}
+
+          <h2>Submit a Review</h2>
+          <form onSubmit={handleReviewSubmit}>
+            <div>
+              <span>Enter your name:</span>
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <span>Enter your rating:</span>
+              <div>
+                <input
+                  type={"number"}
+                  min={1}
+                  max={5}
+                  value={rating}
+                  onChange={(e) => setRating(e.target.value)}
+                />{" "}
+                <span>Stars</span>
+              </div>
+            </div>
+
+            <div>
+              <span>Enter your review:</span>
+              <textarea
+                placeholder="Write your review..."
+                value={review}
+                onChange={(e) => setReview(e.target.value)}
+              />
+            </div>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
         <FadeLeft threshold={0.5}>
           {/** */} <IndexGallery galleryData={galleryData} />
         </FadeLeft>
