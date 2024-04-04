@@ -7,7 +7,7 @@ import path from "path";
 // Library Imports
 
 // Data/Functions/Images Imports
-import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
+// import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
 import { FadeLeft } from "@/assets/animations/components/FadeLeft";
 import { FadeRight } from "@/assets/animations/components/FadeRight";
 
@@ -38,24 +38,24 @@ import "../assets/styles/modules/Index/Index.module.css";
 export async function getServerSideProps({ req }) {
   try {
     // Database activities
-    const DB = await connectDatabase();
+    // const DB = await connectDatabase();
 
-    if (!DB) {
-      return {
-        props: {
-          TOTAL_NUMBER_OF_IPS: 0,
-          current_ip: null,
-          iconData: null,
-          reviewsData: null,
-          galleryData: null,
-          adData: null,
-        },
-      };
-    }
+    // if (!DB) {
+    //   return {
+    //     props: {
+    //       // TOTAL_NUMBER_OF_IPS: 0,
+    //       // current_ip: null,
+    //       iconData: null,
+    //       reviewsData: null,
+    //       galleryData: null,
+    //       adData: null,
+    //     },
+    //   };
+    // }
 
-    const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
+    // const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
 
-    const current_ip = req.socket.remoteAddress;
+    // const current_ip = req.socket.remoteAddress;
 
     const pageHeadDatafilePath = path.join(
       process.cwd(),
@@ -72,25 +72,25 @@ export async function getServerSideProps({ req }) {
     const iconData = JSON.parse(pageHeadDatafileContents);
     // console.log("Icons Data: " + iconData);
 
-    // const reviewsDataFilePath = path.join(
-    //   process.cwd(),
-    //   "public/data/",
-    //   "ReviewsData.json"
-    // );
-    // const reviewsDataFileContents = fs.readFileSync(
-    //   reviewsDataFilePath,
-    //   "utf-8"
-    // );
-
     const reviewsDataFilePath = path.join(
       process.cwd(),
       "public/data/",
-      "GeneratedReviews.json"
+      "ReviewsData.json"
     );
     const reviewsDataFileContents = fs.readFileSync(
       reviewsDataFilePath,
       "utf-8"
     );
+
+    // const reviewsDataFilePath = path.join(
+    //   process.cwd(),
+    //   "public/data/",
+    //   "GeneratedReviews.json"
+    // );
+    // const reviewsDataFileContents = fs.readFileSync(
+    //   reviewsDataFilePath,
+    //   "utf-8"
+    // );
 
     // console.log("Reviews Data: " + reviewsDataFileContents);
 
@@ -124,8 +124,8 @@ export async function getServerSideProps({ req }) {
 
     return {
       props: {
-        TOTAL_NUMBER_OF_IPS,
-        current_ip,
+        // TOTAL_NUMBER_OF_IPS,
+        // current_ip,
         iconData,
         reviewsData,
         galleryData,
@@ -137,8 +137,8 @@ export async function getServerSideProps({ req }) {
 
     return {
       props: {
-        TOTAL_NUMBER_OF_IPS: 0,
-        current_ip: null,
+        // TOTAL_NUMBER_OF_IPS: 0,
+        // current_ip: null,
         iconData: null,
         reviewsData: null,
         galleryData: null,
@@ -149,8 +149,8 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Home({
-  TOTAL_NUMBER_OF_IPS,
-  current_ip,
+  // TOTAL_NUMBER_OF_IPS,
+  // current_ip,
   iconData,
   reviewsData,
   galleryData,
@@ -158,10 +158,6 @@ export default function Home({
 }) {
   const router = useRouter();
 
-  const [name, setName] = useState("");
-  const [rating, setRating] = useState("");
-  const [review, setReview] = useState("");
-  const [reviews, setReviews] = useState([]);
   const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
 
   // useEffect(() => {
@@ -202,82 +198,88 @@ export default function Home({
 
   //! DB Activities
   // Checking if connected to DB
-  console.log("Total number of website visits: " + TOTAL_NUMBER_OF_IPS);
+  // console.log("Total number of website visits: " + TOTAL_NUMBER_OF_IPS);
 
-  // Triggering getWebsiteVisitsByIps.js
-  useEffect(() => {
-    // Fetching the api route
-    const FETCH_DATA = async () => {
-      try {
-        const response = await fetch("/api/getWebsiteVisitsByIps");
-        const data = await response.json();
+  // // Triggering getWebsiteVisitsByIps.js
+  // useEffect(() => {
+  //   // Fetching the api route
+  //   const FETCH_DATA = async () => {
+  //     try {
+  //       const response = await fetch("/api/getWebsiteVisitsByIps");
+  //       const data = await response.json();
 
-        // Handle the data
-        console.log("API response: " + data);
-      } catch (error) {
-        console.error("Error fetching data: " + error);
-      }
-    };
+  //       // Handle the data
+  //       console.log("API response: " + data);
+  //     } catch (error) {
+  //       console.error("Error fetching data: " + error);
+  //     }
+  //   };
 
-    FETCH_DATA();
-  }, []);
+  //   FETCH_DATA();
+  // }, []);
 
   // Displaying the current website visits when on localhost
-  useEffect(() => {
-    const IPS = ["127.0.0.1", "::1"];
+  // useEffect(() => {
+  //   const IPS = ["127.0.0.1", "::1"];
 
-    if (current_ip === IPS[0] || current_ip === IPS[1]) {
-      SET_ON_LOCALHOST(true);
-    }
-  }, []);
+  //   if (current_ip === IPS[0] || current_ip === IPS[1]) {
+  //     SET_ON_LOCALHOST(true);
+  //   }
+  // }, []);
 
-  // Function to fetch reviews
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch("/api/getReviews");
-      if (response.ok) {
-        const data = await response.json();
-        setReviews(data); // Set the reviews state with fetched data
-      } else {
-        console.error("Failed to fetch reviews");
-      }
-    } catch (error) {
-      console.error("Error fetching reviews:", error);
-    }
-  };
+  //! EVERYTHING RELATED TO REVIEWS
+  // const [name, setName] = useState("");
+  // const [rating, setRating] = useState("");
+  // const [review, setReview] = useState("");
+  // const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    // Call the fetchReviews function when component mounts
-    fetchReviews();
-  }, []);
+  // // Function to fetch reviews
+  // const fetchReviews = async () => {
+  //   try {
+  //     const response = await fetch("/api/getReviews");
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setReviews(data); // Set the reviews state with fetched data
+  //     } else {
+  //       console.error("Failed to fetch reviews");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching reviews:", error);
+  //   }
+  // };
 
-  const handleReviewSubmit = async (e) => {
-    e.preventDefault();
+  // useEffect(() => {
+  //   // Call the fetchReviews function when component mounts
+  //   fetchReviews();
+  // }, []);
 
-    try {
-      const response = await fetch("/api/getReviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, rating, review }),
-      });
+  // const handleReviewSubmit = async (e) => {
+  //   e.preventDefault();
 
-      if (response.ok) {
-        console.log("Review submitted successfully");
-        // Reset form fields after successful submission
-        setName("");
-        setRating("");
-        setReview("");
-        // Fetch reviews again after submission to update the list
-        fetchReviews();
-      } else {
-        console.error("Failed to submit review");
-      }
-    } catch (error) {
-      console.error("Error submitting review:", error);
-    }
-  };
+  //   try {
+  //     const response = await fetch("/api/getReviews", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ name, rating, review }),
+  //     });
+
+  //     if (response.ok) {
+  //       console.log("Review submitted successfully");
+  //       // Reset form fields after successful submission
+  //       setName("");
+  //       setRating("");
+  //       setReview("");
+  //       // Fetch reviews again after submission to update the list
+  //       fetchReviews();
+  //     } else {
+  //       console.error("Failed to submit review");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting review:", error);
+  //   }
+  // };
 
   return (
     <div id="PAGE" className="page index-page">
@@ -328,13 +330,12 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexAd adData={adData} />
         </FadeLeft>
-        {/*
+        {/***/}
         <FadeRight threshold={0.5}>
           <IndexReviews reviewsData={reviewsData} />
         </FadeRight>
-        **/}
+
         {/**
-         */}
         <div>
           <h2>Reviews</h2>
           {reviews.length > 0 ? (
@@ -395,7 +396,7 @@ export default function Home({
             <button type="submit">Submit Review</button>
           </form>
         </div>
-
+        */}
         <FadeLeft threshold={0.5}>
           {/** */} <IndexGallery galleryData={galleryData} />
         </FadeLeft>

@@ -75,5 +75,16 @@
     "reviewDate": "11/30/2023",
     "reviewRating": 5,
     "reviewText": "I was very pleased with the excellent work on my home by Elty's Premium Painting and Restoration. They were professional, courteous, honest and provided the best paint work I have ever had. They showed up on time were genuinely nice and listened to what I wanted done. They finished the work in record time and I couldn't be more pleased. Thank you for providing quality work at a fair price. I highly recommend them."
+  },
+  {
+    "reviewID": "review_0008",
+    "reviewType": "?",
+    "reviewName": "Ruth & David Collins",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
+    "reviewLocation": "?",
+    "reviewDate": "4/3/2024",
+    "reviewRating": 5,
+    "reviewText": "We were very pleased with the quality work that Elty's Painting did for us. They painted our entire inside house. They were very professional, honest, courteous and nice people. Was very pleased with their price and would highly recommend them to anyone.  THANK YOU for a job well done."
   }
 ]
