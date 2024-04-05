@@ -71,11 +71,11 @@ async function connectToDatabase() {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, rating, img, review } = req.body;
+    const { name, rating, img, date, location, review } = req.body;
     const collection = await connectToDatabase();
 
     try {
-      await collection.insertOne({ name, rating, img, review });
+      await collection.insertOne({ name, rating, img, date, location, review });
       return res
         .status(200)
         .json({ message: "Review submitted successfully!" });
