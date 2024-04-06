@@ -4,7 +4,10 @@
  *
  */
 
+import axios from "axios";
+
 import { BsStarFill } from "react-icons/bs";
+import { FaTimes } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import styles from "../../../styles/modules/Index/Index.module.css";
@@ -20,6 +23,24 @@ export const IndexGeneratedReviews = (props) => {
     }
   };
 
+  const deleteReview = async (name) => {
+    try {
+      // // axios.delete(`/api/getReviews?id=${id}`);
+      const RESPONSE = await fetch(`/api/getReviews?name=${name}`, {
+        method: "DELETE",
+      });
+
+      if (RESPONSE.ok) {
+        console.log("Review deleted successfully!");
+        document.location.reload();
+      } else {
+        console.error("Failed to delete review:", RESPONSE.statusText);
+      }
+    } catch (error) {
+      console.error("Error deleting review:", error);
+    }
+  };
+
   return (
     <section
       id="indexGeneratedReviews"
@@ -32,7 +53,7 @@ export const IndexGeneratedReviews = (props) => {
           >
             <h3
               id="indexReviews_JUMPPOINT"
-              className="orientation-change-element half-second"
+              className={`${styles.section_heading_h3} orientation-change-element half-second`}
             >
               Reviews:
             </h3>
@@ -56,6 +77,15 @@ export const IndexGeneratedReviews = (props) => {
                   )}`}
                 >
                   <div className={`${styles.review_inner}`}>
+                    <button
+                      className="review-delete"
+                      onClick={() => {
+                        deleteReview(review.name);
+                      }}
+                    >
+                      <span>Delete</span> <FaTimes />
+                    </button>
+
                     <div className={`${styles.review_inner_top}`}>
                       <div
                         className={`${styles.review_inner_top_box} container-fluid`}
