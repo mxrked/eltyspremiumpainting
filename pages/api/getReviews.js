@@ -93,6 +93,30 @@ export default async function handler(req, res) {
       console.error("Error retrieving reviews from database:", error);
       return res.status(500).json({ error: "Failed to retrieve reviews" });
     }
+  } else if (req.method === "DELETE") {
+    const { name } = req.query;
+
+    if (!name) {
+      return res.status(400).json({ error: "Name parameter is required" });
+    }
+
+    const collection = await connectToDatabase();
+
+    try {
+      const result = await collection.deleteOne({ name: name });
+
+      if (result.deletedCount === 1) {
+        const reviews = await collection.find().toArray();
+        return res
+          .status(200)
+          .json({ reviews, message: "Review deleted successfully!" });
+      } else {
+        return res.status(404).json({ error: "Review not found.." });
+      }
+    } catch (error) {
+      console.error("Error deleting review from database:", error);
+      return res.status(500).json({ error: "Failed to delete review" });
+    }
   } else {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
