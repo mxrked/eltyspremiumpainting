@@ -76,6 +76,26 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router, router.events]);
 
+  //! Admin Mode Stuff
+  useEffect(() => {
+    console.log("Checking Current User...");
+    if (localStorage.getItem("Current User")) {
+      console.log("Current User found. Showing review-delete elements.");
+      if (document.querySelector("#currentUser")) {
+        document.querySelector("#currentUser").style.display = "flex";
+      }
+
+      setTimeout(() => {
+        document.querySelectorAll(".review-delete").forEach((rd) => {
+          rd.style.opacity = 1;
+          rd.style.visibility = "visible";
+        });
+      }, 1500);
+    } else {
+      console.log("No Current User found.");
+    }
+  }, []);
+
   //! Forget scroll position and force user back to top of page
   useEffect(() => {
     if ("scrollRestoration" in history) {
