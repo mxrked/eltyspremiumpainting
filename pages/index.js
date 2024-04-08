@@ -22,6 +22,9 @@ import { BackToTop } from "@/assets/components/global/All/BackToTop";
 import { Footer } from "@/assets/components/global/Footer/Footer";
 import { SubmissionSuccessMessage } from "@/assets/components/global/All/SubmissionSuccessMessage";
 import { PaymentRequiredWall } from "@/assets/components/global/All/PaymentRequiredWall";
+import { LoginToggler } from "@/assets/components/global/All/LoginToggler";
+import { LoginWindow } from "@/assets/components/global/All/LoginWindow";
+import { CurrentUser } from "@/assets/components/global/All/CurrentUser";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
@@ -31,11 +34,11 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 // import { IndexGalleryImgModal } from "@/assets/components/pages/Index/IndexGalleryImgModal";
 // import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
+import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
 
 export async function getServerSideProps({ req }) {
   try {
@@ -254,6 +257,8 @@ export default function Home({
       if (response.ok) {
         const data = await response.json();
         setReviews(data); // Set the reviews state with fetched data
+
+        // router.reload();
       } else {
         console.error("Failed to fetch reviews");
       }
@@ -320,6 +325,8 @@ export default function Home({
           setReview("");
           // Fetch reviews again after submission to update the list
           fetchReviews();
+
+          router.reload();
         } else {
           console.error("Failed to submit review");
         }
@@ -356,6 +363,7 @@ export default function Home({
 
       <SubmissionSuccessMessage />
       <PaymentRequiredWall />
+      <CurrentUser />
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         {/**
@@ -386,6 +394,9 @@ export default function Home({
         <NavTop />
         <DesktopNav />
         <MobileNav />
+
+        <LoginToggler />
+        <LoginWindow />
 
         <IndexTop />
         <FadeRight threshold={0.5}>
