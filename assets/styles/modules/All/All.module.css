@@ -95,6 +95,10 @@
   display: block;
 }
 
+.current_user {
+  display: none;
+}
+
 @media all and (max-width: 991px) {
   .back_to_top button {
     width: 35px;

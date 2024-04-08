@@ -646,7 +646,9 @@
                 margin-right: 0;
                 font-family: "Noto Sans Medium";
                 color: red;
-                @include displayElement(none, space-between, center);
+                @include displayElement(flex, space-between, center);
+                opacity: 0;
+                visibility: hidden;
                 width: 100%;
                 max-width: 80px;
                 position: absolute;

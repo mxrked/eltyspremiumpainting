@@ -337,9 +337,11 @@
   margin-right: 0;
   font-family: "Noto Sans Medium";
   color: red;
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
   width: 100%;
   max-width: 80px;
   position: absolute;
@@ -1156,10 +1158,6 @@
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .index_generated_reviews_inner_reviews_top p {
     font-size: 18px;
     max-width: 700px;
-  }
-  .index_generated_reviews_form {
-    max-width: 700px;
-    margin-bottom: 150px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
