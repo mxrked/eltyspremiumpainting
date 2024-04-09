@@ -79,8 +79,12 @@ function MyApp({ Component, pageProps }) {
   //! Admin Mode Stuff
   useEffect(() => {
     console.log("Checking Current User...");
-    window.addEventListener("load", () => {
-      if (localStorage.getItem("Current User")) {
+
+    const CURRENT_USER = localStorage.getItem("Current User");
+
+    // Show review-delete elements immediately
+    setTimeout(() => {
+      if (CURRENT_USER) {
         console.log("Current User found. Showing review-delete elements.");
 
         document.getElementById("loginToggler").style.display = "none";
@@ -91,16 +95,14 @@ function MyApp({ Component, pageProps }) {
           document.querySelector("#currentUser").style.display = "flex";
         }
 
-        setTimeout(() => {
-          document.querySelectorAll(".review-delete").forEach((rd) => {
-            rd.style.opacity = 1;
-            rd.style.visibility = "visible";
-          });
-        }, 1500);
+        document.querySelectorAll(".review-delete").forEach((rd) => {
+          rd.style.opacity = 1;
+          rd.style.visibility = "visible";
+        });
       } else {
         console.log("No Current User found.");
       }
-    });
+    }, 1800);
   }, []);
 
   //! Forget scroll position and force user back to top of page
