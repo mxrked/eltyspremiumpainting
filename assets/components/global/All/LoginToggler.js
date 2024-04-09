@@ -12,15 +12,18 @@ export const LoginToggler = () => {
     <button
       id="loginToggler"
       className={`${styles.login_toggler} orientation-change-element half-second`}
-      onClick={() => {
+      onClick={(e) => {
         if (document.querySelector("#loginWindow")) {
           const LOGIN_WINDOW = document.getElementById("loginWindow");
 
           LOGIN_WINDOW.style.display = "block";
+
+          document.getElementById("loginCloser").style.display = "flex";
+
+          e.currentTarget.style.display = "none";
         }
       }}
     >
-      <span>Admin Login</span>
       <BiSolidLogInCircle className={`${styles.icon}`} />
     </button>
   );

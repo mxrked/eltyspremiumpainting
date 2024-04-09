@@ -32,22 +32,16 @@ export const LoginWindow = () => {
 
       document.location.reload();
     } catch (error) {
-      setError("Invalid username or password!");
+      setError("Invalid credentials!");
       console.error("Login error:", error);
     }
   };
 
   return (
     <div id="loginWindow" className={`${styles.login_window}`}>
-      <div id="loginWindowDarken" className={`${styles.login_window_darken}`} />
-
       <div id="loginWindowMain" className={`${styles.login_window_main}`}>
         <div className={`${styles.login_window_main_top}`}>
-          <span className="orientation-change-element">Admin Login</span>
-
-          <button className="orientation-change-element">
-            <FaTimes className={`${styles.icon}`} />
-          </button>
+          <span className="orientation-change-element">Login</span>
         </div>
 
         <div className={`${styles.login_window_main_form_holder}`}>
@@ -55,11 +49,13 @@ export const LoginWindow = () => {
             onSubmit={(e) => {
               handleLogin(e);
             }}
+            onReset={(e) => {
+              setUsername("");
+              setPassword("");
+              setError("");
+            }}
           >
             <div className={`${styles.form_set}`}>
-              <span className="orientation-change-element">
-                Enter Username:
-              </span>
               <input
                 type="text"
                 value={username}
@@ -67,13 +63,11 @@ export const LoginWindow = () => {
                 id="adminUsername"
                 name="adminUsername"
                 className="orientation-change-element"
+                placeholder="Username"
               />
             </div>
 
             <div className={`${styles.form_set}`}>
-              <span className="orientation-change-element">
-                Enter Password:
-              </span>
               <input
                 type="password"
                 id="adminPassword"
@@ -81,6 +75,7 @@ export const LoginWindow = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 name="adminPassword"
                 className="orientation-change-element"
+                placeholder="Password"
               />
             </div>
 
@@ -88,14 +83,20 @@ export const LoginWindow = () => {
               id="loginError"
               className={`${styles.login_error} orientation-change-element`}
             >
-              INSERT_ERROR_HERE
+              {error}
             </span>
 
             <div className={`${styles.form_btns}`}>
-              <button type={"reset"} className="orientation-change-element">
+              <button
+                type={"reset"}
+                className={`${styles.clear} orientation-change-element`}
+              >
                 Clear
               </button>
-              <button type={"submit"} className="orientation-change-element">
+              <button
+                type={"submit"}
+                className={`${styles.login} orientation-change-element`}
+              >
                 Login
               </button>
             </div>
