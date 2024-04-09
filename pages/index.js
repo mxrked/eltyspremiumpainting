@@ -23,6 +23,7 @@ import { Footer } from "@/assets/components/global/Footer/Footer";
 import { SubmissionSuccessMessage } from "@/assets/components/global/All/SubmissionSuccessMessage";
 import { PaymentRequiredWall } from "@/assets/components/global/All/PaymentRequiredWall";
 import { LoginToggler } from "@/assets/components/global/All/LoginToggler";
+import { LoginCloser } from "@/assets/components/global/All/LoginCloser";
 import { LoginWindow } from "@/assets/components/global/All/LoginWindow";
 import { CurrentUser } from "@/assets/components/global/All/CurrentUser";
 
@@ -396,6 +397,7 @@ export default function Home({
         <MobileNav />
 
         <LoginToggler />
+        <LoginCloser />
         <LoginWindow />
 
         <IndexTop />
