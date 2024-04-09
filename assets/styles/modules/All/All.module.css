@@ -96,7 +96,112 @@
 }
 
 .current_user {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
   display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 500;
+}
+.current_user span {
+  font-family: "Poppins Bold";
+  color: white;
+}
+.current_user button {
+  border: 2px solid white;
+  padding: 5px;
+  font-family: "Poppins Bold";
+  color: white;
+  font-size: 14px;
+}
+.current_user button:hover {
+  background-color: white;
+  color: red;
+}
+
+.login_toggler,
+.login_closer {
+  position: fixed;
+  bottom: 10px;
+  left: 9px;
+  background-color: #93329e;
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  color: white;
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 350;
+}
+
+.login_closer {
+  display: none;
+}
+
+.login_window {
+  position: fixed;
+  left: 9px;
+  bottom: 60px;
+  display: none;
+  background-color: rgb(237, 237, 237);
+  z-index: 350;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.login_window .login_window_main {
+  padding: 10px;
+}
+.login_window .login_window_main .login_window_main_top {
+  font-family: "Poppins Bold";
+  font-size: 19px;
+}
+.login_window .login_window_main .login_window_main_form_holder {
+  margin-top: 10px;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_set {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_set input {
+  background-color: white;
+  font-family: "Noto Sans Regular";
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.login_window .login_window_main .login_window_main_form_holder form .login_error {
+  font-family: "Noto Sans Medium";
+  color: red;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_btns {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_btns button {
+  color: white;
+  padding: 7px;
+  font-family: "Poppins Bold";
+  font-size: 14px;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_btns .clear {
+  margin-right: 15px;
+  background-color: #333333;
+}
+.login_window .login_window_main .login_window_main_form_holder form .form_btns .login {
+  background-color: #93329e;
 }
 
 @media all and (max-width: 991px) {
@@ -110,6 +215,12 @@
   }
   .submission_success_message .submission_success_message_cnt span {
     font-size: 15px;
+  }
+  .current_user {
+    flex-wrap: wrap;
+  }
+  .current_user span {
+    display: block;
   }
 }
 @media all and (max-width: 768px) {
@@ -128,6 +239,31 @@
   .submission_success_message .submission_success_message_cnt span {
     font-size: 13px;
   }
+  .login_toggler,
+  .login_closer {
+    width: 33px;
+    height: 33px;
+    font-size: 15px;
+  }
+  .login_window {
+    bottom: 50px;
+  }
+  .login_window .login_window_main .login_window_main_top span {
+    font-size: 15px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_set input {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .login_error {
+    font-size: 14px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_btns button {
+    font-size: 13px;
+  }
 }
 @media all and (max-width: 419px) {
   .back_to_top button {
@@ -143,6 +279,31 @@
     padding-right: 10px;
   }
   .submission_success_message .submission_success_message_cnt span {
+    font-size: 13px;
+  }
+  .login_toggler,
+  .login_closer {
+    width: 33px;
+    height: 33px;
+    font-size: 15px;
+  }
+  .login_window {
+    bottom: 50px;
+  }
+  .login_window .login_window_main .login_window_main_top span {
+    font-size: 15px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_set input {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .login_error {
+    font-size: 14px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_btns button {
     font-size: 13px;
   }
 }
@@ -178,6 +339,31 @@
   }
   .submission_success_message .submission_success_message_cnt span {
     font-size: 15px;
+  }
+  .login_toggler,
+  .login_closer {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+  .login_window {
+    bottom: 60px;
+  }
+  .login_window .login_window_main .login_window_main_top span {
+    font-size: 16px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_set input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .login_error {
+    font-size: 15px;
+  }
+  .login_window .login_window_main .login_window_main_form_holder form .form_btns button {
+    font-size: 14px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
