@@ -7,7 +7,10 @@
 export default function handler(req, res) {
   const { username, password } = req.body;
 
-  if (username === "admin_elty" && password === "@painting!0024") {
+  if (
+    username === process.env.LOGIN_USERNAME &&
+    password === process.env.LOGIN_PASSWORD
+  ) {
     const token = "Logged In User";
 
     // res.setHeader("Set-Cookie", `token=${token}; Path=/; HttpOnly`);
