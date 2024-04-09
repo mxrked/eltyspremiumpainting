@@ -234,7 +234,7 @@ export default function Home({
   //   }
   // }, []);
 
-  //! EVERYTHING RELATED TO REVIEWS
+  //! EVERYTHING RELATED TO REVIEWS AND IMAGES AND VIDEOS
   const CURRENT_DATE = new Date();
   const MONTH = CURRENT_DATE.getMonth() + 1;
   const DAY = CURRENT_DATE.getDate();
@@ -250,6 +250,7 @@ export default function Home({
   const [date, setDate] = useState(FORMATTED_DATE);
   const [location, setLocation] = useState("");
   const [reviews, setReviews] = useState([]);
+  const [imagesAndVideos, setImagesAndVideos] = useState([]);
 
   // Function to fetch reviews
   const fetchReviews = async () => {
@@ -268,9 +269,26 @@ export default function Home({
     }
   };
 
+  const fetchImagesAndVideos = async () => {
+    try {
+      const response = await fetch("/api/getImagesAndVideos");
+      if (response.ok) {
+        const data = await response.json();
+        setImagesAndVideos(data);
+      } else {
+        console.error("Failed to fetch images and videos");
+      }
+    } catch (error) {
+      console.error("Error fetching images and videos:", error);
+    }
+  };
+
   useEffect(() => {
     // Call the fetchReviews function when component mounts
     fetchReviews();
+
+    // Call the fetchImagesAndVideos function when component mounts
+    fetchImagesAndVideos();
   }, []);
 
   const checkingForValidInput = (input) => {
@@ -606,6 +624,7 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           {/** */} <IndexGallery galleryData={galleryData} />
         </FadeLeft>
+
         <FadeRight threshold={0.5}>
           <IndexContact />
         </FadeRight>
