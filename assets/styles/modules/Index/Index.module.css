@@ -1159,6 +1159,40 @@
     font-size: 18px;
     max-width: 700px;
   }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: center;
+    text-align: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 20px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 14px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
     margin-bottom: 90px;
@@ -1368,6 +1402,51 @@
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .index_generated_reviews_inner_reviews_top p {
     font-size: 16px;
     max-width: 420px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: center;
+    text-align: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 20px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 17px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 13px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 14px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -1617,6 +1696,51 @@
     max-width: 700px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: center;
+    text-align: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 20px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 17px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 13px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 14px;
   }
   .index_gallery {
     margin-bottom: 50px;
@@ -1918,6 +2042,53 @@
     margin-top: 10px;
     margin-bottom: 30px;
   }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 80px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 40%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 60%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 17px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 13px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 14px;
+  }
   .index_gallery {
     margin-bottom: 40px;
   }
@@ -2207,6 +2378,59 @@
     margin-top: 20px;
     margin-bottom: 40px;
   }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 80px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 20%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 80%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 16px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 14px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 15px;
+  }
   .index_gallery {
     margin-bottom: 70px;
   }
@@ -2495,6 +2719,59 @@
     margin-top: 10px;
     margin-bottom: 30px;
   }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 80px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 20%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 80%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 16px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 14px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 15px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
   }
@@ -2775,6 +3052,59 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 100px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 20%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 80%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 16px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 14px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 15px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -3058,6 +3388,59 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 100px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 20%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 80%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 16px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 14px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 15px;
   }
   .index_gallery {
     margin-bottom: 120px;
@@ -3344,6 +3727,59 @@
     padding-right: 10px;
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_side .review_inner_top_side_cnt img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 100px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_L {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 15%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R {
+    padding-bottom: 0;
+    max-width: 85%;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
+    font-size: 18px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_location,
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_date {
+    font-size: 16px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 15px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
