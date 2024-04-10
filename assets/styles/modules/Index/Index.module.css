@@ -1193,6 +1193,27 @@
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 14px;
   }
+  .index_generated_reviews_form {
+    margin-bottom: 100px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 600px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 8px;
+    font-size: 14px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
     margin-bottom: 90px;
@@ -1448,6 +1469,27 @@
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 14px;
   }
+  .index_generated_reviews_form {
+    margin-bottom: 100px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(1.7rem, 2.1vw, 2.1rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 600px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 13px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 8px;
+    font-size: 13px;
+  }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
     margin-bottom: 110px;
@@ -1676,6 +1718,9 @@
   .index_ad .index_ad_inner .ad h3 {
     font-size: clamp(1.3rem, 1.9vw, 1.9rem);
   }
+  .index_generated_reviews {
+    margin-bottom: 50px;
+  }
   .index_generated_reviews .index_generated_reviews_inner {
     padding-left: 20px;
     padding-right: 20px;
@@ -1741,6 +1786,34 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 14px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 600px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 14px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 12px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 8px;
+    font-size: 12px;
   }
   .index_gallery {
     margin-bottom: 50px;
@@ -2021,6 +2094,9 @@
   .index_ad .index_ad_inner .ad h3 br {
     display: none;
   }
+  .index_generated_reviews {
+    margin-bottom: 50px;
+  }
   .index_generated_reviews .index_generated_reviews_inner {
     padding-left: 20px;
     padding-right: 20px;
@@ -2087,6 +2163,34 @@
     margin-right: 10px;
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
+    font-size: 14px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 400px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 15px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 8px;
     font-size: 14px;
   }
   .index_gallery {
@@ -2431,6 +2535,34 @@
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 15px;
   }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 520px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 17px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 15px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 10px;
+    font-size: 15px;
+  }
   .index_gallery {
     margin-bottom: 70px;
   }
@@ -2698,6 +2830,9 @@
   .index_ad .index_ad_inner .ad h3 br {
     display: none;
   }
+  .index_generated_reviews {
+    margin-bottom: 40px;
+  }
   .index_generated_reviews .index_generated_reviews_inner {
     padding-left: 20px;
     padding-right: 20px;
@@ -2771,6 +2906,34 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 15px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(1.5rem, 1.9vw, 1.9rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 520px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 15px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -3105,6 +3268,34 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 15px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 640px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
@@ -3441,6 +3632,34 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 15px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 640px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_gallery {
     margin-bottom: 120px;
@@ -3780,6 +3999,34 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 15px;
+  }
+  .index_generated_reviews_form {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_generated_reviews_form h2 {
+    font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+  }
+  .index_generated_reviews_form form {
+    max-width: 740px;
+  }
+  .index_generated_reviews_form form .form_set span {
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_generated_reviews_form form .form_set input,
+  .index_generated_reviews_form form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_generated_reviews_form form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_gallery .index_gallery_inner .index_gallery_inner_top {
     height: 100%;
