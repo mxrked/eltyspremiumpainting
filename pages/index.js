@@ -36,6 +36,8 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 // import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
+import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
+import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
@@ -165,19 +167,23 @@ export default function Home({
 }) {
   const router = useRouter();
 
+  const [adminMode, setAdminMode] = useState(false);
   const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
 
-  // useEffect(() => {
-  //   console.log(iconData.favicon);
+  // Setting adminMode
+  useEffect(() => {
+    const CURRENT_USER = localStorage.getItem("Current User");
+    setTimeout(() => {
+      setAdminMode(CURRENT_USER ? true : false);
 
-  //   reviewsData.forEach((review) => {
-  //     console.log(review);
-  //   });
-
-  //   galleryData.forEach((gallery) => {
-  //     console.log(gallery);
-  //   });
-  // }, []);
+      if (CURRENT_USER) {
+        document.querySelectorAll(".review-delete").forEach((rd) => {
+          rd.style.opacity = 1;
+          rd.style.visibility = "visible";
+        });
+      }
+    }, 1800);
+  }, []);
 
   // Displaying the submission form success message if sent
   useEffect(() => {
@@ -234,7 +240,7 @@ export default function Home({
   //   }
   // }, []);
 
-  //! EVERYTHING RELATED TO REVIEWS AND IMAGES AND VIDEOS
+  //! EVERYTHING RELATED TO REVIEWS
   const CURRENT_DATE = new Date();
   const MONTH = CURRENT_DATE.getMonth() + 1;
   const DAY = CURRENT_DATE.getDate();
@@ -250,7 +256,6 @@ export default function Home({
   const [date, setDate] = useState(FORMATTED_DATE);
   const [location, setLocation] = useState("");
   const [reviews, setReviews] = useState([]);
-  const [imagesAndVideos, setImagesAndVideos] = useState([]);
 
   // Function to fetch reviews
   const fetchReviews = async () => {
@@ -269,107 +274,10 @@ export default function Home({
     }
   };
 
-  const fetchImagesAndVideos = async () => {
-    try {
-      const response = await fetch("/api/getImagesAndVideos");
-      if (response.ok) {
-        const data = await response.json();
-        setImagesAndVideos(data);
-      } else {
-        console.error("Failed to fetch images and videos");
-      }
-    } catch (error) {
-      console.error("Error fetching images and videos:", error);
-    }
-  };
-
   useEffect(() => {
     // Call the fetchReviews function when component mounts
     fetchReviews();
-
-    // Call the fetchImagesAndVideos function when component mounts
-    fetchImagesAndVideos();
   }, []);
-
-  const checkingForValidInput = (input) => {
-    if (
-      input.value !== "" &&
-      input.value !== null &&
-      input.value.length !== 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const handleReviewSubmit = async (e) => {
-    e.preventDefault();
-
-    const NAME = document.getElementById("reviewFormName");
-    const LOCATION = document.getElementById("reviewFormLocation");
-    const RATING = document.getElementById("reviewFormRating");
-    const MESSAGE = document.getElementById("reviewFormMessage");
-
-    const CHECKING_NAME = checkingForValidInput(NAME);
-    const CHECKING_LOCATION = checkingForValidInput(LOCATION);
-    const CHECKING_RATING = checkingForValidInput(RATING);
-    const CHECKING_MESSAGE = checkingForValidInput(MESSAGE);
-
-    if (
-      CHECKING_NAME &&
-      CHECKING_LOCATION &&
-      CHECKING_RATING &&
-      CHECKING_MESSAGE
-    ) {
-      try {
-        const response = await fetch("/api/getReviews", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, rating, img, date, location, review }),
-        });
-
-        if (response.ok) {
-          console.log("Review submitted successfully");
-          // Reset form fields after successful submission
-          setName("");
-          setRating("");
-          setImg(
-            "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png"
-          );
-          setDate(FORMATTED_DATE);
-          setLocation("");
-          setReview("");
-          // Fetch reviews again after submission to update the list
-          fetchReviews();
-
-          router.reload();
-        } else {
-          console.error("Failed to submit review");
-        }
-      } catch (error) {
-        console.error("Error submitting review:", error);
-      }
-    } else {
-      if (!CHECKING_NAME) {
-        NAME.style.border = "2px solid red";
-      }
-
-      if (!CHECKING_LOCATION) {
-        LOCATION.style.border = "2px solid red";
-      }
-
-      if (!CHECKING_RATING) {
-        RATING.style.border = "2px solid red";
-      }
-
-      if (!CHECKING_MESSAGE) {
-        MESSAGE.style.border = "2px solid red";
-      }
-    }
-  };
 
   return (
     <div id="PAGE" className="page index-page">
@@ -382,7 +290,8 @@ export default function Home({
 
       <SubmissionSuccessMessage />
       <PaymentRequiredWall />
-      <CurrentUser />
+
+      {adminMode && <CurrentUser />}
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         {/**
@@ -414,9 +323,9 @@ export default function Home({
         <DesktopNav />
         <MobileNav />
 
-        <LoginToggler />
-        <LoginCloser />
-        <LoginWindow />
+        {!adminMode && <LoginToggler />}
+        {!adminMode && <LoginCloser />}
+        {!adminMode && <LoginWindow />}
 
         <IndexTop />
         <FadeRight threshold={0.5}>
@@ -425,204 +334,15 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexAd adData={adData} />
         </FadeLeft>
-        {/*
+
         <FadeRight threshold={0.5}>
-          <IndexReviews reviewsData={reviewsData} />
+          <IndexGeneratedReviews reviews={reviews} adminMode={adminMode} />
+          <IndexSubmitReview />
         </FadeRight>
-        **/}
 
         <FadeLeft threshold={0.5}>
-          <IndexGeneratedReviews reviews={reviews} />
-
-          <div className={`${styles.index_generated_reviews_form}`}>
-            <h2>Submit a Review</h2>
-            <form
-              onSubmit={handleReviewSubmit}
-              onReset={() => {
-                document.querySelectorAll(".form-field").forEach((field) => {
-                  field.style.border = "2px solid white";
-                  field.value = "";
-
-                  setName("");
-                  setLocation("");
-                  setRating("");
-                  setReview("");
-                });
-              }}
-            >
-              <div className={`${styles.form_set}`}>
-                <span>Enter your name:</span>
-                <input
-                  className="form-field"
-                  id="reviewFormName"
-                  type="text"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => {
-                    e.currentTarget.style.border = "2px solid white";
-                    setName(e.target.value);
-                  }}
-                />
-              </div>
-
-              <div className={`${styles.form_set}`}>
-                <span>Enter your NC city:</span>
-                <input
-                  className="form-field"
-                  id="reviewFormLocation"
-                  type="text"
-                  placeholder="Your City"
-                  value={location}
-                  onChange={(e) => {
-                    e.currentTarget.style.border = "2px solid white";
-                    setLocation(e.target.value);
-                  }}
-                />
-              </div>
-
-              <div className={`${styles.form_set}`}>
-                <span>Enter your rating:</span>
-                <div>
-                  <input
-                    className="form-field"
-                    id="reviewFormRating"
-                    placeholder="1"
-                    type={"number"}
-                    min={1}
-                    max={5}
-                    value={rating}
-                    onChange={(e) => {
-                      e.currentTarget.style.border = "2px solid white";
-                      setRating(e.target.value);
-                    }}
-                  />{" "}
-                  <span>Stars</span>
-                </div>
-              </div>
-
-              <div className={`${styles.form_set}`}>
-                <span>Enter your review:</span>
-                <textarea
-                  className="form-field"
-                  id="reviewFormMessage"
-                  placeholder="Write your review..."
-                  value={review}
-                  onChange={(e) => {
-                    e.currentTarget.style.border = "2px solid white";
-                    setReview(e.target.value);
-                  }}
-                />
-              </div>
-
-              <div className={`${styles.form_btns}`}>
-                <button
-                  type="reset"
-                  className={`${styles.reset_btn} orientation-change-element half-second`}
-                >
-                  Reset
-                </button>
-                <button
-                  type="submit"
-                  className={`${styles.submit_btn} orientation-change-element half-second`}
-                >
-                  Post
-                </button>
-              </div>
-            </form>
-          </div>
-        </FadeLeft>
-
-        {/*
-        <div>
-          <h2>Reviews</h2>
-          {reviews.length > 0 ? (
-            <ul>
-              {reviews.map((review, index) => (
-                <li key={index}>
-                  <div>
-                    <span>
-                      Name: <strong>{review.name}</strong>
-                    </span>
-                    <br />
-                    <span>
-                      Location: <strong>{review.location}, NC</strong>
-                    </span>
-                    <br />
-                    <span>
-                      Date: <strong>{review.date}</strong>
-                    </span>
-                    <br />
-                    <ul>
-                      {Array.from({ length: review.rating }, (_, index) => (
-                        <li key={index}>
-                          <BsStarFill />
-                        </li>
-                      ))}
-                    </ul>
-                    <br />
-                    <span>Img: {review.img}</span>
-                    <br />
-                    <span>Review:</span>
-                    <p>{review.review}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No reviews available</p>
-          )}
-
-          <h2>Submit a Review</h2>
-          <form onSubmit={handleReviewSubmit}>
-            <div>
-              <span>Enter your name:</span>
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <span>Enter your NC city:</span>
-              <input
-                type="text"
-                placeholder="Your City"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <span>Enter your rating:</span>
-              <div>
-                <input
-                  type={"number"}
-                  min={1}
-                  max={5}
-                  value={rating}
-                  onChange={(e) => setRating(e.target.value)}
-                />{" "}
-                <span>Stars</span>
-              </div>
-            </div>
-
-            <div>
-              <span>Enter your review:</span>
-              <textarea
-                placeholder="Write your review..."
-                value={review}
-                onChange={(e) => setReview(e.target.value)}
-              />
-            </div>
-            <button type="submit">Submit Review</button>
-          </form>
-        </div>
-        **/}
-
-        <FadeLeft threshold={0.5}>
-          {/** */} <IndexGallery galleryData={galleryData} />
+          <IndexGallery galleryData={galleryData} />
+          {adminMode && <IndexAddMedia />}
         </FadeLeft>
 
         <FadeRight threshold={0.5}>
