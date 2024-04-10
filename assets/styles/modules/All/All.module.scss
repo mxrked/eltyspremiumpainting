@@ -108,7 +108,7 @@
   left: 0;
   width: 100%;
   height: 50px;
-  @include displayElement(none, space-between, center);
+  @include displayElement(flex, space-between, center);
   padding-left: 15px;
   padding-right: 15px;
   z-index: 500;
