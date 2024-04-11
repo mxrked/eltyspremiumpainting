@@ -5,7 +5,7 @@
  */
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import styles from "../../../styles/modules/Index/Index.module.css";
+import styles from "../../../../styles/modules/Index/Index.module.css";
 
 export const IndexGeneratedMedia = (props) => {
   const getColumnClasses = (index, totalColumns) => {

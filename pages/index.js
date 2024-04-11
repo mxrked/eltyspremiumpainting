@@ -36,8 +36,8 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 // import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
-import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
-import { IndexGeneratedMedia } from "@/assets/components/pages/Index/IndexGeneratedMedia";
+import { IndexAddMedia } from "@/assets/components/pages/Index/old/IndexAddMedia";
+import { IndexGeneratedMedia } from "@/assets/components/pages/Index/old/IndexGeneratedMedia";
 import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
 
 // Style Imports
@@ -358,9 +358,9 @@ export default function Home({
 
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
-          {/** */}
+          {/**
           <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
-          {adminMode && <IndexAddMedia />}
+          {adminMode && <IndexAddMedia />}  */}
         </FadeLeft>
 
         <FadeRight threshold={0.5}>
