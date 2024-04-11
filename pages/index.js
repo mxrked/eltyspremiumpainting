@@ -37,6 +37,7 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
 import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
+import { IndexGeneratedMedia } from "@/assets/components/pages/Index/IndexGeneratedMedia";
 import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
 
 // Style Imports
@@ -241,20 +242,6 @@ export default function Home({
   // }, []);
 
   //! EVERYTHING RELATED TO REVIEWS
-  const CURRENT_DATE = new Date();
-  const MONTH = CURRENT_DATE.getMonth() + 1;
-  const DAY = CURRENT_DATE.getDate();
-  const YEAR = CURRENT_DATE.getFullYear();
-  const FORMATTED_DATE = MONTH + "/" + DAY + "/" + YEAR;
-
-  const [name, setName] = useState("");
-  const [rating, setRating] = useState("");
-  const [review, setReview] = useState("");
-  const [img, setImg] = useState(
-    "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png"
-  );
-  const [date, setDate] = useState(FORMATTED_DATE);
-  const [location, setLocation] = useState("");
   const [reviews, setReviews] = useState([]);
 
   // Function to fetch reviews
@@ -277,6 +264,30 @@ export default function Home({
   useEffect(() => {
     // Call the fetchReviews function when component mounts
     fetchReviews();
+  }, []);
+
+  //! EVERYTHING RELATED TO MEDIA ITEMS
+  const [mediaItems, setMediaItems] = useState([]);
+
+  // Function to fetch mediaItems
+  const fetchMediaItems = async () => {
+    try {
+      const response = await fetch("/api/getImagesAndVideos");
+
+      if (response.ok) {
+        const data = await response.json();
+        setMediaItems(data);
+      } else {
+        console.error("Failed to fetch media items.");
+      }
+    } catch (error) {
+      console.error("Error fetching media items:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Call the fetchMediaItems function when component mounts
+    fetchMediaItems();
   }, []);
 
   return (
@@ -342,6 +353,7 @@ export default function Home({
 
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
+          {/** <IndexGeneratedMedia mediaItems={mediaItems} /> */}
           {adminMode && <IndexAddMedia />}
         </FadeLeft>
 
