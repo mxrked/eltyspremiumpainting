@@ -15,6 +15,9 @@ export const IndexSubmitReview = () => {
   const YEAR = CURRENT_DATE.getFullYear();
   const FORMATTED_DATE = MONTH + "/" + DAY + "/" + YEAR;
 
+  const [itemID, setItemID] = useState(
+    "ID_" + Math.random().toString(36).substring(2, 10)
+  );
   const [name, setName] = useState("");
   const [rating, setRating] = useState("");
   const [review, setReview] = useState("");
@@ -67,6 +70,19 @@ export const IndexSubmitReview = () => {
     const CHECKING_RATING = checkingForValidInput(RATING);
     const CHECKING_MESSAGE = checkingForValidInput(MESSAGE);
 
+    if (CHECKING_NAME) {
+      NAME.style.border = "2px solid white";
+    }
+    if (CHECKING_LOCATION) {
+      LOCATION.style.border = "2px solid white";
+    }
+    if (CHECKING_RATING) {
+      RATING.style.border = "2px solid white";
+    }
+    if (CHECKING_MESSAGE) {
+      MESSAGE.style.border = "2px solid white";
+    }
+
     if (
       CHECKING_NAME &&
       CHECKING_LOCATION &&
@@ -79,12 +95,21 @@ export const IndexSubmitReview = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, rating, img, date, location, review }),
+          body: JSON.stringify({
+            itemID,
+            name,
+            rating,
+            img,
+            date,
+            location,
+            review,
+          }),
         });
 
         if (response.ok) {
           console.log("Review submitted successfully");
           // Reset form fields after successful submission
+          setItemID("ID_" + Math.random().toString(36).substring(2, 10));
           setName("");
           setRating("");
           setImg(
@@ -124,7 +149,7 @@ export const IndexSubmitReview = () => {
 
   return (
     <div className={`${styles.index_generated_reviews_form}`}>
-      <h2>Submit a Review</h2>
+      <h2>Leave a Review</h2>
       <form
         onSubmit={handleReviewSubmit}
         onReset={() => {

@@ -24,10 +24,10 @@ export const IndexGeneratedReviews = (props) => {
     }
   };
 
-  const deleteReview = async (name) => {
+  const deleteReview = async (itemID) => {
     try {
       // // axios.delete(`/api/getReviews?id=${id}`);
-      const RESPONSE = await fetch(`/api/getReviews?name=${name}`, {
+      const RESPONSE = await fetch(`/api/getReviews?itemID=${itemID}`, {
         method: "DELETE",
       });
 
@@ -81,7 +81,7 @@ export const IndexGeneratedReviews = (props) => {
                     <button
                       className="review-delete"
                       onClick={() => {
-                        deleteReview(review.name);
+                        deleteReview(review.itemID);
                       }}
                     >
                       <span>Delete</span> <FaTimes />
