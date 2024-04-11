@@ -95,6 +95,7 @@ export const IndexAddMedia = () => {
     if (CHECKING_NAME && CHECKING_TYPE && CHECKING_TEXT && CHECKING_FILE) {
       try {
         const formData = new FormData();
+        // formData.append("_id", null);
         formData.append("itemID", itemID);
         formData.append("name", NAME.value);
         formData.append("type", type);
