@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         return;
       }
 
-      const { _id, itemID, name, type, text } = req.body;
+      const { itemID, name, type, text } = req.body;
       const file = req.file;
 
       if (!file) {
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
         const fileData = fs.readFileSync(file.path); // Read file data
         const src = `data:${type};base64,${fileData.toString("base64")}`; // Convert file data to base64
 
-        await collection.insertOne({ _id, itemID, name, type, src, text });
+        await collection.insertOne({ itemID, name, type, src, text });
 
         res.status(200).json({ message: "Media item submitted successfully!" });
       } catch (error) {
