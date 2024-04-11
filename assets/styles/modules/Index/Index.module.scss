@@ -1080,6 +1080,27 @@
     // }
   }
 }
+.index_add_media {
+  margin-top: 60px;
+  margin-bottom: 260px;
+  overflow: hidden !important;
+  white-space: pre-wrap;
+
+  .index_add_media_inner {
+    max-width: 1300px;
+    @include quickCenter("relative");
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100%;
+
+    h2 {
+      font-family: "Poppins Extra Bold";
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: $MineShaft;
+      text-align: center;
+    }
+  }
+}
 // .index_gallery_modal {
 //   position: fixed;
 //   width: 100%;
