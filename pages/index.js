@@ -182,6 +182,11 @@ export default function Home({
           rd.style.opacity = 1;
           rd.style.visibility = "visible";
         });
+
+        document.querySelectorAll(".media-delete").forEach((md) => {
+          md.style.opacity = 1;
+          md.style.visibility = "visible";
+        });
       }
     }, 1800);
   }, []);
@@ -353,7 +358,8 @@ export default function Home({
 
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
-          {/** <IndexGeneratedMedia mediaItems={mediaItems} /> */}
+          {/** */}
+          <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
           {adminMode && <IndexAddMedia />}
         </FadeLeft>
 
