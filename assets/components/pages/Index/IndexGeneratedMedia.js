@@ -75,6 +75,22 @@ export const IndexGeneratedMedia = (props) => {
                 )}`}
               >
                 {media.type === "image" && <LazyLoadImage src={media.src} />}
+
+                {media.type === "video" && (
+                  <video controls>
+                    <source src={media.src} type="video/mp4" /> {/* Here */}
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+
+                {/** <button
+                  className="media-delete"
+                  onClick={() => {
+                    deleteMedia(media.itemID);
+                  }}
+                >
+                  Delete
+                </button> */}
               </div>
             ))}
           </div>
