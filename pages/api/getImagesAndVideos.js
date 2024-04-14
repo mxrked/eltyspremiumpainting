@@ -2,7 +2,9 @@ import multer from "multer";
 import fs from "fs";
 import { MongoClient } from "mongodb";
 
-const upload = multer({ dest: "uploads/" }); // Define multer upload middleware
+const upload = multer({
+  storage: multer.memoryStorage(),
+});
 
 async function connectToDatabase() {
   const client = new MongoClient(process.env.IMAGES_AND_VIDEOS_DRIVER, {
@@ -21,7 +23,7 @@ export const config = {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    // Use multer middleware to handle file upload
+    // Use multer middleware to handle file upload with in-memory storage
     upload.single("file")(req, res, async (err) => {
       if (err) {
         console.error("Error uploading file:", err);
@@ -41,18 +43,16 @@ export default async function handler(req, res) {
       const collection = await connectToDatabase();
 
       try {
-        const fileData = fs.readFileSync(file.path); // Read file data
-        const src = `data:${type};base64,${fileData.toString("base64")}`; // Convert file data to base64
+        // Convert file buffer to base64
+        const src = `data:${type};base64,${file.buffer.toString("base64")}`;
 
+        // Insert media item into database
         await collection.insertOne({ itemID, name, type, src, text });
 
         res.status(200).json({ message: "Media item submitted successfully!" });
       } catch (error) {
         console.error("Error saving media item to database: ", error);
         res.status(500).json({ error: "Failed to save media item." });
-      } finally {
-        // Remove uploaded file after processing
-        fs.unlinkSync(file.path);
       }
     });
   } else if (req.method === "DELETE") {

@@ -4,13 +4,10 @@ let client;
 
 async function connectToDatabase() {
   if (!client) {
-    client = new MongoClient(
-      "mongodb+srv://admin:eltyspremiumpainting_SR_020700@reviews.0zazg9o.mongodb.net/?retryWrites=true&w=majority&appName=reviews",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    client = new MongoClient(process.env.REVIEWS_DRIVER, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     await client.connect();
   }
   return client.db("site-reviews").collection("reviews");
