@@ -44,6 +44,7 @@ import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitRe
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export async function getServerSideProps({ req }) {
   try {
@@ -294,6 +295,12 @@ export default function Home({
   useEffect(() => {
     // Call the fetchMediaItems function when component mounts
     fetchMediaItems();
+
+    // setTimeout(() => {
+    //   mediaItems.forEach((item) => {
+    //     console.log(item.name);
+    //   });
+    // }, 600);
   }, []);
 
   return (
@@ -360,6 +367,19 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
           {adminMode && <IndexAddMedia />}
+
+          {mediaItems.map((item) => (
+            <div key={item.itemID}>
+              {item.type === "image" && <LazyLoadImage src={item.src} />}
+              {item.type === "video" && (
+                <video controls>
+                  <source src={""} type={""} />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+            </div>
+          ))}
+
           {/**
           <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
           {adminMode && <IndexAddMedia />}  */}

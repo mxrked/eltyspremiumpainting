@@ -18,12 +18,13 @@ async function connectToDatabase() {
 export const config = {
   api: {
     bodyParser: false, // Disables automatic parsing of the request body
+    sizeLimit: "5gb",
   },
 };
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    // Use multer middleware to handle file upload with in-memory storage
+    // Use multer middleware to handle file upload
     upload.single("file")(req, res, async (err) => {
       if (err) {
         console.error("Error uploading file:", err);
@@ -43,10 +44,8 @@ export default async function handler(req, res) {
       const collection = await connectToDatabase();
 
       try {
-        // Convert file buffer to base64
-        const src = `data:${type};base64,${file.buffer.toString("base64")}`;
+        const src = `data:${type};base64,${file.buffer.toString("base64")}`; // Convert file buffer to base64
 
-        // Insert media item into database
         await collection.insertOne({ itemID, name, type, src, text });
 
         res.status(200).json({ message: "Media item submitted successfully!" });
