@@ -38,13 +38,12 @@ import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
 import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
 // import { IndexAddMedia } from "@/assets/components/pages/Index/old/IndexAddMedia";
 import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
-import { IndexGeneratedMedia } from "@/assets/components/pages/Index/old/IndexGeneratedMedia";
+import { IndexGeneratedMedia } from "@/assets/components/pages/Index/IndexGeneratedMedia";
 import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export async function getServerSideProps({ req }) {
   try {
@@ -240,13 +239,12 @@ export default function Home({
   // }, []);
 
   // Displaying the current website visits when on localhost
-  // useEffect(() => {
-  //   const IPS = ["127.0.0.1", "::1"];
-
-  //   if (current_ip === IPS[0] || current_ip === IPS[1]) {
-  //     SET_ON_LOCALHOST(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    SET_ON_LOCALHOST(isLocalhost);
+  }, []);
 
   //! EVERYTHING RELATED TO REVIEWS
   const [reviews, setReviews] = useState([]);
@@ -366,19 +364,8 @@ export default function Home({
 
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
-          {adminMode && <IndexAddMedia />}
-
-          {mediaItems.map((item) => (
-            <div key={item.itemID}>
-              {item.type === "image" && <LazyLoadImage src={item.src} />}
-              {item.type === "video" && (
-                <video controls>
-                  <source src={""} type={""} />
-                  Your browser does not support the video tag.
-                </video>
-              )}
-            </div>
-          ))}
+          {ON_LOCAL_HOST && adminMode && <IndexAddMedia />}
+          {ON_LOCAL_HOST && <IndexGeneratedMedia mediaItems={mediaItems} />}
 
           {/**
           <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
