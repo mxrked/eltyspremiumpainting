@@ -262,295 +262,6 @@
     }
   }
 }
-// .index_reviews {
-//   margin-top: 60px;
-//   margin-bottom: 200px;
-//   overflow: hidden !important;
-//   white-space: pre-wrap;
-
-//   .index_reviews_inner {
-//     max-width: 1300px;
-//     @include quickCenter("relative");
-//     padding-left: 50px;
-//     padding-right: 50px;
-//     height: 100%;
-
-//     .index_reviews_inner_top {
-//       text-align: center;
-//       height: 550px;
-
-//       h3 {
-//         font-family: "Poppins Extra Bold";
-//         font-size: clamp(3rem, 3vw, 3rem);
-//         color: $MineShaft;
-//       }
-
-//       h2 {
-//         font-family: "Poppins Extra Bold";
-//         font-size: $SubHeading;
-//         color: $Seance;
-//         max-width: 730px;
-//         line-height: 80px;
-//         @include quickCenter("relative");
-//         margin-bottom: 50px;
-//         white-space: pre-wrap;
-//       }
-
-//       p {
-//         font-family: "Noto Sans Medium";
-//         font-size: $Link;
-//         color: $MineShaft;
-//         max-width: 800px;
-//         line-height: 35px;
-//         // margin-top: 20px;
-//         margin-bottom: 40px;
-//         @include quickCenter("relative");
-//       }
-
-//       ul {
-//         @include displayElement(flex, space-evenly, center);
-//         width: 100%;
-//         max-width: 385px;
-//         @include quickCenter("relative");
-
-//         li {
-//           a {
-//             img {
-//               max-width: 100px;
-//             }
-//           }
-//         }
-//       }
-//     }
-
-//     .index_reviews_inner_reviews {
-//       .index_reviews_inner_reviews_box {
-//         .index_reviews_inner_reviews_row {
-//           .review {
-//             height: 100%;
-//             max-width: 48%;
-//             max-height: 350px;
-//             margin-bottom: 30px;
-//             @include quickCenter("relative");
-//             overflow: hidden;
-//             overflow-y: auto;
-//             white-space: nowrap;
-//             scrollbar-color: rgba(197, 197, 197, 0.63) $VividViolet;
-//             scrollbar-width: thin;
-//             border: 2px solid rgba(0, 0, 0, 0.053);
-//             /* Custom styling for the scrollbar track */
-
-//             &::-webkit-scrollbar {
-//               width: 8px;
-//               background-color: rgba(197, 197, 197, 0.63);
-//             }
-
-//             /* Custom styling for the scrollbar handle */
-//             &::-webkit-scrollbar-thumb {
-//               background-color: $VividViolet;
-//             }
-
-//             .review_inner {
-//               background-color: white;
-//               // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.109);
-//               height: 100%;
-//               // min-height: 410px;
-//               // max-height: 410px;
-//               overflow: hidden;
-//               white-space: pre-wrap;
-//               overflow-y: auto;
-//               max-width: 95%;
-//               @include quickCenter("relative");
-//               width: 100%;
-//               border-radius: 5px;
-//               padding-top: 30px;
-//               padding-bottom: 60px;
-//               position: relative;
-//               @include displayElement(flex, center, center);
-//               // border: 2px solid red;
-
-//               .review_inner_cnt {
-//                 height: 100%;
-//                 width: 100%;
-//               }
-
-//               .review_inner_top {
-//                 padding-left: 30px;
-//                 padding-right: 30px;
-
-//                 .review_inner_top_box {
-//                   .review_inner_top_row {
-//                     .review_inner_top_side {
-//                       height: 185px;
-//                       display: flex;
-//                       align-items: center;
-//                     }
-
-//                     .review_top_L {
-//                       justify-content: center;
-
-//                       .review_inner_top_side_cnt {
-//                         width: 100%;
-//                         height: 100%;
-//                         @include displayElement(flex, flex-start, center);
-
-//                         img {
-//                           width: 100%;
-//                           max-width: 85px;
-//                           @include quickCenter("relative");
-//                           margin-left: 0;
-//                           border-radius: 50%;
-//                         }
-//                       }
-//                     }
-
-//                     .review_top_R {
-//                       .review_inner_top_side_cnt {
-//                         .review_inner_top_text {
-//                           display: block;
-//                           text-align: left;
-
-//                           a {
-//                             display: inline-block;
-//                             text-decoration: none;
-
-//                             &:hover {
-//                               .review_name {
-//                                 color: $VividViolet;
-//                               }
-//                             }
-
-//                             .review_name {
-//                               color: $MineShaft;
-//                               font-family: "Poppins Extra Bold";
-//                               font-size: clamp(17px, 19px, 19px);
-//                             }
-//                           }
-
-//                           .review_location {
-//                             font-family: "Poppins Bold";
-//                             font-size: clamp(15px, 16px, 16px);
-//                           }
-
-//                           .review_date {
-//                             font-family: "Noto Sans Medium";
-//                             font-size: clamp(15px, 16px, 16px);
-//                           }
-//                         }
-
-//                         .review_inner_yelp_rating {
-//                           margin-top: 13px;
-
-//                           ul {
-//                             @include displayElement(
-//                               flex,
-//                               space-between,
-//                               center
-//                             );
-
-//                             li {
-//                               margin-left: 5px;
-//                               margin-right: 5px;
-//                               width: 25px;
-//                               height: 25px;
-//                               background-color: red;
-//                               @include displayElement(flex, center, center);
-//                               color: white;
-//                               font-size: clamp(13px, 13px, 13px);
-//                               border-radius: 3px;
-
-//                               &:first-child {
-//                                 margin-left: 0;
-//                               }
-//                               &:last-child {
-//                                 margin-right: 0;
-//                               }
-//                             }
-//                           }
-//                         }
-
-//                         .review_inner_google_rating {
-//                           margin-top: 13px;
-
-//                           ul {
-//                             @include displayElement(
-//                               flex,
-//                               space-between,
-//                               center
-//                             );
-
-//                             li {
-//                               margin-left: 10px;
-//                               margin-right: 10px;
-//                               // background-color: red;
-//                               @include displayElement(flex, center, center);
-//                               color: #f7b704;
-//                               font-size: clamp(15px, 15px, 15px);
-//                               border-radius: 3px;
-
-//                               &:first-child {
-//                                 margin-left: 0;
-//                               }
-//                               &:last-child {
-//                                 margin-right: 0;
-//                               }
-//                             }
-//                           }
-//                         }
-//                       }
-//                     }
-//                   }
-//                 }
-//               }
-
-//               .review_inner_text {
-//                 height: 100%;
-//                 padding-left: 35px;
-//                 padding-right: 35px;
-//                 margin-bottom: 40px;
-
-//                 p {
-//                   height: 100%;
-//                   font-family: "Noto Sans Regular";
-//                   font-size: clamp(15px, 16px, 16px);
-//                 }
-//               }
-
-//               .yelp_logo_holder {
-//                 max-width: 75px;
-//                 margin-left: 35px;
-//                 height: 100%;
-//                 display: flex;
-//                 align-items: flex-end;
-//                 position: relative;
-
-//                 a {
-//                   display: inline-flex;
-//                   align-items: flex-end;
-//                   // position: absolute;
-//                   // left: 0;
-//                   // bottom: 0;
-
-//                   // img {
-//                   //   margin-left: 35px;
-//                   //   width: 100%;
-//                   //   max-width: 90px;
-//                   // }
-//                 }
-
-//                 img {
-//                   width: 100%;
-//                   max-width: 100%;
-//                 }
-//               }
-//             }
-//             // height: 600px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 .index_generated_reviews {
   margin-top: 60px;
   margin-bottom: 70px;
@@ -1081,90 +792,80 @@
   }
 }
 .index_add_media {
-  margin-top: 60px;
+  margin-top: 55px;
   margin-bottom: 260px;
   overflow: hidden !important;
   white-space: pre-wrap;
+  max-width: 900px;
+  @include quickCenter("relative");
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100%;
 
-  .index_add_media_inner {
-    max-width: 1300px;
+  h2 {
+    font-family: "Poppins Extra Bold";
+    font-size: clamp(3rem, 3vw, 3rem);
+    color: $MineShaft;
+    text-align: center;
+  }
+
+  form {
+    max-width: 800px;
     @include quickCenter("relative");
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 100%;
+    margin-top: 30px;
 
-    h2 {
-      font-family: "Poppins Extra Bold";
-      font-size: clamp(2rem, 3vw, 3rem);
-      color: $MineShaft;
-      text-align: center;
+    .form_set {
+      display: grid;
+      margin-bottom: 20px;
+
+      span {
+        display: block;
+        font-family: "Noto Sans Medium";
+        font-size: clamp(17px, 19px, 19px);
+      }
+
+      input {
+        padding: 10px;
+        font-family: "Noto Sans Regular";
+        border: 2px solid white;
+        background-color: rgba(237, 237, 237, 0.3);
+        margin-top: 15px;
+      }
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        span {
+          margin-top: 8px;
+          margin-left: 10px;
+          font-size: clamp(14px, 15px, 15px);
+        }
+      }
+    }
+
+    .form_btns {
+      @include displayElement(flex, flex-start, center);
+
+      button {
+        padding: 12px;
+        color: white;
+        border-radius: 5px;
+        font-family: "Poppins Bold";
+      }
+
+      .reset_btn {
+        background-color: $MineShaft;
+        margin-right: 12px;
+      }
+
+      .submit_btn {
+        background-color: $VividViolet;
+      }
     }
   }
 }
-// .index_gallery_modal {
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   top: 0;
-//   left: 0;
-//   // opacity: 0;
-//   // visibility: hidden;
-//   z-index: 400;
-//   background-color: white;
-
-//   .modal_darken {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.55);
-//     top: 0;
-//     left: 0;
-//     cursor: pointer;
-//   }
-
-//   button {
-//     position: absolute;
-//     width: 100%;
-//     height: 50px;
-//     max-width: 50px;
-//     left: 50%;
-//     transform: translate(-50%);
-//     margin-top: 60px;
-//     background-color: $Seance;
-//     color: white;
-//     font-size: $Link;
-//     @include displayElement(flex, center, center);
-//   }
-
-//   .modal_img_holder,
-//   .modal_video_holder {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     top: 50%;
-//     left: 50%;
-//     background-color: rgb(26, 26, 26);
-//     transform: translate(-50%, -50%);
-
-//     img,
-//     video {
-//       max-width: 100%;
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
-
-//   .modal_img_holder {
-//     max-width: 550px;
-//     max-height: 550px;
-//     margin-top: 30px;
-//   }
-
-//   .modal_video_holder {
-//     max-width: 65%;
-//     max-height: 65%;
-//   }
-// }
 .index_contact {
   margin-top: 60px;
   margin-bottom: 260px;
@@ -1568,25 +1269,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   .index_reviews_inner {
-  //     .index_reviews_inner_top {
-  //       h3 {
-  //         font-size: clamp(2rem, 3vw, 3rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 60px;
-  //         font-size: clamp(3rem, 3vw, 3rem);
-  //       }
-
-  //       p {
-  //         font-size: clamp(19px, 21px, 21px);
-  //         max-width: 800px;
-  //       }
-  //     }
-  //   }
-  // }
   .index_gallery {
     margin-bottom: 95px;
 
@@ -1746,64 +1428,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 60px;
-
-  //   .index_reviews_inner {
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 40px;
-
-  //       h3 {
-  //         font-size: clamp(2rem, 3vw, 3rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 40px;
-  //         font-size: clamp(2rem, 2.5vw, 2.5rem);
-  //         max-width: 550px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(16px, 18px, 18px);
-  //         max-width: 700px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-
-  //       .index_reviews_inner_reviews_box {
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 100%;
-  //             width: 100%;
-  //             margin-bottom: 60px;
-  //             height: 100%;
-  //             max-height: 100%;
-
-  //             .review_inner {
-  //               .review_inner_top {
-  //                 .review_inner_top_box {
-  //                   .review_top_R {
-  //                     .review_inner_top_side_cnt {
-  //                       .review_inner_google_rating {
-  //                         ul {
-  //                           justify-content: space-evenly;
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       .index_generated_reviews_inner_reviews {
@@ -1946,18 +1570,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     max-width: 520px;
-  //     max-height: 520px;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       .close_btn {
@@ -1991,6 +1603,36 @@
       .modal_description_holder {
         margin-top: 190px;
         max-width: 500px;
+      }
+    }
+  }
+  .index_add_media {
+    margin-bottom: 100px;
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    form {
+      max-width: 600px;
+
+      .form_set {
+        span {
+          font-size: clamp(14px, 16px, 16px);
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(13px, 14px, 14px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 8px;
+          font-size: clamp(13px, 14px, 14px);
+        }
       }
     }
   }
@@ -2208,131 +1850,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 50px;
-
-  //   .index_reviews_inner {
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 50px;
-
-  //       h3 {
-  //         font-size: clamp(1.5rem, 1.8vw, 1.8rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 35px;
-  //         font-size: clamp(1.7rem, 2.1vw, 2.1rem);
-  //         max-width: 650px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(14px, 16px, 16px);
-  //         max-width: 420px;
-  //       }
-
-  //       ul {
-  //         li {
-  //           a {
-  //             img {
-  //               max-width: 80px;
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-
-  //       .index_reviews_inner_reviews_box {
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 100%;
-  //             width: 100%;
-  //             margin-bottom: 60px;
-  //             height: 100%;
-  //             max-height: 100%;
-
-  //             .review_inner {
-  //               .review_inner_top {
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(17px, 18px, 18px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(13px, 14px, 14px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(13px, 14px, 14px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 40px;
-  //                 padding-right: 40px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 15px, 15px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       .index_generated_reviews_inner_reviews {
@@ -2489,18 +2006,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     max-width: 80%;
-  //     height: 80%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -2545,6 +2050,36 @@
         // margin-top: 50px;
         top: 12%;
         max-width: 500px;
+      }
+    }
+  }
+  .index_add_media {
+    margin-bottom: 100px;
+
+    h2 {
+      font-size: clamp(1.7rem, 2.1vw, 2.1rem);
+    }
+
+    form {
+      max-width: 600px;
+
+      .form_set {
+        span {
+          font-size: clamp(13px, 15px, 15px);
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(12px, 13px, 13px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 8px;
+          font-size: clamp(12px, 13px, 13px);
+        }
       }
     }
   }
@@ -2783,166 +2318,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 30px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 30px;
-  //     padding-right: 30px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       padding-bottom: 0px;
-
-  //       h3 {
-  //         font-size: clamp(1.1rem, 1.6vw, 1.6rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 30px;
-  //         font-size: clamp(1.3rem, 1.9vw, 1.9rem);
-  //         max-width: 650px;
-  //         padding-left: 15px;
-  //         padding-right: 15px;
-  //         margin-bottom: 25px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(13px, 15px, 15px);
-  //         max-width: 700px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-bottom: 25px;
-  //       }
-
-  //       ul {
-  //         li {
-  //           a {
-  //             img {
-  //               max-width: 75px;
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 100%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             height: 100%;
-  //             max-height: 100%;
-
-  //             .review_inner {
-  //               padding-bottom: 15px;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .index_generated_reviews {
     margin-bottom: 50px;
 
@@ -3138,28 +2513,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 50px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 20px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 280px;
-  //     max-height: 280px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -3209,6 +2562,46 @@
 
         p {
           font-size: clamp(13px, 14px, 14px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+    }
+
+    form {
+      max-width: 600px;
+
+      .form_set {
+        span {
+          font-size: clamp(12px, 14px, 14px);
+        }
+
+        div {
+          span {
+            font-size: 13px;
+            margin-top: 14px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(12px, 12px, 12px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 8px;
+          font-size: clamp(12px, 12px, 12px);
         }
       }
     }
@@ -3471,184 +2864,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 40px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 45px;
-
-  //       h3 {
-  //         font-size: clamp(1.1rem, 1.6vw, 1.6rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 30px;
-  //         font-size: clamp(1.3rem, 1.9vw, 1.9rem);
-  //         max-width: 560px;
-  //         margin-bottom: 23px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(13px, 15px, 15px);
-  //         max-width: 500px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 10px;
-  //         margin-bottom: 30px;
-  //       }
-
-  //       ul {
-  //         li {
-  //           a {
-  //             img {
-  //               max-width: 75px;
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 350px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .index_generated_reviews {
     margin-bottom: 50px;
 
@@ -3842,28 +3057,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 12px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 230px;
-  //     max-height: 230px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -3910,6 +3103,46 @@
 
         p {
           font-size: clamp(14px, 15px, 15px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+    }
+
+    form {
+      max-width: 400px;
+
+      .form_set {
+        span {
+          font-size: clamp(13px, 15px, 15px);
+        }
+
+        div {
+          span {
+            font-size: 13px;
+            margin-top: 14px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(13px, 14px, 14px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 8px;
+          font-size: clamp(13px, 14px, 14px);
         }
       }
     }
@@ -4175,289 +3408,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 120px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 340px;
-
-  //       h3 {
-  //         font-size: clamp(1.5rem, 1.6vw, 1.6rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 40px;
-  //         font-size: clamp(2rem, 3vw, 3rem);
-  //         max-width: 410px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(15px, 17px, 17px);
-  //         max-width: 580px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 20px;
-  //         margin-bottom: 40px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 350px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     // .index_reviews_inner_reviews {
-  //     //   max-width: 550px;
-  //     //   @include quickCenter("relative");
-  //     //   padding-left: 0px;
-  //     //   padding-right: 0px;
-
-  //     //   .index_reviews_inner_reviews_box {
-  //     //     padding-left: 0px;
-  //     //     padding-right: 0px;
-
-  //     //     .index_reviews_inner_reviews_row {
-  //     //       .review {
-  //     //         max-width: 100%;
-  //     //         width: 100%;
-  //     //         margin-bottom: 40px;
-  //     //         height: 100%;
-  //     //         padding-left: 0px;
-  //     //         padding-right: 0px;
-
-  //     //         .review_inner {
-  //     //           padding-bottom: 15px;
-  //     //           max-width: 92%;
-
-  //     //           .review_inner_top {
-  //     //             padding-left: 10px;
-  //     //             padding-right: 10px;
-
-  //     //             .review_inner_top_box {
-  //     //               .review_inner_top_row {
-  //     //                 .review_inner_top_side {
-  //     //                   height: 100%;
-  //     //                   width: 100%;
-  //     //                   justify-content: center;
-  //     //                 }
-
-  //     //                 .review_top_L {
-  //     //                   padding-top: 30px;
-  //     //                   padding-bottom: 20px;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     img {
-  //     //                       @include quickCenter("relative");
-  //     //                       max-width: 85px;
-  //     //                     }
-  //     //                   }
-  //     //                 }
-
-  //     //                 .review_top_R {
-  //     //                   padding-bottom: 40px;
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     .review_inner_top_text {
-  //     //                       text-align: center;
-
-  //     //                       a {
-  //     //                         .review_name {
-  //     //                           font-size: clamp(20px, 21px, 21px);
-  //     //                         }
-  //     //                       }
-
-  //     //                       .review_location {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-
-  //     //                       .review_date {
-  //     //                         font-size: clamp(13px, 14px, 14px);
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_yelp_rating {
-  //     //                       ul {
-  //     //                         li {
-  //     //                           width: 23px;
-  //     //                           height: 23px;
-  //     //                           font-size: 12px;
-  //     //                         }
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_google_rating {
-  //     //                       ul {
-  //     //                         @include quickCenter("relative");
-  //     //                         max-width: 120px;
-  //     //                         width: 100%;
-  //     //                         justify-content: space-evenly;
-
-  //     //                         li {
-  //     //                           &:last-child {
-  //     //                             margin-right: 0;
-  //     //                           }
-  //     //                         }
-  //     //                       }
-  //     //                     }
-  //     //                   }
-  //     //                 }
-  //     //               }
-  //     //             }
-  //     //           }
-
-  //     //           .review_inner_text {
-  //     //             text-align: center;
-  //     //             padding-left: 45px;
-  //     //             padding-right: 45px;
-
-  //     //             p {
-  //     //               font-size: clamp(14px, 16px, 16px);
-  //     //             }
-  //     //           }
-
-  //     //           .yelp_logo_holder {
-  //     //             @include quickCenter("relative");
-  //     //           }
-  //     //         }
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       padding-left: 20px;
@@ -4651,28 +3601,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 115px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 510px;
-  //     max-height: 510px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -4718,6 +3646,46 @@
 
         p {
           font-size: clamp(16px, 17px, 17px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    form {
+      max-width: 520px;
+
+      .form_set {
+        span {
+          font-size: clamp(15px, 17px, 17px);
+        }
+
+        div {
+          span {
+            font-size: 11px;
+            margin-top: 15px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(14px, 15px, 15px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 10px;
+          font-size: clamp(14px, 15px, 15px);
         }
       }
     }
@@ -4983,302 +3951,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 40px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 50px;
-
-  //       h3 {
-  //         font-size: clamp(1.3rem, 1.7vw, 1.7rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 30px;
-  //         font-size: clamp(1.5rem, 1.9vw, 1.9rem);
-  //         max-width: 560px;
-  //         margin-bottom: 23px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(13px, 15px, 15px);
-  //         max-width: 570px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 10px;
-  //         margin-bottom: 30px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 650px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 350px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     // .index_reviews_inner_reviews {
-  //     //   max-width: 550px;
-  //     //   @include quickCenter("relative");
-  //     //   padding-left: 0px;
-  //     //   padding-right: 0px;
-
-  //     //   .index_reviews_inner_reviews_box {
-  //     //     padding-left: 0px;
-  //     //     padding-right: 0px;
-
-  //     //     .index_reviews_inner_reviews_row {
-  //     //       .review {
-  //     //         max-width: 100%;
-  //     //         width: 100%;
-  //     //         margin-bottom: 30px;
-  //     //         height: 100%;
-  //     //         padding-left: 0px;
-  //     //         padding-right: 0px;
-
-  //     //         &:last-child {
-  //     //           max-width: 100%;
-  //     //         }
-
-  //     //         .review_inner {
-  //     //           padding-bottom: 25px;
-  //     //           max-width: 92%;
-
-  //     //           .review_inner_top {
-  //     //             padding-left: 10px;
-  //     //             padding-right: 10px;
-
-  //     //             .review_inner_top_box {
-  //     //               .review_inner_top_row {
-  //     //                 .review_inner_top_side {
-  //     //                   height: 185px;
-  //     //                   width: 100%;
-  //     //                   justify-content: center;
-  //     //                 }
-
-  //     //                 .review_top_L {
-  //     //                   max-width: 30%;
-  //     //                   padding-top: 30px;
-  //     //                   padding-bottom: 20px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     img {
-  //     //                       @include quickCenter("relative");
-  //     //                       max-width: 85px;
-  //     //                     }
-  //     //                   }
-  //     //                 }
-
-  //     //                 .review_top_R {
-  //     //                   max-width: 70%;
-  //     //                   padding-bottom: 0px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     .review_inner_top_text {
-  //     //                       text-align: left;
-
-  //     //                       a {
-  //     //                         .review_name {
-  //     //                           font-size: clamp(18px, 19px, 19px);
-  //     //                         }
-  //     //                       }
-
-  //     //                       .review_location {
-  //     //                         font-size: clamp(13px, 14px, 14px);
-  //     //                       }
-
-  //     //                       .review_date {
-  //     //                         font-size: clamp(13px, 14px, 14px);
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_yelp_rating {
-  //     //                       ul {
-  //     //                         li {
-  //     //                           width: 21px;
-  //     //                           height: 21px;
-  //     //                           font-size: 11px;
-  //     //                         }
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_google_rating {
-  //     //                       ul {
-  //     //                         @include quickCenter("relative");
-  //     //                         margin-left: 0;
-  //     //                         max-width: 120px;
-  //     //                         width: 100%;
-  //     //                         justify-content: space-evenly;
-
-  //     //                         li {
-  //     //                           &:last-child {
-  //     //                             margin-right: 0;
-  //     //                           }
-  //     //                         }
-  //     //                       }
-  //     //                     }
-  //     //                   }
-  //     //                 }
-  //     //               }
-  //     //             }
-  //     //           }
-
-  //     //           .review_inner_text {
-  //     //             text-align: left;
-  //     //             padding-left: 45px;
-  //     //             padding-right: 45px;
-
-  //     //             p {
-  //     //               font-size: clamp(13px, 15px, 15px);
-  //     //             }
-  //     //           }
-
-  //     //           .yelp_logo_holder {
-  //     //             @include quickCenter("relative");
-  //     //             margin-left: 40px;
-  //     //           }
-  //     //         }
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // }
   .index_generated_reviews {
     margin-bottom: 40px;
 
@@ -5474,28 +4146,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 25px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 290px;
-  //     max-height: 290px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -5538,6 +4188,46 @@
 
       .modal_description_holder {
         margin-top: 30px;
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(1.5rem, 1.9vw, 1.9rem);
+    }
+
+    form {
+      max-width: 520px;
+
+      .form_set {
+        span {
+          font-size: clamp(14px, 15px, 15px);
+        }
+
+        div {
+          span {
+            font-size: 11px;
+            margin-top: 15px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 7px;
+          font-size: clamp(13px, 14px, 14px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 10px;
+          font-size: clamp(13px, 14px, 14px);
+        }
       }
     }
   }
@@ -5802,297 +4492,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 110px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 60px;
-
-  //       h3 {
-  //         font-size: clamp(1.8rem, 2.1vw, 2.1rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 55px;
-  //         font-size: clamp(3rem, 3vw, 3rem);
-  //         max-width: 590px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(17px, 18px, 18px);
-  //         max-width: 670px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 20px;
-  //         margin-bottom: 40px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 750px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 300px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     // .index_reviews_inner_reviews {
-  //     //   max-width: 880px;
-  //     //   @include quickCenter("relative");
-  //     //   padding-left: 0px;
-  //     //   padding-right: 0px;
-
-  //     //   .index_reviews_inner_reviews_box {
-  //     //     padding-left: 0px;
-  //     //     padding-right: 0px;
-
-  //     //     .index_reviews_inner_reviews_row {
-  //     //       .review {
-  //     //         max-width: 50%;
-  //     //         width: 100%;
-  //     //         margin-bottom: 30px;
-  //     //         height: 100%;
-  //     //         padding-left: 0px;
-  //     //         padding-right: 0px;
-
-  //     //         .review_inner {
-  //     //           padding-bottom: 25px;
-  //     //           max-width: 92%;
-
-  //     //           .review_inner_top {
-  //     //             padding-left: 10px;
-  //     //             padding-right: 10px;
-
-  //     //             .review_inner_top_box {
-  //     //               .review_inner_top_row {
-  //     //                 .review_inner_top_side {
-  //     //                   height: 185px;
-  //     //                   width: 100%;
-  //     //                   justify-content: center;
-  //     //                 }
-
-  //     //                 .review_top_L {
-  //     //                   max-width: 30%;
-  //     //                   padding-top: 30px;
-  //     //                   padding-bottom: 20px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     img {
-  //     //                       @include quickCenter("relative");
-  //     //                       max-width: 85px;
-  //     //                     }
-  //     //                   }
-  //     //                 }
-
-  //     //                 .review_top_R {
-  //     //                   max-width: 70%;
-  //     //                   padding-bottom: 0px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     .review_inner_top_text {
-  //     //                       text-align: left;
-
-  //     //                       a {
-  //     //                         .review_name {
-  //     //                           font-size: clamp(19px, 20px, 20px);
-  //     //                         }
-  //     //                       }
-
-  //     //                       .review_location {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-
-  //     //                       .review_date {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_yelp_rating {
-  //     //                       ul {
-  //     //                         li {
-  //     //                           width: 21px;
-  //     //                           height: 21px;
-  //     //                           font-size: 11px;
-  //     //                         }
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_google_rating {
-  //     //                       ul {
-  //     //                         @include quickCenter("relative");
-  //     //                         margin-left: 0;
-  //     //                         max-width: 120px;
-  //     //                         width: 100%;
-  //     //                         justify-content: space-evenly;
-
-  //     //                         li {
-  //     //                           &:last-child {
-  //     //                             margin-right: 0;
-  //     //                           }
-  //     //                         }
-  //     //                       }
-  //     //                     }
-  //     //                   }
-  //     //                 }
-  //     //               }
-  //     //             }
-  //     //           }
-
-  //     //           .review_inner_text {
-  //     //             text-align: left;
-  //     //             padding-left: 45px;
-  //     //             padding-right: 45px;
-
-  //     //             p {
-  //     //               font-size: clamp(13px, 15px, 15px);
-  //     //             }
-  //     //           }
-
-  //     //           .yelp_logo_holder {
-  //     //             @include quickCenter("relative");
-  //     //             margin-left: 40px;
-  //     //           }
-  //     //         }
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       padding-left: 20px;
@@ -6285,29 +4684,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 215px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 690px;
-  //     max-height: 690px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
-
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -6353,6 +4729,46 @@
 
         p {
           font-size: clamp(16px, 17px, 17px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(2rem, 2.5vw, 2.5rem);
+    }
+
+    form {
+      max-width: 640px;
+
+      .form_set {
+        span {
+          font-size: clamp(15px, 16px, 16px);
+        }
+
+        div {
+          span {
+            font-size: 14px;
+            margin-top: 15px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 10px;
+          font-size: clamp(15px, 16px, 16px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 10px;
+          font-size: clamp(13px, 14px, 14px);
         }
       }
     }
@@ -6616,287 +5032,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 140px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 100%;
-  //       margin-bottom: 70px;
-
-  //       h3 {
-  //         font-size: clamp(1.8rem, 2.1vw, 2.1rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 55px;
-  //         font-size: clamp(3rem, 3vw, 3rem);
-  //         max-width: 590px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(17px, 18px, 18px);
-  //         max-width: 670px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 20px;
-  //         margin-bottom: 40px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 750px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 300px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     // .index_reviews_inner_reviews {
-  //     //   max-width: 880px;
-  //     //   @include quickCenter("relative");
-  //     //   padding-left: 0px;
-  //     //   padding-right: 0px;
-
-  //     //   .index_reviews_inner_reviews_box {
-  //     //     padding-left: 0px;
-  //     //     padding-right: 0px;
-
-  //     //     .index_reviews_inner_reviews_row {
-  //     //       .review {
-  //     //         max-width: 50%;
-  //     //         width: 100%;
-  //     //         margin-bottom: 30px;
-  //     //         height: 100%;
-  //     //         padding-left: 0px;
-  //     //         padding-right: 0px;
-
-  //     //         &:last-child {
-  //     //           max-width: 50%;
-  //     //           margin-left: 0;
-  //     //           @include quickCenter("relative");
-  //     //         }
-
-  //     //         .review_inner {
-  //     //           padding-bottom: 25px;
-  //     //           max-width: 92%;
-
-  //     //           .review_inner_top {
-  //     //             padding-left: 10px;
-  //     //             padding-right: 10px;
-
-  //     //             .review_inner_top_box {
-  //     //               .review_inner_top_row {
-  //     //                 .review_inner_top_side {
-  //     //                   height: 185px;
-  //     //                   width: 100%;
-  //     //                   justify-content: center;
-  //     //                 }
-
-  //     //                 .review_top_L {
-  //     //                   max-width: 30%;
-  //     //                   padding-top: 30px;
-  //     //                   padding-bottom: 20px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     img {
-  //     //                       @include quickCenter("relative");
-  //     //                       max-width: 85px;
-  //     //                     }
-  //     //                   }
-  //     //                 }
-
-  //     //                 .review_top_R {
-  //     //                   max-width: 70%;
-  //     //                   padding-bottom: 0px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     .review_inner_top_text {
-  //     //                       text-align: left;
-
-  //     //                       a {
-  //     //                         .review_name {
-  //     //                           font-size: clamp(19px, 20px, 20px);
-  //     //                         }
-  //     //                       }
-
-  //     //                       .review_location {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-
-  //     //                       .review_date {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_yelp_rating {
-  //     //                       ul {
-  //     //                         li {
-  //     //                           width: 21px;
-  //     //                           height: 21px;
-  //     //                           font-size: 11px;
-  //     //                         }
-  //     //                       }
-  //     //                     }
-  //     //                   }
-  //     //                 }
-  //     //               }
-  //     //             }
-  //     //           }
-
-  //     //           .review_inner_text {
-  //     //             text-align: left;
-  //     //             padding-left: 45px;
-  //     //             padding-right: 45px;
-
-  //     //             p {
-  //     //               font-size: clamp(13px, 15px, 15px);
-  //     //             }
-  //     //           }
-
-  //     //           .yelp_logo_holder {
-  //     //             @include quickCenter("relative");
-  //     //             margin-left: 40px;
-  //     //           }
-  //     //         }
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       padding-left: 20px;
@@ -7091,28 +5226,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 65px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 500px;
-  //     max-height: 500px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 70%;
-  //     height: 70%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -7158,6 +5271,46 @@
 
         p {
           font-size: clamp(16px, 17px, 17px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+    }
+
+    form {
+      max-width: 640px;
+
+      .form_set {
+        span {
+          font-size: clamp(15px, 16px, 16px);
+        }
+
+        div {
+          span {
+            font-size: 14px;
+            margin-top: 15px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 10px;
+          font-size: clamp(15px, 16px, 16px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 10px;
+          font-size: clamp(13px, 14px, 14px);
         }
       }
     }
@@ -7422,284 +5575,6 @@
       }
     }
   }
-  // .index_reviews {
-  //   margin-bottom: 160px;
-
-  //   .index_reviews_inner {
-  //     padding-left: 20px;
-  //     padding-right: 20px;
-  //     margin-top: 5px;
-
-  //     .index_reviews_inner_top {
-  //       height: 380px;
-
-  //       h3 {
-  //         font-size: clamp(1.8rem, 2.1vw, 2.1rem);
-  //       }
-
-  //       h2 {
-  //         line-height: 55px;
-  //         font-size: clamp(3rem, 3vw, 3rem);
-  //         max-width: 590px;
-  //       }
-
-  //       p {
-  //         font-size: clamp(17px, 18px, 18px);
-  //         max-width: 670px;
-  //         padding-left: 10px;
-  //         padding-right: 10px;
-  //         margin-top: 20px;
-  //         margin-bottom: 40px;
-  //       }
-  //     }
-
-  //     .index_reviews_inner_reviews {
-  //       max-width: 850px;
-  //       @include quickCenter("relative");
-  //       padding-left: 0px;
-  //       padding-right: 0px;
-
-  //       .index_reviews_inner_reviews_box {
-  //         padding-left: 0px;
-  //         padding-right: 0px;
-
-  //         .index_reviews_inner_reviews_row {
-  //           .review {
-  //             max-width: 46%;
-  //             width: 100%;
-  //             margin-bottom: 40px;
-  //             @include quickCenter("relative");
-  //             max-height: 300px;
-  //             padding-left: 0px;
-  //             padding-right: 0px;
-  //             overflow: hidden;
-  //             overflow-y: auto;
-  //             border: 1px solid rgb(222, 222, 222);
-
-  //             &:last-child {
-  //               max-width: 50%;
-  //               @include quickCenter("relative");
-  //             }
-
-  //             .review_inner {
-  //               padding-top: 5px;
-  //               padding-bottom: 25px;
-  //               max-width: 100%;
-  //               // max-height: 300px;
-  //               // overflow: hidden;
-  //               // overflow-y: auto;
-  //               box-shadow: none;
-  //               // border: 1px solid rgb(222, 222, 222);
-  //               border: none;
-
-  //               .review_inner_top {
-  //                 padding-left: 10px;
-  //                 padding-right: 10px;
-  //                 height: 100%;
-
-  //                 .review_inner_top_box {
-  //                   .review_inner_top_row {
-  //                     .review_inner_top_side {
-  //                       height: 100%;
-  //                       width: 100%;
-  //                       justify-content: center;
-  //                     }
-
-  //                     .review_top_L {
-  //                       padding-top: 30px;
-  //                       padding-bottom: 20px;
-
-  //                       .review_inner_top_side_cnt {
-  //                         img {
-  //                           @include quickCenter("relative");
-  //                           max-width: 75px;
-  //                         }
-  //                       }
-  //                     }
-
-  //                     .review_top_R {
-  //                       padding-bottom: 30px;
-  //                       .review_inner_top_side_cnt {
-  //                         .review_inner_top_text {
-  //                           text-align: center;
-
-  //                           a {
-  //                             .review_name {
-  //                               font-size: clamp(16px, 17px, 17px);
-  //                             }
-  //                           }
-
-  //                           .review_location {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-
-  //                           .review_date {
-  //                             font-size: clamp(12px, 13px, 13px);
-  //                           }
-  //                         }
-
-  //                         .review_inner_yelp_rating {
-  //                           ul {
-  //                             li {
-  //                               width: 20px;
-  //                               height: 20px;
-  //                               font-size: 10px;
-  //                             }
-  //                           }
-  //                         }
-
-  //                         .review_inner_google_rating {
-  //                           ul {
-  //                             @include quickCenter("relative");
-  //                             max-width: 120px;
-  //                             width: 100%;
-  //                             justify-content: space-evenly;
-
-  //                             li {
-  //                               &:last-child {
-  //                                 margin-right: 0;
-  //                               }
-  //                             }
-  //                           }
-  //                         }
-  //                       }
-  //                     }
-  //                   }
-  //                 }
-  //               }
-
-  //               .review_inner_text {
-  //                 text-align: center;
-  //                 padding-left: 25px;
-  //                 padding-right: 25px;
-
-  //                 p {
-  //                   font-size: clamp(13px, 14px, 14px);
-  //                 }
-  //               }
-
-  //               .yelp_logo_holder {
-  //                 @include quickCenter("relative");
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     // .index_reviews_inner_reviews {
-  //     //   max-width: 980px;
-  //     //   @include quickCenter("relative");
-  //     //   padding-left: 0px;
-  //     //   padding-right: 0px;
-
-  //     //   .index_reviews_inner_reviews_box {
-  //     //     padding-left: 0px;
-  //     //     padding-right: 0px;
-
-  //     //     .index_reviews_inner_reviews_row {
-  //     //       .review {
-  //     //         max-width: 50%;
-  //     //         width: 100%;
-  //     //         margin-bottom: 30px;
-  //     //         height: 100%;
-  //     //         padding-left: 0px;
-  //     //         padding-right: 0px;
-
-  //     //         &:last-child {
-  //     //           max-width: 50%;
-  //     //         }
-
-  //     //         .review_inner {
-  //     //           padding-bottom: 25px;
-  //     //           max-width: 92%;
-
-  //     //           .review_inner_top {
-  //     //             padding-left: 10px;
-  //     //             padding-right: 10px;
-
-  //     //             .review_inner_top_box {
-  //     //               .review_inner_top_row {
-  //     //                 .review_inner_top_side {
-  //     //                   height: 185px;
-  //     //                   width: 100%;
-  //     //                   justify-content: center;
-  //     //                 }
-
-  //     //                 .review_top_L {
-  //     //                   max-width: 30%;
-  //     //                   padding-top: 30px;
-  //     //                   padding-bottom: 20px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     img {
-  //     //                       @include quickCenter("relative");
-  //     //                       max-width: 85px;
-  //     //                     }
-  //     //                   }
-  //     //                 }
-
-  //     //                 .review_top_R {
-  //     //                   max-width: 70%;
-  //     //                   padding-bottom: 0px;
-  //     //                   justify-content: flex-start;
-
-  //     //                   .review_inner_top_side_cnt {
-  //     //                     .review_inner_top_text {
-  //     //                       text-align: left;
-
-  //     //                       a {
-  //     //                         .review_name {
-  //     //                           font-size: clamp(19px, 20px, 20px);
-  //     //                         }
-  //     //                       }
-
-  //     //                       .review_location {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-
-  //     //                       .review_date {
-  //     //                         font-size: clamp(14px, 15px, 15px);
-  //     //                       }
-  //     //                     }
-
-  //     //                     .review_inner_yelp_rating {
-  //     //                       ul {
-  //     //                         li {
-  //     //                           width: 21px;
-  //     //                           height: 21px;
-  //     //                           font-size: 11px;
-  //     //                         }
-  //     //                       }
-  //     //                     }
-  //     //                   }
-  //     //                 }
-  //     //               }
-  //     //             }
-  //     //           }
-
-  //     //           .review_inner_text {
-  //     //             text-align: left;
-  //     //             padding-left: 45px;
-  //     //             padding-right: 45px;
-
-  //     //             p {
-  //     //               font-size: clamp(13px, 15px, 15px);
-  //     //             }
-  //     //           }
-
-  //     //           .yelp_logo_holder {
-  //     //             @include quickCenter("relative");
-  //     //             margin-left: 40px;
-  //     //           }
-  //     //         }
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // }
   .index_generated_reviews {
     .index_generated_reviews_inner {
       padding-left: 20px;
@@ -7891,28 +5766,6 @@
       }
     }
   }
-  // .index_gallery_modal {
-  //   button {
-  //     margin-top: 95px;
-  //     max-width: 35px;
-  //     max-height: 35px;
-  //   }
-
-  //   .modal_img_holder,
-  //   .modal_video_holder {
-  //     margin-top: 30px;
-  //   }
-
-  //   .modal_img_holder {
-  //     max-width: 640px;
-  //     max-height: 640px;
-  //   }
-
-  //   .modal_video_holder {
-  //     max-width: 65%;
-  //     height: 65%;
-  //   }
-  // }
   .index_gallery_modal {
     .index_gallery_modal_inner {
       padding-left: 20px;
@@ -7958,6 +5811,46 @@
 
         p {
           font-size: clamp(17px, 18px, 18px);
+        }
+      }
+    }
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+      font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+    }
+
+    form {
+      max-width: 740px;
+
+      .form_set {
+        span {
+          font-size: clamp(15px, 16px, 16px);
+        }
+
+        div {
+          span {
+            font-size: 14px;
+            margin-top: 15px;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 10px;
+          font-size: clamp(15px, 16px, 16px);
+        }
+      }
+
+      .form_btns {
+        button {
+          padding: 10px;
+          font-size: clamp(13px, 14px, 14px);
         }
       }
     }

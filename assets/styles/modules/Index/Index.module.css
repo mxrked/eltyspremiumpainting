@@ -702,24 +702,72 @@
 }
 
 .index_add_media {
-  margin-top: 60px;
+  margin-top: 55px;
   margin-bottom: 260px;
   overflow: hidden !important;
   white-space: pre-wrap;
-}
-.index_add_media .index_add_media_inner {
-  max-width: 1300px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 50px;
   padding-right: 50px;
   height: 100%;
 }
-.index_add_media .index_add_media_inner h2 {
+.index_add_media h2 {
   font-family: "Poppins Extra Bold";
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(3rem, 3vw, 3rem);
   color: #333333;
   text-align: center;
+}
+.index_add_media form {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.index_add_media form .form_set {
+  display: grid;
+  margin-bottom: 20px;
+}
+.index_add_media form .form_set span {
+  display: block;
+  font-family: "Noto Sans Medium";
+  font-size: 19px;
+}
+.index_add_media form .form_set input {
+  padding: 10px;
+  font-family: "Noto Sans Regular";
+  border: 2px solid white;
+  background-color: rgba(237, 237, 237, 0.3);
+  margin-top: 15px;
+}
+.index_add_media form .form_set div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.index_add_media form .form_set div span {
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.index_add_media form .form_btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.index_add_media form .form_btns button {
+  padding: 12px;
+  color: white;
+  border-radius: 5px;
+  font-family: "Poppins Bold";
+}
+.index_add_media form .form_btns .reset_btn {
+  background-color: #333333;
+  margin-right: 12px;
+}
+.index_add_media form .form_btns .submit_btn {
+  background-color: #93329e;
 }
 
 .index_contact {
@@ -1289,6 +1337,27 @@
     margin-top: 190px;
     max-width: 500px;
   }
+  .index_add_media {
+    margin-bottom: 100px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  .index_add_media form {
+    max-width: 600px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 16px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 8px;
+    font-size: 14px;
+  }
   .index_contact {
     margin-top: 60px;
     margin-bottom: 70px;
@@ -1571,6 +1640,27 @@
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
     top: 12%;
     max-width: 500px;
+  }
+  .index_add_media {
+    margin-bottom: 100px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(1.7rem, 2.1vw, 2.1rem);
+  }
+  .index_add_media form {
+    max-width: 600px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 13px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 8px;
+    font-size: 13px;
   }
   .index_contact {
     margin-top: 0px;
@@ -1923,6 +2013,34 @@
   }
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 14px;
+  }
+  .index_add_media {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
+  .index_add_media form {
+    max-width: 600px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 14px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 12px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 8px;
+    font-size: 12px;
   }
   .index_contact {
     margin-top: 90px;
@@ -2293,6 +2411,34 @@
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 15px;
   }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+  }
+  .index_add_media form {
+    max-width: 400px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 15px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 8px;
+    font-size: 14px;
+  }
   .index_contact {
     margin-top: 80px;
     margin-bottom: 60px;
@@ -2659,6 +2805,34 @@
   }
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 17px;
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  .index_add_media form {
+    max-width: 520px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 17px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 15px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 10px;
+    font-size: 15px;
   }
   .index_contact {
     margin-top: 45px;
@@ -3027,6 +3201,34 @@
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder {
     margin-top: 30px;
   }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(1.5rem, 1.9vw, 1.9rem);
+  }
+  .index_add_media form {
+    max-width: 520px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 15px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 7px;
+    font-size: 14px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
+  }
   .index_contact {
     margin-top: 80px;
     margin-bottom: 90px;
@@ -3391,6 +3593,34 @@
   }
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 17px;
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
+  .index_add_media form {
+    max-width: 640px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 16px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_contact {
     margin-top: 160px;
@@ -3759,6 +3989,34 @@
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 17px;
   }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+  }
+  .index_add_media form {
+    max-width: 640px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 16px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
+  }
   .index_contact {
     margin-top: 150px;
     margin-bottom: 110px;
@@ -4121,6 +4379,34 @@
   }
   .index_gallery_modal .index_gallery_modal_inner .modal_description_holder p {
     font-size: 18px;
+  }
+  .index_add_media {
+    margin-top: 0px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .index_add_media h2 {
+    font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+  }
+  .index_add_media form {
+    max-width: 740px;
+  }
+  .index_add_media form .form_set span {
+    font-size: 16px;
+  }
+  .index_add_media form .form_set div span {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .index_add_media form .form_set input,
+  .index_add_media form .form_set textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .index_add_media form .form_btns button {
+    padding: 10px;
+    font-size: 14px;
   }
   .index_contact {
     margin-top: 150px;
