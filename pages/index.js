@@ -364,7 +364,7 @@ export default function Home({
 
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
-          {ON_LOCAL_HOST && adminMode && <IndexAddMedia />}
+          {adminMode && <IndexAddMedia />}
           {ON_LOCAL_HOST && <IndexGeneratedMedia mediaItems={mediaItems} />}
 
           {/**
