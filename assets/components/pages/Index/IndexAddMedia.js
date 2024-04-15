@@ -53,17 +53,28 @@ export const IndexAddMedia = () => {
       const FILE_NAME = file.value.split("\\").pop().split("/").pop();
       const FILE_EXTENSION = FILE_NAME.split(".").pop().toLowerCase();
 
-      const IMG_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "bmp", "webp"];
-      const VIDEO_EXTENSIONS = ["mp4", "avi", "mov", "mkv", "wmv"];
+      const IMG_EXTENSIONS = [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif",
+        "bmp",
+        "webp",
+        "avif",
+      ];
+      // const VIDEO_EXTENSIONS = ["mp4", "avi", "mov", "mkv", "wmv"];
 
       if (IMG_EXTENSIONS.includes(FILE_EXTENSION)) {
         console.log("File is an image!");
         return "image";
-      } else if (VIDEO_EXTENSIONS.includes(FILE_EXTENSION)) {
-        console.log("File is a video!");
-        return "video";
-      } else {
-        console.log("File is not a video or image..");
+      }
+      // else if (VIDEO_EXTENSIONS.includes(FILE_EXTENSION)) {
+      //   console.log("File is a video!");
+      //   return "video";
+      // }
+      else {
+        // console.log("File is not a video or image..");
+        console.log("File is not a image..");
         return false;
       }
     } else {
@@ -88,7 +99,11 @@ export const IndexAddMedia = () => {
     let type = TYPE.value.trim().toLowerCase(); // Get the type input value and normalize it
 
     // If the user didn't manually enter "image" or "video", detect the file type
-    if (!["image", "video"].includes(type)) {
+    // if (!["image", "video"].includes(type)) {
+    //   type = CHECKING_FILE;
+    // }
+
+    if (!["image"].includes(type)) {
       type = CHECKING_FILE;
     }
 
@@ -183,6 +198,7 @@ export const IndexAddMedia = () => {
               type="text"
               name="name"
               value={name}
+              placeholder="Media Name"
               onChange={(e) => {
                 e.currentTarget.style.border = "2px solid white";
                 setName(e.target.value);
@@ -192,7 +208,7 @@ export const IndexAddMedia = () => {
           </div>
           <div className={`${styles.form_set}`}>
             <span className="orientation-change-element half-second">
-              Enter Type (Image OR Video):
+              Enter Type <strong>(Images Only)</strong>:
             </span>
 
             <input
@@ -200,6 +216,7 @@ export const IndexAddMedia = () => {
               type="text"
               name="type"
               value={type}
+              placeholder="Media Type"
               onChange={(e) => {
                 e.currentTarget.style.border = "2px solid white";
                 setType(e.target.value);
@@ -216,6 +233,7 @@ export const IndexAddMedia = () => {
               type="text"
               name="text"
               value={text}
+              placeholder="Modal Text"
               onChange={(e) => {
                 e.currentTarget.style.border = "2px solid white";
                 setText(e.target.value);
@@ -230,7 +248,7 @@ export const IndexAddMedia = () => {
             <input
               id="addMediaFile"
               type="file"
-              accept="image/*,video/*"
+              accept="image/*"
               onChange={handleFileChange}
             />
           </div>
@@ -238,13 +256,13 @@ export const IndexAddMedia = () => {
           <div className={`${styles.form_btns}`}>
             <button
               type="reset"
-              className={`${styles.reset} orientation-change-element half-second`}
+              className={`${styles.reset_btn} orientation-change-element half-second`}
             >
               Clear
             </button>
             <button
               type="submit"
-              className={`${styles.submit} orientation-change-element half-second`}
+              className={`${styles.submit_btn} orientation-change-element half-second`}
             >
               Add To Gallery
             </button>
