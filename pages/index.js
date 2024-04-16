@@ -44,6 +44,7 @@ import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitRe
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
+import { IndexGeneratedImgModal } from "@/assets/components/pages/Index/IndexGeneratedImgModal";
 
 export async function getServerSideProps({ req }) {
   try {
@@ -171,6 +172,40 @@ export default function Home({
 
   const [adminMode, setAdminMode] = useState(false);
   const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
+  const [imgModalOpen, setImgModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+  // Function to open the modal
+  const openImgModal = (index) => {
+    setSelectedImageIndex(index);
+    setImgModalOpen(true);
+    document.body.style.overflowY = "hidden";
+    document.body.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      document.querySelector(".img-modal").style.overflowY = "auto";
+      document.querySelector(".img-modal").style.pointerEvents = "auto";
+    }, 500);
+  };
+
+  // Function to close the modal
+  const closeImgModal = () => {
+    setSelectedImageIndex(null);
+    setImgModalOpen(false);
+    document.body.style.overflowY = "auto";
+    document.body.style.pointerEvents = "auto";
+  };
+
+  const goToNext_IM = () => {
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
+  };
+
+  // Function to navigate to the previous image
+  const goToPrev_IM = () => {
+    setSelectedImageIndex(
+      (prevIndex) => (prevIndex - 1 + mediaItems.length) % mediaItems.length
+    );
+  };
 
   // Setting adminMode
   useEffect(() => {
@@ -365,7 +400,12 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
           {adminMode && <IndexAddMedia />}
-          {ON_LOCAL_HOST && <IndexGeneratedMedia mediaItems={mediaItems} />}
+          {ON_LOCAL_HOST && (
+            <IndexGeneratedMedia
+              mediaItems={mediaItems}
+              openImgModal={openImgModal}
+            />
+          )}
 
           {/**
           <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
@@ -376,6 +416,17 @@ export default function Home({
           <IndexContact />
         </FadeRight>
       </main>
+
+      {ON_LOCAL_HOST && imgModalOpen && (
+        <IndexGeneratedImgModal
+          images={mediaItems.map((media) => media.src)}
+          texts={mediaItems.map((media) => media.text)}
+          currentIndex={selectedImageIndex}
+          closeModal={closeImgModal}
+          goToNext={goToNext_IM}
+          goToPrev={goToPrev_IM}
+        />
+      )}
 
       <Footer />
     </div>

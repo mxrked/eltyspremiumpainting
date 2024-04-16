@@ -4,13 +4,15 @@
  *
  */
 
+import { useState } from "react";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { LazyLoadBackgroundImage } from "../../global/All/LazyLoadBackgroundImage";
 
 import styles from "../../../styles/modules/Index/Index.module.css";
 
-export const IndexGeneratedMedia = (props) => {
+export const IndexGeneratedMedia = ({ mediaItems, openImgModal }) => {
   const getColumnClasses = (index, totalColumns) => {
     const isOddNumber = totalColumns % 2 !== 0;
 
@@ -70,14 +72,17 @@ export const IndexGeneratedMedia = (props) => {
 
         <div className={`${styles.media_box} container-fluid`}>
           <div className={`${styles.media_row} row`}>
-            {props.mediaItems.map((media, index) => (
+            {mediaItems.map((media, index) => (
               <div
                 className={`${styles.media} ${getColumnClasses(
                   index,
-                  props.mediaItems.length
+                  mediaItems.length
                 )}`}
+                onClick={() => openImgModal(index)}
               >
-                {media.type === "image" && <LazyLoadImage src={media.src} />}
+                {media.type === "image" && (
+                  <LazyLoadImage key={index} src={media.src} />
+                )}
                 {media.type === "video" && (
                   <video controls>
                     <source src={media.src} type="video/mp4" /> {/* Here */}

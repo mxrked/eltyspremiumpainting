@@ -215,6 +215,28 @@
     }
   }
 }
+.img_modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 700;
+  background-color: rgba(0, 0, 0, 0.7);
+  @include displayElement(flex, center, center);
+
+  .img_modal_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
 
 // Responsive
 @media all and (max-width: 1995px) {
