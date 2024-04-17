@@ -1,5 +1,11 @@
 [
   {
+    "galleryItem_ID": "galleryItem_-10",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-20.webp",
+    "galleryItem_Description": "This room is completed, new flors were installed and walls and cielings have been painted."
+  },
+  {
     "galleryItem_ID": "galleryItem_-9",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-19.webp",
