@@ -12,7 +12,7 @@ import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 import NProgress from "nprogress";
 
-//
+// Test
 
 // Data/Functions/Images Imports
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
