@@ -12,6 +12,8 @@ import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 import NProgress from "nprogress";
 
+//
+
 // Data/Functions/Images Imports
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
