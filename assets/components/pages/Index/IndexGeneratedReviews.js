@@ -11,6 +11,8 @@ import { BsStarFill } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import { YELP_LOGO, GOOGLE_REVIEWS_LOGO } from "@/assets/cdns/CDNImgs";
+
 import styles from "../../../styles/modules/Index/Index.module.css";
 
 export const IndexGeneratedReviews = (props) => {
@@ -136,13 +138,23 @@ export const IndexGeneratedReviews = (props) => {
                     <div className={`${styles.review_inner_bottom}`}>
                       <p>{review.review}</p>
 
-                      <ul>
-                        {Array.from({ length: review.rating }, (_, index) => (
-                          <li key={index}>
-                            <BsStarFill />
-                          </li>
-                        ))}
-                      </ul>
+                      <div>
+                        {review.type == "google" || review.type == "Google" ? (
+                          <LazyLoadImage src={GOOGLE_REVIEWS_LOGO} />
+                        ) : null}
+
+                        {review.type == "yelp" || review.type == "Yelp" ? (
+                          <LazyLoadImage src={YELP_LOGO} />
+                        ) : null}
+
+                        <ul>
+                          {Array.from({ length: review.rating }, (_, index) => (
+                            <li key={index}>
+                              <BsStarFill />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

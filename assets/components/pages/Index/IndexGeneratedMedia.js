@@ -4,8 +4,6 @@
  *
  */
 
-import { useState } from "react";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { LazyLoadBackgroundImage } from "../../global/All/LazyLoadBackgroundImage";
@@ -32,6 +30,10 @@ export const IndexGeneratedMedia = ({ mediaItems, openImgModal }) => {
 
       if (RESPONSE.ok) {
         console.log("Media deleted successfully!");
+        const updatedItems = displayedItems.filter(
+          (item) => item.itemID !== itemID
+        );
+        setDisplayedItems(updatedItems);
         document.location.reload();
       } else {
         console.error("Failed to delete media:", RESPONSE.statusText);
@@ -79,6 +81,7 @@ export const IndexGeneratedMedia = ({ mediaItems, openImgModal }) => {
                   mediaItems.length
                 )}`}
                 onClick={() => openImgModal(index)}
+                key={media.itemID}
               >
                 {media.type === "image" && (
                   <LazyLoadImage key={index} src={media.src} />

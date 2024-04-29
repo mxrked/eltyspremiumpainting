@@ -26,6 +26,7 @@ export const IndexSubmitReview = () => {
   );
   const [date, setDate] = useState(FORMATTED_DATE);
   const [location, setLocation] = useState("");
+  const [type, setType] = useState("");
   const [reviews, setReviews] = useState([]);
 
   // Function to fetch reviews
@@ -63,11 +64,13 @@ export const IndexSubmitReview = () => {
     const NAME = document.getElementById("reviewFormName");
     const LOCATION = document.getElementById("reviewFormLocation");
     const RATING = document.getElementById("reviewFormRating");
+    const TYPE = document.getElementById("reviewFormType");
     const MESSAGE = document.getElementById("reviewFormMessage");
 
     const CHECKING_NAME = checkingForValidInput(NAME);
     const CHECKING_LOCATION = checkingForValidInput(LOCATION);
     const CHECKING_RATING = checkingForValidInput(RATING);
+    const CHECKING_TYPE = checkingForValidInput(TYPE);
     const CHECKING_MESSAGE = checkingForValidInput(MESSAGE);
 
     if (CHECKING_NAME) {
@@ -79,6 +82,9 @@ export const IndexSubmitReview = () => {
     if (CHECKING_RATING) {
       RATING.style.border = "2px solid white";
     }
+    if (CHECKING_TYPE) {
+      TYPE.style.border = "2px solid white";
+    }
     if (CHECKING_MESSAGE) {
       MESSAGE.style.border = "2px solid white";
     }
@@ -87,6 +93,7 @@ export const IndexSubmitReview = () => {
       CHECKING_NAME &&
       CHECKING_LOCATION &&
       CHECKING_RATING &&
+      CHECKING_TYPE &&
       CHECKING_MESSAGE
     ) {
       try {
@@ -103,6 +110,7 @@ export const IndexSubmitReview = () => {
             date,
             location,
             review,
+            type,
           }),
         });
 
@@ -117,6 +125,7 @@ export const IndexSubmitReview = () => {
           );
           setDate(FORMATTED_DATE);
           setLocation("");
+          setType("");
           setReview("");
           // Fetch reviews again after submission to update the list
           fetchReviews();
@@ -139,6 +148,10 @@ export const IndexSubmitReview = () => {
 
       if (!CHECKING_RATING) {
         RATING.style.border = "2px solid red";
+      }
+
+      if (!CHECKING_TYPE) {
+        TYPE.style.border = "2px solid red";
       }
 
       if (!CHECKING_MESSAGE) {
@@ -175,6 +188,21 @@ export const IndexSubmitReview = () => {
             onChange={(e) => {
               e.currentTarget.style.border = "2px solid white";
               setName(e.target.value);
+            }}
+          />
+        </div>
+
+        <div className={`${styles.form_set}`}>
+          <span>Enter review type (Google, Yelp):</span>
+          <input
+            className="form-field"
+            id="reviewFormType"
+            type="text"
+            placeholder="Google or Yelp"
+            value={type}
+            onChange={(e) => {
+              e.currentTarget.style.border = "2px solid white";
+              setType(e.target.value);
             }}
           />
         </div>

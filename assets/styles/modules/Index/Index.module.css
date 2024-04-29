@@ -379,6 +379,13 @@
   display: block;
   text-align: left;
 }
+.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_type {
+  color: #333333;
+  font-family: "Poppins Bold";
+  font-size: 16px;
+  display: block;
+  opacity: 0.5;
+}
 .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_top .review_inner_top_box .review_inner_top_row .review_inner_top_R .review_inner_top_side_cnt .review_name {
   color: #333333;
   font-family: "Poppins Extra Bold";
@@ -408,18 +415,26 @@
   font-family: "Noto Sans Regular";
   font-size: 16px;
 }
-.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom ul {
+.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div img {
+  max-width: 80px;
+}
+.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div ul {
   max-width: 200px;
   width: 100%;
   margin-left: auto;
   margin-right: 0;
-  margin-top: 25px;
+  margin-top: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   color: #93329e;
 }
-.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom ul li {
+.index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div ul li {
   margin-left: 10px;
 }
 
@@ -1897,6 +1912,18 @@
   }
   .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom p {
     font-size: 14px;
+    text-align: center;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div {
+    display: block;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div img {
+    margin: auto;
+    display: block;
+    max-width: 70px;
+  }
+  .index_generated_reviews .index_generated_reviews_inner .index_generated_reviews_inner_reviews .reviews_box .reviews_row .review .review_inner .review_inner_bottom div ul {
+    justify-content: center;
   }
   .index_generated_reviews_form {
     margin-top: 20px;

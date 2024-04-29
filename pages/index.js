@@ -40,11 +40,11 @@ import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGene
 import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
 import { IndexGeneratedMedia } from "@/assets/components/pages/Index/IndexGeneratedMedia";
 import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
+import { IndexGeneratedImgModal } from "@/assets/components/pages/Index/IndexGeneratedImgModal";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { IndexGeneratedImgModal } from "@/assets/components/pages/Index/IndexGeneratedImgModal";
 
 export async function getServerSideProps({ req }) {
   try {

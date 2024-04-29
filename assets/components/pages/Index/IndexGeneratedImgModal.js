@@ -19,7 +19,6 @@ export const IndexGeneratedImgModal = ({
 }) => {
   return (
     <div className={`${styles.img_modal} img-modal`}>
-
       <div className={`${styles.img_modal_inner}`}>
         <div className={`${styles.img_modal_inner_top}`}>
           <button className={`${styles.closer}`} onClick={closeModal}>

@@ -243,7 +243,7 @@ export const IndexAddMedia = () => {
           </div>
           <div className={`${styles.form_set}`}>
             <span className="orientation-change-element half-second">
-              Add File (Only images and videos):
+              Add File (Only images):
             </span>
             <input
               id="addMediaFile"

@@ -402,6 +402,14 @@
                         display: block;
                         text-align: left;
 
+                        .review_type {
+                          color: $MineShaft;
+                          font-family: "Poppins Bold";
+                          font-size: clamp(15px, 16px, 16px);
+                          display: block;
+                          opacity: 0.5;
+                        }
+
                         .review_name {
                           color: $MineShaft;
                           font-family: "Poppins Extra Bold";
@@ -443,17 +451,27 @@
                   font-size: clamp(15px, 16px, 16px);
                 }
 
-                ul {
-                  max-width: 200px;
-                  width: 100%;
-                  margin-left: auto;
-                  margin-right: 0;
-                  margin-top: 25px;
-                  @include displayElement(flex, flex-end, center);
-                  color: $VividViolet;
+                div {
+                  display: flex;
+                  align-items: center;
+                  margin-top: 30px;
 
-                  li {
-                    margin-left: 10px;
+                  img {
+                    max-width: 80px;
+                  }
+
+                  ul {
+                    max-width: 200px;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: 0;
+                    margin-top: 0;
+                    @include displayElement(flex, flex-end, center);
+                    color: $VividViolet;
+
+                    li {
+                      margin-left: 10px;
+                    }
                   }
                 }
               }
@@ -2407,6 +2425,21 @@
 
                   p {
                     font-size: clamp(13px, 14px, 14px);
+                    text-align: center;
+                  }
+
+                  div {
+                    display: block;
+
+                    img {
+                      margin: auto;
+                      display: block;
+                      max-width: 70px;
+                    }
+
+                    ul {
+                      justify-content: center;
+                    }
                   }
                 }
               }
