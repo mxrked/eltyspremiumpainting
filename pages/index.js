@@ -400,12 +400,14 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexGallery galleryData={galleryData} />
           {adminMode && <IndexAddMedia />}
+          {/**
           {ON_LOCAL_HOST && (
             <IndexGeneratedMedia
               mediaItems={mediaItems}
               openImgModal={openImgModal}
             />
           )}
+          */}
 
           {/**
           <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
