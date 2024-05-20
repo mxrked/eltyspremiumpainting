@@ -132,11 +132,11 @@ export const Footer = () => {
           <span className="orientation-change-element half-second">
             Website created by{" "}
             <a
-              href="https://www.codingthefront.com"
+              href="https://dynamicwebtechnologies.com/"
               target={"_blank"}
               className="orientation-change-element half-second"
             >
-              codingthefront.com
+              Dynamic Web Technologies
             </a>
           </span>
         </div>
