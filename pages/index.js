@@ -83,26 +83,26 @@ export async function getServerSideProps({ req }) {
     const iconData = JSON.parse(pageHeadDatafileContents);
     // console.log("Icons Data: " + iconData);
 
-    // const reviewsDataFilePath = path.join(
-    //   process.cwd(),
-    //   "public/data/",
-    //   "ReviewsData.json"
-    // );
-    // const reviewsDataFileContents = fs.readFileSync(
-    //   reviewsDataFilePath,
-    //   "utf-8"
-    // );
-
-    //! SWITCH TO HAVE ADDED REVIEWS
     const reviewsDataFilePath = path.join(
       process.cwd(),
       "public/data/",
-      "GeneratedReviews.json"
+      "ReviewsData.json"
     );
     const reviewsDataFileContents = fs.readFileSync(
       reviewsDataFilePath,
       "utf-8"
     );
+
+    //! SWITCH TO HAVE ADDED REVIEWS
+    // const reviewsDataFilePath = path.join(
+    //   process.cwd(),
+    //   "public/data/",
+    //   "GeneratedReviews.json"
+    // );
+    // const reviewsDataFileContents = fs.readFileSync(
+    //   reviewsDataFilePath,
+    //   "utf-8"
+    // );
 
     // console.log("Reviews Data: " + reviewsDataFileContents);
 
@@ -392,6 +392,7 @@ export default function Home({
           <IndexAd adData={adData} />
         </FadeLeft>
 
+        {/***/}
         <FadeRight threshold={0.5}>
           <IndexGeneratedReviews reviews={reviews} adminMode={adminMode} />
           <IndexSubmitReview />
