@@ -97,5 +97,82 @@
     "reviewDate": "4/29/2024",
     "reviewRating": 5,
     "reviewText": "Elty's did a fantastic job finishing our bathroom remodeling project. They are professional and so easy to work with. I would definitely hire them again for my painting needs. Great people, great job!"
+  },
+  {
+    "reviewID": "review_0010",
+    "reviewType": "Google",
+    "reviewName": "M L",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "5/29/2024",
+    "reviewRating": 5,
+    "reviewText": "Elty's Premium Painting & Restoration does a wonderful job!!! From the first phone call to completion; everything is about their attention to the details. I am very pleased with their services and would highly recommend them to anyone who needs a prompt, professional, and skilled painting company. I would give them TEN stars if I could ⭐️"
+  },
+  {
+    "reviewID": "review_0011",
+    "reviewType": "Google",
+    "reviewName": "Sean Scollan",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "6/29/2024",
+    "reviewRating": 5,
+    "reviewText": "Excellent painting and ceiling repair!!!!!"
+  },
+  {
+    "reviewID": "review_0012",
+    "reviewType": "Google",
+    "reviewName": "Amy Chambers",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "6/29/2024",
+    "reviewRating": 5,
+    "reviewText": "Very dependable and professional! Did an outstanding job, very reasonably priced and walked every room with me at the end to make sure I was extremely satisfied! Definitely, Highly Recommended!"
+  },
+  {
+    "reviewID": "review_0013",
+    "reviewType": "Google",
+    "reviewName": "Jennifer Poole",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "6/29/2024",
+    "reviewRating": 5,
+    "reviewText": "I am so pleased with the work that Elty's crew did! They painted my home exterior and I am very happy with the results. They made sure that we were satisfied before the job was complete. I highly recommend."
+  },
+  {
+    "reviewID": "review_0014",
+    "reviewType": "Google",
+    "reviewName": "William Brown",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "6/29/2024",
+    "reviewRating": 5,
+    "reviewText": "Exactly what I wanted am very happy with the work all contractors should be this pleasant to work with thank you"
+  },
+  {
+    "reviewID": "review_0015",
+    "reviewType": "Google",
+    "reviewName": "Amanda Dodson",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "7/15/2024",
+    "reviewRating": 5,
+    "reviewText": "Elty's did an amazing job at East Stokes Outreach painting a food pantry, offices,  lobby, halls, restrooms and closets. They were professional, courteous, great attention to detail and finished the project sooner than planned. Would use them again and have already highly recommended them to others!"
+  },
+  {
+    "reviewID": "review_0016",
+    "reviewType": "Google",
+    "reviewName": "Joshua",
+    "reviewProfile": "N/A",
+    "reviewProfilePicture": "?",
+    "reviewLocation": "?",
+    "reviewDate": "7/15/2024",
+    "reviewRating": 5,
+    "reviewText": "Elty's Painting & Restoration's work is hands down the best you can hope for. The quality of work from the detailed craftsmanship to the professionalism is second to none. Their work is on-time, on-budget, and beautiful. I can't say enough about this company and the employees that work for them. You can't go wrong with Elty's."
   }
 ]
