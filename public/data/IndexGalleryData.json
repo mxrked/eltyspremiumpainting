@@ -1,5 +1,77 @@
 [
   {
+    "galleryItem_ID": "galleryItem_-46",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-32.webp",
+    "galleryItem_Description": "Image of painted interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-45",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-31.webp",
+    "galleryItem_Description": "Image of painted interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-44",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-30.webp",
+    "galleryItem_Description": "Image of painted bathroom."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-43",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-29.webp",
+    "galleryItem_Description": "Image of painted interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-42",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-48.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-41",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-47.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-40",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-46.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-39",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-45.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-38",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-44.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-37",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-43.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-36",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-42.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-35",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-41.webp",
+    "galleryItem_Description": "Before and After image of repainting of an interior."
+  },
+  {
     "galleryItem_ID": "galleryItem_-34",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-20.webp",
