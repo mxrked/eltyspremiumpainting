@@ -1,5 +1,97 @@
 [
   {
+    "galleryItem_ID": "galleryItem_-84",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-8.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-83",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-7.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-82",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-6.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-81",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-5.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-80",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-4.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-79",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-3.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-78",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-2.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-77",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-1.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-76",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/fresh-smooth-surface-1.webp",
+    "galleryItem_Description": "Image of fresh smooth surface ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-75",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/removing-popcorn-ceiling-2.webp",
+    "galleryItem_Description": "Image of removing popcorn ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-74",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/removing-popcorn-ceiling-1.webp",
+    "galleryItem_Description": "Image of removing popcorn ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-73",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/popcorn-ceiling-3.webp",
+    "galleryItem_Description": "Image of popcorn ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-72",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/popcorn-ceiling-2.webp",
+    "galleryItem_Description": "Image of popcorn ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-71",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/popcorn-ceiling-1.webp",
+    "galleryItem_Description": "Image of popcorn ceiling."
+  },
+  {
+    "galleryItem_ID": "galleryItem_-70",
+    "galleryItem_Type": "video",
+    "galleryItem_Poster": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/popcorn-ceiling-removal-2.webp",
+    "galleryItem_Video": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/videos/gallery/removing-popcorn-ceiling.mp4",
+    "galleryItem_VideoVolume": 0.1,
+    "galleryItem_Description": "Time to remove old popcorn ceiling."
+  },
+  {
     "galleryItem_ID": "galleryItem_-69",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/outside-36.webp",
