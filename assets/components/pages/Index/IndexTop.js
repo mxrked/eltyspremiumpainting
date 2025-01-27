@@ -55,7 +55,8 @@ export const IndexTop = () => {
           <p className="orientation-change-element half-second">
             Your Mt. Airy & Greensboro, NC Painting and Restoration Experts. We
             specialize in removing popcorn ceilings, skim coating, staining,
-            sheetrock repair, and pressure-washing for your home.
+            sheetrock repair, drywall installation, vinyl flooring installation,
+            and pressure-washing for your home.
           </p>
 
           <button
