@@ -1,5 +1,23 @@
 [
     {
+    "galleryItem_ID": "galleryItem_-102",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-62.webp",
+    "galleryItem_Description": "Before and After image. We removed wallpaper, we did a skim coat and painted the walls."
+  },
+    {
+    "galleryItem_ID": "galleryItem_-101",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-61.webp",
+    "galleryItem_Description": "Before and After image. We removed wallpaper, we did a skim coat and painted the walls."
+  },
+    {
+    "galleryItem_ID": "galleryItem_-100",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-60.webp",
+    "galleryItem_Description": "Before and After image. We removed wallpaper, we did a skim coat and painted the walls."
+  },
+    {
     "galleryItem_ID": "galleryItem_-99",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-59.webp",
@@ -47,7 +65,7 @@
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-36.png",
     "galleryItem_Description": "Image of painted interior."
   },
-  {
+  { 
     "galleryItem_ID": "galleryItem_-91",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-35.jpg",
