@@ -1,5 +1,11 @@
 [
   {
+    "galleryItem_ID": "galleryItem_-98",
+    "galleryItem_Type": "img",
+    "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/before-after-58.webp",
+    "galleryItem_Description": "Before and After image. We removed wallpaper, we did a skim coat and painted the walls."
+  },
+  {
     "galleryItem_ID": "galleryItem_-97",
     "galleryItem_Type": "img",
     "galleryItem_Img": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/eltyspremiumpainting/imgs/gallery/inside-41.jpg",
