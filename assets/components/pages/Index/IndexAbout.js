@@ -63,11 +63,11 @@ export const IndexAbout = () => {
             <p className="orientation-change-element half-second">
               Transform your living spaces with Elty's Premium Painting &
               Restoration - your go-to partner for professional painting, wall
-              restoration, and wood finishing, including Elty's Premium Painting
-              Greensboro. Our commitment to excellence and attention to detail
-              guarantee results that exceed expectations. Elevate the beauty of
-              your home with our specialized services in Greensboro, Mt. Airy,
-              and throughout North Carolina.
+              restoration, and wood finishing, vinyl flooring installation,
+              including Elty's Premium Painting Greensboro. Our commitment to
+              excellence and attention to detail guarantee results that exceed
+              expectations. Elevate the beauty of your home with our specialized
+              services in Greensboro, Mt. Airy, and throughout North Carolina.
             </p>
 
             <button

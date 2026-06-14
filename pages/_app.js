@@ -12,6 +12,8 @@ import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 import NProgress from "nprogress";
 
+// Tests
+
 // Data/Functions/Images Imports
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
@@ -75,6 +77,35 @@ function MyApp({ Component, pageProps }) {
       });
     }
   }, [router, router.events]);
+
+  //! Admin Mode Stuff
+  // useEffect(() => {
+  //   console.log("Checking Current User...");
+
+  //   const CURRENT_USER = localStorage.getItem("Current User");
+
+  //   // Show review-delete elements immediately
+  //   setTimeout(() => {
+  //     if (CURRENT_USER) {
+  //       console.log("Current User found. Showing review-delete elements.");
+
+  //       document.getElementById("loginToggler").style.display = "none";
+  //       document.getElementById("loginCloser").style.display = "none";
+  //       document.getElementById("loginWindow").style.display = "none";
+
+  //       if (document.querySelector("#currentUser")) {
+  //         document.querySelector("#currentUser").style.display = "flex";
+  //       }
+
+  //       document.querySelectorAll(".review-delete").forEach((rd) => {
+  //         rd.style.opacity = 1;
+  //         rd.style.visibility = "visible";
+  //       });
+  //     } else {
+  //       console.log("No Current User found.");
+  //     }
+  //   }, 1800);
+  // }, []);
 
   //! Forget scroll position and force user back to top of page
   useEffect(() => {

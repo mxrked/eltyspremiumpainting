@@ -122,6 +122,16 @@ export const IndexReviews = (props) => {
                                     alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
                                   />
                                 )}
+
+                                {review.reviewType === "?" && (
+                                  <LazyLoadImage
+                                    // data-src={review.reviewProfilePicture}
+                                    // className="lazyload"
+                                    src={review.reviewProfilePicture}
+                                    className={`${styles.pfp_img}`}
+                                    alt={`Elty's Premium Painting & Restoration: ${review.reviewName}'s profile picture.`}
+                                  />
+                                )}
                               </div>
                             </div>
                             <div
@@ -194,6 +204,23 @@ export const IndexReviews = (props) => {
                                     </ul>
                                   </div>
                                 )}
+
+                                {review.reviewType === "?" && (
+                                  <div
+                                    className={`${styles.review_inner_google_rating}`}
+                                  >
+                                    <ul>
+                                      {Array.from(
+                                        { length: review.reviewRating },
+                                        (_, index) => (
+                                          <li key={index}>
+                                            <BsStarFill />
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -239,6 +266,8 @@ export const IndexReviews = (props) => {
                           </a>
                         </div>
                       )}
+
+                      {review.reviewType === "?" && null}
                     </div>
                   </div>
                 </div>

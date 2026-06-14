@@ -1342,7 +1342,9 @@ export const IndexContact = () => {
                         <option>Popcorn Ceiling Removal</option>
                         <option>Skim Coating</option> <option>Staining</option>{" "}
                         <option>Sheetrock Repair</option>{" "}
-                        <option>Pressure Washing</option>
+                        <option>Pressure Washing</option>{" "}
+                        <option>Vinyl Floor Installation</option>{" "}
+                        <option>Dry Wall Installation</option>
                       </select>
                     </div>
                   </div>

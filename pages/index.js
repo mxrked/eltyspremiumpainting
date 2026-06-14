@@ -5,9 +5,10 @@ import fs from "fs";
 import path from "path";
 
 // Library Imports
+import { BsStarFill } from "react-icons/bs";
 
 // Data/Functions/Images Imports
-import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
+// import { connectDatabase } from "@/db/connections/websiteVisitsCounter_CONNECTION";
 import { FadeLeft } from "@/assets/animations/components/FadeLeft";
 import { FadeRight } from "@/assets/animations/components/FadeRight";
 
@@ -21,6 +22,10 @@ import { BackToTop } from "@/assets/components/global/All/BackToTop";
 import { Footer } from "@/assets/components/global/Footer/Footer";
 import { SubmissionSuccessMessage } from "@/assets/components/global/All/SubmissionSuccessMessage";
 import { PaymentRequiredWall } from "@/assets/components/global/All/PaymentRequiredWall";
+import { LoginToggler } from "@/assets/components/global/All/LoginToggler";
+import { LoginCloser } from "@/assets/components/global/All/LoginCloser";
+import { LoginWindow } from "@/assets/components/global/All/LoginWindow";
+import { CurrentUser } from "@/assets/components/global/All/CurrentUser";
 
 import { IndexTop } from "@/assets/components/pages/Index/IndexTop";
 import { IndexAbout } from "@/assets/components/pages/Index/IndexAbout";
@@ -30,6 +35,12 @@ import { IndexGallery } from "@/assets/components/pages/Index/IndexGallery";
 // import { IndexGalleryImgModal } from "@/assets/components/pages/Index/IndexGalleryImgModal";
 // import { IndexGalleryVideoModal } from "@/assets/components/pages/Index/IndexGalleryVideoModal";
 import { IndexContact } from "@/assets/components/pages/Index/IndexContact";
+import { IndexGeneratedReviews } from "@/assets/components/pages/Index/IndexGeneratedReviews";
+// import { IndexAddMedia } from "@/assets/components/pages/Index/old/IndexAddMedia";
+import { IndexAddMedia } from "@/assets/components/pages/Index/IndexAddMedia";
+import { IndexGeneratedMedia } from "@/assets/components/pages/Index/IndexGeneratedMedia";
+import { IndexSubmitReview } from "@/assets/components/pages/Index/IndexSubmitReview";
+import { IndexGeneratedImgModal } from "@/assets/components/pages/Index/IndexGeneratedImgModal";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
@@ -38,24 +49,24 @@ import "../assets/styles/modules/Index/Index.module.css";
 export async function getServerSideProps({ req }) {
   try {
     // Database activities
-    const DB = await connectDatabase();
+    // const DB = await connectDatabase();
 
-    if (!DB) {
-      return {
-        props: {
-          TOTAL_NUMBER_OF_IPS: 0,
-          current_ip: null,
-          iconData: null,
-          reviewsData: null,
-          galleryData: null,
-          adData: null,
-        },
-      };
-    }
+    // if (!DB) {
+    //   return {
+    //     props: {
+    //       // TOTAL_NUMBER_OF_IPS: 0,
+    //       // current_ip: null,
+    //       iconData: null,
+    //       reviewsData: null,
+    //       galleryData: null,
+    //       adData: null,
+    //     },
+    //   };
+    // }
 
-    const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
+    // const TOTAL_NUMBER_OF_IPS = await DB.collection("ips").countDocuments();
 
-    const current_ip = req.socket.remoteAddress;
+    // const current_ip = req.socket.remoteAddress;
 
     const pageHeadDatafilePath = path.join(
       process.cwd(),
@@ -72,25 +83,26 @@ export async function getServerSideProps({ req }) {
     const iconData = JSON.parse(pageHeadDatafileContents);
     // console.log("Icons Data: " + iconData);
 
-    // const reviewsDataFilePath = path.join(
-    //   process.cwd(),
-    //   "public/data/",
-    //   "ReviewsData.json"
-    // );
-    // const reviewsDataFileContents = fs.readFileSync(
-    //   reviewsDataFilePath,
-    //   "utf-8"
-    // );
-
     const reviewsDataFilePath = path.join(
       process.cwd(),
       "public/data/",
-      "GeneratedReviews.json"
+      "ReviewsData.json"
     );
     const reviewsDataFileContents = fs.readFileSync(
       reviewsDataFilePath,
       "utf-8"
     );
+
+    //! SWITCH TO HAVE ADDED REVIEWS
+    // const reviewsDataFilePath = path.join(
+    //   process.cwd(),
+    //   "public/data/",
+    //   "GeneratedReviews.json"
+    // );
+    // const reviewsDataFileContents = fs.readFileSync(
+    //   reviewsDataFilePath,
+    //   "utf-8"
+    // );
 
     // console.log("Reviews Data: " + reviewsDataFileContents);
 
@@ -124,8 +136,8 @@ export async function getServerSideProps({ req }) {
 
     return {
       props: {
-        TOTAL_NUMBER_OF_IPS,
-        current_ip,
+        // TOTAL_NUMBER_OF_IPS,
+        // current_ip,
         iconData,
         reviewsData,
         galleryData,
@@ -137,8 +149,8 @@ export async function getServerSideProps({ req }) {
 
     return {
       props: {
-        TOTAL_NUMBER_OF_IPS: 0,
-        current_ip: null,
+        // TOTAL_NUMBER_OF_IPS: 0,
+        // current_ip: null,
         iconData: null,
         reviewsData: null,
         galleryData: null,
@@ -149,8 +161,8 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Home({
-  TOTAL_NUMBER_OF_IPS,
-  current_ip,
+  // TOTAL_NUMBER_OF_IPS,
+  // current_ip,
   iconData,
   reviewsData,
   galleryData,
@@ -158,23 +170,62 @@ export default function Home({
 }) {
   const router = useRouter();
 
-  const [name, setName] = useState("");
-  const [rating, setRating] = useState("");
-  const [review, setReview] = useState("");
-  const [reviews, setReviews] = useState([]);
+  const [adminMode, setAdminMode] = useState(false);
   const [ON_LOCAL_HOST, SET_ON_LOCALHOST] = useState(null);
+  const [imgModalOpen, setImgModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  // useEffect(() => {
-  //   console.log(iconData.favicon);
+  // Function to open the modal
+  const openImgModal = (index) => {
+    setSelectedImageIndex(index);
+    setImgModalOpen(true);
+    document.body.style.overflowY = "hidden";
+    document.body.style.pointerEvents = "none";
 
-  //   reviewsData.forEach((review) => {
-  //     console.log(review);
-  //   });
+    setTimeout(() => {
+      document.querySelector(".img-modal").style.overflowY = "auto";
+      document.querySelector(".img-modal").style.pointerEvents = "auto";
+    }, 500);
+  };
 
-  //   galleryData.forEach((gallery) => {
-  //     console.log(gallery);
-  //   });
-  // }, []);
+  // Function to close the modal
+  const closeImgModal = () => {
+    setSelectedImageIndex(null);
+    setImgModalOpen(false);
+    document.body.style.overflowY = "auto";
+    document.body.style.pointerEvents = "auto";
+  };
+
+  const goToNext_IM = () => {
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
+  };
+
+  // Function to navigate to the previous image
+  const goToPrev_IM = () => {
+    setSelectedImageIndex(
+      (prevIndex) => (prevIndex - 1 + mediaItems.length) % mediaItems.length
+    );
+  };
+
+  // Setting adminMode
+  useEffect(() => {
+    const CURRENT_USER = localStorage.getItem("Current User");
+    setTimeout(() => {
+      setAdminMode(CURRENT_USER ? true : false);
+
+      if (CURRENT_USER) {
+        document.querySelectorAll(".review-delete").forEach((rd) => {
+          rd.style.opacity = 1;
+          rd.style.visibility = "visible";
+        });
+
+        document.querySelectorAll(".media-delete").forEach((md) => {
+          md.style.opacity = 1;
+          md.style.visibility = "visible";
+        });
+      }
+    }, 1800);
+  }, []);
 
   // Displaying the submission form success message if sent
   useEffect(() => {
@@ -202,61 +253,36 @@ export default function Home({
 
   //! DB Activities
   // Checking if connected to DB
-  console.log("Total number of website visits: " + TOTAL_NUMBER_OF_IPS);
+  // console.log("Total number of website visits: " + TOTAL_NUMBER_OF_IPS);
 
-  // Triggering getWebsiteVisitsByIps.js
-  useEffect(() => {
-    // Fetching the api route
-    const FETCH_DATA = async () => {
-      try {
-        const response = await fetch("/api/getWebsiteVisitsByIps");
-        const data = await response.json();
+  // // Triggering getWebsiteVisitsByIps.js
+  // useEffect(() => {
+  //   // Fetching the api route
+  //   const FETCH_DATA = async () => {
+  //     try {
+  //       const response = await fetch("/api/getWebsiteVisitsByIps");
+  //       const data = await response.json();
 
-        // Handle the data
-        console.log("API response: " + data);
-      } catch (error) {
-        console.error("Error fetching data: " + error);
-      }
-    };
+  //       // Handle the data
+  //       console.log("API response: " + data);
+  //     } catch (error) {
+  //       console.error("Error fetching data: " + error);
+  //     }
+  //   };
 
-    FETCH_DATA();
-  }, []);
+  //   FETCH_DATA();
+  // }, []);
 
   // Displaying the current website visits when on localhost
   useEffect(() => {
-    const IPS = ["127.0.0.1", "::1"];
-
-    if (current_ip === IPS[0] || current_ip === IPS[1]) {
-      SET_ON_LOCALHOST(true);
-    }
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    SET_ON_LOCALHOST(isLocalhost);
   }, []);
 
-  // Function to handle review submission
-  // const handleReviewSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const newReviewData = { name, review };
-  //   setReviews([...reviews, newReviewData]);
-  //   setNewReview(newReviewData);
-
-  //   // Save the new review to the JSON file
-  //   try {
-  //     const reviewsFilePath = path.join(
-  //       process.cwd(),
-  //       "public/data/",
-  //       "GeneratedReviews.json"
-  //     );
-  //     await fs.promises.appendFile(
-  //       reviewsFilePath,
-  //       JSON.stringify(newReviewData) + "\n"
-  //     );
-  //   } catch (error) {
-  //     console.error("Error saving review:", error);
-  //   }
-
-  //   // Clear the form inputs
-  //   setName("");
-  //   setReview("");
-  // };
+  //! EVERYTHING RELATED TO REVIEWS
+  const [reviews, setReviews] = useState([]);
 
   // Function to fetch reviews
   const fetchReviews = async () => {
@@ -265,6 +291,8 @@ export default function Home({
       if (response.ok) {
         const data = await response.json();
         setReviews(data); // Set the reviews state with fetched data
+
+        // router.reload();
       } else {
         console.error("Failed to fetch reviews");
       }
@@ -278,34 +306,35 @@ export default function Home({
     fetchReviews();
   }, []);
 
-  // Function to handle review submission
-  const handleReviewSubmit = async (e) => {
-    e.preventDefault();
+  //! EVERYTHING RELATED TO MEDIA ITEMS
+  const [mediaItems, setMediaItems] = useState([]);
 
+  // Function to fetch mediaItems
+  const fetchMediaItems = async () => {
     try {
-      const response = await fetch("/api/getReviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, rating, review }),
-      });
+      const response = await fetch("/api/getImagesAndVideos");
 
       if (response.ok) {
-        console.log("Review submitted successfully");
-        // Reset form fields after successful submission
-        setName("");
-        setRating("");
-        setReview("");
-        // Fetch reviews again after submission to update the list
-        fetchReviews();
+        const data = await response.json();
+        setMediaItems(data);
       } else {
-        console.error("Failed to submit review");
+        console.error("Failed to fetch media items.");
       }
     } catch (error) {
-      console.error("Error submitting review:", error);
+      console.error("Error fetching media items:", error);
     }
   };
+
+  useEffect(() => {
+    // Call the fetchMediaItems function when component mounts
+    fetchMediaItems();
+
+    // setTimeout(() => {
+    //   mediaItems.forEach((item) => {
+    //     console.log(item.name);
+    //   });
+    // }, 600);
+  }, []);
 
   return (
     <div id="PAGE" className="page index-page">
@@ -318,6 +347,8 @@ export default function Home({
 
       <SubmissionSuccessMessage />
       <PaymentRequiredWall />
+
+      {adminMode && <CurrentUser />}
 
       <main id="PAGE_CNT" className={`${styles.page_cnt} page-cnt`}>
         {/**
@@ -349,6 +380,10 @@ export default function Home({
         <DesktopNav />
         <MobileNav />
 
+        {!adminMode && <LoginToggler />}
+        {!adminMode && <LoginCloser />}
+        {!adminMode && <LoginWindow />}
+
         <IndexTop />
         <FadeRight threshold={0.5}>
           <IndexAbout />
@@ -356,78 +391,45 @@ export default function Home({
         <FadeLeft threshold={0.5}>
           <IndexAd adData={adData} />
         </FadeLeft>
-        {/**
+
+        {/***/}
         <FadeRight threshold={0.5}>
-          <IndexReviews reviewsData={reviewsData} />
+          <IndexGeneratedReviews reviews={reviews} adminMode={adminMode} />
+          <IndexSubmitReview />
         </FadeRight>
-        */}
-        <div>
-          <h2>Reviews</h2>
-          {reviews.length > 0 ? (
-            <ul>
-              {reviews.map((review, index) => (
-                <li key={index}>
-                  <div>
-                    <span>
-                      Name: <strong>{review.name}</strong>
-                    </span>
-                    <br />
-                    <span>Rating: {review.rating}</span>
-                    <br />
-                    <span>Review:</span>
-                    <p>{review.review}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No reviews available</p>
-          )}
 
-          <h2>Submit a Review</h2>
-          <form onSubmit={handleReviewSubmit}>
-            <div>
-              <span>Enter your name:</span>
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <span>Enter your rating:</span>
-              <div>
-                <input
-                  type={"number"}
-                  min={1}
-                  max={5}
-                  value={rating}
-                  onChange={(e) => setRating(e.target.value)}
-                />{" "}
-                <span>Stars</span>
-              </div>
-            </div>
-
-            <div>
-              <span>Enter your review:</span>
-              <textarea
-                placeholder="Write your review..."
-                value={review}
-                onChange={(e) => setReview(e.target.value)}
-              />
-            </div>
-            <button type="submit">Submit Review</button>
-          </form>
-        </div>
         <FadeLeft threshold={0.5}>
-          {/** */} <IndexGallery galleryData={galleryData} />
+          <IndexGallery galleryData={galleryData} />
+          {adminMode && <IndexAddMedia />}
+          {/**
+          {ON_LOCAL_HOST && (
+            <IndexGeneratedMedia
+              mediaItems={mediaItems}
+              openImgModal={openImgModal}
+            />
+          )}
+          */}
+
+          {/**
+          <IndexGeneratedMedia mediaItems={mediaItems} adminMode={adminMode} />
+          {adminMode && <IndexAddMedia />}  */}
         </FadeLeft>
+
         <FadeRight threshold={0.5}>
           <IndexContact />
         </FadeRight>
       </main>
+
+      {ON_LOCAL_HOST && imgModalOpen && (
+        <IndexGeneratedImgModal
+          images={mediaItems.map((media) => media.src)}
+          texts={mediaItems.map((media) => media.text)}
+          currentIndex={selectedImageIndex}
+          closeModal={closeImgModal}
+          goToNext={goToNext_IM}
+          goToPrev={goToPrev_IM}
+        />
+      )}
 
       <Footer />
     </div>
